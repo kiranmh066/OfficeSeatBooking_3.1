@@ -11,6 +11,8 @@ using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_DLL;
 using Office_Seat_Book_DLL.Repost;
 using Office_Seat_Book_Entity;
+using Office_SecretKey_Book_BLL.Services;
+using Office_SecretKey_Book_DLL.Repost;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +39,15 @@ namespace OfficeAPI
             services.AddTransient<IFloorRepost, FloorRepost>();
             services.AddTransient<SeatService, SeatService>();
             services.AddTransient<ISeatRepost, SeatRepost>();
+            services.AddTransient<BookingService, BookingService>();
+            services.AddTransient<IBookingRepost, BookingRepost>();
+            services.AddTransient<ParkingService, ParkingService>();
+            services.AddTransient<IParkingRepost, ParkingRepost>();
+            services.AddTransient<EmployeeService, EmployeeService>();
+            services.AddTransient<IEmployeeRepost, EmployeeRepost>();
 
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             services.AddControllers();
             services.AddSwaggerGen();
@@ -66,7 +76,7 @@ namespace OfficeAPI
             app.UseSwagger();
 
             app.UseSwaggerUI(options =>
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Clinic API"));
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Office API"));
 
             app.UseAuthorization();
 
