@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Book", "Office_Seat_Book\Office_Seat_Book.csproj", "{353D616B-CD7F-4033-941D-85219784C01A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Book_Entity", "Office_Seat_Book_Entity\Office_Seat_Book_Entity.csproj", "{D172218B-E4D3-4C90-B37D-63BC8EC35140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Book_Entity", "Office_Seat_Book_Entity\Office_Seat_Book_Entity.csproj", "{D172218B-E4D3-4C90-B37D-63BC8EC35140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Book_DLL", "Office_Seat_Book_DLL\Office_Seat_Book_DLL.csproj", "{53DDA5EB-E881-48C6-AAF7-BFD6DF07C353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Book_DLL", "Office_Seat_Book_DLL\Office_Seat_Book_DLL.csproj", "{53DDA5EB-E881-48C6-AAF7-BFD6DF07C353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Book_BLL", "Office_Seat_Book_BLL\Office_Seat_Book_BLL.csproj", "{DE06D952-9E7C-4E5D-BB47-CFE95B090BBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Book_BLL", "Office_Seat_Book_BLL\Office_Seat_Book_BLL.csproj", "{DE06D952-9E7C-4E5D-BB47-CFE95B090BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAPI", "OfficeAPI\OfficeAPI.csproj", "{6F589B80-3F0E-4125-9945-3F711352DAEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAPI", "OfficeAPI\OfficeAPI.csproj", "{6F589B80-3F0E-4125-9945-3F711352DAEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Book_MVC", "Office_Seat_Book_MVC\Office_Seat_Book_MVC.csproj", "{105A401A-BD3A-459B-A6A4-DE93A438DA62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{353D616B-CD7F-4033-941D-85219784C01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{353D616B-CD7F-4033-941D-85219784C01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{353D616B-CD7F-4033-941D-85219784C01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{353D616B-CD7F-4033-941D-85219784C01A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D172218B-E4D3-4C90-B37D-63BC8EC35140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D172218B-E4D3-4C90-B37D-63BC8EC35140}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D172218B-E4D3-4C90-B37D-63BC8EC35140}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{6F589B80-3F0E-4125-9945-3F711352DAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F589B80-3F0E-4125-9945-3F711352DAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F589B80-3F0E-4125-9945-3F711352DAEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
