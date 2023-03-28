@@ -1,0 +1,40 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Office_Seat_Book_Entity;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Drawing;
+using DbContext = Microsoft.EntityFrameworkCore.DbContext;
+
+namespace Office_Seat_Book_DLL
+{
+    public class Office_DB_Context : DbContext
+    {
+        public Office_DB_Context()
+        {
+        }
+        public Office_DB_Context(DbContextOptions<Office_DB_Context> options) : base(options)
+        {
+        }
+
+     
+        public Microsoft.EntityFrameworkCore.DbSet<Floor> floor { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Seat> seat { get; set; }
+
+
+       
+
+
+
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
+        {
+
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-BJO1KRV\\SQLEXPRESS; Initial Catalog = OfficeDb; Integrated Security = True;");
+
+
+
+        }
+    }
+}
