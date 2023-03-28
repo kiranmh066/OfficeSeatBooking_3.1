@@ -31,23 +31,44 @@ namespace OfficeAPI.Controllers
         [HttpPost("AddParking")]
         public IActionResult AddParking([FromBody] Parking parking)
         {
-            _ParkingService.AddParking(parking);
+            try
+            {
+
+                _ParkingService.AddParking(parking);
 
 
-            return Ok("Parking created successfully!!");
-
+                return Ok("Parking created successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpDelete("DeleteParking")]
         public IActionResult DeleteParking(int parkingId)
         {
-            _ParkingService.DeleteParking(parkingId);
-            return Ok("Parking deleted successfully!!");
+            try
+            {
+                _ParkingService.DeleteParking(parkingId);
+                return Ok("Parking deleted successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpPut("UpdateParking")]
         public IActionResult UpdateParking([FromBody] Parking parking)
         {
-            _ParkingService.UpdateParking(parking);
-            return Ok("Parking updated successfully!!");
+            try
+            {
+                _ParkingService.UpdateParking(parking);
+                return Ok("Parking updated successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
     }
 }
