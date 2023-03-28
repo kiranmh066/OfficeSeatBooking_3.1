@@ -37,7 +37,12 @@ namespace OfficeAPI
             services.AddTransient<IFloorRepost, FloorRepost>();
             services.AddTransient<SeatService, SeatService>();
             services.AddTransient<ISeatRepost, SeatRepost>();
-
+            services.AddTransient<BookingService, BookingService>();
+            services.AddTransient<IBookingRepost, BookingRepost>();
+            services.AddTransient<ParkingService, ParkingService>();
+            services.AddTransient<IParkingRepost, ParkingRepost>();
+            services.AddTransient<EmployeeService, EmployeeService>();
+            services.AddTransient<IEmployeeRepost, EmployeeRepost>();
 
             services.AddControllers();
             services.AddSwaggerGen();
@@ -66,7 +71,7 @@ namespace OfficeAPI
             app.UseSwagger();
 
             app.UseSwaggerUI(options =>
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Clinic API"));
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Office API"));
 
             app.UseAuthorization();
 
