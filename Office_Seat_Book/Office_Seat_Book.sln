@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Book_BLL", "Off
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAPI", "OfficeAPI\OfficeAPI.csproj", "{6F589B80-3F0E-4125-9945-3F711352DAEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office_Seat_Book_MVC", "Office_Seat_Book_MVC\Office_Seat_Book_MVC.csproj", "{105A401A-BD3A-459B-A6A4-DE93A438DA62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Book_MVC", "Office_Seat_Book_MVC\Office_Seat_Book_MVC.csproj", "{105A401A-BD3A-459B-A6A4-DE93A438DA62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAPITests", "OfficeAPITests\OfficeAPITests.csproj", "{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{105A401A-BD3A-459B-A6A4-DE93A438DA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
