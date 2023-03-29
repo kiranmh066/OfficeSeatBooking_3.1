@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230328084729_db1")]
-    partial class db1
+    [Migration("20230329045051_kiran")]
+    partial class kiran
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_Entity;
-using Office_SecretKey_Book_BLL.Services;
 using System.Collections.Generic;
 
 namespace OfficeAPI.Controllers
@@ -13,6 +13,7 @@ namespace OfficeAPI.Controllers
         private SecretKeyService _SecretKeyService;
         public SecretKeyController(SecretKeyService secretKeyService)
         {
+
             _SecretKeyService = secretKeyService;
         }
         [HttpGet("GetSecretKeys")]
@@ -28,26 +29,50 @@ namespace OfficeAPI.Controllers
         [HttpPost("AddSecretKey")]
         public IActionResult AddSecretKey([FromBody] SecretKey secretKey)
         {
-            _SecretKeyService.AddSecretKey(secretKey);
-            return Ok("SecretKey crecretKeyed successfully!!");
+            try
+            {
+                _SecretKeyService.AddSecretKey(secretKey);
 
+
+                return Ok("SecretKey crecretKeyed successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpDelete("DeleteSecretKey")]
         public IActionResult DeleteSecretKey(int secretKeyId)
         {
-            _SecretKeyService.DeleteSecretKey(secretKeyId);
-            return Ok("SecretKey deleted successfully!!");
+            try
+            {
+                _SecretKeyService.DeleteSecretKey(secretKeyId);
+                return Ok("SecretKey deleted successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpPut("UpdateSecretKey")]
         public IActionResult UpdateSecretKey([FromBody] SecretKey secretKey)
         {
-            _SecretKeyService.UpdateSecretKey(secretKey);
-            return Ok("SecretKey updated successfully!!");
+            try
+            {
+                _SecretKeyService.UpdateSecretKey(secretKey);
+                return Ok("SecretKey updated successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpGet("GetSecretKeyByEmpId")]
         public SecretKey GetSecretKeyByEmpId(int empId)
         {
-            return _SecretKeyService.GetBySecretKeyId(empId);
+           
+            return _SecretKeyService.GetSecretKeyByEmpId(empId);
+            
         }
     }
 }

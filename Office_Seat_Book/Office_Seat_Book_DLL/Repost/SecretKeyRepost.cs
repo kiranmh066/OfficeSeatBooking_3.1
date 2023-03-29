@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Office_Seat_Book_DLL;
-using Office_Seat_Book_Entity;
+﻿using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 
-namespace Office_SecretKey_Book_DLL.Repost
+namespace Office_Seat_Book_DLL.Repost
 {
     public class SecretKeyRepost:ISecretKeyRepost
     {
@@ -51,7 +50,7 @@ namespace Office_SecretKey_Book_DLL.Repost
             List<SecretKey> secretKeys = _dbContext.secretKey.Include(obj => obj.Employee.EmpID).ToList();
 
             List<SecretKey> secretKeyList = new List<SecretKey>();
-            foreach (var item in secretKeyList)
+            foreach (var item in secretKeys)
             {
                 if (empId == item.EmpID)
                 {

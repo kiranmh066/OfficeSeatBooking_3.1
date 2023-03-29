@@ -19,6 +19,9 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             _configuration = configuration;
         }
+
+
+
         Office_DB_Context db = new Office_DB_Context();
 
         public IActionResult Index()
