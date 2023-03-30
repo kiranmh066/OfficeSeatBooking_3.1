@@ -29,23 +29,43 @@ namespace OfficeAPI.Controllers
         [HttpPost("AddSeat")]
         public IActionResult AddSeat([FromBody] Seat seat)
         {
-            _SeatService.AddSeat(seat);
+            try
+            {
+                _SeatService.AddSeat(seat);
 
 
-            return Ok("Seat created successfully!!");
-
+                return Ok("Seat created successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpDelete("DeleteSeat")]
         public IActionResult DeleteSeat(int seatId)
         {
-            _SeatService.DeleteSeat(seatId);
-            return Ok("Seat deleted successfully!!");
+            try
+            {
+                _SeatService.DeleteSeat(seatId);
+                return Ok("Seat deleted successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpPut("UpdateSeat")]
         public IActionResult UpdateSeat([FromBody] Seat seat)
         {
-            _SeatService.UpdateSeat(seat);
-            return Ok("Seat updated successfully!!");
+            try
+            {
+                _SeatService.UpdateSeat(seat);
+                return Ok("Seat updated successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
 
     }

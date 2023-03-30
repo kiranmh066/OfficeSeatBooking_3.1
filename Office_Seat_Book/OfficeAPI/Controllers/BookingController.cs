@@ -29,23 +29,43 @@ namespace OfficeAPI.Controllers
         [HttpPost("AddBooking")]
         public IActionResult AddBooking([FromBody] Booking booking)
         {
-            _BookingService.AddBooking(booking);
+            try
+            {
+                _BookingService.AddBooking(booking);
 
 
-            return Ok("Booking created successfully!!!");
-
+                return Ok("Booking created successfully!!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpDelete("DeleteBooking")]
         public IActionResult DeleteBooking(int bookingId)
         {
-            _BookingService.DeleteBooking(bookingId);
-            return Ok("Booking deleted successfully!!");
+            try
+            {
+                _BookingService.DeleteBooking(bookingId);
+                return Ok("Booking deleted successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpPut("UpdateBooking")]
         public IActionResult UpdateBooking([FromBody] Booking booking)
         {
-            _BookingService.UpdateBooking(booking);
-            return Ok("Booking updated successfully!!");
+            try
+            {
+                _BookingService.UpdateBooking(booking);
+                return Ok("Booking updated successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
     }
 }
