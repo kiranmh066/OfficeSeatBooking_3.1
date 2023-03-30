@@ -335,3 +335,68 @@ WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Pass
 2023-03-30 14:30:24.871 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 19.2232ms
 2023-03-30 14:30:24.871 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
 2023-03-30 14:30:24.872 +05:30 [INF] Request finished in 22.9951ms 204 
+2023-03-30 14:45:46.212 +05:30 [INF] Now listening on: http://localhost:5000
+2023-03-30 14:45:46.268 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 14:45:46.269 +05:30 [INF] Hosting environment: Development
+2023-03-30 14:45:46.273 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 14:45:48.134 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2023-03-30 14:45:48.329 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 14:45:48.388 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 14:45:48.399 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 14:45:48.457 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 59.6229ms
+2023-03-30 14:45:48.459 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 14:45:48.466 +05:30 [INF] Request finished in 340.0609ms 200 application/json; charset=utf-8
+2023-03-30 14:45:48.598 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2023-03-30 14:45:48.600 +05:30 [INF] Request finished in 2.2569ms 404 
+2023-03-30 14:45:54.396 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger  
+2023-03-30 14:45:54.407 +05:30 [INF] Request finished in 9.9017ms 301 
+2023-03-30 14:45:54.409 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+2023-03-30 14:45:54.602 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css  
+2023-03-30 14:45:54.609 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js  
+2023-03-30 14:45:54.610 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js  
+2023-03-30 14:45:54.613 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 14:45:54.616 +05:30 [INF] Request finished in 207.0572ms 200 text/html;charset=utf-8
+2023-03-30 14:45:54.617 +05:30 [INF] Request finished in 3.3727ms 200 application/javascript; charset=utf-8
+2023-03-30 14:45:54.652 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-03-30 14:45:54.652 +05:30 [INF] Request finished in 42.282ms 200 application/javascript
+2023-03-30 14:45:54.653 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-03-30 14:45:54.654 +05:30 [INF] Request finished in 52.3446ms 200 text/css
+2023-03-30 14:45:54.659 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink  
+2023-03-30 14:45:54.661 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-03-30 14:45:54.661 +05:30 [INF] Request finished in 52.279ms 200 application/javascript
+2023-03-30 14:45:54.716 +05:30 [INF] Request finished in 57.38ms 200 text/javascript; charset=UTF-8
+2023-03-30 14:45:54.901 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2023-03-30 14:45:54.935 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2023-03-30 14:45:54.936 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-03-30 14:45:54.936 +05:30 [INF] Request finished in 1.2048ms 200 image/png
+2023-03-30 14:45:55.065 +05:30 [INF] Request finished in 164.7769ms 200 application/json;charset=utf-8
+2023-03-30 14:46:00.434 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Employee/GetEmployees  
+2023-03-30 14:46:00.437 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 14:46:00.441 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 14:46:01.324 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 14:46:02.006 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-30 14:46:02.024 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Employee, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 14:46:02.027 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 1585.4486ms
+2023-03-30 14:46:02.027 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 14:46:02.031 +05:30 [INF] Request finished in 1597.2441ms 200 application/json; charset=utf-8
+2023-03-30 14:46:50.821 +05:30 [INF] Now listening on: http://localhost:5000
+2023-03-30 14:46:50.854 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 14:46:50.854 +05:30 [INF] Hosting environment: Development
+2023-03-30 14:46:50.855 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 14:46:51.225 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2023-03-30 14:46:51.389 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 14:46:51.445 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 14:46:51.454 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 14:46:51.494 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 36.43ms
+2023-03-30 14:46:51.496 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 14:46:51.507 +05:30 [INF] Request finished in 287.4968ms 200 application/json; charset=utf-8
+2023-03-30 14:46:55.167 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+2023-03-30 14:46:55.272 +05:30 [INF] Request finished in 104.9214ms 200 text/html;charset=utf-8
+2023-03-30 14:46:55.276 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 14:46:55.280 +05:30 [INF] Request finished in 4.2645ms 200 application/javascript; charset=utf-8
+2023-03-30 14:46:55.313 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink  
+2023-03-30 14:46:55.352 +05:30 [INF] Request finished in 38.4425ms 200 text/javascript; charset=UTF-8
+2023-03-30 14:46:55.575 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2023-03-30 14:46:55.704 +05:30 [INF] Request finished in 129.1999ms 200 application/json;charset=utf-8

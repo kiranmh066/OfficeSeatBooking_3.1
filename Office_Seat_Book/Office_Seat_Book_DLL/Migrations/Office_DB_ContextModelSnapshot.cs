@@ -161,6 +161,26 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.ToTable("seat");
                 });
 
+            modelBuilder.Entity("Office_Seat_Book_Entity.SecretKey", b =>
+                {
+                    b.Property<int>("SecretId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("EmpID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SpecialKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SecretId");
+
+                    b.HasIndex("EmpID");
+
+                    b.ToTable("secretKey");
+                });
+
             modelBuilder.Entity("Office_Seat_Book_Entity.Booking", b =>
                 {
                     b.HasOne("Office_Seat_Book_Entity.Employee", "employee")
@@ -200,6 +220,17 @@ namespace Office_Seat_Book_DLL.Migrations
                         .IsRequired();
 
                     b.Navigation("Floor");
+                });
+
+            modelBuilder.Entity("Office_Seat_Book_Entity.SecretKey", b =>
+                {
+                    b.HasOne("Office_Seat_Book_Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmpID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 #pragma warning restore 612, 618
         }
