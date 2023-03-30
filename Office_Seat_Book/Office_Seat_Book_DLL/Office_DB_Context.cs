@@ -30,7 +30,7 @@ namespace Office_Seat_Book_DLL
         {
 
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-2EN1VVU\\SQLEXPRESS; Initial Catalog = Officeproject100; Integrated Security = True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-2JIKDUR\\SQLEXPRESS; Initial Catalog = Office100; Integrated Security = True;");
 
 
 
