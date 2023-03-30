@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Office_Seat_Book_Entity.Parking
+
+@{
+    ViewData["Title"] = "AddParking";
+}
+
+<br />
+@*<a asp-area="" asp-controller="Admin" asp-action="GetAllPatients"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+*@
+
+
+<h2 style="color:#003399" class="font-weight-bolder text-uppercase" align="center">Add parking</h2>
+
+
+
+<div style="background-color:#f0f8ff;font-family:'Roboto',sans-serif;padding:55px">
+    <form method="post" enctype="multipart/form-data">
+        <div class="col-4 d-inline-block align-top" style=" margin-right:50px;margin-left:270px">
+            
+            <div class="form-group">
+                <label style="color:#003399;font-size:20px">parking Type</label>
+                <select class="form-control" asp-for="ParkingType">
+                    <option >BIKE</option>
+                    <option >CAR</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label style="color:#003399;font-size:20px">Booking Id</label>
+                <input  type="text" asp-for="BookingID" class="form-control" placeholder="Enter booking id" required />
+            </div>
+            <input type="submit" value="Register" class="btn btn-outline-success" />
+            <input type="reset" value="Reset" class="btn btn-outline-secondary" />
+            @if (ViewBag.status == "Ok")
+            {
+                <br />
+
+
+
+                <br />
+                <div class="alert alert-success">
+                    @ViewBag.message
+                </div>
+            }
+            else if (ViewBag.status == "Error")
+            {
+                <br />
+
+
+
+                <br />
+                <div class="alert alert-danger">
+                    @ViewBag.message
+                </div>
+            }
+        </div>
+    </form>
+</div>
+

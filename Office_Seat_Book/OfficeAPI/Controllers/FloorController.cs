@@ -30,23 +30,44 @@ namespace OfficeAPI.Controllers
         [HttpPost("AddFloor")]
         public IActionResult AddFloor([FromBody] Floor floor)
         {
-            _FloorService.AddFloor(floor);
+            try
+            {
+                _FloorService.AddFloor(floor);
 
 
-            return Ok("Floor created successfully!!");
-
+                return Ok("Floor created successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpDelete("DeleteFloor")]
         public IActionResult DeleteFloor(int floorId)
         {
-            _FloorService.DeleteFloor(floorId);
-            return Ok("Floor deleted successfully!!");
+            try
+            {
+
+                _FloorService.DeleteFloor(floorId);
+                return Ok("Floor deleted successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
         [HttpPut("UpdateFloor")]
         public IActionResult UpdateFloor([FromBody] Floor floor)
         {
-            _FloorService.UpdateFloor(floor);
-            return Ok("Floor updated successfully!!");
+            try
+            {
+                _FloorService.UpdateFloor(floor);
+                return Ok("Floor updated successfully!!");
+            }
+            catch
+            {
+                return BadRequest(400);
+            }
         }
     }
 }
