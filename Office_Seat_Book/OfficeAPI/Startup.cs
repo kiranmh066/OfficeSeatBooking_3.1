@@ -43,7 +43,6 @@ namespace OfficeAPI
             services.AddTransient<IParkingRepost, ParkingRepost>();
             services.AddTransient<EmployeeService, EmployeeService>();
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
-
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddSwaggerGen(c =>
@@ -51,8 +50,8 @@ namespace OfficeAPI
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Clinic API",
-                    Description = "Clinic Management System API",
+                    Title = "office API",
+                    Description = "Office secure web System API",
                 });
             });
         }

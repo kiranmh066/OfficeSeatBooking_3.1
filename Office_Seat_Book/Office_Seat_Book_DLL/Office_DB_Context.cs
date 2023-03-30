@@ -17,7 +17,6 @@ namespace Office_Seat_Book_DLL
         {
         }
 
-     
         public Microsoft.EntityFrameworkCore.DbSet<Floor> floor { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Seat> seat { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Parking> parking { get; set; }
@@ -31,7 +30,7 @@ namespace Office_Seat_Book_DLL
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-BJO1KRV\\SQLEXPRESS; Initial Catalog = OfficeDb; Integrated Security = True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-2EN1VVU\\SQLEXPRESS; Initial Catalog = Officeproject100; Integrated Security = True;");
 
 
 
