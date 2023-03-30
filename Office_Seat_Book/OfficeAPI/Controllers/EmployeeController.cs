@@ -100,6 +100,7 @@ namespace OfficeAPI.Controllers
                     //_logger.LogCritical("Email Log");
                     return null;
                 }
+                
             }
             catch (NullReferenceException)
             {
