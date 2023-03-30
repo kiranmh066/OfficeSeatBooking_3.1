@@ -61,19 +61,21 @@ namespace OfficeAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+        
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseRouting();
-
             app.UseSwagger();
-
             app.UseSwaggerUI(options =>
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Office API"));
+            app.UseHttpsRedirection();
+            app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
+
+
 
             app.UseEndpoints(endpoints =>
             {

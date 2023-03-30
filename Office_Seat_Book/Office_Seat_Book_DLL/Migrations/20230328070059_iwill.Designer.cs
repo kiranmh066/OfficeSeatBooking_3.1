@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Office_Seat_Book_DLL;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    partial class Office_DB_ContextModelSnapshot : ModelSnapshot
+    [Migration("20230328070059_iwill")]
+    partial class iwill
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,9 +155,6 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
-
-                    b.Property<bool>("seat_flag")
-                        .HasColumnType("bit");
 
                     b.HasKey("Seat_No");
 

@@ -47,6 +47,11 @@ namespace OfficeAPI.Controllers
             _SeatService.UpdateSeat(seat);
             return Ok("Seat updated successfully!!");
         }
+        [HttpGet("GetSeatsByFloorId")]
+        public IEnumerable<Seat> GetSeats(int floorId)
+        {
+            return _SeatService.GetSeatsByFloorId(floorId);
+        }
 
     }
 }

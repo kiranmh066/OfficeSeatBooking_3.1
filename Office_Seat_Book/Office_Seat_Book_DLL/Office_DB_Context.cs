@@ -31,7 +31,7 @@ namespace Office_Seat_Book_DLL
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-BJO1KRV\\SQLEXPRESS; Initial Catalog = OfficeDb; Integrated Security = True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-FICLE82\\SQLEXPRESS; Initial Catalog = OfficeDbchan1; Integrated Security = True;");
 
 
 
