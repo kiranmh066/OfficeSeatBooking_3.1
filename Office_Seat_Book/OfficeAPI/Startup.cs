@@ -11,6 +11,9 @@ using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_DLL;
 using Office_Seat_Book_DLL.Repost;
 using Office_Seat_Book_Entity;
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.Email;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +45,43 @@ namespace OfficeAPI
             services.AddTransient<IParkingRepost, ParkingRepost>();
             services.AddTransient<EmployeeService, EmployeeService>();
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
+
+
+
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
+
+            //  var Logger = new LoggerConfiguration()
+            //.MinimumLevel.Information()
+            //.MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            //.Enrich.FromLogContext()
+            //.WriteTo.File("LogTesting.log", LogEventLevel.Information, fileSizeLimitBytes: 10_000_000, rollOnFileSizeLimit: true, shared: true)
+            //.WriteTo.Email(new EmailConnectionInfo
+            //{
+            //    FromEmail = "mailapp@valtech.co.in",
+            //    //FromEmail = "kiran.mh@valtech.com",
+            //    ToEmail = "chandan.m@valtech.com",
+            //    MailServer = "192.168.130.134",
+            //    //MailServer = "192.168.141.52",
+            //    //NetworkCredentials = new NetworkCredential
+            //    //{
+            //    //    UserName = "Pankaj.Chandrakar@gmail.com",
+            //    //    Password = "P@nk@j25"
+            //    //},
+            //    // EnableSsl = true,
+            //    /* Port = 29,*/
+            //    Port = 29,
+            //    EmailSubject = "Error in app"
+            //}, restrictedToMinimumLevel: LogEventLevel.Error, batchPostingLimit: 1)
+            // .CreateLogger();
+
+            //  services.AddLogging(loggingBuilder =>
+            //  {
+            //      loggingBuilder.ClearProviders();
+            //      loggingBuilder.AddSerilog(Logger);
+            //  });
+
+
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddSwaggerGen(c =>
@@ -49,8 +89,8 @@ namespace OfficeAPI
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "office API",
-                    Description = "Office secure web System API",
+                    Title = "Office API",
+                    Description = "Office Seat Booking API",
                 });
             });
         }
