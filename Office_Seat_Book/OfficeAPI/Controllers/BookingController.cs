@@ -27,19 +27,21 @@ namespace OfficeAPI.Controllers
             return _BookingService.GetBookingById(bookingId);
         }
         [HttpPost("AddBooking")]
-        public IActionResult AddBooking([FromBody] Booking booking)
+        public int AddBooking([FromBody] Booking booking)
         {
+
             try
             {
                 _BookingService.AddBooking(booking);
 
 
-                return Ok("Booking created successfully!!!");
+                return  _BookingService.AddBooking(booking);
             }
             catch
             {
-                return BadRequest(400);
+                return 0;
             }
+
         }
         [HttpDelete("DeleteBooking")]
         public IActionResult DeleteBooking(int bookingId)
