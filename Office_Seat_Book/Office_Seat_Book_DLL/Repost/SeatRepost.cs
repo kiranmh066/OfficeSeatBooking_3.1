@@ -45,5 +45,28 @@ namespace Office_Seat_Book_DLL.Repost
             _dbContext.Entry(seat).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _dbContext.SaveChanges();
         }
+        public IEnumerable<Seat> GetSeatsByFloorId(int floorId)
+        {
+            List<Seat>seats = new List<Seat>();
+
+            seats = _dbContext.seat.ToList();
+            List<Seat> list = new List<Seat>();
+
+            foreach (var item in seats)
+            {
+                if (floorId == item.FloorID)
+                {
+                    list.Add(item);
+                }
+
+            }
+
+
+            return list;
+
+
+        }
+
+       
     }
 }
