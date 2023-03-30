@@ -7,97 +7,6 @@
 @{
     ViewData["Title"] = "RegisterEmp";
 }
-@*
-<br />
-<a asp-area="" asp-controller="Admin" asp-action="GetAllPatients"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
-
-
-
-<h2 style="color:#003399" class="font-weight-bolder text-uppercase" align="center">Registration</h2>
-
-
-
-<div style="background-color:#f0f8ff;font-family:'Roboto',sans-serif;padding:55px">
-    <form method="post" enctype="multipart/form-data">
-        <div class="col-4 d-inline-block align-top" style=" margin-right:50px;margin-left:270px">*@
-            @* <div class="form-group">
-            <label style="color:#003399;font-size:20px">Patient Id</label>
-            <input  type="text" asp-for="EmpID" class="form-control" placeholder="Enter Emp Id" required />
-            </div>*@
-            @*<div class="form-group">
-                <label style="color:#003399;font-size:20px">Employee Name</label>
-                <input  type="text" asp-for="Name" class="form-control" placeholder="Enter emp Name" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Phone</label>
-                <input  type="text" asp-for="PhoneNo" class="form-control" placeholder="Enter Phone Number" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Email</label>
-                <input  type="text" asp-for="Email" class="form-control" placeholder="Enter Email" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Place</label>
-                <input  type="text" asp-for="Place" class="form-control" placeholder="Enter place" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Role</label>
-                    <select class="form-control" asp-for="Role">
-                        <option value="1">ADMIN</option>
-                        <option value="2">USER</option>
-                    <option value="3">RECEPTIONIST</option>
-                    </select>
-               
-                @*<input  type="text" asp-for="Role" class="form-control" placeholder="Enter Role" required />*@
-           @* </div>
-        </div>
-        <div class="col-4 d-inline-block align-top">
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Password</label>
-                <input  type="text" asp-for="Password" class="form-control" placeholder="Enter password" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Gender</label>
-                <input  type="text" asp-for="Gender" class="form-control" placeholder="Enter gender" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Designation</label>
-                <input  type="text" asp-for="Designation" class="form-control" placeholder="Enter Designation" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Secret Key</label>
-                <input  type="text" asp-for="Secret_Key" class="form-control" placeholder="Enter Secret Key" required />
-            </div>
-
-
-            <input type="submit" value="Register" class="btn btn-outline-success" />
-            <input type="reset" value="Reset" class="btn btn-outline-secondary" />
-            @if (ViewBag.status == "Ok")
-            {
-                <br />
-
-
-
-                <br />
-                <div class="alert alert-success">
-                    @ViewBag.message
-                </div>
-            }
-            else if (ViewBag.status == "Error")
-            {
-                <br />
-
-
-
-                <br />
-                <div class="alert alert-danger">
-                    @ViewBag.message
-                </div>
-            }
-        </div>
-    </form>
-</div>*@
-
 <section class="h-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -154,9 +63,9 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                                 <select class="form-control" asp-for="Role">
-                                                    <option value="1">ADMIN</option>
-                                                    <option value="2">USER</option>
-                                                    <option value="3">RECEPTIONIST</option>
+                                                    <option >ADMIN</option>
+                                                    <option >USER</option>
+                                                    <option>RECEPTIONIST</option>
                                                 </select>
                                     </div>
                                     <div class="col-md-6 mb-4">

@@ -10,13 +10,17 @@
 
             <strong>Admin Profile</strong>
             <hr />
-            @*<div class="d-flex flex-row justify-content-center align-items-center gap-2">
-            <span style="color:cadetblue">id</span>
-            <span style="color:black">@Model.EmpID</span>
-            </div>*@
+            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                <span style="color:cadetblue">name</span>
+                <span style="color:black">@Model.Name</span>
+            </div>
             <div class="d-flex flex-row justify-content-center align-items-center gap-2">
                 <span style="color:cadetblue">phone no.</span>
                 <span style="color:black">@Model.PhoneNo</span>
+            </div>
+            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                <span style="color:cadetblue">email:</span>
+                <span style="color:black">@Model.Email</span>
             </div>
             <div class="d-flex flex-row justify-content-center align-items-center mt-3">
                 <span style="color:cadetblue">gender: </span>
@@ -38,18 +42,12 @@
                 <span style="color:cadetblue">role</span>
                 <span style="color:black">@Model.Role</span>
             </div>
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">name</span>
-                <span style="color:black">@Model.Name</span>
-            </div>
+            
             <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
                 <span style="color:cadetblue">place</span>
                 <span style="color:black">@Model.Place</span>
             </div>
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">email:</span>
-                <span style="color:black">@Model.Email</span>
-            </div>
+            
         </div>
     </div>
 </div>
