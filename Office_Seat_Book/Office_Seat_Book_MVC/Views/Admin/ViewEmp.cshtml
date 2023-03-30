@@ -1,0 +1,69 @@
+﻿﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Office_Seat_Book_Entity.Employee>
+
+@{
+    ViewData["Title"] = "ViewEmp";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+</head>
+<body>
+    <br />
+   @* <a asp-area="" asp-controller="Admin" asp-action="Index"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+   *@ <br />
+    <br />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a class="text-uppercase d-inline-block text-center" style="color:#003399;font-size:x-large" align="center"> Employee <span class="font-weight-bold" style="font-size:x-large">Details</span></a>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Emp Id</th>
+                            <th>employee Name</th>
+                            <th>Phone</th>
+                            <th>password</th>
+                            <th>Gender</th>
+                            <th>secret key</th>
+                            <th>place</th>
+                            <th>Role</th>
+                            <th>Designation</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var employee in Model)
+                        {
+                            <tr>
+                                <td>@employee.EmpID</td>
+                                <td>@employee.Name</td>
+                                <td>@employee.PhoneNo</td>
+                                <td>@employee.Password</td>
+                                <td>@employee.Gender</td>
+                                <td>@employee.Secret_Key</td>
+                                <td>@employee.Place</td>
+                                <td>@employee.Role</td>
+                                <td>@employee.Designation</td>
+                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="EditEmp" asp-route-EmpID="@employee.EmpID">Edit<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="DeleteEmp" asp-route-EmpID="@employee.EmpID">Delete<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

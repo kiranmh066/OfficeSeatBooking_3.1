@@ -16,9 +16,7 @@ namespace Office_Seat_Book_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-       
+ 
         private IConfiguration _configuration;
         public HomeController(IConfiguration configuration)
         {
@@ -26,10 +24,12 @@ namespace Office_Seat_Book_MVC.Controllers
         }
 
 
+
         public IActionResult Index()
         {
             return View();
         }
+      
 
         [HttpPost]
         public async Task<IActionResult> Index(Employee employee)
