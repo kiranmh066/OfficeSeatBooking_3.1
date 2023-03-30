@@ -24,11 +24,9 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:32500",
-<<<<<<< HEAD
+
       "sslPort": 44332
-=======
-      "sslPort": 44369
->>>>>>> 7f35fcdad8f21983d2d227d016a45de911551d5e
+
     }
   }
 }
