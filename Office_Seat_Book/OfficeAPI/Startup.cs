@@ -29,8 +29,7 @@ namespace OfficeAPI
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionStr = Configuration.GetConnectionString("sqlConnection");
@@ -46,6 +45,7 @@ namespace OfficeAPI
             services.AddTransient<IParkingRepost, ParkingRepost>();
             services.AddTransient<EmployeeService, EmployeeService>();
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
+
 
 
             services.AddTransient<SecretKeyService, SecretKeyService>();
@@ -80,6 +80,7 @@ namespace OfficeAPI
             //      loggingBuilder.ClearProviders();
             //      loggingBuilder.AddSerilog(Logger);
             //  });
+
 
             services.AddControllers();
             services.AddSwaggerGen();

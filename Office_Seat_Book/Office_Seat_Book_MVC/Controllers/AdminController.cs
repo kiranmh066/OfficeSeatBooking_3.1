@@ -1,33 +1,320 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text.Json.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+using Office_Seat_Book_DLL;
 using Newtonsoft.Json;
 using Office_Seat_Book_Entity;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace Office_Seat_Book_MVC.Controllers
 {
     public class AdminController : Controller
     {
-         private IConfiguration _configuration;
+        private IConfiguration _configuration;
+
         public AdminController(IConfiguration configuration)
         {
-
             _configuration = configuration;
         }
-        public   IActionResult Index()
+
+
+
+        Office_DB_Context db = new Office_DB_Context();
+
+        public IActionResult Index()
         {
             return View();
         }
+        public IActionResult RegisterEmp()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> RegisterEmp(Employee employee)
+        {
+            ViewBag.status = "";
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(employee), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/AddEmployee";
+                using (var response = await client.PostAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Register successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong entries!";
+                    }
+                }
+            }
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> ViewEmp()
+        {
+            IEnumerable<Employee> empresult = null;
+            using (HttpClient client = new HttpClient())
+            {
+                // LocalHost Adress in endpoint
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployees";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        //It will deserilize the object in the form of JSON
+                        empresult = JsonConvert.DeserializeObject<IEnumerable<Employee>>(result);
+                    }
+                }
+            }
+            return View(empresult);
+        }
+
+        public async Task<IActionResult> EditEmp(int EmpID)
+        {
+            //if (EmpId != 0)
+            //{
+            //    //We are Storing employee Id  temporary to avoid the error. Now it will show the doctor details after the update also
+            //    TempData["EditEmployeeId"] = EmpId;
+            //    TempData.Keep();
+            //}
+            Employee emp = new Employee();
+            //it will fetch the Doctor Details by using DoctorID
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + EmpID;/*+ Convert.ToInt32(TempData["EditDoctorId"])*/
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        //It will deserilize the object in the form of JSON
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            //ViewBag.genderlist = GetGender();
+            //ViewBag.doctorstatuslist = GetDoctorStatus();
+
+            return View(emp);
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditEmp(Employee emp)
+        {
+            ViewBag.status = "";
+            //it will update the doctor details after Admin Changes
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(emp), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Employee Details Updated Successfully!";
+                        //return RedirectToAction("GetAllDoctors", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> DeleteEmp(int EmpId)
+        {
+            ViewBag.status = "";
+            //it will Delete the employee Details by using employee Id
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/DeleteEmployee?employeeId=" + EmpId;
+                using (var response = await client.DeleteAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Details Deleted Successfully!";
+                        // return RedirectToAction("", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View();
+        }
+
+        public IActionResult AddParking()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddParking(Parking parking)
+        {
+            ViewBag.status = "";
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(parking), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Parking/AddParking";
+                using (var response = await client.PostAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "parking added";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "wrong entities try again!";
+                    }
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ViewParking()
+        {
+            IEnumerable<Parking> parkresult = null;
+            using (HttpClient client = new HttpClient())
+            {
+                // LocalHost Adress in endpoint
+                string endPoint = _configuration["WebApiBaseUrl"] + "Parking/GetParkings";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        //It will deserilize the object in the form of JSON
+                        parkresult = JsonConvert.DeserializeObject<IEnumerable<Parking>>(result);
+                    }
+                }
+            }
+            return View(parkresult);
+        }
+
+
+        public async Task<IActionResult> EditParking(int parkingID)
+        {
+            Parking parking = new Parking();
+            //it will fetch the parking Details by using ParkingID
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Parking/GetParkingById?parkingId=" + parkingID;/*+ Convert.ToInt32(TempData["EditDoctorId"])*/
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        //It will deserilize the object in the form of JSON
+                        parking = JsonConvert.DeserializeObject<Parking>(result);
+                    }
+                }
+            }
+
+            return View(parking);
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditParking(Parking parking)
+        {
+            ViewBag.status = "";
+            //Admin can update the parking details 
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(parking), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Parking/UpdateParking";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "parking Details Updated Successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View();
+        }
+        public async Task<IActionResult> DeleteParking(int parkingId)
+        {
+            ViewBag.status = "";
+            //it will Delete the parking Details by using parking Id
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Parking/DeleteParking?parkingId=" + parkingId;
+                using (var response = await client.DeleteAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Details Deleted Successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ShowAdminProfile()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+
+                }
+
+            }
+            return View(emp);
+
+        }
+
         public IActionResult AddSeat()
         {
 
-         
+
             return View();
         }
         [HttpPost]
@@ -58,8 +345,8 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
             return View();
-            
-        }
+
+        }
         public async Task<IActionResult> EditSeat(int seatID)
         {
 
@@ -85,7 +372,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
             return View(seat);
-            
+
         }
         [HttpPost]
         public async Task<IActionResult> EditSeat(Seat seat)
@@ -118,10 +405,10 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
             return View();
-           
-        }
-      
-        public async Task<IActionResult> DeleteSeat( int seatID)
+
+        }
+
+        public async Task<IActionResult> DeleteSeat(int seatID)
         {
             ViewBag.status = "";
             //Seat seat = null;
@@ -154,10 +441,10 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllSeat(Seat seat)
         {
-            
+
 
             IEnumerable<Seat> seatresult = null;
-            
+
             {
                 using (HttpClient client = new HttpClient())
                 {
@@ -173,9 +460,9 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            
+
             return View(seatresult);
-           
+
         }
 
         public IActionResult AddFloor()
@@ -292,7 +579,7 @@ namespace Office_Seat_Book_MVC.Controllers
         }
         [HttpGet]
         public async Task<IActionResult> GetAllFloor(Floor floor)
-            
+
         {
 
 
@@ -320,11 +607,5 @@ namespace Office_Seat_Book_MVC.Controllers
 
 
 
-
-
-
     }
-
-
-    
 }

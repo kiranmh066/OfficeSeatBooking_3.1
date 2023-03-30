@@ -18,6 +18,7 @@ namespace Office_Seat_Book_DLL
         }
 
 
+        
         public Microsoft.EntityFrameworkCore.DbSet<Parking> parking { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Employee> employee { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Booking> booking { get; set; }
@@ -29,7 +30,7 @@ namespace Office_Seat_Book_DLL
         {
 
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-63UI94V\\SQLEXPRESS; Initial Catalog = Officecontext; Integrated Security = True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-2EN1VVU\\SQLEXPRESS; Initial Catalog = Officeproject100; Integrated Security = True;");
 
 
 

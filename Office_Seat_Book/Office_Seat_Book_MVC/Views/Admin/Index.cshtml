@@ -1,50 +1,13 @@
 ﻿@{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-
+    Layout = "~/Views/Shared/_Layout1.cshtml";
 }
-@*<html>
-//<head>
-//   </head>
 
-//<body style="background-color:#5A3B5D">
-//    <br />
-//    <div class=" container">
-
-//        <br />
-//        <center>
-//            <h2 class="display-5 text-light">Index of Admin</h2>
-//        </center>
-//        <div class="row">
-
-
-//            <div class="col-md-4">
-//                <a asp-controller="Admin" asp-action="Addseat" type="button " class="btn text-white" style="width:500px"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/22049/add-user.svg" /><span>&nbsp;</span> Add Seat </a>
-//                <br />
-
-//                <a asp-controller="Admin" asp-action="GetallSeat" type="button" class="btn text-white" style="width:500px"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/61278/edit.svg" /><span>&nbsp;</span>Getallseats</a>
-//                <br />
-
-//                <a asp-controller="Admin" asp-action="Addfloor" type="button " class="btn text-white" style="width:500px"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/22049/add-user.svg" /><span>&nbsp;</span> Add Floor </a>
-//                <br />
-
-//                <a asp-controller="Admin" asp-action="Getallfloor" type="button" class="btn text-white" style="width:500px"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/61278/edit.svg" /><span>&nbsp;</span>Getallfloors</a>
-
-                
-
-
-//            </div>
-                     
-//        </div>
-//        <hr />
-              
-//    </div>
-//</body>
-//</html>*@
+@*@model Office_Seat_Book_Entity.Employee*@
 
 <div class="bg-image"></div>
 
+</nav>
 
-    </nav>
 <div class="container">
     <nav class="navbar navbar-expand-lg blur blur-rounded shadow my-4">
         <div class="container-fluid">
@@ -100,21 +63,21 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
+        @*<section class="color-7">
+        <div class="anchor cl-effect-4">
+        <a>home</a>
+        </div>
+        </section>*@
+        <br>
         <section class="color-7">
             <div class="anchor cl-effect-4">
-                <a href="#">Home</a>
+                <a asp-area="" asp-controller="Admin" asp-action="ShowAdminProfile">Profile</a>
             </div>
         </section>
         <br>
         <section class="color-7">
             <div class="anchor cl-effect-4">
-                <a href="#">Profile</a>
-            </div>
-        </section>
-        <br>
-        <section class="color-7">
-            <div class="anchor cl-effect-4">
-                <a href="#">Register New Employee</a>
+                <a asp-controller="Admin" asp-action="RegisterEMP">Register Employee</a>
             </div>
         </section>
         <br>
@@ -123,11 +86,13 @@
                 <div class="dropdown">
                     <a href="#"> Manage &#9662;</a>
                     <div class="dropdown-content">
-                       <a asp-controller="Admin" asp-action="Addseat" type="button ">  Manage Seat </a>
-                       <a asp-controller="Admin" asp-action="GetallSeat" type="button"> Get all seats Details</a>
+                        <a asp-area="" asp-controller="Admin" asp-action="AddParking">Create Parking</a>
+                        <a asp-area="" asp-controller="Admin" asp-action="ViewParking">Get All Parking details</a>
+                        <a asp-area="" asp-controller="Admin" asp-action="ViewEmp">Get All Employee details</a>
+                        <a asp-controller="Admin" asp-action="Addseat" type="button ">  Manage Seat </a>
+                        <a asp-controller="Admin" asp-action="GetallSeat" type="button"> Get all seats Details</a>
                         <a asp-controller="Admin" asp-action="Addfloor" type="button ">Manage floor</a>
-                         <a asp-controller="Admin" asp-action="Getallfloor" type="button">Get all floors Details</a>
-                        
+                        <a asp-controller="Admin" asp-action="Getallfloor" type="button">Get all floors Details</a>
                     </div>
                 </div>
             </div>
@@ -137,6 +102,12 @@
         <section class="color-7">
             <div class="anchor cl-effect-4">
                 <a href="#">Help</a>
+            </div>
+        </section>
+        <br />
+        <section class="color-7">
+            <div class="anchor cl-effect-4">
+                <a asp-controller="Home" asp-action="Index" type="button">Logout</a>
             </div>
         </section>
     </div>
