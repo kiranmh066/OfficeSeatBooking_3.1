@@ -9,7 +9,8 @@ using System;
 using System.Linq;
 using System.Drawing.Imaging;
 using ZXing;
-using ZXing.QrCode;
+using System.Drawing;
+using System.IO;
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -126,7 +127,8 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public async Task<IActionResult> GenerateQR()
         {
-            /*int empId = Convert.ToInt32(TempData["EmpId"]);
+            #region Generating Displaying QR
+            int empId = Convert.ToInt32(TempData["EmpId"]);
             SecretKey secretKey = null;
 
             using (HttpClient client = new HttpClient())
@@ -144,11 +146,8 @@ namespace Office_Seat_Book_MVC.Controllers
             BarcodeWriter barcodeWriter = new BarcodeWriter();
             barcodeWriter.Format = BarcodeFormat.QR_CODE;
             var bitmap = barcodeWriter.Write(secretKey.SpecialKey);
-            bitmap.Save("QRCode.bmp", ImageFormat.Bmp);
-
-            string base64String = Convert.ToBase64String(BitmapToByteArray(qrCodeAsBitmap));
-            model.QRImageURL = "data:image/png;base64," + base64String;*/
-
+            bitmap.Save(@"C:\POC\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_MVC\wwwroot\QRCode.bmp", ImageFormat.Bmp);
+            #endregion
             return View();
         }
     }
