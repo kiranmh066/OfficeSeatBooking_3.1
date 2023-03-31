@@ -5,6 +5,7 @@ using Office_Seat_Book_Entity;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System;
+using ZXing.QrCode;
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -20,6 +21,15 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Scan()
+        {
+
+            return View();
+        }
+
+
         public IActionResult GenerateOTP()
         {
             return View();
