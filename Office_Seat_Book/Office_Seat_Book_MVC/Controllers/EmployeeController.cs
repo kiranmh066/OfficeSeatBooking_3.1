@@ -109,7 +109,7 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.EmployeeID =Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No =1;
-            booking.Emp_Status = 1;
+            booking.Emp_Status = true;
             booking.Food_Type = 1;
             booking.Vehicle = true;
             booking.booking_Status = 0;
@@ -200,7 +200,7 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No = 1;
-            booking.Emp_Status = 1;
+            booking.Emp_Status = true;
             booking.Food_Type = 1;
             booking.Vehicle = true;
             booking.booking_Status = 0;

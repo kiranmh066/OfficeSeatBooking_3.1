@@ -135,3 +135,58 @@ FROM [employee] AS [e]
 2023-03-31 17:20:41.399 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 49.4503ms
 2023-03-31 17:20:41.399 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
 2023-03-31 17:20:41.399 +05:30 [INF] Request finished in 56.03ms 200 application/json; charset=utf-8
+2023-03-31 17:38:57.649 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 17:38:57.746 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 17:38:57.769 +05:30 [INF] Hosting environment: Development
+2023-03-31 17:38:57.770 +05:30 [INF] Content root path: C:\POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 17:38:57.967 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 17:38:58.021 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 17:38:58.034 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 17:38:58.167 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 132.7597ms
+2023-03-31 17:38:58.173 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 17:38:58.185 +05:30 [INF] Request finished in 453.7141ms 200 application/json; charset=utf-8
+2023-03-31 17:39:02.471 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger  
+2023-03-31 17:39:02.495 +05:30 [INF] Request finished in 25.3598ms 301 
+2023-03-31 17:39:02.501 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 17:39:02.851 +05:30 [INF] Request finished in 350.3452ms 200 text/html;charset=utf-8
+2023-03-31 17:39:02.869 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui.css  
+2023-03-31 17:39:02.869 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui-bundle.js  
+2023-03-31 17:39:02.870 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui-standalone-preset.js  
+2023-03-31 17:39:02.871 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 17:39:02.874 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 17:39:02.876 +05:30 [INF] Request finished in 5.0459ms 200 application/javascript; charset=utf-8
+2023-03-31 17:39:02.941 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-03-31 17:39:02.941 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-03-31 17:39:02.941 +05:30 [INF] Request finished in 72.2759ms 200 text/css
+2023-03-31 17:39:02.941 +05:30 [INF] Request finished in 70.8384ms 200 application/javascript
+2023-03-31 17:39:02.942 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-03-31 17:39:02.942 +05:30 [INF] Request finished in 73.0622ms 200 application/javascript
+2023-03-31 17:39:02.973 +05:30 [INF] Request finished in 98.9145ms 200 text/javascript; charset=UTF-8
+2023-03-31 17:39:03.377 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 17:39:03.425 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/favicon-32x32.png  
+2023-03-31 17:39:03.427 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-03-31 17:39:03.427 +05:30 [INF] Request finished in 2.7141ms 200 image/png
+2023-03-31 17:39:03.619 +05:30 [INF] Request finished in 242.4836ms 200 application/json;charset=utf-8
+2023-03-31 17:39:08.530 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Booking/GetBookings  
+2023-03-31 17:39:08.534 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-31 17:39:08.539 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Booking"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Booking] GetBookings() on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 17:39:10.888 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 17:39:12.787 +05:30 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+2023-03-31 17:39:12.843 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Booking, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-31 17:39:12.880 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI) in 4340.486ms
+2023-03-31 17:39:12.880 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-31 17:39:12.891 +05:30 [INF] Request finished in 4360.8304ms 200 application/json; charset=utf-8
+2023-03-31 17:41:00.771 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 17:41:00.798 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 17:41:00.816 +05:30 [INF] Hosting environment: Development
+2023-03-31 17:41:00.816 +05:30 [INF] Content root path: C:\POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 17:41:00.894 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 17:41:00.928 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 17:41:00.934 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 17:41:00.980 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 43.4179ms
+2023-03-31 17:41:00.983 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 17:41:00.997 +05:30 [INF] Request finished in 205.3325ms 200 application/json; charset=utf-8
+2023-03-31 17:41:01.066 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/favicon.ico  
+2023-03-31 17:41:01.075 +05:30 [INF] Request finished in 8.6216ms 404 
