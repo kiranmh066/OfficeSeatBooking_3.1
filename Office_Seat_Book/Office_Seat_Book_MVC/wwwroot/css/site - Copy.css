@@ -263,7 +263,6 @@ a:hover {
 .greet {
     position: relative;
     margin: 0 auto;
-    margin-top: 10%;
     color: #1b1b1b;
 }
 
@@ -283,7 +282,7 @@ a:hover {
 } */
 .middle-row {
     background: rgba(234, 210, 239, 0.9);
-    width: 400px !important;
+    width: 200px !important;
     margin: 10px;
     border-radius: 10px;
 }

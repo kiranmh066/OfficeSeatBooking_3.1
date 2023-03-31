@@ -161,6 +161,82 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();
         }
 
+        public async Task<IActionResult> EditAdminProfile()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+
+                }
+
+            }
+            return View(emp);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditAdminProfile(Employee emp1)
+        {
+            Employee emp = new Employee();
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            emp1.Designation = emp.Designation;
+            emp1.Email = emp.Email;
+            emp1.Role = emp.Role; ;
+            emp1.EmpID = emp.EmpID;
+            emp1.Place = emp.Place;
+            emp1.Gender = emp.Gender;
+            emp1.Secret_Key = emp.Secret_Key;
+            emp1.Name = emp.Name;
+            emp1.Password = emp.Password;
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(emp1), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Your Details Updated Successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View(emp1);
+        }
+
         public IActionResult AddParking()
         {
             return View();
@@ -285,7 +361,7 @@ namespace Office_Seat_Book_MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ShowAdminProfile()
+        public async Task<IActionResult> Showprofile()
         {
             Employee emp = null;
             using (HttpClient client = new HttpClient())
