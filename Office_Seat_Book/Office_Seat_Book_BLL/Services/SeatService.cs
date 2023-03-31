@@ -45,5 +45,9 @@ namespace Office_Seat_Book_BLL.Services
         {
             return _SeatRepost.GetSeatById(SeatID);
         }
+        public IEnumerable<Seat> GetSeatsByFloorId(int floorId)
+        {
+            return _SeatRepost.GetSeatsByFloorId(floorId);
+        }
     }
 }

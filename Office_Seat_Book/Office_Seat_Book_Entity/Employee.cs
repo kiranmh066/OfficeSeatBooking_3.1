@@ -40,5 +40,7 @@ namespace Office_Seat_Book_Entity
 
         [AllowNull]
         public string Designation { get; set; }
+
+       
     }
 }

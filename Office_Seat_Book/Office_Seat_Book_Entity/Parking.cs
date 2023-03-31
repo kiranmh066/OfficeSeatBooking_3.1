@@ -9,7 +9,7 @@ namespace Office_Seat_Book_Entity
     public class Parking
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+     
         public int ParkingID { get; set; }
 
 

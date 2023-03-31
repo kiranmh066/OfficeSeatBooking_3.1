@@ -30,17 +30,11 @@ namespace OfficeAPI.Controllers
         public int AddBooking([FromBody] Booking booking)
         {
 
-            try
-            {
-                _BookingService.AddBooking(booking);
 
+            return _BookingService.AddBooking(booking);
 
-                return  _BookingService.AddBooking(booking);
-            }
-            catch
-            {
-                return 0;
-            }
+            
+           
 
         }
         [HttpDelete("DeleteBooking")]

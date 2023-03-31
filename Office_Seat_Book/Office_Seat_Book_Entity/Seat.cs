@@ -9,8 +9,11 @@ namespace Office_Seat_Book_Entity
     public class Seat
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    
         public int Seat_No { get; set; }
+
+
+        public bool seat_flag { get; set; }
 
 
         [ForeignKey("Floor")]

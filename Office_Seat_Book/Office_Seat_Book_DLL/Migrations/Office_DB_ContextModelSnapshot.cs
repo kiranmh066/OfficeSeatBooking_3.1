@@ -155,6 +155,9 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
 
+                    b.Property<bool>("seat_flag")
+                        .HasColumnType("bit");
+
                     b.HasKey("Seat_No");
 
                     b.HasIndex("FloorID");
