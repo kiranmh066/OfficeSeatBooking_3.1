@@ -743,3 +743,1473 @@ WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Pass
 2023-03-30 15:55:51.675 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
 2023-03-30 15:55:51.675 +05:30 [INF] Request finished in 8.9375ms 200 application/json; charset=utf-8
 2023-03-30 15:58:13.861 +05:30 [INF] Application is shutting down...
+2023-03-30 16:56:52.431 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 16:56:52.472 +05:30 [INF] Hosting environment: Development
+2023-03-30 16:56:52.473 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 16:56:52.529 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger  
+2023-03-30 16:56:52.529 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 16:56:52.610 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 16:56:52.655 +05:30 [INF] Request finished in 130.2299ms 301 
+2023-03-30 16:56:52.655 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 16:56:52.661 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 16:56:52.667 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 16:56:52.707 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 34.958ms
+2023-03-30 16:56:52.708 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 16:56:52.708 +05:30 [INF] Request finished in 184.007ms 200 application/json; charset=utf-8
+2023-03-30 16:56:52.954 +05:30 [INF] Request finished in 299.1783ms 200 text/html;charset=utf-8
+2023-03-30 16:56:52.959 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui.css  
+2023-03-30 16:56:52.960 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui-bundle.js  
+2023-03-30 16:56:52.961 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui-standalone-preset.js  
+2023-03-30 16:56:52.962 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 16:56:52.966 +05:30 [INF] Request finished in 4.9025ms 200 application/javascript; charset=utf-8
+2023-03-30 16:56:52.988 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-03-30 16:56:52.988 +05:30 [INF] Request finished in 27.3029ms 200 application/javascript
+2023-03-30 16:56:52.989 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-03-30 16:56:52.989 +05:30 [INF] Request finished in 30.5439ms 200 text/css
+2023-03-30 16:56:52.990 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-03-30 16:56:52.990 +05:30 [INF] Request finished in 30.8542ms 200 application/javascript
+2023-03-30 16:56:53.018 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 16:56:53.080 +05:30 [INF] Request finished in 62.0006ms 200 text/javascript; charset=UTF-8
+2023-03-30 16:56:53.275 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 16:56:53.312 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/favicon-32x32.png  
+2023-03-30 16:56:53.316 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-03-30 16:56:53.317 +05:30 [INF] Request finished in 5.1061ms 200 image/png
+2023-03-30 16:56:53.389 +05:30 [INF] Request finished in 113.8603ms 200 application/json;charset=utf-8
+2023-03-30 16:56:56.788 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployees  
+2023-03-30 16:56:56.789 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 16:56:56.792 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 16:56:57.950 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 16:56:59.378 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-30 16:56:59.614 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-03-30 16:56:59.635 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 2842.3341ms
+2023-03-30 16:56:59.635 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 16:56:59.641 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Office_Seat_Book_DLL.Repost.EmployeeRepost.GetEmployees() in C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_DLL\Repost\EmployeeRepost.cs:line 39
+   at Office_Seat_Book_BLL.Services.EmployeeService.GetEmployee() in C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_BLL\Services\EmployeeService.cs:line 41
+   at OfficeAPI.Controllers.EmployeeController.GetEmployees() in C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI\Controllers\EmployeeController.cs:line 30
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-30 16:56:59.707 +05:30 [INF] Request finished in 2919.6591ms 500 text/plain
+2023-03-30 16:58:06.148 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 16:58:06.183 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 16:58:06.183 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 16:58:06.202 +05:30 [INF] Hosting environment: Development
+2023-03-30 16:58:06.203 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 16:58:06.300 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 16:58:06.340 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 16:58:06.417 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 16:58:06.443 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 93.7561ms
+2023-03-30 16:58:06.446 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 16:58:06.462 +05:30 [INF] Request finished in 285.8947ms 200 application/json; charset=utf-8
+2023-03-30 16:58:06.637 +05:30 [INF] Request finished in 462.9746ms 200 text/html;charset=utf-8
+2023-03-30 16:58:06.648 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 16:58:06.652 +05:30 [INF] Request finished in 3.6228ms 200 application/javascript; charset=utf-8
+2023-03-30 16:58:06.684 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 16:58:06.736 +05:30 [INF] Request finished in 51.896ms 200 text/javascript; charset=UTF-8
+2023-03-30 16:58:07.029 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 16:58:07.240 +05:30 [INF] Request finished in 212.2833ms 200 application/json;charset=utf-8
+2023-03-30 16:58:12.299 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployees  
+2023-03-30 16:58:12.301 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 16:58:12.304 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 16:58:14.099 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 16:58:14.847 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-30 16:58:14.948 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-03-30 16:58:47.530 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 16:58:47.588 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 16:58:47.597 +05:30 [INF] Hosting environment: Development
+2023-03-30 16:58:47.597 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 16:58:47.672 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 16:58:47.701 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 16:58:47.735 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 16:58:47.784 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 75.9474ms
+2023-03-30 16:58:47.787 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 16:58:47.803 +05:30 [INF] Request finished in 220.906ms 200 application/json; charset=utf-8
+2023-03-30 16:58:58.617 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 16:58:58.792 +05:30 [INF] Request finished in 176.1265ms 200 text/html;charset=utf-8
+2023-03-30 16:58:58.802 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 16:58:58.805 +05:30 [INF] Request finished in 2.9474ms 200 application/javascript; charset=utf-8
+2023-03-30 16:58:58.836 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 16:58:58.861 +05:30 [INF] Request finished in 25.7305ms 200 text/javascript; charset=UTF-8
+2023-03-30 16:58:58.955 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 16:58:59.121 +05:30 [INF] Request finished in 165.8312ms 200 application/json;charset=utf-8
+2023-03-30 16:59:02.664 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Floor/GetFloors  
+2023-03-30 16:59:02.666 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI)'
+2023-03-30 16:59:02.669 +05:30 [INF] Route matched with {action = "GetFloors", controller = "Floor"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Floor] GetFloors() on controller OfficeAPI.Controllers.FloorController (OfficeAPI).
+2023-03-30 16:59:03.695 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 16:59:04.401 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[FloorID], [f].[FloorName]
+FROM [floor] AS [f]
+2023-03-30 16:59:04.421 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Floor, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 16:59:04.423 +05:30 [INF] Executed action OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI) in 1753.0664ms
+2023-03-30 16:59:04.423 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI)'
+2023-03-30 16:59:04.427 +05:30 [INF] Request finished in 1763.1759ms 200 application/json; charset=utf-8
+2023-03-30 16:59:17.235 +05:30 [INF] Request starting HTTP/2.0 POST https://localhost:44332/api/Employee/Login application/json 213
+2023-03-30 16:59:17.240 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 16:59:17.257 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 16:59:17.368 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 16:59:17.480 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 16:59:17.590 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-03-30 17:00:35.543 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:00:35.563 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:00:35.579 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:00:35.579 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:00:35.640 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:00:35.661 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:00:35.665 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:00:35.693 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 24.8687ms
+2023-03-30 17:00:35.694 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:00:35.703 +05:30 [INF] Request finished in 144.253ms 200 application/json; charset=utf-8
+2023-03-30 17:00:40.158 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:00:40.306 +05:30 [INF] Request finished in 148.4734ms 200 text/html;charset=utf-8
+2023-03-30 17:00:40.313 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:00:40.315 +05:30 [INF] Request finished in 2.6702ms 200 application/javascript; charset=utf-8
+2023-03-30 17:00:40.341 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:00:40.363 +05:30 [INF] Request finished in 21.9189ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:00:40.464 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:00:40.606 +05:30 [INF] Request finished in 141.3428ms 200 application/json;charset=utf-8
+2023-03-30 17:00:47.385 +05:30 [INF] Application is shutting down...
+2023-03-30 17:04:26.142 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:04:26.163 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:04:26.179 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:04:26.179 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:04:26.238 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:04:26.264 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:04:26.271 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:04:26.319 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 46.7006ms
+2023-03-30 17:04:26.322 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:04:26.328 +05:30 [INF] Request finished in 169.1742ms 200 application/json; charset=utf-8
+2023-03-30 17:04:29.669 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:04:29.789 +05:30 [INF] Request finished in 119.9695ms 200 text/html;charset=utf-8
+2023-03-30 17:04:29.800 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:04:29.802 +05:30 [INF] Request finished in 2.292ms 200 application/javascript; charset=utf-8
+2023-03-30 17:04:29.831 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:04:29.850 +05:30 [INF] Request finished in 19.5488ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:04:29.965 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:04:30.100 +05:30 [INF] Request finished in 134.5579ms 200 application/json;charset=utf-8
+2023-03-30 17:04:36.315 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Booking/GetBookings  
+2023-03-30 17:04:36.316 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 17:04:36.318 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Booking"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Booking] GetBookings() on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-30 17:04:37.091 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:04:37.708 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+2023-03-30 17:04:37.722 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Booking, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:04:37.723 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI) in 1404.131ms
+2023-03-30 17:04:37.723 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 17:04:37.726 +05:30 [INF] Request finished in 1410.9143ms 200 application/json; charset=utf-8
+2023-03-30 17:04:49.640 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployeeById?EmployeeId=1  
+2023-03-30 17:04:49.643 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-30 17:04:49.654 +05:30 [INF] Route matched with {action = "GetEmployeeById", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee GetEmployeeById(Int32) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:04:49.704 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:04:49.798 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE [e].[EmpID] = @__p_0
+2023-03-30 17:04:49.842 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-03-30 17:04:49.846 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI) in 191.1099ms
+2023-03-30 17:04:49.846 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-30 17:04:49.849 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Double'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Double()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetDouble(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.Find(Object[] keyValues)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Find(Object[] keyValues)
+   at Office_Seat_Book_DLL.Repost.EmployeeRepost.GetEmployeeById(Int32 employeeId) in C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_DLL\Repost\EmployeeRepost.cs:line 34
+   at Office_Seat_Book_BLL.Services.EmployeeService.GetByEmployeeId(Int32 EmployeeID) in C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_BLL\Services\EmployeeService.cs:line 45
+   at OfficeAPI.Controllers.EmployeeController.GetEmployeeById(Int32 EmployeeId) in C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI\Controllers\EmployeeController.cs:line 35
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-30 17:04:49.882 +05:30 [INF] Request finished in 241.9962ms 500 text/plain
+2023-03-30 17:10:54.959 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:10:54.984 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:10:55.003 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:10:55.003 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:10:55.084 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:10:55.114 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:10:55.121 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:10:55.170 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 44.8401ms
+2023-03-30 17:10:55.173 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:10:55.182 +05:30 [INF] Request finished in 205.0826ms 200 application/json; charset=utf-8
+2023-03-30 17:10:56.398 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:10:56.602 +05:30 [INF] Request finished in 205.1579ms 200 text/html;charset=utf-8
+2023-03-30 17:10:56.622 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:10:56.623 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:10:56.625 +05:30 [INF] Request finished in 3.1266ms 200 application/javascript; charset=utf-8
+2023-03-30 17:10:56.669 +05:30 [INF] Request finished in 45.8974ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:10:57.360 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:10:57.362 +05:30 [INF] Request finished in 1.3256ms 200 application/javascript; charset=utf-8
+2023-03-30 17:10:57.504 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:10:57.630 +05:30 [INF] Request finished in 125.89ms 200 application/json;charset=utf-8
+2023-03-30 17:11:01.762 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployees  
+2023-03-30 17:11:01.764 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 17:11:01.773 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:11:02.670 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:11:03.263 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-30 17:11:03.276 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Employee, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:11:03.279 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 1504.5142ms
+2023-03-30 17:11:03.279 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 17:11:03.281 +05:30 [INF] Request finished in 1519.2217ms 200 application/json; charset=utf-8
+2023-03-30 17:12:09.094 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/AddEmployee application/json; charset=utf-8 172
+2023-03-30 17:12:09.097 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.AddEmployee (OfficeAPI)'
+2023-03-30 17:12:09.105 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddEmployee(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:12:09.159 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:12:09.381 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 1), @p3='?' (Size = 30) (DbType = AnsiString), @p4='?' (Size = 4000), @p5='?' (DbType = Double), @p6='?' (Size = 30) (DbType = AnsiString), @p7='?' (Size = 4000), @p8='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [employee] ([Designation], [Email], [Gender], [Name], [Password], [PhoneNo], [Place], [Role], [Secret_Key])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [EmpID]
+FROM [employee]
+WHERE @@ROWCOUNT = 1 AND [EmpID] = scope_identity();
+2023-03-30 17:12:09.419 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-03-30 17:12:09.419 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.AddEmployee (OfficeAPI) in 313.8013ms
+2023-03-30 17:12:09.419 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.AddEmployee (OfficeAPI)'
+2023-03-30 17:12:09.420 +05:30 [INF] Request finished in 327.6182ms 200 text/plain; charset=utf-8
+2023-03-30 17:12:26.419 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 17:12:26.420 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:12:26.423 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:12:26.437 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:12:26.510 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 17:12:26.516 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 17:12:26.519 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 95.6508ms
+2023-03-30 17:12:26.519 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:12:26.519 +05:30 [INF] Request finished in 100.6367ms 200 application/json; charset=utf-8
+2023-03-30 17:17:39.048 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:17:39.075 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:17:39.075 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:17:39.090 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:17:39.090 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:17:39.160 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:17:39.194 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:17:39.202 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:17:39.225 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 17.7193ms
+2023-03-30 17:17:39.234 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:17:39.243 +05:30 [INF] Request finished in 173.9637ms 200 application/json; charset=utf-8
+2023-03-30 17:17:39.364 +05:30 [INF] Request finished in 296.0554ms 200 text/html;charset=utf-8
+2023-03-30 17:17:39.405 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:17:39.405 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:17:39.407 +05:30 [INF] Request finished in 2.1336ms 200 application/javascript; charset=utf-8
+2023-03-30 17:17:39.425 +05:30 [INF] Request finished in 20.2045ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:17:40.113 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:17:40.115 +05:30 [INF] Request finished in 2.3177ms 200 application/javascript; charset=utf-8
+2023-03-30 17:17:40.273 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:17:40.449 +05:30 [INF] Request finished in 176.8096ms 200 application/json;charset=utf-8
+2023-03-30 17:17:45.927 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Floor/GetFloors  
+2023-03-30 17:17:45.928 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI)'
+2023-03-30 17:17:45.932 +05:30 [INF] Route matched with {action = "GetFloors", controller = "Floor"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Floor] GetFloors() on controller OfficeAPI.Controllers.FloorController (OfficeAPI).
+2023-03-30 17:17:46.883 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:17:47.489 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[FloorID], [f].[FloorName]
+FROM [floor] AS [f]
+2023-03-30 17:17:47.504 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Floor, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:17:47.505 +05:30 [INF] Executed action OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI) in 1573.1221ms
+2023-03-30 17:17:47.505 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI)'
+2023-03-30 17:17:47.508 +05:30 [INF] Request finished in 1580.9626ms 200 application/json; charset=utf-8
+2023-03-30 17:18:03.621 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 17:18:03.626 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:18:03.642 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:18:03.695 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:18:03.778 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 17:18:03.863 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 17:18:03.866 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 223.8002ms
+2023-03-30 17:18:03.866 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:18:03.866 +05:30 [INF] Request finished in 248.1682ms 200 application/json; charset=utf-8
+2023-03-30 17:18:47.686 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployees  
+2023-03-30 17:18:47.707 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 17:18:47.713 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:18:47.724 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:18:47.731 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-30 17:18:47.732 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Employee, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:18:47.733 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 19.477ms
+2023-03-30 17:18:47.733 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 17:18:47.733 +05:30 [INF] Request finished in 47.1229ms 200 application/json; charset=utf-8
+2023-03-30 17:31:54.233 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:31:54.274 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:31:54.295 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:31:54.295 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:31:54.387 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:31:54.432 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:31:54.440 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:31:54.496 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 52.6258ms
+2023-03-30 17:31:54.498 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:31:54.507 +05:30 [INF] Request finished in 241.6462ms 200 application/json; charset=utf-8
+2023-03-30 17:32:04.179 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:32:04.195 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:32:04.195 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:32:04.196 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:32:04.197 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 1.5727ms
+2023-03-30 17:32:04.198 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:32:04.198 +05:30 [INF] Request finished in 19.5382ms 200 application/json; charset=utf-8
+2023-03-30 17:32:04.224 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/favicon.ico  
+2023-03-30 17:32:04.228 +05:30 [INF] Request finished in 4.0451ms 404 
+2023-03-30 17:32:07.118 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:32:07.341 +05:30 [INF] Request finished in 224.0634ms 200 text/html;charset=utf-8
+2023-03-30 17:32:07.359 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:32:07.359 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:32:07.362 +05:30 [INF] Request finished in 3.1739ms 200 application/javascript; charset=utf-8
+2023-03-30 17:32:07.387 +05:30 [INF] Request finished in 28.0457ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:32:09.030 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:32:09.034 +05:30 [INF] Request finished in 3.6912ms 200 application/javascript; charset=utf-8
+2023-03-30 17:32:09.215 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:32:09.379 +05:30 [INF] Request finished in 164.8435ms 200 application/json;charset=utf-8
+2023-03-30 17:32:14.875 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployees  
+2023-03-30 17:32:14.877 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 17:32:14.883 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:32:16.394 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:32:17.396 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-30 17:32:17.566 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Employee, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:32:17.576 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 2692.6562ms
+2023-03-30 17:32:17.576 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-30 17:32:17.581 +05:30 [INF] Request finished in 2706.4456ms 200 application/json; charset=utf-8
+2023-03-30 17:32:43.485 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 17:32:43.494 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:32:43.515 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:32:43.679 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:32:43.904 +05:30 [INF] Executed DbCommand (62ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 17:32:43.909 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 17:32:43.911 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 395.5414ms
+2023-03-30 17:32:43.912 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:32:43.912 +05:30 [INF] Request finished in 430.5549ms 200 application/json; charset=utf-8
+2023-03-30 17:39:16.927 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:39:16.962 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:39:16.962 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:39:16.982 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:39:16.982 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:39:17.063 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:39:17.098 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:39:17.104 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:39:17.136 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 21.763ms
+2023-03-30 17:39:17.140 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:39:17.151 +05:30 [INF] Request finished in 197.1415ms 200 application/json; charset=utf-8
+2023-03-30 17:39:17.243 +05:30 [INF] Request finished in 290.1422ms 200 text/html;charset=utf-8
+2023-03-30 17:39:17.253 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:39:17.263 +05:30 [INF] Request finished in 10.2006ms 200 application/javascript; charset=utf-8
+2023-03-30 17:39:17.288 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:39:17.314 +05:30 [INF] Request finished in 26.1727ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:39:17.509 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:39:17.740 +05:30 [INF] Request finished in 230.3364ms 200 application/json;charset=utf-8
+2023-03-30 17:43:04.321 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:43:04.367 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:43:04.391 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:43:04.392 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:43:04.483 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:43:04.523 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:43:04.531 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:43:04.573 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 42.1282ms
+2023-03-30 17:43:04.575 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:43:04.587 +05:30 [INF] Request finished in 234.9122ms 200 application/json; charset=utf-8
+2023-03-30 17:43:08.796 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:43:09.045 +05:30 [INF] Request finished in 249.6383ms 200 text/html;charset=utf-8
+2023-03-30 17:43:09.064 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:43:09.068 +05:30 [INF] Request finished in 4.8239ms 200 application/javascript; charset=utf-8
+2023-03-30 17:43:09.116 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:43:09.156 +05:30 [INF] Request finished in 40.104ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:43:09.292 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:43:09.510 +05:30 [INF] Request finished in 218.5446ms 200 application/json;charset=utf-8
+2023-03-30 17:44:03.193 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 17:44:03.240 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 17:44:03.270 +05:30 [INF] Hosting environment: Development
+2023-03-30 17:44:03.270 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 17:44:03.358 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:44:03.385 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 17:44:03.390 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 17:44:03.428 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 34.1629ms
+2023-03-30 17:44:03.430 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 17:44:03.438 +05:30 [INF] Request finished in 208.08ms 200 application/json; charset=utf-8
+2023-03-30 17:44:18.517 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 17:44:18.756 +05:30 [INF] Request finished in 240.0565ms 200 text/html;charset=utf-8
+2023-03-30 17:44:18.777 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:44:18.780 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 17:44:18.781 +05:30 [INF] Request finished in 3.3333ms 200 application/javascript; charset=utf-8
+2023-03-30 17:44:18.805 +05:30 [INF] Request finished in 25.5627ms 200 text/javascript; charset=UTF-8
+2023-03-30 17:44:20.002 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 17:44:20.004 +05:30 [INF] Request finished in 1.5028ms 200 application/javascript; charset=utf-8
+2023-03-30 17:44:20.175 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 17:44:20.349 +05:30 [INF] Request finished in 174.4119ms 200 application/json;charset=utf-8
+2023-03-30 17:44:58.516 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 17:44:58.520 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:44:58.542 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:45:00.396 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:45:01.752 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 17:45:01.959 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 17:45:01.964 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 3421.9233ms
+2023-03-30 17:45:01.965 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:45:01.970 +05:30 [INF] Request finished in 3456.7847ms 200 application/json; charset=utf-8
+2023-03-30 17:45:26.752 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookings  
+2023-03-30 17:45:26.756 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 17:45:26.764 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Booking"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Booking] GetBookings() on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-30 17:45:26.829 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:45:26.854 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+2023-03-30 17:45:26.855 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Booking, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:45:26.858 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI) in 93.2584ms
+2023-03-30 17:45:26.858 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 17:45:26.859 +05:30 [INF] Request finished in 107.937ms 200 application/json; charset=utf-8
+2023-03-30 17:46:12.472 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Employee/GetEmployeeById?EmployeeId=1  
+2023-03-30 17:46:12.477 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-30 17:46:12.481 +05:30 [INF] Route matched with {action = "GetEmployeeById", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee GetEmployeeById(Int32) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:46:12.503 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:46:12.554 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE [e].[EmpID] = @__p_0
+2023-03-30 17:46:12.555 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 17:46:12.556 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI) in 74.7299ms
+2023-03-30 17:46:12.556 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-30 17:46:12.557 +05:30 [INF] Request finished in 84.6227ms 200 application/json; charset=utf-8
+2023-03-30 17:46:26.912 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 17:46:26.914 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:46:26.915 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 17:46:26.935 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:46:26.945 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 17:46:26.947 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 17:46:26.947 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 31.2449ms
+2023-03-30 17:46:26.948 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 17:46:26.948 +05:30 [INF] Request finished in 36.6086ms 200 application/json; charset=utf-8
+2023-03-30 17:46:36.864 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookings  
+2023-03-30 17:46:36.871 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 17:46:36.873 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Booking"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Booking] GetBookings() on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-30 17:46:36.879 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 17:46:36.886 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+2023-03-30 17:46:36.888 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Booking, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 17:46:36.889 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI) in 15.7424ms
+2023-03-30 17:46:36.890 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 17:46:36.891 +05:30 [INF] Request finished in 26.9869ms 200 application/json; charset=utf-8
+2023-03-30 22:51:26.359 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 22:51:26.387 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-30 22:51:26.402 +05:30 [INF] Hosting environment: Development
+2023-03-30 22:51:26.403 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-30 22:51:26.470 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 22:51:26.502 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-30 22:51:26.509 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-30 22:51:26.543 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 33.4026ms
+2023-03-30 22:51:26.546 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-30 22:51:26.554 +05:30 [INF] Request finished in 172.9821ms 200 application/json; charset=utf-8
+2023-03-30 22:51:26.585 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/favicon.ico  
+2023-03-30 22:51:26.590 +05:30 [INF] Request finished in 5.3774ms 404 
+2023-03-30 22:51:28.458 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-30 22:51:28.599 +05:30 [INF] Request finished in 141.398ms 200 text/html;charset=utf-8
+2023-03-30 22:51:28.610 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 22:51:28.612 +05:30 [INF] Request finished in 2.3792ms 200 application/javascript; charset=utf-8
+2023-03-30 22:51:28.617 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-30 22:51:28.642 +05:30 [INF] Request finished in 24.755ms 200 text/javascript; charset=UTF-8
+2023-03-30 22:51:30.290 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-30 22:51:30.293 +05:30 [INF] Request finished in 1.2678ms 200 application/javascript; charset=utf-8
+2023-03-30 22:51:30.435 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-30 22:51:30.562 +05:30 [INF] Request finished in 126.6185ms 200 application/json;charset=utf-8
+2023-03-30 22:51:55.747 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 22:51:55.749 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 22:51:55.761 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 22:51:56.748 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 22:51:57.487 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 22:51:57.617 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 22:51:57.621 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 1859.7168ms
+2023-03-30 22:51:57.621 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 22:51:57.625 +05:30 [INF] Request finished in 1879.3599ms 200 application/json; charset=utf-8
+2023-03-30 22:52:37.847 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Employee/GetEmployeeById?EmployeeId=1  
+2023-03-30 22:52:37.850 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-30 22:52:37.853 +05:30 [INF] Route matched with {action = "GetEmployeeById", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee GetEmployeeById(Int32) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 22:52:37.883 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 22:52:37.907 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE [e].[EmpID] = @__p_0
+2023-03-30 22:52:37.908 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 22:52:37.908 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI) in 55.1032ms
+2023-03-30 22:52:37.909 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-30 22:52:37.909 +05:30 [INF] Request finished in 62.0357ms 200 application/json; charset=utf-8
+2023-03-30 22:53:12.438 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookings  
+2023-03-30 22:53:12.440 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 22:53:12.446 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Booking"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Booking] GetBookings() on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-30 22:53:12.458 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 22:53:12.467 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+2023-03-30 22:53:12.468 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Booking, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-30 22:53:12.469 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI) in 22.9111ms
+2023-03-30 22:53:12.469 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-30 22:53:12.469 +05:30 [INF] Request finished in 31.6303ms 200 application/json; charset=utf-8
+2023-03-30 22:53:49.256 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-30 22:53:49.257 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 22:53:49.257 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-30 22:53:49.263 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-30 22:53:49.268 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-30 22:53:49.269 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-30 22:53:49.270 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 12.1227ms
+2023-03-30 22:53:49.270 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-30 22:53:49.270 +05:30 [INF] Request finished in 13.9687ms 200 application/json; charset=utf-8
+2023-03-31 10:36:37.421 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 10:36:37.482 +05:30 [INF] Hosting environment: Development
+2023-03-31 10:36:37.483 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 10:36:37.577 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 10:36:37.577 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 10:36:37.721 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 10:36:37.760 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 10:36:37.767 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 10:36:37.831 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 61.3729ms
+2023-03-31 10:36:37.833 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 10:36:37.840 +05:30 [INF] Request finished in 271.3194ms 200 application/json; charset=utf-8
+2023-03-31 10:36:38.228 +05:30 [INF] Request finished in 660.3098ms 200 text/html;charset=utf-8
+2023-03-31 10:36:38.249 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 10:36:38.253 +05:30 [INF] Request finished in 3.7503ms 200 application/javascript; charset=utf-8
+2023-03-31 10:36:38.386 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 10:36:38.508 +05:30 [INF] Request finished in 122.7566ms 200 text/javascript; charset=UTF-8
+2023-03-31 10:36:38.673 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 10:36:38.865 +05:30 [INF] Request finished in 191.8648ms 200 application/json;charset=utf-8
+2023-03-31 10:36:43.440 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Employee/GetEmployees  
+2023-03-31 10:36:43.442 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-31 10:36:43.447 +05:30 [INF] Route matched with {action = "GetEmployees", controller = "Employee"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Employee] GetEmployees() on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 10:36:45.517 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:36:47.525 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+2023-03-31 10:36:47.678 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Employee, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-31 10:36:47.686 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI) in 4238.9343ms
+2023-03-31 10:36:47.687 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployees (OfficeAPI)'
+2023-03-31 10:36:47.691 +05:30 [INF] Request finished in 4251.9919ms 200 application/json; charset=utf-8
+2023-03-31 10:37:27.859 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 10:37:27.865 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 10:37:27.879 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 10:37:27.959 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:37:28.102 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 10:37:28.106 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 10:37:28.108 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 228.8024ms
+2023-03-31 10:37:28.108 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 10:37:28.108 +05:30 [INF] Request finished in 251.1363ms 200 application/json; charset=utf-8
+2023-03-31 10:37:50.344 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Booking/AddBooking application/json; charset=utf-8 254
+2023-03-31 10:37:50.345 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI)'
+2023-03-31 10:37:50.347 +05:30 [INF] Route matched with {action = "AddBooking", controller = "Booking"}. Executing controller action with signature Int32 AddBooking(Office_Seat_Book_Entity.Booking) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:37:50.366 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:37:50.501 +05:30 [ERR] Failed executing DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Boolean), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [booking] ([Emp_Status], [EmployeeID], [Food_Type], [From_Date], [Seat_No], [Shift_Time], [To_Date], [Type_Of_Request], [Vehicle], [booking_Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [BookingID]
+FROM [booking]
+WHERE @@ROWCOUNT = 1 AND [BookingID] = scope_identity();
+2023-03-31 10:37:50.656 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_booking_seat_Seat_No". The conflict occurred in database "Office1", table "dbo.seat", column 'Seat_No'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:55a8ae19-b6c4-4bde-a37a-889f1e484174
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_booking_seat_Seat_No". The conflict occurred in database "Office1", table "dbo.seat", column 'Seat_No'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:55a8ae19-b6c4-4bde-a37a-889f1e484174
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-03-31 10:37:50.658 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Int32'.
+2023-03-31 10:37:50.658 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI) in 310.3607ms
+2023-03-31 10:37:50.658 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI)'
+2023-03-31 10:37:50.658 +05:30 [INF] Request finished in 314.9357ms 200 application/json; charset=utf-8
+2023-03-31 10:37:50.680 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:37:50.682 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:37:50.684 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:37:50.687 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:37:50.712 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:37:50.712 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:37:50.712 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 28.3716ms
+2023-03-31 10:37:50.712 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:37:50.713 +05:30 [INF] Request finished in 32.2531ms 204 
+2023-03-31 10:37:54.495 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:44332/api/Booking/UpdateBooking application/json; charset=utf-8 241
+2023-03-31 10:37:54.496 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.UpdateBooking (OfficeAPI)'
+2023-03-31 10:37:54.498 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateBooking(Office_Seat_Book_Entity.Booking) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:37:54.504 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:37:54.516 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p10='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Boolean), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [booking] SET [Emp_Status] = @p0, [EmployeeID] = @p1, [Food_Type] = @p2, [From_Date] = @p3, [Seat_No] = @p4, [Shift_Time] = @p5, [To_Date] = @p6, [Type_Of_Request] = @p7, [Vehicle] = @p8, [booking_Status] = @p9
+WHERE [BookingID] = @p10;
+SELECT @@ROWCOUNT;
+2023-03-31 10:37:54.519 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Int32'.
+2023-03-31 10:37:54.520 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.UpdateBooking (OfficeAPI) in 21.3442ms
+2023-03-31 10:37:54.520 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.UpdateBooking (OfficeAPI)'
+2023-03-31 10:37:54.521 +05:30 [INF] Request finished in 25.2741ms 400 application/json; charset=utf-8
+2023-03-31 10:38:22.764 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Booking/AddBooking application/json; charset=utf-8 254
+2023-03-31 10:38:22.765 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI)'
+2023-03-31 10:38:22.766 +05:30 [INF] Route matched with {action = "AddBooking", controller = "Booking"}. Executing controller action with signature Int32 AddBooking(Office_Seat_Book_Entity.Booking) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:38:22.771 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:38:22.779 +05:30 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Boolean), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [booking] ([Emp_Status], [EmployeeID], [Food_Type], [From_Date], [Seat_No], [Shift_Time], [To_Date], [Type_Of_Request], [Vehicle], [booking_Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [BookingID]
+FROM [booking]
+WHERE @@ROWCOUNT = 1 AND [BookingID] = scope_identity();
+2023-03-31 10:38:22.781 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_booking_seat_Seat_No". The conflict occurred in database "Office1", table "dbo.seat", column 'Seat_No'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:55a8ae19-b6c4-4bde-a37a-889f1e484174
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_booking_seat_Seat_No". The conflict occurred in database "Office1", table "dbo.seat", column 'Seat_No'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:55a8ae19-b6c4-4bde-a37a-889f1e484174
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-03-31 10:38:22.781 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Int32'.
+2023-03-31 10:38:22.782 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI) in 15.6762ms
+2023-03-31 10:38:22.782 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI)'
+2023-03-31 10:38:22.782 +05:30 [INF] Request finished in 18.437ms 200 application/json; charset=utf-8
+2023-03-31 10:38:22.801 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:38:22.802 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:38:22.802 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:38:22.803 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:38:22.809 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:38:22.810 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:38:22.810 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 7.4202ms
+2023-03-31 10:38:22.810 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:38:22.810 +05:30 [INF] Request finished in 9.5096ms 204 
+2023-03-31 10:38:36.900 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:44332/api/Booking/UpdateBooking application/json; charset=utf-8 241
+2023-03-31 10:38:36.901 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.UpdateBooking (OfficeAPI)'
+2023-03-31 10:38:36.901 +05:30 [INF] Route matched with {action = "UpdateBooking", controller = "Booking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateBooking(Office_Seat_Book_Entity.Booking) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:38:36.906 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:38:36.916 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p10='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Boolean), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [booking] SET [Emp_Status] = @p0, [EmployeeID] = @p1, [Food_Type] = @p2, [From_Date] = @p3, [Seat_No] = @p4, [Shift_Time] = @p5, [To_Date] = @p6, [Type_Of_Request] = @p7, [Vehicle] = @p8, [booking_Status] = @p9
+WHERE [BookingID] = @p10;
+SELECT @@ROWCOUNT;
+2023-03-31 10:38:36.917 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Int32'.
+2023-03-31 10:38:36.918 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.UpdateBooking (OfficeAPI) in 16.5744ms
+2023-03-31 10:38:36.918 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.UpdateBooking (OfficeAPI)'
+2023-03-31 10:38:36.919 +05:30 [INF] Request finished in 19.0338ms 400 application/json; charset=utf-8
+2023-03-31 10:38:49.046 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:38:49.046 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:38:49.046 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:38:49.048 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:38:49.052 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:38:49.052 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:38:49.052 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 5.8671ms
+2023-03-31 10:38:49.052 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:38:49.053 +05:30 [INF] Request finished in 7.324ms 204 
+2023-03-31 10:39:03.853 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Booking/AddBooking application/json; charset=utf-8 254
+2023-03-31 10:39:03.854 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI)'
+2023-03-31 10:39:03.854 +05:30 [INF] Route matched with {action = "AddBooking", controller = "Booking"}. Executing controller action with signature Int32 AddBooking(Office_Seat_Book_Entity.Booking) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:39:03.860 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:39:03.867 +05:30 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Boolean), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [booking] ([Emp_Status], [EmployeeID], [Food_Type], [From_Date], [Seat_No], [Shift_Time], [To_Date], [Type_Of_Request], [Vehicle], [booking_Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [BookingID]
+FROM [booking]
+WHERE @@ROWCOUNT = 1 AND [BookingID] = scope_identity();
+2023-03-31 10:39:03.868 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'Office_Seat_Book_DLL.Office_DB_Context'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_booking_seat_Seat_No". The conflict occurred in database "Office1", table "dbo.seat", column 'Seat_No'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:55a8ae19-b6c4-4bde-a37a-889f1e484174
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_booking_seat_Seat_No". The conflict occurred in database "Office1", table "dbo.seat", column 'Seat_No'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:55a8ae19-b6c4-4bde-a37a-889f1e484174
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-03-31 10:39:03.869 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Int32'.
+2023-03-31 10:39:03.869 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI) in 14.2796ms
+2023-03-31 10:39:03.869 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.AddBooking (OfficeAPI)'
+2023-03-31 10:39:03.870 +05:30 [INF] Request finished in 16.4443ms 200 application/json; charset=utf-8
+2023-03-31 10:39:03.885 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:39:03.885 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:39:03.886 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:39:03.887 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:39:03.889 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:39:03.890 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:39:03.890 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 3.8804ms
+2023-03-31 10:39:03.890 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:39:03.890 +05:30 [INF] Request finished in 5.04ms 204 
+2023-03-31 10:40:21.876 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:40:21.876 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:40:21.877 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:40:21.879 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:40:21.885 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:40:21.885 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:40:21.886 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 8.8948ms
+2023-03-31 10:40:21.886 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:40:21.886 +05:30 [INF] Request finished in 10.7671ms 204 
+2023-03-31 10:41:30.131 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:41:30.132 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:41:30.132 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:41:30.134 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:41:30.138 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:41:30.139 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:41:30.139 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 6.656ms
+2023-03-31 10:41:30.139 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:41:30.139 +05:30 [INF] Request finished in 8.1506ms 204 
+2023-03-31 10:43:37.968 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 10:43:37.968 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:43:37.969 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 10:43:37.971 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 10:43:37.978 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 10:43:37.979 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 10:43:37.979 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 10.1085ms
+2023-03-31 10:43:37.979 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 10:43:37.980 +05:30 [INF] Request finished in 11.6527ms 204 
+2023-03-31 10:58:49.743 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 10:58:49.764 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 10:58:49.777 +05:30 [INF] Hosting environment: Development
+2023-03-31 10:58:49.777 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 10:58:49.839 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 10:58:49.860 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 10:58:49.864 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 10:58:49.891 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 25.3955ms
+2023-03-31 10:58:49.893 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 10:58:49.899 +05:30 [INF] Request finished in 140.1462ms 200 application/json; charset=utf-8
+2023-03-31 10:58:49.928 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/favicon.ico  
+2023-03-31 10:58:49.930 +05:30 [INF] Request finished in 2.0097ms 404 
+2023-03-31 10:58:54.044 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 10:58:54.178 +05:30 [INF] Request finished in 135.0862ms 200 text/html;charset=utf-8
+2023-03-31 10:58:54.189 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 10:58:54.190 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 10:58:54.192 +05:30 [INF] Request finished in 2.5819ms 200 application/javascript; charset=utf-8
+2023-03-31 10:58:54.211 +05:30 [INF] Request finished in 20.7497ms 200 text/javascript; charset=UTF-8
+2023-03-31 10:58:55.963 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 10:58:55.964 +05:30 [INF] Request finished in 1.6501ms 200 application/javascript; charset=utf-8
+2023-03-31 10:58:56.104 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 10:58:56.236 +05:30 [INF] Request finished in 133.0426ms 200 application/json;charset=utf-8
+2023-03-31 10:59:47.169 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 10:59:47.189 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 10:59:47.203 +05:30 [INF] Hosting environment: Development
+2023-03-31 10:59:47.203 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 10:59:47.261 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 10:59:47.285 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 10:59:47.289 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 10:59:47.319 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 26.8942ms
+2023-03-31 10:59:47.320 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 10:59:47.329 +05:30 [INF] Request finished in 142.155ms 200 application/json; charset=utf-8
+2023-03-31 10:59:51.297 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 10:59:51.406 +05:30 [INF] Request finished in 109.7624ms 200 text/html;charset=utf-8
+2023-03-31 10:59:51.416 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 10:59:51.419 +05:30 [INF] Request finished in 2.6314ms 200 application/javascript; charset=utf-8
+2023-03-31 10:59:51.438 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 10:59:51.461 +05:30 [INF] Request finished in 22.9448ms 200 text/javascript; charset=UTF-8
+2023-03-31 10:59:51.568 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 10:59:51.681 +05:30 [INF] Request finished in 113.1578ms 200 application/json;charset=utf-8
+2023-03-31 11:00:16.267 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 11:00:16.271 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 11:00:16.283 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 11:00:17.215 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 11:00:17.918 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 11:00:18.014 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 11:00:18.016 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 1733.2926ms
+2023-03-31 11:00:18.016 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 11:00:18.018 +05:30 [INF] Request finished in 1752.7316ms 200 application/json; charset=utf-8
+2023-03-31 11:02:25.519 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:02:25.541 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 11:02:25.555 +05:30 [INF] Hosting environment: Development
+2023-03-31 11:02:25.555 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 11:02:25.612 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 11:02:25.638 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 11:02:25.642 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 11:02:25.670 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 25.0352ms
+2023-03-31 11:02:25.672 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 11:02:25.679 +05:30 [INF] Request finished in 141.9612ms 200 application/json; charset=utf-8
+2023-03-31 11:02:30.559 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 11:02:30.665 +05:30 [INF] Request finished in 106.5538ms 200 text/html;charset=utf-8
+2023-03-31 11:02:30.678 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 11:02:30.683 +05:30 [INF] Request finished in 4.6707ms 200 application/javascript; charset=utf-8
+2023-03-31 11:02:30.700 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 11:02:30.716 +05:30 [INF] Request finished in 16.8835ms 200 text/javascript; charset=UTF-8
+2023-03-31 11:02:30.838 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 11:02:30.936 +05:30 [INF] Request finished in 98.1416ms 200 application/json;charset=utf-8
+2023-03-31 11:02:50.497 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 11:02:50.499 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 11:02:50.509 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 11:02:51.341 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 11:02:51.971 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 11:02:52.046 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 11:02:52.048 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 1539.6171ms
+2023-03-31 11:02:52.049 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 11:02:52.051 +05:30 [INF] Request finished in 1556.3556ms 200 application/json; charset=utf-8
+2023-03-31 11:06:26.947 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:06:26.968 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 11:06:26.983 +05:30 [INF] Hosting environment: Development
+2023-03-31 11:06:26.983 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 11:06:27.039 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 11:06:27.060 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 11:06:27.091 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 11:06:27.120 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 53.1043ms
+2023-03-31 11:06:27.121 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 11:06:27.130 +05:30 [INF] Request finished in 167.1467ms 200 application/json; charset=utf-8
+2023-03-31 11:06:36.944 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 11:06:37.078 +05:30 [INF] Request finished in 135.6284ms 200 text/html;charset=utf-8
+2023-03-31 11:06:37.094 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 11:06:37.095 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 11:06:37.096 +05:30 [INF] Request finished in 2.1756ms 200 application/javascript; charset=utf-8
+2023-03-31 11:06:37.133 +05:30 [INF] Request finished in 38.3817ms 200 text/javascript; charset=UTF-8
+2023-03-31 11:06:37.830 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 11:06:37.831 +05:30 [INF] Request finished in 1.5958ms 200 application/javascript; charset=utf-8
+2023-03-31 11:06:37.975 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 11:06:38.080 +05:30 [INF] Request finished in 105.1092ms 200 application/json;charset=utf-8
+2023-03-31 11:07:04.670 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 11:07:04.672 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 11:07:04.689 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 11:07:05.471 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 11:07:06.077 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 11:07:06.153 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 11:07:06.155 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 1465.7558ms
+2023-03-31 11:07:06.155 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 11:07:06.158 +05:30 [INF] Request finished in 1489.1159ms 200 application/json; charset=utf-8
+2023-03-31 12:17:26.571 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:17:26.605 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 12:17:26.624 +05:30 [INF] Hosting environment: Development
+2023-03-31 12:17:26.624 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 12:17:26.702 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:17:26.732 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 12:17:26.738 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 12:17:26.779 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 37.3101ms
+2023-03-31 12:17:26.782 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:17:26.790 +05:30 [INF] Request finished in 192.3594ms 200 application/json; charset=utf-8
+2023-03-31 12:17:27.999 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 12:17:28.192 +05:30 [INF] Request finished in 194.7416ms 200 text/html;charset=utf-8
+2023-03-31 12:17:28.209 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:17:28.211 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 12:17:28.212 +05:30 [INF] Request finished in 2.7142ms 200 application/javascript; charset=utf-8
+2023-03-31 12:17:28.238 +05:30 [INF] Request finished in 27.2444ms 200 text/javascript; charset=UTF-8
+2023-03-31 12:17:28.906 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:17:28.908 +05:30 [INF] Request finished in 1.9542ms 200 application/javascript; charset=utf-8
+2023-03-31 12:17:29.098 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 12:17:29.268 +05:30 [INF] Request finished in 170.8547ms 200 application/json;charset=utf-8
+2023-03-31 12:18:31.711 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:18:31.779 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 12:18:31.797 +05:30 [INF] Hosting environment: Development
+2023-03-31 12:18:31.797 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 12:18:31.884 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:18:31.913 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 12:18:31.919 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 12:18:31.952 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 31.2701ms
+2023-03-31 12:18:31.954 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:18:31.964 +05:30 [INF] Request finished in 193.7703ms 200 application/json; charset=utf-8
+2023-03-31 12:18:34.270 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 12:18:34.477 +05:30 [INF] Request finished in 207.6409ms 200 text/html;charset=utf-8
+2023-03-31 12:18:34.493 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:18:34.496 +05:30 [INF] Request finished in 3.4409ms 200 application/javascript; charset=utf-8
+2023-03-31 12:18:34.530 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 12:18:34.558 +05:30 [INF] Request finished in 27.2995ms 200 text/javascript; charset=UTF-8
+2023-03-31 12:18:34.706 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 12:18:34.880 +05:30 [INF] Request finished in 174.0568ms 200 application/json;charset=utf-8
+2023-03-31 12:18:53.111 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:18:53.115 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:18:53.134 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:18:54.832 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:18:56.172 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:18:56.352 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:18:56.358 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 3223.477ms
+2023-03-31 12:18:56.358 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:18:56.364 +05:30 [INF] Request finished in 3255.4739ms 200 application/json; charset=utf-8
+2023-03-31 12:20:54.286 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:20:54.327 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 12:20:54.353 +05:30 [INF] Hosting environment: Development
+2023-03-31 12:20:54.353 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 12:20:54.434 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:20:54.461 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 12:20:54.466 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 12:20:54.534 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 49.9162ms
+2023-03-31 12:20:54.536 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:20:54.546 +05:30 [INF] Request finished in 228.2447ms 200 application/json; charset=utf-8
+2023-03-31 12:22:30.662 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:22:30.852 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 12:22:30.852 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 12:22:30.863 +05:30 [INF] Hosting environment: Development
+2023-03-31 12:22:30.863 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 12:22:31.042 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:22:31.100 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 12:22:31.131 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 12:22:31.166 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 47.1775ms
+2023-03-31 12:22:31.169 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:22:31.194 +05:30 [INF] Request finished in 350.4716ms 200 application/json; charset=utf-8
+2023-03-31 12:22:31.581 +05:30 [INF] Request finished in 740.8735ms 200 text/html;charset=utf-8
+2023-03-31 12:22:31.642 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:22:31.663 +05:30 [INF] Request finished in 21.329ms 200 application/javascript; charset=utf-8
+2023-03-31 12:22:31.744 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 12:22:31.978 +05:30 [INF] Request finished in 233.8979ms 200 text/javascript; charset=UTF-8
+2023-03-31 12:22:32.452 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 12:22:32.947 +05:30 [INF] Request finished in 495.487ms 200 application/json;charset=utf-8
+2023-03-31 12:22:37.798 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Booking/GetBookings  
+2023-03-31 12:22:37.907 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-31 12:22:37.926 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Booking"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Booking] GetBookings() on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 12:22:40.706 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:23:01.406 +05:30 [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+2023-03-31 12:23:01.496 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Booking, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-31 12:23:01.548 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI) in 23621.727ms
+2023-03-31 12:23:01.549 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookings (OfficeAPI)'
+2023-03-31 12:23:01.556 +05:30 [INF] Request finished in 23758.1966ms 200 application/json; charset=utf-8
+2023-03-31 12:23:56.563 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 168
+2023-03-31 12:23:56.570 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:23:56.635 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:23:56.773 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:23:57.061 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:23:57.065 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 12:23:57.066 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 430.8428ms
+2023-03-31 12:23:57.066 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:23:57.068 +05:30 [INF] Request finished in 509.2612ms 204 
+2023-03-31 12:24:52.478 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:24:52.484 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:24:52.486 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:24:52.520 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:24:52.529 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:24:52.744 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:24:52.752 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 264.5402ms
+2023-03-31 12:24:52.755 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:24:52.761 +05:30 [INF] Request finished in 283.3621ms 200 application/json; charset=utf-8
+2023-03-31 12:27:41.379 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:27:41.381 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:27:41.382 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:27:41.394 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:27:41.407 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:27:41.409 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:27:41.410 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 26.7484ms
+2023-03-31 12:27:41.410 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:27:41.411 +05:30 [INF] Request finished in 37.8444ms 200 application/json; charset=utf-8
+2023-03-31 12:29:34.905 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:29:34.906 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:29:34.911 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:29:34.926 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:29:34.932 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:29:34.934 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:29:34.938 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 23.8425ms
+2023-03-31 12:29:34.942 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:29:34.943 +05:30 [INF] Request finished in 40.4259ms 200 application/json; charset=utf-8
+2023-03-31 12:32:09.644 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Employee/GetEmployeeById?EmployeeId=1  
+2023-03-31 12:32:09.644 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-31 12:32:09.648 +05:30 [INF] Route matched with {action = "GetEmployeeById", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee GetEmployeeById(Int32) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:32:09.653 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:32:09.689 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE [e].[EmpID] = @__p_0
+2023-03-31 12:32:09.690 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:32:09.691 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI) in 43.5714ms
+2023-03-31 12:32:09.693 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-31 12:32:09.696 +05:30 [INF] Request finished in 56.0397ms 200 application/json; charset=utf-8
+2023-03-31 12:35:03.127 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:35:03.128 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:35:03.129 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:35:03.148 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:35:03.192 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:35:03.194 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:35:03.216 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 86.9173ms
+2023-03-31 12:35:03.216 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:35:03.217 +05:30 [INF] Request finished in 89.9533ms 200 application/json; charset=utf-8
+2023-03-31 12:37:06.468 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:37:06.474 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:37:06.475 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:37:06.483 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:37:06.490 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:37:06.492 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:37:06.493 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 17.7991ms
+2023-03-31 12:37:06.495 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:37:06.500 +05:30 [INF] Request finished in 33.7222ms 200 application/json; charset=utf-8
+2023-03-31 12:38:01.361 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:38:01.366 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:38:01.366 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:38:01.370 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:38:01.376 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:38:01.377 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:38:01.378 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 11.9214ms
+2023-03-31 12:38:01.380 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:38:01.383 +05:30 [INF] Request finished in 23.1306ms 200 application/json; charset=utf-8
+2023-03-31 12:39:30.309 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:39:30.314 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:39:30.314 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:39:30.319 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:39:30.324 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:39:30.326 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:39:30.327 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 12.8486ms
+2023-03-31 12:39:30.328 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:39:30.328 +05:30 [INF] Request finished in 19.0995ms 200 application/json; charset=utf-8
+2023-03-31 12:40:53.352 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:40:53.353 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:40:53.353 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:40:53.367 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:40:53.377 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:40:53.379 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:40:53.380 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 26.1841ms
+2023-03-31 12:40:53.380 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:40:53.380 +05:30 [INF] Request finished in 28.2968ms 200 application/json; charset=utf-8
+2023-03-31 12:43:21.464 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:43:21.468 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:43:21.469 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:43:21.474 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:43:21.482 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:43:21.484 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:43:21.485 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 15.8258ms
+2023-03-31 12:43:21.485 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:43:21.491 +05:30 [INF] Request finished in 26.5243ms 200 application/json; charset=utf-8
+2023-03-31 12:46:03.721 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:46:03.726 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:46:03.728 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:46:03.733 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:46:03.741 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:46:03.744 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:46:03.745 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 17.3891ms
+2023-03-31 12:46:03.746 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:46:03.746 +05:30 [INF] Request finished in 26.5385ms 200 application/json; charset=utf-8
+2023-03-31 12:47:46.593 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:47:46.593 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:47:46.594 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:47:46.599 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:47:46.652 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:47:46.653 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:47:46.673 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 78.0219ms
+2023-03-31 12:47:46.675 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:47:46.675 +05:30 [INF] Request finished in 82.3494ms 200 application/json; charset=utf-8
+2023-03-31 12:48:37.914 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 12:48:37.938 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:48:37.938 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 12:48:37.940 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:48:37.943 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 12:48:37.944 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 12:48:37.945 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 6.5477ms
+2023-03-31 12:48:37.946 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 12:48:37.946 +05:30 [INF] Request finished in 32.9714ms 200 application/json; charset=utf-8
+2023-03-31 12:50:37.815 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 12:50:37.826 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 12:50:37.833 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 12:50:37.837 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:50:37.860 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 12:50:37.861 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 12:50:37.862 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 28.3552ms
+2023-03-31 12:50:37.862 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 12:50:37.863 +05:30 [INF] Request finished in 48.0321ms 204 
+2023-03-31 12:51:05.990 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 12:51:06.029 +05:30 [INF] Request finished in 39.3495ms 200 text/html;charset=utf-8
+2023-03-31 12:51:06.108 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 12:51:06.131 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:51:06.132 +05:30 [INF] Request finished in 24.058ms 200 text/javascript; charset=UTF-8
+2023-03-31 12:51:06.132 +05:30 [INF] Request finished in 0.5279ms 200 application/javascript; charset=utf-8
+2023-03-31 12:51:07.271 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:51:07.278 +05:30 [INF] Request finished in 7.2779ms 200 application/javascript; charset=utf-8
+2023-03-31 12:51:07.505 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 12:51:07.557 +05:30 [INF] Request finished in 52.1914ms 200 application/json;charset=utf-8
+2023-03-31 12:54:20.176 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Booking/GetBookingById?bookingId=0  
+2023-03-31 12:54:20.202 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 12:54:20.205 +05:30 [INF] Route matched with {action = "GetBookingById", controller = "Booking"}. Executing controller action with signature Office_Seat_Book_Entity.Booking GetBookingById(Int32) on controller OfficeAPI.Controllers.BookingController (OfficeAPI).
+2023-03-31 12:54:20.216 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 12:54:20.229 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[BookingID], [b].[Emp_Status], [b].[EmployeeID], [b].[Food_Type], [b].[From_Date], [b].[Seat_No], [b].[Shift_Time], [b].[To_Date], [b].[Type_Of_Request], [b].[Vehicle], [b].[booking_Status]
+FROM [booking] AS [b]
+WHERE [b].[BookingID] = @__p_0
+2023-03-31 12:54:20.230 +05:30 [INF] Executing ObjectResult, writing value of type 'null'.
+2023-03-31 12:54:20.230 +05:30 [INF] Executed action OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI) in 24.3951ms
+2023-03-31 12:54:20.231 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.BookingController.GetBookingById (OfficeAPI)'
+2023-03-31 12:54:20.231 +05:30 [INF] Request finished in 55.4123ms 204 
+2023-03-31 14:12:16.900 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 14:12:17.001 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 14:12:17.001 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 14:12:17.001 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 14:12:17.019 +05:30 [INF] Hosting environment: Development
+2023-03-31 14:12:17.020 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 14:12:17.193 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 14:12:17.285 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 14:12:17.329 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 14:12:17.382 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 74.9854ms
+2023-03-31 14:12:17.386 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 14:12:17.397 +05:30 [INF] Request finished in 408.1487ms 200 application/json; charset=utf-8
+2023-03-31 14:12:17.636 +05:30 [INF] Request finished in 648.2511ms 200 text/html;charset=utf-8
+2023-03-31 14:12:17.636 +05:30 [INF] Request finished in 648.2422ms 200 text/html;charset=utf-8
+2023-03-31 14:12:17.653 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 14:12:17.659 +05:30 [INF] Request finished in 6.7285ms 200 application/javascript; charset=utf-8
+2023-03-31 14:12:17.723 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 14:12:17.844 +05:30 [INF] Request finished in 121.1144ms 200 text/javascript; charset=UTF-8
+2023-03-31 14:12:18.019 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 14:12:18.478 +05:30 [INF] Request finished in 459.0745ms 200 application/json;charset=utf-8
+2023-03-31 14:17:14.688 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 14:17:14.695 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 14:17:14.708 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 14:17:15.783 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 14:17:16.662 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 14:17:16.746 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 14:17:16.749 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 2040.5142ms
+2023-03-31 14:17:16.749 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 14:17:16.752 +05:30 [INF] Request finished in 2065.9499ms 200 application/json; charset=utf-8
+2023-03-31 14:21:41.632 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 14:21:41.861 +05:30 [INF] Hosting environment: Development
+2023-03-31 14:21:41.864 +05:30 [INF] Content root path: C:\Users\Harshjeet.Kumar\Desktop\New POC\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 14:21:41.875 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 14:21:41.876 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 14:21:41.875 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 14:21:42.017 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 14:21:42.063 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 14:21:42.095 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 14:21:42.134 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 50.2569ms
+2023-03-31 14:21:42.138 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 14:21:42.163 +05:30 [INF] Request finished in 288.1339ms 200 application/json; charset=utf-8
+2023-03-31 14:21:42.425 +05:30 [INF] Request finished in 559.7105ms 200 text/html;charset=utf-8
+2023-03-31 14:21:42.425 +05:30 [INF] Request finished in 559.7077ms 200 text/html;charset=utf-8
+2023-03-31 14:21:42.455 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 14:21:42.464 +05:30 [INF] Request finished in 8.337ms 200 application/javascript; charset=utf-8
+2023-03-31 14:21:42.509 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 14:21:42.592 +05:30 [INF] Request finished in 83.7352ms 200 text/javascript; charset=UTF-8
+2023-03-31 14:21:42.767 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 14:21:43.001 +05:30 [INF] Request finished in 234.1801ms 200 application/json;charset=utf-8
+2023-03-31 14:24:37.920 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:44332/api/Employee/Login application/json; charset=utf-8 167
+2023-03-31 14:24:37.926 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 14:24:37.935 +05:30 [INF] Route matched with {action = "Login", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee Login(Office_Seat_Book_Entity.Employee) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 14:24:39.418 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 14:24:40.518 +05:30 [INF] Executed DbCommand (78ms) [Parameters=[@__employee_Email_0='?' (Size = 4000), @__employee_Password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE ([e].[Email] = @__employee_Email_0) AND ([e].[Password] = @__employee_Password_1)
+2023-03-31 14:24:40.718 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 14:24:40.722 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI) in 2786.8445ms
+2023-03-31 14:24:40.723 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.Login (OfficeAPI)'
+2023-03-31 14:24:40.727 +05:30 [INF] Request finished in 2808.6909ms 200 application/json; charset=utf-8
+2023-03-31 14:24:40.886 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44332/api/Employee/GetEmployeeById?EmployeeId=1  
+2023-03-31 14:24:40.889 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-31 14:24:40.893 +05:30 [INF] Route matched with {action = "GetEmployeeById", controller = "Employee"}. Executing controller action with signature Office_Seat_Book_Entity.Employee GetEmployeeById(Int32) on controller OfficeAPI.Controllers.EmployeeController (OfficeAPI).
+2023-03-31 14:24:40.939 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-31 14:24:40.968 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmpID], [e].[Designation], [e].[Email], [e].[Gender], [e].[Name], [e].[Password], [e].[PhoneNo], [e].[Place], [e].[Role], [e].[Secret_Key]
+FROM [employee] AS [e]
+WHERE [e].[EmpID] = @__p_0
+2023-03-31 14:24:40.968 +05:30 [INF] Executing ObjectResult, writing value of type 'Office_Seat_Book_Entity.Employee'.
+2023-03-31 14:24:40.969 +05:30 [INF] Executed action OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI) in 75.6981ms
+2023-03-31 14:24:40.969 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.GetEmployeeById (OfficeAPI)'
+2023-03-31 14:24:40.969 +05:30 [INF] Request finished in 83.1548ms 200 application/json; charset=utf-8
