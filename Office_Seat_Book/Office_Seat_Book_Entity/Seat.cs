@@ -12,6 +12,9 @@ namespace Office_Seat_Book_Entity
         public int Seat_No { get; set; }
 
 
+        public bool seat_flag { get; set; }
+
+
         [ForeignKey("Floor")]
         public int FloorID { get; set; }
         public Floor Floor { get; set; }

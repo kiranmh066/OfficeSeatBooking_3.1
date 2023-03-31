@@ -31,7 +31,7 @@ namespace Office_Seat_Book_Entity
         public DateTime To_Date { get; set; }
 
         [AllowNull]
-        public DateTime Shift_Time { get; set; }
+        public string Shift_Time { get; set; }
 
         [ForeignKey("seat")]
         public int Seat_No { get; set; }
@@ -40,7 +40,8 @@ namespace Office_Seat_Book_Entity
         [AllowNull]
         public int booking_Status { get; set; }
 
-        [AllowNull]
+
+        [Required]
         public bool Vehicle { get; set; }
 
         [AllowNull]

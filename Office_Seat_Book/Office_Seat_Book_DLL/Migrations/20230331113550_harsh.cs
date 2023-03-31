@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
-    public partial class kiran : Migration
+    public partial class harsh : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     EmpID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "varchar(30)", nullable: true),
-                    PhoneNo = table.Column<int>(type: "int", nullable: false),
+                    PhoneNo = table.Column<double>(type: "float", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(1)", nullable: false),
@@ -67,6 +67,7 @@ namespace Office_Seat_Book_DLL.Migrations
                 {
                     Seat_No = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    seat_flag = table.Column<bool>(type: "bit", nullable: false),
                     FloorID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -91,10 +92,10 @@ namespace Office_Seat_Book_DLL.Migrations
                     Type_Of_Request = table.Column<int>(type: "int", nullable: false),
                     From_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     To_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Shift_Time = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Shift_Time = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Seat_No = table.Column<int>(type: "int", nullable: false),
                     booking_Status = table.Column<int>(type: "int", nullable: false),
-                    Emp_Status = table.Column<bool>(type: "bit", nullable: false),
+                    Emp_Status = table.Column<int>(type: "int", nullable: false),
                     Vehicle = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

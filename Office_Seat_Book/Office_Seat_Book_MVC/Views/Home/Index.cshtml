@@ -1,8 +1,87 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model Office_Seat_Book_Entity.Employee
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{
+
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<body>
+
+        <section class="vh-100">
+                        <div class="container-fluid h-100">
+                            <div class="row d-flex justify-content-center align-items-center h-100">
+                                <div class="col-md-9 col-lg-6 col-xl-5">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                                         class="img-fluid" alt="Login">
+                                </div>
+
+                                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                                    <h3>LOGIN</h3>
+                                <form method="post" enctype="multipart/form-data">
+
+                                        <div class="form-group">
+                                            <!-- Email input -->
+                                            <div class="form-outline mb-4 mx-5">
+                                            <input type="email" asp-controller="Employee" asp-for="Email" id="email1" class="form-control form-control-lg"
+                                                       placeholder="Enter a valid email address" />
+                                                <label class="form-label" for="email1">Email address</label>
+                                            </div>
+
+                                            <!-- Password input -->
+                                            <div class="form-outline mb-3 mx-5">
+                                            <input type="password" asp-controller="Employee" asp-for="Password" id="password1" class="form-control form-control-lg"
+                                                       placeholder="Enter password" />
+                                                <label class="form-label" for="password1">Password</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <!-- Checkbox -->
+                                            <div class="form-check mb-0 mx-4">
+                                                <input class="form-check-input me-2" type="checkbox" value="" id="form" />
+                                                <label class="form-check-label" for="form">
+                                                    Remember me
+                                                </label>
+                                            </div>
+                                        <a asp-controller="Forgot" asp-action="Index" type="button">Forgot Password</a>
+                                        </div>
+
+                                        <div class="text-center text-lg-start mt-4 pt-2 mx-5">
+                                            <button type="submit" value="Login" class="btn btn-primary btn-lg" onclick="login()"
+                                                    style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                                                Login
+                                            </button>
+                                        <button type="reset" value="Reset" class="btn btn-primary btn-lg" onclick="reset()"
+                                        style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                                       Reset
+                                      </button>
+                                        </div>
+                                    @if (ViewBag.status == "Ok")
+                                    {
+                                        <br />
+                                        <div class="alert alert-success">
+                                            @ViewBag.message
+                                        </div>
+                                    }
+                                    else if (ViewBag.status == "Error")
+                                    {
+                                        <br />
+                                        <div class="alert alert-danger">
+                                            @ViewBag.message
+                                        </div>
+                                    }
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                   
+
+</body>
+
+
+
+    

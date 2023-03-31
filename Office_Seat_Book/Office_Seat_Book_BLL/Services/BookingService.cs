@@ -15,9 +15,9 @@ namespace Office_Seat_Book_BLL.Services
         }
 
         //Add Appointment
-        public void AddBooking(Booking booking)
+        public int AddBooking(Booking booking)
         {
-            _bookingRepost.AddBooking(booking);
+           return _bookingRepost.AddBooking(booking);
         }
 
         //Delete Appointment

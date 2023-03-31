@@ -15,6 +15,6 @@ namespace Office_Seat_Book_DLL.Repost
 
         IEnumerable<Booking> GetBookings();
 
-        void AddBooking(Booking booking);
+        int AddBooking(Booking booking);
     }
 }

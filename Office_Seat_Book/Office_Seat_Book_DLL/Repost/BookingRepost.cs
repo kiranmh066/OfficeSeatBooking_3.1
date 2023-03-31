@@ -1,8 +1,6 @@
 ﻿using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Office_Seat_Book_DLL.Repost
 {
@@ -15,10 +13,15 @@ namespace Office_Seat_Book_DLL.Repost
         {
             _dbContext = dbContext;
         }
-        public void AddBooking(Booking booking)
+        public int AddBooking(Booking booking)
         {
             _dbContext.booking.Add(booking);
             _dbContext.SaveChanges();
+            List<Booking> list = new List<Booking>();
+            list = _dbContext.booking.ToList();
+            var booking1 = (from list1 in list
+                               select list1).Last();
+            return booking1.BookingID;
         }
 
         public void DeleteBooking(int bookingId)

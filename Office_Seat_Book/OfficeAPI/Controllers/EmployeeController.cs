@@ -5,6 +5,8 @@ using Office_Seat_Book_Entity;
 using System.Collections.Generic;
 using System;
 using Microsoft.Extensions.Logging;
+using Serilog.Core;
+using Serilog;
 
 namespace OfficeAPI.Controllers
 {
@@ -13,13 +15,15 @@ namespace OfficeAPI.Controllers
     public class EmployeeController : ControllerBase
     {
         private EmployeeService _EmployeeService;
-        //private readonly ILogger<EmployeeController> _logger;
+        private readonly ILogger<EmployeeController> _logger;
+
         public EmployeeController(EmployeeService employeeService)
         {
-
+            
             _EmployeeService = employeeService;
            
         }
+
         [HttpGet("GetEmployees")]
         public IEnumerable<Employee> GetEmployees()
         {
@@ -93,16 +97,17 @@ namespace OfficeAPI.Controllers
                     //_logger.LogInformation("Logging demo");
                     //_logger.LogWarning("logging Warning");
                     //_logger.LogError("Log Errror");
-                    //_logger.LogCritical("Emai Log");
+                    //_logger.LogCritical("Email Log");
                     return null;
                 }
+                
             }
             catch (NullReferenceException)
             {
-                //_logger.LogInformation("Logging demo");
-                //_logger.LogWarning("logging Warning");
-                //_logger.LogError("Log Errror");
-                //_logger.LogCritical("Emai Log");
+                _logger.LogInformation("Logging demo");
+                _logger.LogWarning("logging Warning");
+                _logger.LogError("Log Errror");
+                _logger.LogCritical("Email Log");
                 return null;
             }
             #endregion

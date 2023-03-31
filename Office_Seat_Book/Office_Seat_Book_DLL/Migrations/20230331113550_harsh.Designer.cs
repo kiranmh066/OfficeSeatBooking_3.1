@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230329045051_kiran")]
-    partial class kiran
+    [Migration("20230331113550_harsh")]
+    partial class harsh
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,8 +28,8 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<bool>("Emp_Status")
-                        .HasColumnType("bit");
+                    b.Property<int>("Emp_Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("EmployeeID")
                         .HasColumnType("int");
@@ -43,8 +43,9 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("Seat_No")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Shift_Time")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Shift_Time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("To_Date")
                         .HasColumnType("datetime2");
@@ -92,8 +93,8 @@ namespace Office_Seat_Book_DLL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNo")
-                        .HasColumnType("int");
+                    b.Property<double>("PhoneNo")
+                        .HasColumnType("float");
 
                     b.Property<string>("Place")
                         .HasColumnType("varchar(30)");
@@ -155,6 +156,9 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
+
+                    b.Property<bool>("seat_flag")
+                        .HasColumnType("bit");
 
                     b.HasKey("Seat_No");
 
