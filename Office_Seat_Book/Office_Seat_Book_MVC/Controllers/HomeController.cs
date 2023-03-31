@@ -59,7 +59,7 @@ namespace Office_Seat_Book_MVC.Controllers
                             if (employee_role == "ADMIN")
                                 return RedirectToAction("Index", "Admin");
                             else if (employee_role == "USER")
-                                return RedirectToAction("Index", "User");
+                                return RedirectToAction("Index", "Employee");
                             else if (employee_role == "RECEPTIONIST")
                                 return RedirectToAction("Index", "Receptionist");
                         }
