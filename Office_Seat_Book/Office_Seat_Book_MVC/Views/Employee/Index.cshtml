@@ -8,8 +8,8 @@
 @{
     ViewData["Title"] = "Index";
 } 
-
-
+@model Office_Seat_Book_Entity.Employee
+<link href="~/css/styles.css" rel="stylesheet" />
 
 <body>
     <!-- Navbar Light -->
@@ -221,8 +221,8 @@
     <div class="row">
         <div class="col-12">
             <div class=" greet text-center">
-                <p class=" head text-white pt-3 mt-n5">Good Morning.!</p>
-                <p class=" name text-white mt-3">Shaan Ram</p>
+                <p class=" head text-white  mt-n5">Good Morning.!</p>
+                <p class=" name text-white mt-3">@Model.Name</p>
             </div>
         </div>
     </div>
@@ -270,9 +270,10 @@
     <div class="row card-div">
         <div class="col-12 col-md-6 col-xl-6 col-xxl-6">
             <div class="buttons">
-                <button class="button btn-lg">
-                    Book a Seat
-                </button>
+                @*<button class="button btn-lg">*@
+                <a  asp-area="" asp-controller="Employee" asp-action="BookSeat"><button class="button btn-lg"> Book a Seat</button></a>
+                   
+               @* </button>*@
                 <button class="button btn-lg">
                     Previous booking
                 </button>

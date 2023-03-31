@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Book_Entity;
+using System;
+using System.Collections.Generic;
+
+using System.Drawing;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace Office_Seat_Book_DLL
@@ -24,8 +28,8 @@ namespace Office_Seat_Book_DLL
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
+            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-2JIKDUR\\SQLEXPRESS; Initial Catalog = Office2; Integrated Security = True;");
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-FICLE82\\SQLEXPRESS; Initial Catalog = OfficeDbchan4; Integrated Security = True;");
 
 
 
