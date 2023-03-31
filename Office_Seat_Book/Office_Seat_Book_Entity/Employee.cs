@@ -18,7 +18,7 @@ namespace Office_Seat_Book_Entity
         public string Name { get; set; }
 
         [AllowNull]
-        public int PhoneNo { get; set; }
+        public double PhoneNo { get; set; }
 
         [Required]
         public string Email { get; set; }
@@ -40,5 +40,7 @@ namespace Office_Seat_Book_Entity
 
         [AllowNull]
         public string Designation { get; set; }
+
+       
     }
 }

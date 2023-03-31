@@ -67,6 +67,11 @@ namespace OfficeAPI.Controllers
                 return BadRequest(400);
             }
         }
+        [HttpGet("GetSeatsByFloorId")]
+        public IEnumerable<Seat> GetSeats(int floorId)
+        {
+            return _SeatService.GetSeatsByFloorId(floorId);
+        }
 
     }
 }
