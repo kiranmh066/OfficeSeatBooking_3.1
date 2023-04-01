@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Office_Seat_Book_Entity.Seat>
+@*//this name should be the name of projects under dependencies after adding referrences in MvcUi*@
+@{
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+
+}
+<body>
+<div class="container">
+    <center>
+        <h2 class="text-light text-center">Select Your Seat</h2>
+        <div class=" row">
+           @{
+                    int c = 0;
+
+            @foreach (var item in Model)
+            {
+                    <div class="col-2">
+                           
+                     @if (item.seat_flag == true )
+                      {
+                                c++;
+                      
+                            <div>
+                                    <a asp-controller="User" asp-action="BookSeatByUpdatingSeatId" asp-route-SeatId="@item.Seat_No" class="btn">
+                                        Seat Num:@item.Seat_No<svg width="40" height="50">
+                                        <rect x="5" y="5" rx="5" ry="5" width="30" height="30"
+                                              style="fill:green;stroke:black;stroke-width:5;opacity:0.5" /></a>
+
+                                        @if(c==12)
+                                        {
+                                         c = 0;
+                                            <div class="row">
+                                            <div class="col-1">
+                                            <svg width="400" height="50">
+                                             <rect x="5" y="5" rx="5" ry="5" width="400" height="30"
+                                              style="fill:blue;stroke:black;stroke-width:5;opacity:0.8"/>
+                                            </div>
+                                            </div>
+                                        }
+                                
+                                </div>
+                               
+                                @* <img class="img-fluid" src="https://www.svgrepo.com/show/105314/table.svg" style="width:100px;height:100px;background-color:green" />
+                 
+                        <a asp-controller="Order" asp-action="SelectedTable" asp-route-HallTableId="@item.HallTableId" class="btn"><img class="img-fluid" src="https://www.svgrepo.com/show/105314/table.svg" style="width:100px;height:100px;background-color:green" /></a>*@
+                            }
+
+                            else
+                            {
+                                <div>
+                                    Seat Num:@item.Seat_No<svg width="40" height="50">
+                                        <rect x="5" y="5" rx="5" ry="5" width="30" height="30"
+                                              style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                                    </svg>
+
+                                </div>
+                            }
+
+                </div>
+
+            }
+            }
+        </div>
+        <div>
+            <br />
+        </div>
+    </center>
+</div>
+
+</body>

@@ -1,0 +1,284 @@
+
+@{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+@model Office_Seat_Book_Entity.Seat
+
+<body>
+    <!-- Navbar Light -->
+    <!-- <div class="mask bg-gradient-primary">
+        <img class="img"
+            src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+            alt="img">
+    </div> -->
+    <div class="bg-image"></div>
+
+
+    <!-- <nav class="navbar navbar-expand-lg  blur blur-rounded shadow my-4 ">
+            <div class="container-fluid">
+                <div class="ham">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list mx-4" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+            </div> -->
+    <!-- <div class="brand">
+                <a class="navbar-brand " style="color: rgb(0, 0, 0);">
+                 BOOK.it
+                </a>
+            </div>
+            <div class="nav col-3">
+                <div>
+                    <button class="viewpass text-white btn-md bg-success px-2" >
+                        View Pass
+                    </button>
+                </div>
+                <div class="bell">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                      </svg>
+                </div>
+                <div class="logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg>
+                </div> -->
+    <!-- <ul class="navbar-nav me-auto ">
+                        <li class="nav-item"> -->
+    <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+    <!-- <input type="checkbox" id="check" class="nav-link">
+                                    <label for="check" class="offset-xxl-2">
+                                        <i class="fas fa-bars" id="btn"></i>
+                                        <i class="fas fa-times" id="cancel"></i>
+                                    </label> -->
+    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasWithBothOptions"
+                                aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+                                <svg data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasWithBothOptions"
+                                aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                                  </svg>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
+            id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with
+                    scrolling</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+        </div>
+    </nav> -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg blur blur-rounded shadow my-4">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <svg data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                     aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                     class="bi" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                    </path>
+                </svg>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>-->
+                <div class="mx-auto order-0">
+
+                    <a class="navbar-brand mx-auto" style="color: rgb(0, 0, 0);">
+                        BOOK.it
+                    </a>
+                </div>
+                <form class="d-flex" role="search">
+                    <div style="display: flex;justify-content: space-evenly">
+                        <div>
+                            <button class="viewpass text-white btn-md bg-success px-2">
+                                View Pass
+                            </button>
+                        </div>
+                        <div class="bell">
+                            &nbsp;&nbsp;&nbsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                 class="bi bi-bell" viewBox="0 0 16 16">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                            </svg>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="logout">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                 class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                            </svg>
+                        </div>
+
+
+                </form>
+            </div>
+    </div>
+    </nav>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+         aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title text-center" id="offcanvasWithBothOptionsLabel">Menu</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a href="#">Home</a>
+                </div>
+            </section>
+            <br>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a href="#">Profile</a>
+                </div>
+            </section>
+            <br>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a href="#">Your Bookings</a>
+                </div>
+            </section>
+            <br>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a href="#">Help</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+    
+
+    <!-- <input type="checkbox" id="check">
+    <label for="check" class="offset-xxl-2">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label> -->
+    <!-- <div class="sidebar">
+        <header>My Menu</header>
+        <a href="#" class="active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-stream"></i>
+            <span>Bookings</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-info"></i>
+            <span>Help</span>
+        </a>
+        </a>
+    </div> -->
+    <div class="row">
+        <div class="col-12">
+            <div class=" greet text-center">
+                <p class=" head text-white pt-3 mt-n5">Good Morning.!</p>
+                <p class=" name text-white mt-3">Shaan Ram</p>
+                <a asp-controller="User" asp-action="FloorSelect" type="button" class="btn-success">Select Floor</a>
+            </div>
+        </div>
+    </div>
+   
+ 
+
+        <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+
+            <span class="numb">
+                0
+            </span>
+            <span class="char">
+                Approved
+            </span>
+
+        </div>
+        <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+            <span class="numb">
+                0
+            </span>
+            <span class="char">
+                Pending
+            </span>
+        </div>
+        <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+            <span class="numb">
+                0
+            </span>
+            <span class="char">
+                Rejected
+            </span>
+
+            <!-- <div class="form-groups">
+                <label for="location">Location</label>
+                <select type="location" name="location" class="form-control" required>
+                    <option value="">Location</option>
+                    <option value="male">Bengaluru</option>
+                    <option value="male">Gurgaon</option>
+                </select>
+            </div> -->
+        </div>
+
+    </div>
+
+    <div class="row card-div">
+        <div class="col-12 col-md-6 col-xl-6 col-xxl-6">
+            <div class="buttons">
+                <button class="button btn-lg">
+                    Book a Seat
+                </button>
+                <button class="button btn-lg">
+                    Previous booking
+                </button>
+            </div>
+        </div>
+    </div>
+    <a asp-controller="User" asp-action="EnterKey" type="button">GenerateSecretKey</a>
+    <br />
+    <a asp-controller="User" asp-action="GenerateQR" type="button">Generate QR</a>
+
+
+
+</body>
+
+
