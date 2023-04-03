@@ -30,17 +30,11 @@ namespace OfficeAPI.Controllers
         public int AddBooking([FromBody] Booking booking)
         {
 
-            try
-            {
-                _BookingService.AddBooking(booking);
 
+            return _BookingService.AddBooking(booking);
 
-                return  _BookingService.AddBooking(booking);
-            }
-            catch
-            {
-                return 0;
-            }
+            
+           
 
         }
         [HttpDelete("DeleteBooking")]
@@ -69,5 +63,14 @@ namespace OfficeAPI.Controllers
                 return BadRequest(400);
             }
         }
+
+        [HttpGet("GetBookingByEmpId")]
+        public Booking GetBookingByEmpId(int EmpId)
+        {
+            
+            return _BookingService.GetBookingByEmpId(EmpId);
+    
+        }
+
     }
 }

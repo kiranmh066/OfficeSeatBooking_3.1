@@ -49,6 +49,13 @@ namespace OfficeAPI
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
 
 
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
+
+            services.AddTransient<HelpService, HelpService>();
+            services.AddTransient<IHelpRepost, HelpRepost>();
+
+
             var Logger = new LoggerConfiguration()
           .MinimumLevel.Information()
           .MinimumLevel.Override("Google", LogEventLevel.Warning)

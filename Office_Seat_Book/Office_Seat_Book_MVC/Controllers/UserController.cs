@@ -9,6 +9,8 @@ using System;
 using System.Linq;
 using System.Drawing.Imaging;
 using ZXing;
+using System.Drawing;
+using System.IO;
 using ZXing.QrCode;
 using System.Collections.Generic;
 
@@ -97,18 +99,29 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();  
 
         }
-      public IActionResult GetFloorLayout()
+        public IActionResult GetFloorLayout()
         {
             return View(seats);
         }
         public async Task<IActionResult> EnterKey(SecretKey secretKeyInfo)
         {
             #region Checking whether already a generated special Key available if not it will be generated
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(1, 100);
+            /*Random rnd = new Random();
+            int randomNumber = rnd.Next(1, 100);*/
+
+            Random random = new Random();
+            int length = 4;
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var result2 = new StringBuilder(length);
+
+            for (int i = 0; i < length; i++)
+            {
+                result2.Append(chars[random.Next(chars.Length)]);
+            }
 
             secretKeyInfo.EmpID = Convert.ToInt32(TempData["EmpId"]);
-            secretKeyInfo.SpecialKey = randomNumber.ToString();
+            TempData.Keep();
+            secretKeyInfo.SpecialKey = result2.ToString();
 
             using (HttpClient client = new HttpClient())
             {
@@ -198,7 +211,8 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public async Task<IActionResult> GenerateQR()
         {
-            /*int empId = Convert.ToInt32(TempData["EmpId"]);
+            #region Generating Displaying QR
+            int empId = Convert.ToInt32(TempData["EmpId"]);
             SecretKey secretKey = null;
 
             using (HttpClient client = new HttpClient())
@@ -216,11 +230,8 @@ namespace Office_Seat_Book_MVC.Controllers
             BarcodeWriter barcodeWriter = new BarcodeWriter();
             barcodeWriter.Format = BarcodeFormat.QR_CODE;
             var bitmap = barcodeWriter.Write(secretKey.SpecialKey);
-            bitmap.Save("QRCode.bmp", ImageFormat.Bmp);
-
-            string base64String = Convert.ToBase64String(BitmapToByteArray(qrCodeAsBitmap));
-            model.QRImageURL = "data:image/png;base64," + base64String;*/
-
+            bitmap.Save(@"C:\POC\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_MVC\wwwroot\QRCode.bmp", ImageFormat.Bmp);
+            #endregion
             return View();
         }
     }
