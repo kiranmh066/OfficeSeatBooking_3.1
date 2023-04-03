@@ -9,7 +9,6 @@ using OfficeAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OfficeAPITests.Controller.Tests
@@ -125,8 +124,8 @@ namespace OfficeAPITests.Controller.Tests
                  Throws(new Exception());
             bookingController = new BookingController(new BookingService(moq.Object));
             var result = bookingController.AddBooking(booking);
-           /* var Obj = result as ObjectResult;
-            Assert.AreEqual(Obj.StatusCode, 200);*/
+            /* var Obj = result as ObjectResult;
+             Assert.AreEqual(Obj.StatusCode, 200);*/
         }
     }
 }

@@ -5,6 +5,7 @@ body{
   background-repeat: no-repeat;
   background-color: linear-gradient(310deg,#7928ca,#ff0080);
 }
+
 .img{
   position:absolute;
   height:100%;

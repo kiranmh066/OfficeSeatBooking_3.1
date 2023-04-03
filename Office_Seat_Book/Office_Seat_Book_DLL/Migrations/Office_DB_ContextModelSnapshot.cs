@@ -138,6 +138,9 @@ namespace Office_Seat_Book_DLL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Parking_Number")
+                        .HasColumnType("int");
+
                     b.HasKey("ParkingID");
 
                     b.HasIndex("BookingID");

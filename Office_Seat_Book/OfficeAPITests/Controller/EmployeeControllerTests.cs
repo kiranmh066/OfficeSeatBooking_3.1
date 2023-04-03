@@ -1,6 +1,5 @@
 ﻿using AutoFixture;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Office_Seat_Book_BLL.Services;
@@ -10,7 +9,6 @@ using OfficeAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OfficeAPITests.Controller.Tests
@@ -98,12 +96,12 @@ namespace OfficeAPITests.Controller.Tests
         public void GetEmployeeById_ExistingIdPassed_ReturnsRightItem()
         {
             //Arrange
-           var employee = _fixture.Create<Employee>();
+            var employee = _fixture.Create<Employee>();
             moq.Setup(x => x.GetEmployeeById(10)).Returns(employee);
             employeeController = new EmployeeController(new EmployeeService(moq.Object));
-           // Act
-           var okResult = employeeController.GetEmployeeById(1);
-           // Assert
+            // Act
+            var okResult = employeeController.GetEmployeeById(1);
+            // Assert
             Assert.AreEqual(okResult, null);
         }
         [TestMethod()]

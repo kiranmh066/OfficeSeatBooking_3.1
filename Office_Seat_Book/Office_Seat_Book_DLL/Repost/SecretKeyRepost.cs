@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Office_Seat_Book_DLL.Repost
 {
-    public class SecretKeyRepost:ISecretKeyRepost
+    public class SecretKeyRepost : ISecretKeyRepost
     {
         Office_DB_Context _dbContext;//default ecretKey
 

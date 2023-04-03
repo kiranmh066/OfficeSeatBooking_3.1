@@ -105,7 +105,7 @@
                         <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
                             <div class="card-content">
                                 <div class="form-groups">
-                                    <label for="type of request">Type of Request</label>
+                                    <label for="Select Floor">Type of Request</label>
                                  
                                     <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required></select>
                                 </div>
@@ -143,6 +143,17 @@
                     </div>
                     </div>
                     </div>
+                    <div class="row">
+                        <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
+                            <div class="card-content">
+                                <div class="form-groups">
+                                    <label for="shift time">Do You Have Vehicle?</label>
+                                    <select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" required></select>
+                                </div>
+                                <p class="card-description"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -154,7 +165,7 @@
         <div class="row card-div">
 
             <div class="buttons">
-                <input type="submit" class="btnRegister" value="Search For Seats" />
+                <input type="submit" class="btn btn-danger" value="Search For Seats" style="width:150px;height:75px" />
             </div>
         </div>
 
