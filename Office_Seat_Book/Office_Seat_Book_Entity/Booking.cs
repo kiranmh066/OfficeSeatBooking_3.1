@@ -40,11 +40,8 @@ namespace Office_Seat_Book_Entity
         [AllowNull]
         public int booking_Status { get; set; }
 
-
         [Required]
         public bool Vehicle { get; set; }
 
-        [AllowNull]
-        public bool Emp_Status { get; set; }
     }
 }

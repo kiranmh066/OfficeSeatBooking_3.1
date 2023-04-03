@@ -1,7 +1,6 @@
 ﻿@{
-    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
-
 @{
     ViewData["Title"] = "BookSeat";
 }
@@ -94,6 +93,7 @@
             </div>
         </div>
     </div>
+     <form method="post" enctype="multipart/form-data">
     <div class="container col-12">
         <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4">
             <label for="location">Location</label>
@@ -115,7 +115,7 @@
 
         <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
             <label for="branch">Type of Request</label>
-            <select type="branch" name="branch" class="form-control" required>
+            <select type="branch" name="branch" asp-for="Type_Of_Request" required>
                 <option value=""></option>
                 <option value="">Daily</option>
                 <option value="">Weekly</option>
@@ -125,16 +125,16 @@
         <div class="date col mx-4 my-2">
             <div>
                 From
-                <input type="date" id="fromDate">
+                <input type="date" id="fromDate" asp-for="From_Date">
             </div> <br>
             <div>
                 To  &nbsp; &nbsp;
-                <input type="date" id="toDate">
+                <input type="date" id="toDate" asp-for="To_Date">
             </div>
         </div>
         <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
             <label for="shift-time">Select Shift TIme</label>
-            <select type="shift-time" name="shift-time" class="form-control" required>
+            <select type="shift-time" name="shift-time" class="form-control" asp-for="Shift_Time" required>
                 <option value=""></option>
                 <option value="">09:00 AM - 06:00 PM</option>
                 <option value="">06:00 AM - 02:00 PM</option>
@@ -143,9 +143,10 @@
             </select>
         </div>
         <button class="btn btn-primary mx-4">
-            Next &nbsp; >
+                <a style="text-decoration:none; color:white"  asp-controller="Employee" asp-action="BookSeat2">Next</a>
         </button>
     </div>
+    </form>
 </body>
 <script>
     const today = new Date().toISOString().split('T')[0];
