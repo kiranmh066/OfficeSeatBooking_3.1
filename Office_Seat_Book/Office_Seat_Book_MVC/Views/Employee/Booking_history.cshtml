@@ -1,33 +1,140 @@
 ﻿@{
-    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
-
 
 @model IEnumerable<Office_Seat_Book_Entity.Booking>
 @{
     ViewData["Title"] = "Booking_history";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width-device-width" />
-</head>
-<body>
-    <br />
-    <a asp-area="" asp-controller="Admin" asp-action="Index"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
-    <br />
-    <br />
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <a class="text-uppercase d-inline-block text-center" style="color:#003399;font-size:x-large" align="center"> Doctor <span class="font-weight-bold" style="font-size:x-large">Details</span></a>
 
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
+  <head>
+    <title>View Booking Status</title>
+    <style>
+      body {
+      
+        background: radial-gradient( #33ccff 0%, #ff99cc 100%);
+        color: rgb(4, 4, 4);
+        padding-bottom: 100px;
+        border-collapse: collapse;
+        background-repeat: repeat;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        margin-top: 50px;
+        
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: bolder;
+        color:blue;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: aliceblue;
+        border:2px solid black;
+        box-shadow: 0 2px 2px 2px grey;
+
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid rgb(11, 10, 10);
+       
+      }
+
+      th {
+        font-weight: bold;
+        background-color: silver;
+      }
+
+      tr:hover {
+        background-color:rgb(214, 214, 238);
+      }
+
+      img {
+        height: 40px;
+      }
+
+      .delete img {
+        height: 50px;
+      }
+
+      .delete:hover img {
+  animation: shake 0.5s;
+}
+
+keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.delete img:hover {
+  animation: zoomIn 0.5s ease;
+}
+
+table {
+  transform: translateY(-100%);
+  animation: bounce-in-top 1s forwards;
+}
+
+keyframes bounce-in-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(30%);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>View Bookings Status</h1>
+      <hr />
+      <table>
+        <thead>
+                <h1>View Bookings Status</h1>
+                <tr>&nbsp;</tr>
+          <tr>
                             <th>Booking Id</th>
                             <th>Employee Id</th>
                             <th>Food_Type</th>
@@ -39,10 +146,10 @@
                             <th>Booking Status</th>
                             <th>Employee Status</th>
                             <th>Vehicle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var booking in Model)
+          </tr>
+        </thead>
+        <tbody>
+             @foreach (var booking in Model)
                         {
                             <tr>
                                 <td>@booking.BookingID</td>
@@ -53,17 +160,16 @@
                                 <td>@booking.To_Date.ToShortDateString()</td>
                                 <td>@booking.Shift_Time</td>
                                 <td>@booking.Seat_No</td>
-                                <td>@booking.booking_Status</td>
-                                <td>@booking.Emp_Status</td>
+                                <td>@booking.Booking_Status</td>
+                              
                                 <td>@booking.Vehicle</td>
 @*                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="EditEmp" asp-route-EmpID="@employee.EmpID"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
 *@                            </tr>
                         }
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        </tbody>
+      </table>
     </div>
-</body>
-</html>
+  </body>
+
+
 

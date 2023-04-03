@@ -1,5 +1,3 @@
-using System;
-
 namespace Office_Seat_Book_MVC.Models
 {
     public class ErrorViewModel

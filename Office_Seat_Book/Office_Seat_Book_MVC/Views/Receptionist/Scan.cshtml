@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Scan";
+}
+
+<h1>Scan</h1>
+
+<style>
+    #video {
+        display: block;
+        margin: 0 auto;
+        width: 320px;
+        height: 240px;
+    }
+
+    #canvas {
+        display: none;
+    }
+</style>
+<body>
+
+    <video id="video" autoplay="autoplay"></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    @*<script src="https://unpkg.com/@zxing/library@0.19.2/umd/index.min.js"></script>*@
+    <script>
+        const codeReader = new ZXing.BrowserQRCodeReader();
+        const video = document.getElementById('video');
+        const canvasElement = document.getElementById('canvas');
+        const canvas = canvasElement.getContext('2d');
+
+        codeReader.decodeFromVideoDevice(null, 'video', (result, error) => {
+            if (result) {
+                alert(result.text);
+            }
+            if (error) {
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+

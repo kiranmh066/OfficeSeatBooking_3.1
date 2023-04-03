@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+@{
+    ViewData["Title"] = "SelectingVehicle";
+}
+@model Office_Seat_Book_Entity.Parking
+
+<h1>Please Select The Vehicle Type?</h1>
+<form method="post">
+    <div class="row">
+        <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
+            <div class="card-content">
+                <div class="form-groups">
+                    <label for="type of request">Select Vehicle</label>
+                    <select asp-for="ParkingType" class="form-control" asp-items="@ViewBag.Type_of_Vehicle" required></select>
+                </div>
+                <p class="card-description"></p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row card-div">
+
+        <div class="button">
+            <input type="submit" class="btn btn-danger" value="Search Parking Slot"/>
+            @*<a asp-controller="Employee" asp-action="SelectingVehicle" class="btn btn-danger">Search Map</a>*@
+        </div>
+    </div>
+</form>
+
+
+
