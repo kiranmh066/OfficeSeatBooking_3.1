@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Book_Entity;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace Office_Seat_Book_DLL

@@ -20,9 +20,23 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             _configuration = configuration;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            int PatientProfileId = 1;
+            Employee employee = null;
+            using (HttpClient client = new HttpClient())
+            {
+                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + PatientProfileId;
+                using (var response = await client.GetAsync(endpoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        employee = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            return View(employee);
         }
         public List<SelectListItem> ShiftTiming()
         {
@@ -69,7 +83,6 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.EmployeeID =Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No =1;
-            
             booking.Food_Type = 1;
             booking.Vehicle = true;
             booking.booking_Status = 0;
@@ -162,7 +175,6 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No = 1;
-           
             booking.Food_Type = 1;
             booking.Vehicle = true;
             booking.booking_Status = 0;

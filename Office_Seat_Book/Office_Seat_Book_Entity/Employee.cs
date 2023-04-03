@@ -31,12 +31,5 @@ namespace Office_Seat_Book_Entity
 
         public bool EmployeeStatus { get;set; }
 
-
-
-
-
-
-    
-       
     }
 }

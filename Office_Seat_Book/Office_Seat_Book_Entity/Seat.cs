@@ -9,7 +9,6 @@ namespace Office_Seat_Book_Entity
     public class Seat
     {
         [Key]
-    
         public int Seat_No { get; set; }
 
 

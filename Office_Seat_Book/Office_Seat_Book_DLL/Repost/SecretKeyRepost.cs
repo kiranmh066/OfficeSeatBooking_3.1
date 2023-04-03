@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Book_Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 

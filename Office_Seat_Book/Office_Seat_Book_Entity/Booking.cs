@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Office_Seat_Book_Entity
 {
     public class Booking
     {
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BookingID { get; set; }
@@ -18,29 +18,30 @@ namespace Office_Seat_Book_Entity
         public Employee employee { get; set; }
 
 
-        [Required]
+        [AllowNull]
         public int Food_Type { get; set; }
-
-        [Required]
+            
+        [AllowNull]
         public int Type_Of_Request { get; set; }
 
-        [Required]
+        [AllowNull]
         public DateTime From_Date { get; set; }
 
-        [Required]
+        [AllowNull]
         public DateTime To_Date { get; set; }
 
-        [Required]
+        [AllowNull]
         public string Shift_Time { get; set; }
 
         [ForeignKey("seat")]
         public int Seat_No { get; set; }
         public Seat seat { get; set; }
 
-        [Required]
+        [AllowNull]
         public int booking_Status { get; set; }
 
         [Required]
         public bool Vehicle { get; set; }
+
     }
 }
