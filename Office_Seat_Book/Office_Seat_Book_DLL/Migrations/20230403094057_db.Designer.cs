@@ -10,7 +10,7 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230403062935_db")]
+    [Migration("20230403094057_db")]
     partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,7 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Emp_Status")
+                    b.Property<int>("Booking_Status")
                         .HasColumnType("int");
 
                     b.Property<int>("EmployeeID")
@@ -44,7 +44,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Shift_Time")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("To_Date")
@@ -55,9 +54,6 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<bool>("Vehicle")
                         .HasColumnType("bit");
-
-                    b.Property<int>("booking_Status")
-                        .HasColumnType("int");
 
                     b.HasKey("BookingID");
 
@@ -75,12 +71,12 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Designation")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmployeeStatus")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -95,9 +91,6 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<double>("PhoneNo")
                         .HasColumnType("float");
-
-                    b.Property<string>("Place")
-                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
@@ -118,12 +111,34 @@ namespace Office_Seat_Book_DLL.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("FloorName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FloorID");
 
                     b.ToTable("floor");
+                });
+
+            modelBuilder.Entity("Office_Seat_Book_Entity.Help", b =>
+                {
+                    b.Property<int>("HelpId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmpID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TypeOfQuery")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("HelpId");
+
+                    b.HasIndex("EmpID");
+
+                    b.ToTable("help");
                 });
 
             modelBuilder.Entity("Office_Seat_Book_Entity.Parking", b =>
@@ -137,7 +152,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ParkingType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Parking_Number")
@@ -160,7 +174,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("seat_flag")
+                    b.Property<bool>("Seat_flag")
                         .HasColumnType("bit");
 
                     b.HasKey("Seat_No");
@@ -207,6 +221,17 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Navigation("employee");
 
                     b.Navigation("seat");
+                });
+
+            modelBuilder.Entity("Office_Seat_Book_Entity.Help", b =>
+                {
+                    b.HasOne("Office_Seat_Book_Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmpID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Office_Seat_Book_Entity.Parking", b =>

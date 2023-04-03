@@ -20,15 +20,27 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             _configuration = configuration;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-
+            int PatientProfileId = 1;
+            Employee employee = null;
+            using (HttpClient client = new HttpClient())
+            {
+                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + PatientProfileId;
+                using (var response = await client.GetAsync(endpoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        employee = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            return View(employee);
+        }    
         public async Task<IActionResult> Profile()
         {
-            #region Patient profile
+            #region profile
             //storing the profile Id
             /* int PatientProfileId = Convert.ToInt32(TempData["ProfileID"]);
              TempData.Keep();*/
@@ -108,7 +120,6 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> BookSeat(Booking booking)
         {
-
             booking.Shift_Time = "Nothing";
             booking.From_Date = DateTime.Today;
             booking.To_Date = DateTime.Today;
@@ -117,10 +128,11 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No = 1;
-            booking.Emp_Status = 1;
             booking.Food_Type = 1;
             booking.Vehicle = true;
-            booking.booking_Status = 0;
+            booking.Booking_Status = 0;
+
+            booking.Shift_Time = "nothing";
 
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
@@ -210,10 +222,9 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No = 1;
-            booking.Emp_Status = 1;
             booking.Food_Type = 1;
             TempData["Vehical"] = booking.Vehicle;
-            booking.booking_Status = 0;
+            booking.Booking_Status = 0;
             int floorId = booking.seat.FloorID;
             booking.seat = null;
             ViewBag.status = "";
@@ -307,6 +318,38 @@ namespace Office_Seat_Book_MVC.Controllers
 
                 }
             }
+
+            Seat seat = new Seat();
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/GetSeatById?seatId=" + SeatId;
+                //EmployeeId is apicontroleer passing argument name
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {   //dynamic viewbag we can create any variable name in run time
+                        var result = await response.Content.ReadAsStringAsync();
+                        seat = JsonConvert.DeserializeObject<Seat>(result);
+                    }
+                }
+            }
+            seat.Seat_flag = false;
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/UpdateSeat";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {   //dynamic viewbag we can create any variable name in run time
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Seat Booked Successfully!!";
+                    }
+                  
+
+                }
+            }
+
 
 
             return View();

@@ -1,15 +1,18 @@
+
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Office_Seat_Book_Entity
 {
     public class Floor
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FloorID { get; set; }
 
-        [Required]
+        [AllowNull]
         public string FloorName { get; set; }
     }
 }

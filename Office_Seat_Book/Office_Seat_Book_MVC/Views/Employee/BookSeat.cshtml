@@ -9,7 +9,7 @@
 @model Office_Seat_Book_Entity.Booking
 
 <body>
-    
+
     <div class="container">
         <nav class="navbar navbar-expand-lg blur blur-rounded shadow my-4">
             <div class="container-fluid">
@@ -53,7 +53,7 @@
                             </svg>
                         </div>
 
-                        </div>
+                    </div>
                 </form>
             </div>
         </nav>
@@ -94,110 +94,110 @@
 
 
     <form method="post">
-    <div class="card-div ">
+        <div class="card-div ">
 
 
-        <div class="container1 ">
-            <div class="row">
-               @* <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                        <div class="card-content">
-                            <div class="form-groups">
-                                <label for="location">Location</label>
-                                <select type="location" name="location" class="form-control" required>
-                                    <option value=""></option>
-                                    <option value="">Bengaluru</option>
-                                    <option value="">Gurgaon</option>
-                                </select>
-                            </div>
-                            <p class="card-description"></p>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="container1 ">
                 <div class="row">
+                    @* <div class="row">
                     <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                        <div class="card-content">
-                            <div class="form-groups">
-                                <label for="branch">Branch</label>
-                                <select type="branch" name="branch" class="form-control" required>
-                                    <option value=""></option>
-                                    <option value="">JP Nagar</option>
-                                </select>
+                    <div class="card-content">
+                    <div class="form-groups">
+                    <label for="location">Location</label>
+                    <select type="location" name="location" class="form-control" required>
+                    <option value=""></option>
+                    <option value="">Bengaluru</option>
+                    <option value="">Gurgaon</option>
+                    </select>
+                    </div>
+                    <p class="card-description"></p>
+
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
+                    <div class="card-content">
+                    <div class="form-groups">
+                    <label for="branch">Branch</label>
+                    <select type="branch" name="branch" class="form-control" required>
+                    <option value=""></option>
+                    <option value="">JP Nagar</option>
+                    </select>
+                    </div>
+                    <p class="card-description"></p>
+                    </div>
+                    </div>
+                    </div>
+                    @* <div class="row">
+                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
+                    <div class="card-content">
+                    <div class="form-groups">
+                    <label for="parking">Parking</label>
+                    <select type="parking" name="parking" class="form-control" required>
+                    <option value=""></option>
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                    </select>
+                    </div>
+                    <p class="card-description"></p>
+                    </div>
+                    </div>
+                    </div>*@
+                    <div class="row">
+                        <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
+                            <div class="card-content">
+                                <div class="form-groups">
+                                    <label for="type of request">Type of Request</label>
+                                    <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
+                                </div>
+                                <p class="card-description"></p>
                             </div>
-                            <p class="card-description"></p>
                         </div>
                     </div>
-                </div>
-               @* <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                        <div class="card-content">
-                            <div class="form-groups">
-                                <label for="parking">Parking</label>
-                                <select type="parking" name="parking" class="form-control" required>
-                                    <option value=""></option>
-                                    <option value="">Yes</option>
-                                    <option value="">No</option>
-                                </select>
-                            </div>
-                            <p class="card-description"></p>
-                        </div>
-                    </div>
-                </div>*@
-                <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                        <div class="card-content">
-                            <div class="form-groups">
-                                <label for="type of request">Type of Request</label>
-                                <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
-                            </div>
-                            <p class="card-description"></p>
-                        </div>
-                    </div>
-                </div>
-               @* <div class="row text-center">
+                    @* <div class="row text-center">
                     <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
-                        <div class="card-content col-12">
-                            <label for="date-picker">From Date</label>
-                            <br>
-                            <input asp-for="From_Date" type="date" class="form-control" placeholder="Birthday date *" value="" />
-                            <p class="card-description"></p>
-                        </div>
+                    <div class="card-content col-12">
+                    <label for="date-picker">From Date</label>
+                    <br>
+                    <input asp-for="From_Date" type="date" class="form-control" placeholder="Birthday date *" value="" />
+                    <p class="card-description"></p>
+                    </div>
                     </div>
                     <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
-                        <div class="card-content col-12">
-                            <label for="date-picker"> To Date</label>
-                            <br>
-                            <input asp-for="To_Date" type="date" id="date-picker tdate" value="">
-                            <p class="card-description"></p>
-                        </div>
+                    <div class="card-content col-12">
+                    <label for="date-picker"> To Date</label>
+                    <br>
+                    <input asp-for="To_Date" type="date" id="date-picker tdate" value="">
+                    <p class="card-description"></p>
                     </div>
-                </div>
-                <div class="row">
+                    </div>
+                    </div>
+                    <div class="row">
                     <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                        <div class="card-content">
-                            <div class="form-groups">
-                                <label for="shift time">Shift Time</label>
-                                <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
-                            </div>
-                            <p class="card-description"></p>
-                        </div>
+                    <div class="card-content">
+                    <div class="form-groups">
+                    <label for="shift time">Shift Time</label>
+                    <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
                     </div>
-                </div>*@
+                    <p class="card-description"></p>
+                    </div>
+                    </div>
+                    </div>*@
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
         @*<input type="submit" class="btn alert-danger" value="Register" />*@
 
-      
-    <div class="">
-        
-            <div class="buttons" >
+
+        <div class="">
+
+            <div class="buttons">
                 <input type="submit" class="btn btn-danger" value="NEXT" style="width:150px;height:75px" />
             </div>
         </div>
-    
+
     </form>
 </body>

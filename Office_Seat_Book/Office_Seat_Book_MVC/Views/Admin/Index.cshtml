@@ -1,10 +1,7 @@
-﻿
-
-@{
-    ViewData["Title"] = "Index";
-
-    Layout = "~/Views/Shared/_Layout1.cshtml";
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 
 @*@model Office_Seat_Book_Entity.Employee*@
 
@@ -54,10 +51,10 @@
                         </svg>
                     </div>
 
-</div>
+                </div>
             </form>
         </div>
-        </nav>
+    </nav>
 </div>
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
@@ -93,7 +90,7 @@
                         <a asp-area="" asp-controller="Admin" asp-action="AddParking">Create Parking</a>
                         <a asp-area="" asp-controller="Admin" asp-action="ViewParking">Get All Parking details</a>
                         <a asp-area="" asp-controller="Admin" asp-action="ViewEmp">Get All Employee details</a>
-                        <a asp-controller="Admin" asp-action="Addseat" type="button ">  Manage Seat </a>
+                        <a asp-controller="Admin" asp-action="Addseat" type="button ">  Manage Seat </a>
                         <a asp-controller="Admin" asp-action="GetallSeat" type="button"> Get all seats Details</a>
                         <a asp-controller="Admin" asp-action="Addfloor" type="button ">Manage floor</a>
                         <a asp-controller="Admin" asp-action="Getallfloor" type="button">Get all floors Details</a>
@@ -203,4 +200,3 @@
         </div>
     </div>
 </div>
-
