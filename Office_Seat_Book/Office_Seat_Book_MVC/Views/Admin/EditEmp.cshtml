@@ -1,6 +1,7 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 
 @model Office_Seat_Book_Entity.Employee
 
@@ -32,10 +33,7 @@
                 <label style="color:#003399;font-size:20px">Email</label>
                 <input  type="text" asp-for="Email" class="form-control" placeholder="Enter Email" required />
             </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Place</label>
-                <input  type="text" asp-for="Place" class="form-control" placeholder="Enter place" required />
-            </div>
+           
             <div class="form-group">
                 <label style="color:#003399;font-size:20px">Role</label>
                 <select class="form-control" asp-for="Role">
@@ -54,10 +52,7 @@
                 <label style="color:#003399;font-size:20px">Gender</label>
                 <input  type="text" asp-for="Gender" class="form-control" placeholder="Enter gender" required />
             </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Designation</label>
-                <input  type="text" asp-for="Designation" class="form-control" placeholder="Enter Designation" required />
-            </div>
+       
             <div class="form-group">
                 <label style="color:#003399;font-size:20px">Secret Key</label>
                 <input  type="text" asp-for="Secret_Key" class="form-control" placeholder="Enter Secret Key" required />

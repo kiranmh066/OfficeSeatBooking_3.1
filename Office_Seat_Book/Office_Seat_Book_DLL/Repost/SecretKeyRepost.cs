@@ -45,7 +45,7 @@ namespace Office_Seat_Book_DLL.Repost
         }
         public SecretKey GetSecretKeyByEmpId(int empId)
         {
-            List<SecretKey> secretKeys = _dbContext.secretKey.Include(obj => obj.Employee.EmpID).ToList();
+            List<SecretKey> secretKeys = _dbContext.secretKey.Include(obj => obj.Employee).ToList();
 
             List<SecretKey> secretKeyList = new List<SecretKey>();
             foreach (var item in secretKeys)
