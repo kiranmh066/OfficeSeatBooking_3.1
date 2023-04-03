@@ -837,3 +837,45 @@ WHERE @@ROWCOUNT = 1 AND [EmpID] = scope_identity();
 2023-03-30 17:41:21.083 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.EmployeeController.AddEmployee (OfficeAPI)'
 2023-03-30 17:41:21.083 +05:30 [INF] Request finished in 389.6588ms 200 text/plain; charset=utf-8
 2023-03-30 17:41:39.369 +05:30 [INF] Application is shutting down...
+2023-03-31 12:22:07.769 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:22:07.823 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 12:22:07.846 +05:30 [INF] Hosting environment: Development
+2023-03-31 12:22:07.847 +05:30 [INF] Content root path: D:\FinalSeatBookingApp\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 12:22:07.970 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:22:08.016 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 12:22:08.027 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 12:22:08.077 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 50.061ms
+2023-03-31 12:22:08.079 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:22:08.087 +05:30 [INF] Request finished in 275.0464ms 200 application/json; charset=utf-8
+2023-03-31 12:22:28.311 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:22:28.372 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-03-31 12:22:28.417 +05:30 [INF] Hosting environment: Development
+2023-03-31 12:22:28.417 +05:30 [INF] Content root path: D:\FinalSeatBookingApp\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-03-31 12:22:28.580 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:22:28.641 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-03-31 12:22:28.655 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-03-31 12:22:28.722 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 67.7161ms
+2023-03-31 12:22:28.725 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-03-31 12:22:28.734 +05:30 [INF] Request finished in 378.8096ms 200 application/json; charset=utf-8
+2023-03-31 12:22:34.483 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger  
+2023-03-31 12:22:34.497 +05:30 [INF] Request finished in 14.2213ms 301 
+2023-03-31 12:22:34.503 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-03-31 12:22:34.764 +05:30 [INF] Request finished in 261.6732ms 200 text/html;charset=utf-8
+2023-03-31 12:22:34.765 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui.css  
+2023-03-31 12:22:34.766 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui-standalone-preset.js  
+2023-03-31 12:22:34.766 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-03-31 12:22:34.767 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/swagger-ui-bundle.js  
+2023-03-31 12:22:34.771 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-03-31 12:22:34.772 +05:30 [INF] Request finished in 5.8667ms 200 application/javascript; charset=utf-8
+2023-03-31 12:22:34.810 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-03-31 12:22:34.810 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-03-31 12:22:34.810 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-03-31 12:22:34.811 +05:30 [INF] Request finished in 43.9236ms 200 application/javascript
+2023-03-31 12:22:34.811 +05:30 [INF] Request finished in 44.9424ms 200 application/javascript
+2023-03-31 12:22:34.811 +05:30 [INF] Request finished in 45.3191ms 200 text/css
+2023-03-31 12:22:34.823 +05:30 [INF] Request finished in 51.9794ms 200 text/javascript; charset=UTF-8
+2023-03-31 12:22:35.337 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-03-31 12:22:35.539 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/favicon-32x32.png  
+2023-03-31 12:22:35.540 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-03-31 12:22:35.541 +05:30 [INF] Request finished in 2.3426ms 200 image/png
+2023-03-31 12:22:35.736 +05:30 [INF] Request finished in 399.7042ms 200 application/json;charset=utf-8
