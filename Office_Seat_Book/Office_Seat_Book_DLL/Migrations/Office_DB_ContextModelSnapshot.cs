@@ -26,9 +26,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Emp_Status")
-                        .HasColumnType("int");
-
                     b.Property<int>("EmployeeID")
                         .HasColumnType("int");
 
@@ -73,12 +70,12 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Designation")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmployeeStatus")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -93,9 +90,6 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<double>("PhoneNo")
                         .HasColumnType("float");
-
-                    b.Property<string>("Place")
-                        .HasColumnType("varchar(30)");
 
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");

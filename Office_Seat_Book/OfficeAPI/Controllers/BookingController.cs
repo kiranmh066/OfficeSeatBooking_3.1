@@ -63,5 +63,14 @@ namespace OfficeAPI.Controllers
                 return BadRequest(400);
             }
         }
+
+        [HttpGet("GetBookingByEmpId")]
+        public Booking GetBookingByEmpId(int EmpId)
+        {
+            
+            return _BookingService.GetBookingByEmpId(EmpId);
+    
+        }
+
     }
 }
