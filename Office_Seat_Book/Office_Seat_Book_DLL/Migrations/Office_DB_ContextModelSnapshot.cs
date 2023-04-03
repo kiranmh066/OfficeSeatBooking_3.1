@@ -39,7 +39,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Shift_Time")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("To_Date")
@@ -110,12 +109,34 @@ namespace Office_Seat_Book_DLL.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("FloorName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FloorID");
 
                     b.ToTable("floor");
+                });
+
+            modelBuilder.Entity("Office_Seat_Book_Entity.Help", b =>
+                {
+                    b.Property<int>("HelpId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmpID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TypeOfQuery")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("HelpId");
+
+                    b.HasIndex("EmpID");
+
+                    b.ToTable("help");
                 });
 
             modelBuilder.Entity("Office_Seat_Book_Entity.Parking", b =>
@@ -129,7 +150,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ParkingType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParkingID");
@@ -196,6 +216,17 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Navigation("employee");
 
                     b.Navigation("seat");
+                });
+
+            modelBuilder.Entity("Office_Seat_Book_Entity.Help", b =>
+                {
+                    b.HasOne("Office_Seat_Book_Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmpID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Office_Seat_Book_Entity.Parking", b =>

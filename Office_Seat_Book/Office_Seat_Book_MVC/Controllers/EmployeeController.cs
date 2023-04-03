@@ -37,6 +37,30 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
             return View(employee);
+        }    
+        public async Task<IActionResult> Profile()
+        {
+            #region profile
+            //storing the profile Id
+            /* int PatientProfileId = Convert.ToInt32(TempData["ProfileID"]);
+             TempData.Keep();*/
+            int PatientProfileId = 1;
+
+            Employee employee = null;
+            using (HttpClient client = new HttpClient())
+            {
+                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + PatientProfileId;
+                using (var response = await client.GetAsync(endpoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        employee = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            return View(employee);
+            #endregion
         }
         public List<SelectListItem> ShiftTiming()
         {
