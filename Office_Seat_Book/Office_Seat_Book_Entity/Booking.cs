@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Diagnostics.CodeAnalysis;
-
 namespace Office_Seat_Book_Entity
 {
     public class Booking
@@ -38,9 +37,9 @@ namespace Office_Seat_Book_Entity
         public Seat seat { get; set; }
 
         [AllowNull]
-        public int booking_Status { get; set; }
+        public int Booking_Status { get; set; }
 
-        [Required]
+        [AllowNull]
         public bool Vehicle { get; set; }
 
     }

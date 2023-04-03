@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 
 namespace Office_Seat_Book_Entity
 {
@@ -30,6 +27,5 @@ namespace Office_Seat_Book_Entity
         public string Role { get; set; }
 
         public bool EmployeeStatus { get;set; }
-
     }
 }

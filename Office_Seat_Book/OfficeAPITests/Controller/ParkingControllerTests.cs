@@ -9,7 +9,6 @@ using OfficeAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OfficeAPITests.Controller.Tests
@@ -128,7 +127,7 @@ namespace OfficeAPITests.Controller.Tests
             var Obj = result as ObjectResult;
             Assert.AreEqual(Obj.StatusCode, 400);
         }
-    
+
 
     }
 }

@@ -26,6 +26,9 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("Booking_Status")
+                        .HasColumnType("int");
+
                     b.Property<int>("EmployeeID")
                         .HasColumnType("int");
 
@@ -49,9 +52,6 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<bool>("Vehicle")
                         .HasColumnType("bit");
-
-                    b.Property<int>("booking_Status")
-                        .HasColumnType("int");
 
                     b.HasKey("BookingID");
 
@@ -152,6 +152,9 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<string>("ParkingType")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Parking_Number")
+                        .HasColumnType("int");
+
                     b.HasKey("ParkingID");
 
                     b.HasIndex("BookingID");
@@ -169,7 +172,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("seat_flag")
+                    b.Property<bool>("Seat_flag")
                         .HasColumnType("bit");
 
                     b.HasKey("Seat_No");
