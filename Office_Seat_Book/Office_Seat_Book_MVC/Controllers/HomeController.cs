@@ -59,7 +59,11 @@ namespace Office_Seat_Book_MVC.Controllers
                             if (employee_role == "ADMIN")
                                 return RedirectToAction("Index", "Admin");
                             else if (employee_role == "USER")
-                                return RedirectToAction("Index", "Employee");
+                                {
+                                    TempData["EmpId"] = employee1.EmpID;
+                                    TempData.Keep();
+                                    return RedirectToAction("Index", "Employee");
+                                }                                
                             else if (employee_role == "RECEPTIONIST")
                                 return RedirectToAction("Index", "Receptionist");
                         }

@@ -42,7 +42,7 @@ namespace Office_Seat_Book_MVC.Controllers
     
         public async Task<IActionResult> Profile()
         {
-            #region Patient profile
+            #region profile
             //storing the profile Id
             /* int PatientProfileId = Convert.ToInt32(TempData["ProfileID"]);
              TempData.Keep();*/

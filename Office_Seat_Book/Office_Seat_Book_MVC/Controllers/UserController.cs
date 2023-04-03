@@ -99,18 +99,29 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();  
 
         }
-      public IActionResult GetFloorLayout()
+        public IActionResult GetFloorLayout()
         {
             return View(seats);
         }
         public async Task<IActionResult> EnterKey(SecretKey secretKeyInfo)
         {
             #region Checking whether already a generated special Key available if not it will be generated
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(1, 100);
+            /*Random rnd = new Random();
+            int randomNumber = rnd.Next(1, 100);*/
+
+            Random random = new Random();
+            int length = 4;
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var result2 = new StringBuilder(length);
+
+            for (int i = 0; i < length; i++)
+            {
+                result2.Append(chars[random.Next(chars.Length)]);
+            }
 
             secretKeyInfo.EmpID = Convert.ToInt32(TempData["EmpId"]);
-            secretKeyInfo.SpecialKey = randomNumber.ToString();
+            TempData.Keep();
+            secretKeyInfo.SpecialKey = result2.ToString();
 
             using (HttpClient client = new HttpClient())
             {
