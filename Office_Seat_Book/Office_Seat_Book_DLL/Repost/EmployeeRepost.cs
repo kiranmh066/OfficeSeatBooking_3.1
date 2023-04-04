@@ -1,9 +1,6 @@
 ﻿using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Text;
 
 namespace Office_Seat_Book_DLL.Repost
 {
@@ -38,7 +35,6 @@ namespace Office_Seat_Book_DLL.Repost
         {
             return _dbContext.employee.ToList();
         }
-
         public Employee Login(Employee employee)
         {
             Employee employeeinfo = null;
@@ -50,7 +46,6 @@ namespace Office_Seat_Book_DLL.Repost
             return employeeinfo;
 
         }
-
         public void UpdateEmployee(Employee employee)
         {
 

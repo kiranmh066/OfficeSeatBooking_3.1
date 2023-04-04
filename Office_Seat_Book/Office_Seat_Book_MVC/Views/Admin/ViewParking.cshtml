@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model IEnumerable<Office_Seat_Book_Entity.Parking>
+
+@{
+    ViewData["Title"] = "ViewParking";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+</head>
+<body>
+    <br />
+@*    <a asp-area="" asp-controller="Admin" asp-action="Index"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+*@    <br />
+    <br />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a class="text-uppercase d-inline-block text-center" style="color:#003399;font-size:x-large" align="center"> Parking <span class="font-weight-bold" style="font-size:x-large">Details</span></a>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>parking type</th>
+                            <th>booking id</th>
+                            <th>parking id</th>
+                           <th>edit</th>
+                           <th>delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var parking in Model)
+                        {
+                            <tr>
+                                <td>@parking.ParkingType</td>
+                                <td>@parking.BookingID</td>
+                                <td>@parking.ParkingID</td>
+
+                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="EditParking" asp-route-parkingID="@parking.ParkingID">Edit<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                                <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="DeleteParking" asp-route-parkingId="@parking.ParkingID">Delete<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

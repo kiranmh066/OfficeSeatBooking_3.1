@@ -9,7 +9,6 @@ using OfficeAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OfficeAPITests.Controller.Tests
@@ -63,8 +62,8 @@ namespace OfficeAPITests.Controller.Tests
             var result = seatController.DeleteSeat(1);
             var Obj = result as ObjectResult;
             Assert.AreEqual(Obj.StatusCode, 400);
-          }
-            [TestMethod()]
+        }
+        [TestMethod()]
         public void UpdateSeatTest()
         {
             var seat = _fixture.Create<Seat>();
@@ -74,18 +73,18 @@ namespace OfficeAPITests.Controller.Tests
             var Obj = result as ObjectResult;
             Assert.AreEqual(200, Obj.StatusCode);
         }
-            [TestMethod()]
-            public void UpdateSeat_ThrowsException_IfIdNotFound()
-            {
-                var seat = _fixture.Create<Seat>();
-                moq.Setup(x => x.UpdateSeat(It.IsAny<Seat>())).
-                     Throws(new Exception());
-                seatController = new SeatController(new SeatService(moq.Object));
-                var result = seatController.UpdateSeat(seat);
-                var Obj = result as ObjectResult;
-                Assert.AreEqual(Obj.StatusCode, 400);
-            }
-            [TestMethod()]
+        [TestMethod()]
+        public void UpdateSeat_ThrowsException_IfIdNotFound()
+        {
+            var seat = _fixture.Create<Seat>();
+            moq.Setup(x => x.UpdateSeat(It.IsAny<Seat>())).
+                 Throws(new Exception());
+            seatController = new SeatController(new SeatService(moq.Object));
+            var result = seatController.UpdateSeat(seat);
+            var Obj = result as ObjectResult;
+            Assert.AreEqual(Obj.StatusCode, 400);
+        }
+        [TestMethod()]
         public void GetSeatByIdTest()
         {
             var seat = _fixture.Create<Seat>();
@@ -115,16 +114,16 @@ namespace OfficeAPITests.Controller.Tests
             var Obj = result as ObjectResult;
             Assert.AreEqual(200, Obj.StatusCode);
         }
-            [TestMethod()]
-            public async Task AddSeatNegativeTest()
-            {
-                var seat = _fixture.Create<Seat>();
-                moq.Setup(x => x.AddSeat(It.IsAny<Seat>())).
-                     Throws(new Exception());
-                seatController = new SeatController(new SeatService(moq.Object));
-                var result = seatController.AddSeat(seat);
-                var Obj = result as ObjectResult;
-                Assert.AreEqual(Obj.StatusCode, 400);
-            }
+        [TestMethod()]
+        public async Task AddSeatNegativeTest()
+        {
+            var seat = _fixture.Create<Seat>();
+            moq.Setup(x => x.AddSeat(It.IsAny<Seat>())).
+                 Throws(new Exception());
+            seatController = new SeatController(new SeatService(moq.Object));
+            var result = seatController.AddSeat(seat);
+            var Obj = result as ObjectResult;
+            Assert.AreEqual(Obj.StatusCode, 400);
         }
+    }
 }

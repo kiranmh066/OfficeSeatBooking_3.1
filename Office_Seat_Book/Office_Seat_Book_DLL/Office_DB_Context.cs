@@ -2,7 +2,6 @@
 using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Drawing;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
@@ -18,18 +17,19 @@ namespace Office_Seat_Book_DLL
         }
 
 
+
         public Microsoft.EntityFrameworkCore.DbSet<Parking> parking { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Employee> employee { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Booking> booking { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Floor> floor { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Seat> seat { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<SecretKey> secretKey { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Help> help { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-7PNCAE8\\SQLEXPRESS; Initial Catalog = OfficeDb; Integrated Security = True;");
-
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-BJO1KRV\\SQLEXPRESS; Initial Catalog = OfficeDb1; Integrated Security = True;");
 
 
         }

@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model Office_Seat_Book_Entity.Parking
+
+<br />
+@*
+<a asp-area="" asp-controller="Admin" asp-action="GetAllPatients"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+*@
+
+
+<h2 style="color:#003399" class="font-weight-bolder text-uppercase" align="center">Edit Parking Details</h2>
+
+
+
+<div style="background-color:#f0f8ff;font-family:'Roboto',sans-serif;padding:55px">
+    <form method="post" enctype="multipart/form-data">
+        <div class="col-4 d-inline-block align-top" style=" margin-right:50px;margin-left:270px">
+            <div class="form-group">
+                <label style="color:#003399;font-size:20px">Parking Id</label>
+                <input  readonly asp-for="ParkingID" class="form-control" placeholder="Enter Emp Id" required />
+            </div>
+            <div class="form-group">
+                <label style="color:#003399;font-size:20px">parking type</label>
+                <select class="form-control" asp-for="ParkingType">
+                    <option value="1">BIKE</option>
+                    <option value="2">CAR</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label style="color:#003399;font-size:20px">booking id</label>
+                <input  type="text" asp-for="BookingID" class="form-control" placeholder="Enter Phone Number" required />
+            </div>
+            <input type="submit" value="Update" class="btn btn-outline-success" />
+            <input type="reset" value="Reset" class="btn btn-outline-secondary" />
+            @if (ViewBag.status == "Ok")
+            {
+                <br />
+
+
+
+                <br />
+                <div class="alert alert-success">
+                    @ViewBag.message
+                </div>
+            }
+            else if (ViewBag.status == "Error")
+            {
+                <br />
+
+
+
+                <br />
+                <div class="alert alert-danger">
+                    @ViewBag.message
+                </div>
+            }
+        </div>
+    </form>
+</div>
