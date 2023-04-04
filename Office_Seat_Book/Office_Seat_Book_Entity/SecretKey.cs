@@ -20,5 +20,8 @@ namespace Office_Seat_Book_Entity
 
         [AllowNull]
         public string SpecialKey { get; set; }
+
+        [AllowNull]
+        public byte[] Qr { get; set; }
     }
 }

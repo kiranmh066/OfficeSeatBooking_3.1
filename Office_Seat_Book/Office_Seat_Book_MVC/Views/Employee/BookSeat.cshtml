@@ -113,14 +113,9 @@
             </select>
         </div>
 
-        <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
-            <label for="branch">Type of Request</label>
-            <select type="branch" name="branch" asp-for="Type_Of_Request" required>
-                <option value=""></option>
-                <option value="">Daily</option>
-                <option value="">Weekly</option>
-                <option value="">Customise</option>
-            </select>
+        <div class="form-groups">
+            <label for="type of request">Type of Request</label>
+            <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
         </div>
         <div class="date col mx-4 my-2">
             <div>
@@ -142,18 +137,31 @@
                 <option value="">10:00 AM - 06:00 PM</option>
             </select>
         </div>
-        <button class="btn btn-primary mx-4">
-                <a style="text-decoration:none; color:white"  asp-controller="Employee" asp-action="BookSeat2">Next</a>
-        </button>
+        
+                @*<a style="text-decoration:none; color:white"  asp-controller="Employee" asp-action="BookSeat2">Next</a>*@
+                <input  type="submit" class="btn btn-danger" value=""/>
+       
     </div>
+        @if (ViewBag.status == "Ok")
+        {
+            <div class="alert alert-success">
+                @ViewBag.message
+            </div>
+        }
+        else if (ViewBag.status == "Error")
+        {
+            <div class="alert alert-danger">
+                @ViewBag.message
+            </div>
+        }
     </form>
-</body>
-<script>
-    const today = new Date().toISOString().split('T')[0];
-    const dateFrom = document.getElementById("fromDate");
-    dateFrom.setAttribute("min", today);
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        const dateFrom = document.getElementById("fromDate");
+        dateFrom.setAttribute("min", today);
 
-    const thisday = new Date().toISOString().split('T')[0];
-    const dateTo = document.getElementById("toDate");
-    dateTo.setAttribute("min", thisday);
-</script>
+        const thisday = new Date().toISOString().split('T')[0];
+        const dateTo = document.getElementById("toDate");
+        dateTo.setAttribute("min", thisday);
+    </script>
+</body>
