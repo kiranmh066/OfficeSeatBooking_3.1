@@ -4,90 +4,312 @@
 
 @model Office_Seat_Book_Entity.Employee
 
-<br />@*
-<a asp-area="" asp-controller="Admin" asp-action="GetAllPatients"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
-*@
+@{
+    ViewData["Title"] = "RegisterEmp";
 
+}
+<style>
+    .img {
+        position: absolute;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
 
-<h2 style="color:#003399" class="font-weight-bolder text-uppercase" align="center">Edit Employee Details</h2>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
 
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
 
+    .container {
+        max-width: 700px;
+        width: 100%;
+        height: fit-content;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        position: relative;
+        z-index: 1;
+    }
 
-<div style="background-color:#f0f8ff;font-family:'Roboto',sans-serif;padding:55px">
-    <form method="post" enctype="multipart/form-data">
-        <div class="col-4 d-inline-block align-top" style=" margin-right:50px;margin-left:270px">
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">emp Id</label>
-                <input  type="text" asp-for="EmpID" class="form-control" placeholder="Enter Emp Id" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">emp Name</label>
-                <input  type="text" asp-for="Name" class="form-control" placeholder="Enter emp Name" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Phone</label>
-                <input  type="text" asp-for="PhoneNo" class="form-control" placeholder="Enter Phone Number" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Email</label>
-                <input  type="text" asp-for="Email" class="form-control" placeholder="Enter Email" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Place</label>
-                <input  type="text" asp-for="Place" class="form-control" placeholder="Enter place" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Role</label>
-                <select class="form-control" asp-for="Role">
-                    <option value="1">ADMIN</option>
-                    <option value="2">USER</option>
-                    <option value="3">SECURITY</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-4 d-inline-block align-top">
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Password</label>
-                <input  type="radio" asp-for="Password" class="form-control" placeholder="Enter password" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Gender</label>
-                <input  type="text" asp-for="Gender" class="form-control" placeholder="Enter gender" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Designation</label>
-                <input  type="text" asp-for="Designation" class="form-control" placeholder="Enter Designation" required />
-            </div>
-            <div class="form-group">
-                <label style="color:#003399;font-size:20px">Secret Key</label>
-                <input  type="text" asp-for="Secret_Key" class="form-control" placeholder="Enter Secret Key" required />
-            </div>
-
-
-            <input type="submit" value="Update" class="btn btn-outline-success" />
-            <input type="reset" value="Reset" class="btn btn-outline-secondary" />
-            @if (ViewBag.status == "Ok")
-            {
-                <br />
+        .container .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
 
 
 
-                <br />
-                <div class="alert alert-success">
-                    @ViewBag.message
-                </div>
+    input {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        width: 100%;
+        margin: 3px;
+    }
+
+        input:active {
+            border: 2px solid black;
+        }
+
+    .content form .user-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0 12px 0;
+    }
+
+    .user-details .input-box {
+        margin-bottom: 15px;
+        /* width: calc(100% / 2 - 20px); */
+        display: flex;
+        width: 48%;
+    }
+
+    .input-box span.details {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .user-details .input-box input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .gender-details {
+        width: 380px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    select {
+        height: 45px;
+        background-color: rgb(238, 238, 238);
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .category {
+        display: flex;
+        width: 80%;
+        margin: 14px 0;
+        justify-content: space-between;
+    }
+
+        .category option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+    form .button {
+        height: 45px;
+        margin: 35px 0
+    }
+
+        form .button input {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 1s ease;
+            background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        }
+
+            form .button input:hover {
+                transform: scale(0.99);
+                background-image: linear-gradient(310deg,#ff0080, #7928ca);
             }
-            else if (ViewBag.status == "Error")
-            {
-                <br />
+
+    .media(max-width: 584px) {
+        .container
+
+    {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category {
+        width: 100%;
+    }
+
+    .content form .gender-details .user-details {
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    }
+
+    media(max-width: 459px) {
+        .container .content .category
+
+    {
+        flex-direction: column;
+    }
+
+    }
+
+    media(max-width: 465px) {
+        .gender-details
+
+    {
+        width: 100%;
+    }
+
+    }
+
+    .mask {
+        position: absolute;
+        background-size: cover;
+        top: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+    .bg-gradient-primary {
+        background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        height: 70%;
+        width: 100%;
+        opacity: 1;
+    }
+
+</style>
+
+<body>
+
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+    </div>
+
+    <div class="container">
+        <a asp-area="" asp-controller="Admin" asp-action="ViewEmp"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+        <div class="title">Registration</div>
+        <div class="content">
+            <form method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <input type="text" asp-for="Name" id="form" placeholder="Enter Name" class="form-control form-control-lg" />
+                        <label class="form-label" for=" name"></label>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" asp-for="Email" id="form" placeholder="Enter Email" class="form-control form-control-lg" />
+                        <label class="form-label" for="Email"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" asp-for="PhoneNo" id="form" placeholder="Enter Phone number" class="form-control form-control-lg" />
+                        <label class="form-label" for="Enter Phone Number"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" asp-for="Secret_Key" id="form3Example90" placeholder="Enter SecretKey" class="form-control form-control-lg" />
+                        <label class="form-label" for="Secret Key"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" asp-for="Designation" id="form" placeholder="Enter Designation" class="form-control form-control-lg" />
+                        <label class="form-label" for="Designation"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" asp-for="Password" id="form" placeholder="Enter Password" class="form-control form-control-lg" />
+                        <label class="form-label" for="Enter Password"></label>
+                    </div>
+                    @* <div class="input-box">
+                    <input type="text" asp-for="Password" id="form" placeholder="Enter Password" class="form-control form-control-lg" />
+                    <label class="form-label" for="Enter your Role"></label>
+                    </div>*@
+
+                    <div class="input-box">
+                        <select class="form-control" asp-for="Role">
+                            <option>ADMIN</option>
+                            <option>USER</option>
+                            <option>RECEPTIONIST</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <select class="form-control" asp-for="Gender">
+                            @*<option class="gender">Gender</option>*@
+                            <option>M</option>
+                            <option>F</option>
+
+                        </select>
+
+                    </div>
 
 
 
-                <br />
-                <div class="alert alert-danger">
-                    @ViewBag.message
+                    @*<div class="input-box">
+                    <input type="text" asp-for="Password" id="form" placeholder="Confrim Password" class="form-control form-control-lg" />
+                    <label class="form-label" for="Confirm Password"></label>
+                    </div>*@
                 </div>
-            }
+
+
+                @*<div class="button">
+                <input type="submit" value="Register" onclick=" validateForm()">
+                </div>*@
+                <div class="button">
+                    <input type="submit" value="Update" onclick=" validateForm()" />
+                    @* <input type="reset" value="Reset" class="btn btn-outline-secondary" />*@
+
+                </div>
+
+                @if (ViewBag.status == "Ok")
+                {
+
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
+
+            </form>
         </div>
-    </form>
-</div>
+    </div>
+</body>

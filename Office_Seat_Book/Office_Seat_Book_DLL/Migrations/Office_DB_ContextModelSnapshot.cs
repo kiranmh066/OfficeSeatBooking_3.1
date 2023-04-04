@@ -26,8 +26,8 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("Emp_Status")
-                        .HasColumnType("int");
+                    b.Property<bool>("Emp_Status")
+                        .HasColumnType("bit");
 
                     b.Property<int>("EmployeeID")
                         .HasColumnType("int");
@@ -42,7 +42,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Shift_Time")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("To_Date")
@@ -116,7 +115,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("FloorName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FloorID");
@@ -135,7 +133,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ParkingType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParkingID");

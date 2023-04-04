@@ -71,7 +71,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            catch (NullReferenceException e)
+            catch (NullReferenceException)
             {
                 ViewBag.status = "Error";
                
