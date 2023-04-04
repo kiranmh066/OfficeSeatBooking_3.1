@@ -1,13 +1,17 @@
 ﻿@model IEnumerable<Office_Seat_Book_Entity.Floor>
 @{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
+
+
+}
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
+
+
 
 <body style="background-color:#5A3B5D;color:white;padding-bottom:100px">
     <div class="container">
@@ -15,15 +19,21 @@
             <h3>All Floors </h3>
         </center>
 
+
+
         <div class="row">
             <div class="col-12 text-white">
 
+
+
                 <hr />
-                <table class="table  table-bordered table-hover">
+                <table class="table  table-bordered table-hover">
                     <thead>
                         <tr style="color:white">
 
-                           
+
+
+
                             <th>FloorID</th>
                             <th>FloorName</th>
                             <th>Edit</th>
@@ -33,22 +43,32 @@
                     <tbody>
                         @foreach (var Floor in Model)
 
+
+
                         {
+
+
 
                             <tr style="color:white">
                                 <td>@Floor.FloorID</td>
                                 <td>@Floor.FloorName</td>
 
+
+
                                 <td>
                                     <a asp-controller="Admin" asp-action="EditFloor"
-                                   asp-route-FloorID="@Floor.FloorID"><img class="img-fluid" style="height:40px" src="https://www.svgrepo.com/show/241804/edit.svg" /></a>
+                                                                     asp-route-FloorID="@Floor.FloorID"><img class="img-fluid" style="height:40px" src="https://www.svgrepo.com/show/241804/edit.svg" /></a>
                                 </td>
+
+
 
                                 <td>
                                     <a asp-controller="Admin" asp-action="Deletefloor" onclick="deleteFunction()"
-                                   asp-route-FloorId="@Floor.FloorID"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/243864/delete.svg" /></a>
+                                                                     asp-route-FloorId="@Floor.FloorID"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/243864/delete.svg" /></a>
                                 </td>
                             </tr>
+
+
 
                         }
                     </tbody>
