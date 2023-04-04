@@ -50,5 +50,10 @@ namespace Office_Seat_Book_BLL.Services
             return _bookingRepost.GetBookingByEmpId(EmpId);
         }
 
+
+        public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
+        {
+            return _bookingRepost.GetBookingsByDate(date1);
+        }
     }
 }

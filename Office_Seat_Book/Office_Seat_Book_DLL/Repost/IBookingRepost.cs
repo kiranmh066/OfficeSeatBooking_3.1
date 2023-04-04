@@ -18,5 +18,8 @@ namespace Office_Seat_Book_DLL.Repost
         int AddBooking(Booking booking);
 
         Booking GetBookingByEmpId(int EmpId);
+        IEnumerable<Booking> GetBookingsByDate(DateTime date1);
+
+
     }
 }
