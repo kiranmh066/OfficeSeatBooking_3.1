@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text.Json.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using Office_Seat_Book_DLL;
 using Newtonsoft.Json;
+using Office_Seat_Book_DLL;
 using Office_Seat_Book_Entity;
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Office_Seat_Book_MVC.Controllers
 {

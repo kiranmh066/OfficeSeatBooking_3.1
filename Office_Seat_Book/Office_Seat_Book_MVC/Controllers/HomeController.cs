@@ -16,7 +16,7 @@ namespace Office_Seat_Book_MVC.Controllers
 {
     public class HomeController : Controller
     {
- 
+
         private IConfiguration _configuration;
         public HomeController(IConfiguration configuration)
         {
@@ -29,14 +29,14 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             return View();
         }
-      
+
 
         [HttpPost]
         public async Task<IActionResult> Index(Employee employee)
         {
 
 
-            if (employee.Email != null && employee.Password!=null)
+            if (employee.Email != null && employee.Password != null)
             {
                 #region Logging in of Employee using Email and Password and Will Redirect using Employee designation
                 try
@@ -85,8 +85,8 @@ namespace Office_Seat_Book_MVC.Controllers
                 ViewBag.status = "Error";
                 ViewBag.message = "Please Enter The Credentials!";
             }
-                return View();
-            
+            return View();
+
             #endregion
         }
 

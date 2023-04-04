@@ -16,7 +16,7 @@
     foreach(var item in Model.Item2)
     {
 
-        if (item.booking_Status == 1)
+        if (item.Booking_Status == 1)
         {
             booked_and_came++;
         }
@@ -68,7 +68,7 @@
                         <td>@item.To_Date.ToShortDateString()</td>
                         <td>@item.Shift_Time</td>
                         <td>@item.Seat_No</td>
-                        if(item.booking_Status==1)
+                        if(item.Booking_Status==1)
                         {
                            <td>Booked and Scanned</td>
                         }

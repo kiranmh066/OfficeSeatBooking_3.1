@@ -22,7 +22,7 @@ namespace Office_Seat_Book_DLL.Repost
             List<Booking> list = new List<Booking>();
             list = _dbContext.booking.ToList();
             var booking1 = (from list1 in list
-                               select list1).Last();
+                            select list1).Last();
             return booking1.BookingID;
         }
 
@@ -87,5 +87,6 @@ namespace Office_Seat_Book_DLL.Repost
             return booking1;
         }
 
+       
     }
 }

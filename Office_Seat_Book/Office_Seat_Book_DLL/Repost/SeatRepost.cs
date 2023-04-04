@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Office_Seat_Book_DLL.Repost
 {
-    public class SeatRepost:ISeatRepost
+    public class SeatRepost : ISeatRepost
     {
         Office_DB_Context _dbContext;//default private
 
@@ -44,7 +44,7 @@ namespace Office_Seat_Book_DLL.Repost
         }
         public IEnumerable<Seat> GetSeatsByFloorId(int floorId)
         {
-            List<Seat>seats = new List<Seat>();
+            List<Seat> seats = new List<Seat>();
 
             seats = _dbContext.seat.ToList();
             List<Seat> list = new List<Seat>();
@@ -64,6 +64,6 @@ namespace Office_Seat_Book_DLL.Repost
 
         }
 
-       
+
     }
 }

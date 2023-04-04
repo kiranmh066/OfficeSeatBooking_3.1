@@ -148,12 +148,12 @@ namespace Office_Seat_Book_MVC.Controllers
             if (secretKey.SpecialKey == specialKey)
             {
                 employeeinfo.EmployeeStatus = true;
-                booking.booking_Status = 1;
+                booking.Booking_Status = 1;
             }
             else
             {
                 employeeinfo.EmployeeStatus=false;
-                booking.booking_Status = 0;
+                booking.Booking_Status = 0;
             }
 
 

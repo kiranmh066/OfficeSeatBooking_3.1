@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_Entity;
-using System.Collections.Generic;
 using System;
-using Microsoft.Extensions.Logging;
-using Serilog.Core;
-using Serilog;
+using System.Collections.Generic;
 
 namespace OfficeAPI.Controllers
 {
@@ -19,9 +16,9 @@ namespace OfficeAPI.Controllers
 
         public EmployeeController(EmployeeService employeeService)
         {
-            
+
             _EmployeeService = employeeService;
-           
+
         }
 
         [HttpGet("GetEmployees")]
@@ -100,7 +97,7 @@ namespace OfficeAPI.Controllers
                     //_logger.LogCritical("Email Log");
                     return null;
                 }
-                
+
             }
             catch (NullReferenceException)
             {
