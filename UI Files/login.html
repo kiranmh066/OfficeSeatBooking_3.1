@@ -5,49 +5,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  <title>LOGIN PAGE</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https:kit.fontawesome.com/2b070e02a1.js" crossorigin="anonymous"></script>
-  <script src="login.js"> </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="login.js"></script>
+  <title>Login</title>
 </head>
 <body>
-  <div class="container">
-    <div class="login-box">
-      <div class="user-icon">
-        <i class="far fa-user">
-        </i>
-        
+  
+  <section class="vh-100">
+  <div class="container-fluid h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://img.freepik.com/free-vector/my-password-concept-illustration_114360-4294.jpg?w=740&t=st=1680516578~exp=1680517178~hmac=77f7d87ee04bc14454098c39a54f80786e9ea41e89b3e91aa5e70961eb46bc8c"
+        class="img-fluid" alt="Login">
       </div>
       
-      <div class="login">
-        <div class="form-group">
-          <label>Email</label>
-          <input type="text" placeholder="Enter Your Email" id="email1" class="form-control">
-         
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1"><h3>LOGIN</h3>
+        <form>
           
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" placeholder="Enter your Password" id="password1" class="form-control">
-          
+          <div class="form-group">
+            <div class="form-outline mb-3 mx-5">
+              <input type="email" id="email1" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" />
+            </div>
+
+           
+            <div class="form-outline mb-3 mx-5">
+              <input type="password" id="password1" class="form-control form-control-lg"
+                placeholder="Enter password" />
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check mb-0 mx-5">
+              <input class="form-check-input " type="checkbox" value="" id="form" />
+              <label class="form-check-label" for="form">
+                Remember me
+              </label>
+            </div>
+            <a href="#" class="text-body">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2 mx-5">
+            <button type="button" class="btn btn-lg" onclick="login()"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+          </div>
+
          
-      </div>
-        </div>
-        <div class="form-group">
-          <label1 for="remember me">
-            <input type="checkbox" name="remember me" id="remember me">
-              Remember Me
-            <a href="#">Forgot Password?</a>
-          </label>
-            
-        </div>
-        <div class="form-group">
-          <input type="submit" value="Reset" onclick="clearFunc()" class="btn" />
-         
-          <input type="submit" value="Login" onclick="login()" class="btn" />
-        </div>       
+
+    </div>
+  </div>
+</div>
+
+        </form>
       </div>
     </div>
   </div>
+</section>
+
+    
+     
+      <!-- Right -->
+    </div>
+  </section>
 </body>
 </html>
