@@ -33,25 +33,25 @@ body {
     border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     position: absolute;
-    z-index:1;
-
+    z-index: 1;
     .container .title
-        {
-        font-size: 25px;
-        font-weight: 500;
-        position: relative;
-        }
 
-        .container .title::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 3px;
-            width: 30px;
-            border-radius: 5px;
-            background-image: linear-gradient(310deg,#7928ca,#ff0080);
-        }
+{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background-image: linear-gradient(310deg,#7928ca,#ff0080);
+}
 
 input {
     background-color: #eee;

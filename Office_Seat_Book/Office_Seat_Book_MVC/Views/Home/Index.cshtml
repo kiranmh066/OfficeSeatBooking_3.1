@@ -5,7 +5,7 @@
 
 @{
 
-    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
 <body>
@@ -50,35 +50,36 @@
                                         </div>
 
                                         <div class="text-center text-lg-start mt-4 pt-2 mx-5">
-                                            <button type="submit" value="Login" class="btn btn-primary btn-lg" onclick="login()"
+                                            <button type="submit" value="Login" class="btn btn-primary btn-lg" @*onclick="login()"*@
                                                     style="padding-left: 2.5rem; padding-right: 2.5rem;">
                                                 Login
                                             </button>
-                                        <button type="reset" value="Reset" class="btn btn-primary btn-lg" onclick="reset()"
+                                        <button type="reset" value="Reset" class="btn btn-primary btn-lg"
                                         style="padding-left: 2.5rem; padding-right: 2.5rem;">
                                        Reset
                                       </button>
                                         </div>
-                                    @if (ViewBag.status == "Ok")
-                                    {
-                                        <br />
-                                        <div class="alert alert-success">
-                                            @ViewBag.message
-                                        </div>
-                                    }
-                                    else if (ViewBag.status == "Error")
-                                    {
-                                        <br />
-                                        <div class="alert alert-danger">
-                                            @ViewBag.message
-                                        </div>
-                                    }
+                        @if (ViewBag.status == "Ok")
+                        {
+                            <br />
+                            <div class="alert alert-success">
+                                @ViewBag.message
+                            </div>
+                        }
+                        else if (ViewBag.status == "Error")
+                        {
+                            <br />
+                            <div class="alert alert-danger">
+                                @ViewBag.message
+                            </div>
+                        }
+                                
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </section>
-                   
+
 
 </body>
 

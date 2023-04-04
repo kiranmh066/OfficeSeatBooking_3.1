@@ -99,17 +99,17 @@
                         </div>
                     </section>
                     <br />
-                  @*  <section class="color-7">
-                        <div class="anchor cl-effect-4">
-                            <div>
-                                <a href="#"> PARKING&#9662;</a>
-                                <div>
-                                    <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
-                                    <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
+                    @*  <section class="color-7">
+                    <div class="anchor cl-effect-4">
+                    <div>
+                    <a href="#"> PARKING&#9662;</a>
+                    <div>
+                    <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
+                    <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
 
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    </div>
+                    </div>
                     </section>*@
                     <br>
                     <section class="color-7">
@@ -126,55 +126,55 @@
                 </div>
             </div>
         </div>
-    <div class="container">
-        <center>
+        <div class="container">
+            <center>
                 <h2 style="color:black ;position:relative">All seats </h2>
-        </center>
+            </center>
             <div class="col-4 d-inline-block align-top" style=" margin-right:90px;margin-left:370px ;position:relative">
-        <div class="row">
-            <div class="col-12 text-white">
+                <div class="row">
+                    <div class="col-12 text-white">
 
-                <hr />
+                        <hr />
                         <table class="table table-bordered border-dark" style="background-color:white;position:relative">
-                    <thead>
-                        <tr style="color:black">
+                            <thead>
+                                <tr style="color:black">
 
-                            <th>Seat_No</th>
-                            <th>FloorID</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var Seat in Model) 
-                        
-                        {
-                            
-                            <tr style="color:black">
-                                <td>@Seat.Seat_No</td>
-                                <td>@Seat.FloorID</td>                                                     
+                                    <th>Seat_No</th>
+                                    <th>FloorID</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var Seat in Model)
 
-                                <td>
-                                    <a asp-controller="Admin" asp-action="EditSeat"
+                                {
+
+                                    <tr style="color:black">
+                                        <td>@Seat.Seat_No</td>
+                                        <td>@Seat.FloorID</td>
+
+                                        <td>
+                                            <a asp-controller="Admin" asp-action="EditSeat"
                                            asp-route-seatID="@Seat.Seat_No"><img class="btn btn-warning" style="height:50px; width:80px" src="https://www.svgrepo.com/show/241804/edit.svg" /> </a>
-                                </td>
+                                        </td>
 
-                                <td>
-                                    <a asp-controller="Admin" asp-action="DeleteSeat" onclick="DeleteFunction()"
-                                   asp-route-seatID="@Seat.Seat_No"><img class="btn btn-danger" style="height:50px; width:80px" src="https://www.svgrepo.com/show/243864/delete.svg" /> </a>
-                                </td>
-                            </tr>
+                                        <td>
+                                            <a asp-controller="Admin" asp-action="DeleteSeat" onclick="DeleteFunction()"
+                                           asp-route-seatID="@Seat.Seat_No"><img class="btn btn-danger" style="height:50px; width:80px" src="https://www.svgrepo.com/show/243864/delete.svg" /> </a>
+                                        </td>
+                                    </tr>
 
-                        }
-                    </tbody>
-                </table>
-            
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
     </div>
-   </div>
- 
+
 </body>
 <script>
     function DeleteFunction() {

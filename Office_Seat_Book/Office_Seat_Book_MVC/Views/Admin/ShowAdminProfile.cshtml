@@ -99,17 +99,17 @@
                         </div>
                     </section>
                     <br />
-                   @* <section class="color-7">
-                        <div class="anchor cl-effect-4">
-                            <div>
-                                <a href="#"> PARKING&#9662;</a>
-                                <div>
-                                    <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
-                                    <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
+                    @* <section class="color-7">
+                    <div class="anchor cl-effect-4">
+                    <div>
+                    <a href="#"> PARKING&#9662;</a>
+                    <div>
+                    <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
+                    <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
 
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    </div>
+                    </div>
                     </section>*@
                     <br>
                     <section class="color-7">
@@ -126,53 +126,53 @@
                 </div>
             </div>
         </div>
-<!-- Begin Page Content -->
- <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-    <div class="card p-4" style="background-color:lavender; box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .1)">
-        <div class=" image d-flex flex-column justify-content-center align-items-center">
+        <!-- Begin Page Content -->
+        <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+            <div class="card p-4" style="background-color:lavender; box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .1)">
+                <div class=" image d-flex flex-column justify-content-center align-items-center">
 
-            <strong>Admin Profile</strong>
-            <hr />
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">name</span>
-                <span style="color:black">@Model.Name</span>
+                    <strong>Admin Profile</strong>
+                    <hr />
+                    <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                        <span style="color:cadetblue">name</span>
+                        <span style="color:black">@Model.Name</span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                        <span style="color:cadetblue">phone no.</span>
+                        <span style="color:black">@Model.PhoneNo</span>
+                    </div>
+                    <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                        <span style="color:cadetblue">email:</span>
+                        <span style="color:black">@Model.Email</span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center align-items-center mt-3">
+                        <span style="color:cadetblue">gender: </span>
+                        <span style="color:black">@Model.Gender</span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center align-items-center mt-3">
+                        <span style="color:cadetblue">secret key: </span>
+                        <span style="color:black">@Model.Secret_Key</span>
+                    </div>
+                    <div class="text mt-3">
+                        <span style="color:cadetblue">designation:</span>
+                        
+                    </div>
+                    <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                        <span style="color:cadetblue">password</span>
+                        <span style="color:black">@Model.Password</span>
+                    </div>
+                    <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                        <span style="color:cadetblue">role</span>
+                        <span style="color:black">@Model.Role</span>
+                    </div>
+@*
+                    <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+                        <span style="color:cadetblue">place</span>
+                        <span style="color:black">@Model.Place</span>
+                    </div>*@
+
+                </div>
             </div>
-            <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                <span style="color:cadetblue">phone no.</span>
-                <span style="color:black">@Model.PhoneNo</span>
-            </div>
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">email:</span>
-                <span style="color:black">@Model.Email</span>
-            </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3">
-                <span style="color:cadetblue">gender: </span>
-                <span style="color:black">@Model.Gender</span>
-            </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3">
-                <span style="color:cadetblue">secret key: </span>
-                <span style="color:black">@Model.Secret_Key</span>
-            </div>
-            <div class="text mt-3">
-                <span style="color:cadetblue">designation:</span>
-                <span style="color:black">@Model.Designation</span>
-            </div>
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">password</span>
-                <span style="color:black">@Model.Password</span>
-            </div>
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">role</span>
-                <span style="color:black">@Model.Role</span>
-            </div>
-            
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">place</span>
-                <span style="color:black">@Model.Place</span>
-            </div>
-            
         </div>
     </div>
-   </div>
-  </div>
 </body>

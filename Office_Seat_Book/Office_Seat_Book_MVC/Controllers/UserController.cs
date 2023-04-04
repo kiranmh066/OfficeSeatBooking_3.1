@@ -2,6 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Office_Seat_Book_Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +28,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             _configuration = configuration;
         }
-       
+
         public IActionResult Index()
         {
             return View();
@@ -37,7 +40,7 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> FloorSelect(Seat seat)
         {
-           
+
             using (HttpClient client = new HttpClient())
             {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Seat/GetSeatsByFloorId?floorId=" + seat.FloorID;
@@ -60,7 +63,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeatByUpdatingSeatId(int SeatId)
         {
             int bookingId = 0;
-            Booking booking=new Booking();
+            Booking booking = new Booking();
             using (HttpClient client = new HttpClient())
             {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingById?bookingId=" + bookingId;
@@ -94,27 +97,38 @@ namespace Office_Seat_Book_MVC.Controllers
 
                 }
             }
-           
 
-            return View();  
+
+            return View();
 
         }
-      public IActionResult GetFloorLayout()
+        public IActionResult GetFloorLayout()
         {
             return View(seats);
         }
         public async Task<IActionResult> EnterKey(SecretKey secretKeyInfo)
         {
             #region Checking whether already a generated special Key available if not it will be generated
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(1, 100);
+            /*Random rnd = new Random();
+            int randomNumber = rnd.Next(1, 100);*/
+
+            Random random = new Random();
+            int length = 4;
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var result2 = new StringBuilder(length);
+
+            for (int i = 0; i < length; i++)
+            {
+                result2.Append(chars[random.Next(chars.Length)]);
+            }
 
             secretKeyInfo.EmpID = Convert.ToInt32(TempData["EmpId"]);
-            secretKeyInfo.SpecialKey = randomNumber.ToString();
+            TempData.Keep();
+            secretKeyInfo.SpecialKey = result2.ToString();
 
             using (HttpClient client = new HttpClient())
             {
-                
+
                 SecretKey secretKey = null;
                 string endPoint = _configuration["WebApiBaseUrl"] + "SecretKey/GetSecretKeyByEmpId?empId=" + secretKeyInfo.EmpID;
                 using (var response = await client.GetAsync(endPoint))
@@ -125,7 +139,7 @@ namespace Office_Seat_Book_MVC.Controllers
                         secretKey = JsonConvert.DeserializeObject<SecretKey>(result);
                     }
                 }
-                if(secretKey.SpecialKey.Count()==0 || secretKey==null)
+                if (secretKey.SpecialKey.Count() == 0 || secretKey == null)
                 {
                     StringContent content = new StringContent(JsonConvert.SerializeObject(secretKeyInfo), Encoding.UTF8, "application/json");
                     string endPoint2 = _configuration["WebApiBaseUrl"] + "SecretKey/AddSecretKey";//api controller name and its function
@@ -186,7 +200,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            if (secretKey.SpecialKey==specialKey)
+            if (secretKey.SpecialKey == specialKey)
             {
                 //employeeinfo.Emp_Statu = true;
             }
