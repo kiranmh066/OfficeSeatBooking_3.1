@@ -22,7 +22,7 @@ namespace Office_Seat_Book_Entity
 
         public char Gender { get; set; }
 
-        public string Secret_Key { get; set; }
+        public string Security_Question { get; set; }
 
         public string Role { get; set; }
 
