@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parking Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body{
+        background:radial-gradient( #33ccff 0%, #ff99cc 100%) ;
+      }
+      .parking-spot {
+        background-color: #2b877d;
+        padding: 10px;
+        margin: 5px;
+        text-align: center;
+        width:100px
+      }
+  
+      .container-fluid{
+          border: 1px solid black;
+          width: 90%;
+          margin-top: 50px;
+          margin: 100px auto;
+          border-radius: 15px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.2);
+          background-color: azure;
+      }
+      .two{
+          margin-top: 30px;
+      }
+  
+      .col-md-1{
+          width:80px;
+          height:80px;
+          margin-top: 30px;
+          margin-left: 20px;
+          margin-bottom: 40px;
+          
+      }
+  
+      .col-md-2{
+          width:120px;
+          height:80px;
+          background-color:gainsboro;
+          margin-left: 20px;
+          
+      }
+  
+      .col-md-1{
+          background-color:grey;
+      }
+  
+      .col-md-3{
+          background-color: grey;
+          margin-bottom: 20px;
+          margin-top: 60px;
+          width: 80px;
+          height: 80px;
+          margin-left: 20px;
+  
+      }
+      .selected{
+          background-color:green;
+      }
+  
+      img{
+          width:50px;
+          height:50px;
+      }
+
+      h2{
+        text-align: center;
+        color:blue;
+        
+      }
+    </style>
+    
+  </head>
+  <body>
+  
+           <h2>Parking Slot Mapping</h2>
+            <div class="container-fluid">
+                  <div class="row">
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">1</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">2</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">3</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">4</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">5</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">6</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">7</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">8</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">9</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">10</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">11</button>
+                  <button class="col-md-1 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">12</button>
+                 
+                </div>
+                <div class="row two">
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">13</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">14</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">15</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">16</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">17</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">18</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">19</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">20</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">21</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">22</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">23</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">24</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">25</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">26</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">27</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">28</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">29</button>
+                    <button class="col-md-2 parking-spot"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">30</button>
+                   
+                    
+                  </div>
+
+                  <div class="row three">
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">31</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">32</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">33</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">34</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">35</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">36</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">37</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">38</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">39</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">40</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">41</button>
+                    <button class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">42</button>
+                   
+                  </div>
+          </div>
+          
+      </div>
+      <script>
+        $(document).ready(function(){
+  $(".parking-spot").click(function(){
+    // remove "selected" class from all other parking spots
+    $(".parking-spot").not(this).removeClass("selected");
+    // toggle "selected" class on the clicked parking spot
+    $(this).toggleClass("selected");
+  });
+});
+
+
+      </script>
+  </body>
+</html>
+
+  
+   
+     
+  

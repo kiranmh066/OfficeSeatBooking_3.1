@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
-    public partial class harsh4 : Migration
+    public partial class kiran : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,6 +39,26 @@ namespace Office_Seat_Book_DLL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_floor", x => x.FloorID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "secretKey",
+                columns: table => new
+                {
+                    SecretId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmpID = table.Column<int>(type: "int", nullable: false),
+                    SpecialKey = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_secretKey", x => x.SecretId);
+                    table.ForeignKey(
+                        name: "FK_secretKey_employee_EmpID",
+                        column: x => x.EmpID,
+                        principalTable: "employee",
+                        principalColumn: "EmpID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -133,12 +153,20 @@ namespace Office_Seat_Book_DLL.Migrations
                 name: "IX_seat_FloorID",
                 table: "seat",
                 column: "FloorID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_secretKey_EmpID",
+                table: "secretKey",
+                column: "EmpID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "parking");
+
+            migrationBuilder.DropTable(
+                name: "secretKey");
 
             migrationBuilder.DropTable(
                 name: "booking");

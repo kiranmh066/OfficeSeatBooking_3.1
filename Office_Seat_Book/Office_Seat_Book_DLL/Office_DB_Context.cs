@@ -23,16 +23,12 @@ namespace Office_Seat_Book_DLL
         public Microsoft.EntityFrameworkCore.DbSet<Booking> booking { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Floor> floor { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Seat> seat { get; set; }
-        
-
-
-
-
+        public Microsoft.EntityFrameworkCore.DbSet<SecretKey> secretKey { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
 
-            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-2JIKDUR\\SQLEXPRESS; Initial Catalog = OfficeDb2; Integrated Security = True;");
+            dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-7PNCAE8\\SQLEXPRESS; Initial Catalog = OfficeDb; Integrated Security = True;");
 
 
 
