@@ -17,5 +17,7 @@ namespace Office_Seat_Book_Entity
 
         [AllowNull]
         public string SpecialKey { get; set; }
+
+        
     }
 }

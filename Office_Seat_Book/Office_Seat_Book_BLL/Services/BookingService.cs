@@ -1,5 +1,6 @@
 ﻿using Office_Seat_Book_DLL.Repost;
 using Office_Seat_Book_Entity;
+using System;
 using System.Collections.Generic;
 
 namespace Office_Seat_Book_BLL.Services
@@ -48,5 +49,10 @@ namespace Office_Seat_Book_BLL.Services
             return _bookingRepost.GetBookingByEmpId(EmpId);
         }
 
+
+        public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
+        {
+            return _bookingRepost.GetBookingsByDate(date1);
+        }
     }
 }
