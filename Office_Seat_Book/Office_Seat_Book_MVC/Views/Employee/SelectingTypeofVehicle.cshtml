@@ -1,6 +1,7 @@
 ﻿@{
-    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
+
 @{
     ViewData["Title"] = "SelectingVehicle";
 }
@@ -20,12 +21,11 @@
         </div>
     </div>
 
-    
+
     <div class="row card-div">
 
-        <div class="button">
-            <input type="submit" class="btn btn-danger" value="Search Parking Slot"/>
-            @*<a asp-controller="Employee" asp-action="SelectingVehicle" class="btn btn-danger">Search Map</a>*@
+        <div class="buttons">
+            <input type="submit" class="btn btn-danger" value="Search Parking Slots" style="width:150px;height:75px" />
         </div>
     </div>
 </form>
