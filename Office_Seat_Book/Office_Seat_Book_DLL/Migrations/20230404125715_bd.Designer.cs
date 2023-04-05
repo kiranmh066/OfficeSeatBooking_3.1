@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230404101341_dbs")]
-    partial class dbs
+    [Migration("20230404125715_bd")]
+    partial class bd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -95,7 +95,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Secret_Key")
+                    b.Property<string>("Security_Question")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmpID");

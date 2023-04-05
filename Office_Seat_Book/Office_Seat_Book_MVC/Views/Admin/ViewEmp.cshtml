@@ -151,9 +151,9 @@
                                 <th>password</th>
                                 <th>Gender</th>
                                 <th>secret key</th>
-                                
+
                                 <th>Role</th>
-                                
+
                                 <th>Edit</th>
                                 <th>Delete</th>
 
@@ -168,7 +168,7 @@
                                     <td>@employee.PhoneNo</td>
                                     <td>@employee.Password</td>
                                     <td>@employee.Gender</td>
-                                    <td>@employee.Secret_Key</td>                                    
+                                    <td>@employee.Security_Question </td>
                                     <td>@employee.Role</td>
                                     <td>
                                         <a asp-controller="Admin" asp-action="EditEmp"
@@ -179,7 +179,7 @@
                                         <a asp-controller="Admin" asp-action="DeleteEmp" onclick="DeleteFunction()"
                                        asp-route-EmpID="@employee.EmpID"><img class="btn btn-danger" style="height:50px; width:80px" src="https://www.svgrepo.com/show/243864/delete.svg" /> </a>
                                     </td>
-                                   
+
                                 </tr>
                             }
                         </tbody>

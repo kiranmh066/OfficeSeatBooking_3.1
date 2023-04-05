@@ -93,7 +93,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Secret_Key")
+                    b.Property<string>("Security_Question")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmpID");

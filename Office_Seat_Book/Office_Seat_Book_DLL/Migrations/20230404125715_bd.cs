@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
-    public partial class dbs : Migration
+    public partial class bd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    Secret_Key = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Security_Question = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmployeeStatus = table.Column<bool>(type: "bit", nullable: false)
                 },
