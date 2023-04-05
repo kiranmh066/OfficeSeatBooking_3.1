@@ -79,7 +79,7 @@ namespace Office_Seat_Book_DLL.Repost
                     booking1.Add(item);
                     continue;
                 }
-                else if((item.From_Date.Date != item.To_Date.Date)&&(item.From_Date.Date>=date1&& date1<= item.To_Date.Date))
+                else if((item.From_Date.Date != item.To_Date.Date)&&(date1>=item.From_Date.Date&& date1<= item.To_Date.Date))
                 {
                     booking1.Add(item);
                 }
