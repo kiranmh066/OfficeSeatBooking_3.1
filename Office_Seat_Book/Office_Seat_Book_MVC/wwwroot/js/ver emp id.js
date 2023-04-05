@@ -21,7 +21,7 @@ function validateForm() {
     event.preventDefault(); // prevent form submission if validation fails
     if (validateForm()) {
       // submit form if validation passes
-      alert("Form submitted successfully.");
+      alert("OTP Generated successfully.");
       // add code to submit form here
     }
   });

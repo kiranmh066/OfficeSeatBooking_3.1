@@ -71,9 +71,6 @@
                 </div>
             </div>
         </div>
-
-     
-
         <div class=" col-8 mx-auto card text-center mb-3">
             <!-- <div class="row"> -->
             <div class="card-body">
@@ -83,9 +80,10 @@
                 <p class="card-text">Shift Time :@Model.Shift_Time     </p>
                 <p class="card-text">Seat Number :  @Model.Seat_No   </p>
                 <p class="card-text">Booking ID : @Model.BookingID    </p>
-                <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn btn-success">Verify Pass</a>
+                <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn btn-success">Verify Pass through OTP</a>
+                <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn btn-success">Verify Pass through QR</a>
             </div>
         </div>
-
+        </div>
 </body>
 </html>
