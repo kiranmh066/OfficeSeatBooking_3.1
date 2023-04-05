@@ -54,12 +54,7 @@
                 <h3 class="offcanvas-title text-center" id="offcanvasWithBothOptionsLabel">Menu</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <section class="color-7">
-                    <div class="anchor cl-effect-4">
-                        <a asp-area="" asp-controller="Admin" asp-action="Index">HOME</a>
-                    </div>
-                </section>
+
                 <br>
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
@@ -100,6 +95,16 @@
                         </div>
                     </div>
                 </section>
+                 <section class="color-7">
+                       <div class="anchor cl-effect-4">
+                           <div>
+                                  <a href="#"> Get Reports &#9662;</a>
+                                            <a asp-controller="Report" asp-action="Index" type="button">GetReportByDate</a>
+                                            <a asp-controller="Report" asp-action="GetCustomDates" type="button">GetReportByWeek</a>
+                                     
+                          </div>
+                       </div>
+                 </section>
                 @* <br />
                 <section class="color-7">
                 <div class="anchor cl-effect-4">

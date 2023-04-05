@@ -72,21 +72,28 @@ namespace Office_Seat_Book_MVC.Controllers
             return View(tupeluser);
 
         }
-
-
-        public async Task<IActionResult> GetReportByWeek(DateTime fromdate1, DateTime todate1)
+        public IActionResult GetCustomDates()
         {
-            int d = Convert.ToInt32(fromdate1.Date);
-            int e = Convert.ToInt32(todate1.Date);
+
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> GetCustomDates(Booking booking)
+        {
+           
+            int d = Convert.ToInt32(booking.From_Date.Day);
+            int e = Convert.ToInt32(booking.To_Date.Day);
             int j = 0;
 
-            for(int i=d;i<=e;i++)
+            for (int i = d; i <= e; i++)
             {
                 List<Booking> bookings = null;
-
+                DateTime date1 = booking.From_Date.AddDays(j);
+                string date2 = date1.ToString("yyyy-MM-dd");
                 using (HttpClient client = new HttpClient())
                 {
-                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingsByDate?date1=" + fromdate1.AddDays(j);
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingsByDate?date1=" + date2;
                     TempData.Keep();
                     using (var response = await client.GetAsync(endPoint))
                     {
@@ -97,13 +104,42 @@ namespace Office_Seat_Book_MVC.Controllers
                             bookings = JsonConvert.DeserializeObject<List<Booking>>(result);
                         }
                     }
-
+                   
                 }
+              
                 j++;
-                bookings1 = bookings1.Concat(bookings).ToList();
+                foreach(var item in bookings)
+                {
+                    item.From_Date = date1;
+                    bookings1.Add(item);
+                }
+               
 
             }
-            return View(bookings1);
+            return RedirectToAction("GetReportByWeek", "Report");
+        }
+
+
+        public async Task<IActionResult> GetReportByWeek()
+        {
+            List<Employee> employees = null;
+            using (HttpClient client = new HttpClient())
+            {
+                // LocalHost Adress in endpoint
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployees";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        //It will deserilize the object in the form of JSON
+                        employees = JsonConvert.DeserializeObject<List<Employee>>(result);
+                    }
+                }
+            }
+            var tupeluser = new Tuple<List<Employee>, List<Booking>>(employees, bookings1);
+            return View(tupeluser);
+
         }
 
 
