@@ -78,13 +78,18 @@ namespace Office_Seat_Book_MVC.Controllers
                 {
                     ViewBag.status = "Error";
                     ViewBag.message = "Enter Correct Credentials!";
+
                 }
-            }
-            else
+
+
+            }else
+
             {
                 ViewBag.status = "Error";
                 ViewBag.message = "Please Enter The Credentials!";
+
             }
+
             return View();
 
             #endregion
