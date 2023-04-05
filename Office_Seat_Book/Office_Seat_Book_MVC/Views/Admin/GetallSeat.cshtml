@@ -2,6 +2,8 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+
+
 }
 <html>
 <head>
@@ -9,19 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 </head>
 
+
+
 <body style="background-color:#5A3B5D;color:white;padding-bottom:100px">
     <div class="container">
         <center>
             <h3>All seats </h3>
         </center>
 
+
+
         <div class="row">
             <div class="col-12 text-white">
 
+
+
                 <hr />
-                <table class="table  table-bordered table-hover">
+                <table class="table  table-bordered table-hover">
                     <thead>
                         <tr style="color:white">
+
+
 
                             <th>Seat_No</th>
                             <th>FloorID</th>
@@ -30,22 +40,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var Seat in Model) 
+                        @foreach (var Seat in Model)
+
                         {
+
                             <tr style="color:white">
                                 <td>@Seat.Seat_No</td>
-                                <td>@Seat.FloorID</td>                                                     
+                                <td>@Seat.FloorID</td>
+
+
 
                                 <td>
                                     <a asp-controller="Admin" asp-action="EditSeat"
-                                   asp-route-seatID="@Seat.Seat_No"><img class="img-fluid" style="height:40px" src="https://www.svgrepo.com/show/241804/edit.svg" /></a>
+                                                                     asp-route-seatID="@Seat.Seat_No"><img class="img-fluid" style="height:40px" src="https://www.svgrepo.com/show/241804/edit.svg" /></a>
                                 </td>
+
+
 
                                 <td>
                                     <a asp-controller="Admin" asp-action="DeleteSeat" onclick="deleteFunction()"
-                                   asp-route-seatID="@Seat.Seat_No"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/243864/delete.svg" /></a>
+                                                                     asp-route-seatID="@Seat.Seat_No"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/243864/delete.svg" /></a>
                                 </td>
                             </tr>
+
+
+
                         }
                     </tbody>
                 </table>
