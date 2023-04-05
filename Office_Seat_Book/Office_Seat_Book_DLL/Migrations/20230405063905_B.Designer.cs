@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230404122453_ashes")]
-    partial class ashes
+    [Migration("20230405063905_B")]
+    partial class B
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -193,6 +193,9 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<int>("EmpID")
                         .HasColumnType("int");
+
+                    b.Property<byte[]>("Qr")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("SpecialKey")
                         .HasColumnType("nvarchar(max)");
