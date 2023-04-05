@@ -1,0 +1,19 @@
+﻿@model Office_Seat_Book_Entity.Booking
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="From Date">From Date</label>
+
+        <input type="date" asp-for="From_Date" class="form-control" placeholder="Select the From Date" required />
+    </div>
+    <div class="form-group">
+        <label for="To date">To date</label>
+
+        <input type="date" asp-for="To_Date" class="form-control" placeholder="Select the To Date" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
