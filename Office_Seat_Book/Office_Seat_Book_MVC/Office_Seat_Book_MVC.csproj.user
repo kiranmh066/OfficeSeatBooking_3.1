@@ -10,7 +10,7 @@
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
-    <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
+    <ActiveDebugProfile>Office_Seat_Book_MVC</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>D:\FinalSeatBookingApp\OfficeSeatBooking_3.1\Office_Seat_Book\Office_Seat_Book_MVC\Properties\PublishProfiles\OfficeSeatBookMVC - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

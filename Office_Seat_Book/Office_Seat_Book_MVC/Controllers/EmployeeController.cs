@@ -1,6 +1,15 @@
 ﻿using Aspose.BarCode.Generation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Numerics;
+using Org.BouncyCastle.Ocsp;
+using Newtonsoft.Json;
+using Office_Seat_Book_Entity;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Office_Seat_Book_Entity;
@@ -120,41 +129,68 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> BookSeat(Booking booking)
         {
-            booking.Shift_Time = "Nothing";
-            booking.From_Date = DateTime.Today;
-            booking.To_Date = DateTime.Today;
-
-            int bookingId = 0;
-            booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
-            TempData.Keep();
-            booking.Seat_No = 1;
-            booking.Food_Type = 1;
-            booking.Vehicle = true;
-            booking.Booking_Status = 0;
-
-            booking.Shift_Time = "nothing";
-
-            ViewBag.status = "";
+            //List<Booking> booking2 = null;
+            /*Booking booking2 = new Booking();
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";
-                using (var response = await client.PostAsync(endPoint, content))
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]);
+                TempData.Keep(); ;
+                //EmployeeId is apicontroleer passing argument name
+                using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-
+                    {   //dynamic viewbag we can create any variable name in run time
                         var result = await response.Content.ReadAsStringAsync();
-                        bookingId = JsonConvert.DeserializeObject<int>(result);
-                        TempData["Bookid"] = bookingId;
-                        TempData.Keep();
-                        ViewBag.status = "Ok";
-                        ViewBag.message = "Booked successfully!";
-                        return RedirectToAction("BookSeat2", "Employee");
+                        booking2 = JsonConvert.DeserializeObject<Booking>(result);
+                    }
+                }
+            }
+            if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
+            {
+                ViewBag.status = "Error";
+                ViewBag.message = "Alredy a seat waiting for you!!";
+            }
+            else
+            {*/
+                #region Booking Seat
+                booking.From_Date = DateTime.Today;
+                booking.To_Date = DateTime.Today;
+
+                int bookingId = 0;
+                booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
+                TempData.Keep();
+                booking.Seat_No = 1;
+                booking.Food_Type = 1;
+                booking.Vehicle = true;
+                booking.Booking_Status = 0;
+
+                booking.Shift_Time = "nothing";
+
+                ViewBag.status = "";
+                using (HttpClient client = new HttpClient())
+                {
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";
+                    using (var response = await client.PostAsync(endPoint, content))
+                    {
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+
+                            var result = await response.Content.ReadAsStringAsync();
+                            bookingId = JsonConvert.DeserializeObject<int>(result);
+                            TempData["Bookid"] = bookingId;
+                            TempData.Keep();
+                            ViewBag.status = "Ok";
+                            ViewBag.message = "Booked successfully!";
+                            return RedirectToAction("BookSeat2", "Employee");
+
+                        }
 
                     }
+                /*}*/
+                #endregion
 
-                }
+
             }
             return View();
         }
@@ -344,13 +380,10 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
-                    }
-                  
+                    }                  
 
                 }
             }
-
-
 
             return View();
 

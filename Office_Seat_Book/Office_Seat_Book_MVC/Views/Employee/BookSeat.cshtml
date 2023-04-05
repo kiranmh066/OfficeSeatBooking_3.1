@@ -100,51 +100,6 @@
 
             <div class="container1 ">
                 <div class="row">
-                    @* <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                    <div class="card-content">
-                    <div class="form-groups">
-                    <label for="location">Location</label>
-                    <select type="location" name="location" class="form-control" required>
-                    <option value=""></option>
-                    <option value="">Bengaluru</option>
-                    <option value="">Gurgaon</option>
-                    </select>
-                    </div>
-                    <p class="card-description"></p>
-
-                    </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                    <div class="card-content">
-                    <div class="form-groups">
-                    <label for="branch">Branch</label>
-                    <select type="branch" name="branch" class="form-control" required>
-                    <option value=""></option>
-                    <option value="">JP Nagar</option>
-                    </select>
-                    </div>
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
-                    </div>
-                    @* <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                    <div class="card-content">
-                    <div class="form-groups">
-                    <label for="parking">Parking</label>
-                    <select type="parking" name="parking" class="form-control" required>
-                    <option value=""></option>
-                    <option value="">Yes</option>
-                    <option value="">No</option>
-                    </select>
-                    </div>
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
-                    </div>*@
                     <div class="row">
                         <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
                             <div class="card-content">
@@ -156,43 +111,54 @@
                             </div>
                         </div>
                     </div>
-                    @* <div class="row text-center">
-                    <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
-                    <div class="card-content col-12">
-                    <label for="date-picker">From Date</label>
-                    <br>
-                    <input asp-for="From_Date" type="date" class="form-control" placeholder="Birthday date *" value="" />
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
-                    <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
-                    <div class="card-content col-12">
-                    <label for="date-picker"> To Date</label>
-                    <br>
-                    <input asp-for="To_Date" type="date" id="date-picker tdate" value="">
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                    <div class="card-content">
-                    <div class="form-groups">
-                    <label for="shift time">Shift Time</label>
-                    <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
-                    </div>
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
-                    </div>*@
                 </div>
             </div>
 
         </div>
 
         @*<input type="submit" class="btn alert-danger" value="Register" />*@
-
-
+        <div class="form-groups">
+            <label for="type of request">Type of Request</label>
+            <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
+        </div>
+        <div class="date col mx-4 my-2">
+            <div>
+                From
+                <input type="date" id="fromDate" asp-for="From_Date">
+            </div> <br>
+            <div>
+                To  &nbsp; &nbsp;
+                <input type="date" id="toDate" asp-for="To_Date">
+            </div>
+        </div>
+        <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
+            <label for="shift-time">Select Shift TIme</label>
+            <select type="shift-time" name="shift-time" class="form-control" asp-for="Shift_Time" required>
+                <option value=""></option>
+                <option value="">09:00 AM - 06:00 PM</option>
+                <option value="">06:00 AM - 02:00 PM</option>
+                <option value="">02:00 PM - 10:00 PM</option>
+                <option value="">10:00 AM - 06:00 PM</option>
+            </select>
+        </div>
+        
+                @*<a style="text-decoration:none; color:white"  asp-controller="Employee" asp-action="BookSeat2">Next</a>*@
+                <input  type="submit" class="btn btn-danger" value=""/>
+       
+    </div>
+        @if (ViewBag.status == "Ok")
+        {
+            <div class="alert alert-success">
+                @ViewBag.message
+            </div>
+        }
+        else if (ViewBag.status == "Error")
+        {
+            <div class="alert alert-danger">
+                @ViewBag.message
+            </div>
+        }
+    
         <div class="">
 
             <div class="buttons">
@@ -201,4 +167,13 @@
         </div>
 
     </form>
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        const dateFrom = document.getElementById("fromDate");
+        dateFrom.setAttribute("min", today);
+
+        const thisday = new Date().toISOString().split('T')[0];
+        const dateTo = document.getElementById("toDate");
+        dateTo.setAttribute("min", thisday);
+    </script>
 </body>
