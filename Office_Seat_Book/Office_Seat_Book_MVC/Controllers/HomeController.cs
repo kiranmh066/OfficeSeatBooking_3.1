@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Office_Seat_Book_DLL.Migrations;
 using Office_Seat_Book_Entity;
 using Office_Seat_Book_MVC.Models;
 using System;
@@ -27,6 +28,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public IActionResult Index()
         {
+            //TempData["Count"] = 0;
             return View();
         }
       
@@ -55,7 +57,8 @@ namespace Office_Seat_Book_MVC.Controllers
                             TempData.Keep();
                             TempData["empId"] = Convert.ToInt32(employee1.EmpID);
                             TempData.Keep();
-
+                            TempData["Count"] = 0;
+                            TempData.Keep();
                             if (employee_role == "ADMIN")
                                 return RedirectToAction("Index", "Admin");
                             else if (employee_role == "USER")

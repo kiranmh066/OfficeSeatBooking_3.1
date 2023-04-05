@@ -1,89 +1,86 @@
 ﻿@model Office_Seat_Book_Entity.Employee
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_profileLayout.cshtml";
 }
 
 
+  <div class="mask bg-gradient-primary">
+    <img class="img"
+        src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+        alt="img">
+   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="profile">
+                <form method="get" enctype="multipart/form-data">
+          <div class="profile-pic">
+                    @if (@Model.Gender == 'F')
+                    {
+                        <img src="https://www.svgrepo.com/show/428269/female.svg"
+                                                             alt="Avatar" class="img-fluid my-5"  />
+                    }
 
-<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-    <div class="card p-4" style="background-color:lavender; box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .1)">
-        <div class=" image d-flex flex-column justify-content-center align-items-center">
-             <form method="get" enctype="multipart/form-data">
+
+
+                    else
+                    {
+                        <img src="https://www.svgrepo.com/show/428252/male.svg"
+                                                                  alt="Avatar" class="img-fluid my-5" />
+                    }
+          </div>
                 
-
-            <h6 style="color:white">My Profile</h6>
-
-
-
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">name</span>
-                <span style="color:black">@Model.Name</span>
+          <h2 class="text-center mt-3 mb-4">@Model.Role </h2>
+          
+          <hr>
+           
+          <div class="row">
+            <div class="col-md-6 mb-3">
+                            <p><strong>Email: @Model.Email</strong></p>
+            </div></div>
+            <div class="row">
+            <div class="col-md-6 mb-4">
+                            <p><strong>Phone: @Model.PhoneNo</strong></p>
             </div>
-            <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                <span style="color:cadetblue">phone no.</span>
-                <span style="color:black">@Model.PhoneNo</span>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6 mb-4">
+                            <p><strong>Emp Id: @Model.EmpID</strong> </p>
+            </div></div>
+            <div class="row">
+            <div class="col-md-6 mb-3">
+                            <p><strong>Name: @Model.Name</strong> </p>
             </div>
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">email:</span>
-                <span style="color:black">@Model.Email</span>
-            </div>
-            @*<div class="d-flex flex-row justify-content-center align-items-center mt-3">
-            <span style="color:cadetblue">gender: </span>
-            <span style="color:black">@Model.Gender</span>
-            </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3">
-            <span style="color:cadetblue">secret key: </span>
-            <span style="color:black">@Model.Secret_Key</span>
-            </div>
-            <div class="text mt-3">
-            <span style="color:cadetblue">designation:</span>
-            <span style="color:black">@Model.Designation</span>
-            </div>*@
-            @*<form method="post" enctype="multipart/form-data">*@
-                @*<div class="col-4 d-inline-block align-top" style=" margin-right:50px;margin-left:270px">
-                <div class="form-group">
-                <label style="color:#003399;font-size:20px">password</label>
-                <input  type="text" asp-for="Password" class="form-control" placeholder="change password" required />
-                </div>
-                @*<input type="submit" value="Update" class="btn btn-outline-success" />*@
-                <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                    <span style="color:cadetblue">role</span>
-                    <span style="color:black">@Model.Role</span>
-                </div>
+          </div>
 
-                @*<div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">place</span>
-                <span style="color:black">@Model.Place</span>
-                </div>
-                <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
-                <span style="color:cadetblue">eId</span>
-                <span style="color:black">@Model.EmpID</span>
-                </div>*@
-                @*<form method="post" enctype="multipart/form-data">*@
-                <a asp-area="" asp-controller="Admin" asp-action="EditAdminProfile">edit profile</a>
-            </form>
-            @if (ViewBag.status == "Ok")
-            {
-                <br />
+
+                <button type="button" class="btn btn-danger"><a asp-area="" asp-controller="Admin" asp-action="EditAdminProfile">Edit</a></button>
+                    <button type="button" class="btn btn-danger"><a asp-controller="Admin" asp-action="Index">Home</a></button>
+                </form>
+                @if (ViewBag.status == "Ok")
+                {
+                    <br />
 
 
 
-                <br />
-                <div class="alert alert-success">
-                    @ViewBag.message
-                </div>
-            }
-            else if (ViewBag.status == "Error")
-            {
-                <br />
+                    <br />
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+                    <br />
 
 
 
-                <br />
-                <div class="alert alert-danger">
-                    @ViewBag.message
-                </div>
-            }
+                    <br />
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
         </div>
+      </div>
     </div>
-</div>
+  </div>

@@ -31,9 +31,7 @@
                     </thead>
                     <tbody>
                         @foreach (var Seat in Model) 
-                        
                         {
-                            
                             <tr style="color:white">
                                 <td>@Seat.Seat_No</td>
                                 <td>@Seat.FloorID</td>                                                     
@@ -48,7 +46,6 @@
                                    asp-route-seatID="@Seat.Seat_No"><img class="img-fluid" style="height:50px" src="https://www.svgrepo.com/show/243864/delete.svg" /></a>
                                 </td>
                             </tr>
-
                         }
                     </tbody>
                 </table>

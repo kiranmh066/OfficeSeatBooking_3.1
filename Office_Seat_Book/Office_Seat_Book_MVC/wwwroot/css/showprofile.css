@@ -1,0 +1,211 @@
+﻿
+.img {
+    position: absolute;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mask {
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    width: 100%;
+    height: 70%;
+}
+
+.bg-gradient-primary {
+    background-image: linear-gradient(310deg,#7928ca,#ff0080);
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.profile {
+    background-color: aliceblue;
+    padding: 30px;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+    align-items: center;
+    height: 620px;
+    border: 1px solid black;
+}
+
+.profile-pic {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        margin-top:-120px;
+    }
+
+.edit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .edit-button:hover {
+        background-color: #0069d9;
+    }
+
+@media screen and (max-width: 768px) {
+    .profile {
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .profile {
+        margin-top: 30px;
+        padding: 10px;
+    }
+
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+button {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.profile-pic:hover img {
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.profile {
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.profile h5 {
+    text-shadow: 2px 2px 0 #007bff;
+    transition: all 0.3s ease;
+}
+
+    .profile h2:hover,
+    .profile h5:hover {
+        text-shadow: 4px 4px 0 #007bff;
+    }
+
+.profile {
+    position: relative;
+    perspective: 1000px;
+}
+
+    .profile:hover .profile-pic {
+        transform: rotateY(180deg);
+    }
+
+    .profile .profile-pic {
+        transition: all 0.6s ease;
+        transform-style: preserve-3d;
+    }
+
+        .profile .profile-pic img {
+            backface-visibility: hidden;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile .profile-pic .back {
+            transform: rotateY(180deg);
+        }
+
+            .profile .profile-pic .back img {
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+.edit-button {
+    backface-visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotateY(180deg);
+}

@@ -213,11 +213,12 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             return View(seats);
         }
-
-
         [HttpGet]
         public async Task<IActionResult> BookSeatByUpdatingSeatId(int SeatId)
         {
+            TempData["Booked"] = 0;
+            TempData.Keep();    
+
             int bookingId = Convert.ToInt32(TempData["Bookid"]);
             TempData.Keep();
             Booking booking = new Booking();
@@ -245,6 +246,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
+                        
                     }
                     else
                     {

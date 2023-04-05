@@ -285,6 +285,7 @@ a:hover {
     width: 200px !important;
     margin: 10px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .numb {

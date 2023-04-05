@@ -9,6 +9,8 @@ using Office_Seat_Book_DLL;
 using Newtonsoft.Json;
 using Office_Seat_Book_Entity;
 using System;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data;
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -29,6 +31,22 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             return View();
         }
+        public IActionResult Notification()
+        {
+            //if (TempData["Total"] != null)
+            //{
+            //    TempData["Total"] = messages.Count;
+            //}
+            //else
+            //{
+            //    TempData["Total"] = "no notification";
+            //    TempData.Keep();
+            //}
+            int a = Convert.ToInt32(TempData["Counter1"]);
+            TempData["C"] = a;
+            TempData.Keep();
+         return View();
+        }
         public IActionResult RegisterEmp()
         {
             return View();
@@ -47,6 +65,12 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Register successfully!";
+                        TempData["Counter1"] = Convert.ToInt32(TempData["Counter1"]) + 1;
+                        TempData.Keep();
+                        TempData["count"] = TempData["Counter1"];
+                        //TempData.Keep();
+                        TempData["ABC"] = "You Registered successfully";
+                        //TempData.Keep();
                     }
                     else
                     {
@@ -124,7 +148,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Employee Details Updated Successfully!";
-                        //return RedirectToAction("GetAllDoctors", "Admin");
+                        return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -149,7 +173,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Details Deleted Successfully!";
-                        // return RedirectToAction("", "Admin");
+                         return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -395,11 +419,9 @@ namespace Office_Seat_Book_MVC.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> AddSeat(Seat seat)
-
         {
-
             ViewBag.status = "";
-
+            seat.seat_flag = true;
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
@@ -411,7 +433,6 @@ namespace Office_Seat_Book_MVC.Controllers
                         ViewBag.status = "Ok";
                         ViewBag.message = "seat Added Successfull!!";
                     }
-
                     else
                     {
                         ViewBag.status = "Error";

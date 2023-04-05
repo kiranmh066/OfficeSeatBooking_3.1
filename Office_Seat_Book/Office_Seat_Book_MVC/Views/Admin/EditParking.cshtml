@@ -33,7 +33,7 @@
                 <input  type="text" asp-for="BookingID" class="form-control" placeholder="Enter Phone Number" required />
             </div>
             <input type="submit" value="Update" class="btn btn-outline-success" />
-            <input type="reset" value="Reset" class="btn btn-outline-secondary" />
+            <a a asp-controller="Admin" asp-action="ViewParking">Cancel</a>
             @if (ViewBag.status == "Ok")
             {
                 <br />

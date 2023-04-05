@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_notification.cshtml";
+}
+
+@for(int i = 0; i < Convert.ToInt32(TempData["c"]); i++)
+{
+    <div class="alert alert-success">
+    @TempData["ABC"]
+    </div>
+}
+
+
