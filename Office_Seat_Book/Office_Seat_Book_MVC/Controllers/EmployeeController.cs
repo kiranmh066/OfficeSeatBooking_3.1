@@ -130,7 +130,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeat(Booking booking)
         {
             //List<Booking> booking2 = null;
-            Booking booking2 = new Booking();
+            /*Booking booking2 = new Booking();
             using (HttpClient client = new HttpClient())
             {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]);
@@ -151,7 +151,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 ViewBag.message = "Alredy a seat waiting for you!!";
             }
             else
-            {
+            {*/
                 #region Booking Seat
                 booking.From_Date = DateTime.Today;
                 booking.To_Date = DateTime.Today;
@@ -187,7 +187,7 @@ namespace Office_Seat_Book_MVC.Controllers
                         }
 
                     }
-                }
+                /*}*/
                 #endregion
 
 

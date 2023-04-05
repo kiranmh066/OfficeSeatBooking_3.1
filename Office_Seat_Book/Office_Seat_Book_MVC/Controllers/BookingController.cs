@@ -50,7 +50,7 @@ namespace Office_Seat_Book_MVC.Controllers
             return View(booking);
         }
 
-        public async Task<IActionResult> EnterKey(SecretKey secretKeyInfo)
+        public async Task<IActionResult> EnterKey(SecretKey secretKeyInfo,string id)
         {
             #region Checking whether already a generated special Key available if not it will be generated
             Random rnd = new Random();
@@ -112,10 +112,11 @@ namespace Office_Seat_Book_MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EnterKey(string specialKey)
+        public async Task<IActionResult> EnterKey(SecretKey secretKey3)
         {
             #region Changing Employee status if User enters the correct security key
             ViewBag.status = "";
+            string specialKey = secretKey3.SpecialKey + secretKey3.Employee.Name+ secretKey3.Employee.Email+ secretKey3.Employee.Password;
             int empId = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             if (specialKey != null)
@@ -175,33 +176,14 @@ namespace Office_Seat_Book_MVC.Controllers
                 #endregion
 
                 #region updating the status in both employee and booking table
+                
                 using (HttpClient client = new HttpClient())
                 {
                     StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
                     string endPoint = _configuration["WebApiBaseUrl"] + "Booking/UpdateBooking";
                     using (var response = await client.PutAsync(endPoint, content))
                     {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {   //dynamic viewbag we can create any variable name in run time
-                            ViewBag.status = "Ok";
-                            ViewBag.message = "Seat Booked Successfully!!";
-                        }
-                        else
-                        {
-                            ViewBag.status = "Error";
-                            ViewBag.message = "Sorry Try Again Not Able to Book!!";
-                        }
-
-                    }
-                }
-
-                using (HttpClient client = new HttpClient())
-                {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
-                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/UpdateBooking";
-                    using (var response = await client.PutAsync(endPoint, content))
-                    {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK && booking.Booking_Status == 1)
                         {   //dynamic viewbag we can create any variable name in run time
                             ViewBag.status = "Ok";
                             ViewBag.message = "Seat Booking Verified Successfully!!";
@@ -220,7 +202,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
                     using (var response = await client.PutAsync(endPoint, content))
                     {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK && employeeinfo.EmployeeStatus == true)
                         {   //dynamic viewbag we can create any variable name in run time
                             ViewBag.status = "Ok";
                             ViewBag.message = "Seat Booking Verified Successfully!!";
@@ -235,14 +217,9 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
             else 
-                { 
-                    ViewBag.status = "Error";
-                }
-            
-
-
-            
-
+            { 
+                ViewBag.status = "Error";
+            }
             #endregion
 
             return View();
