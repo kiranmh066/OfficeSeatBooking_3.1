@@ -1,0 +1,15 @@
+﻿@model Office_Seat_Book_Entity.SecretKey;
+@{
+    ViewData["Title"] = "GenerateQR";
+}
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h1>GenerateQR</h1>
+@{
+   string imageBase64Data = Convert.ToBase64String(Model.Qr);
+    string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+
+    <img height="200" width="200" src="@imageDataURL" />
+}
+@*<input type="image" asp-for="Qr"/>*@

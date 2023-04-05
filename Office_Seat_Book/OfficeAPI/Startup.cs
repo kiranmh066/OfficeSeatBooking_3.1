@@ -48,6 +48,8 @@ namespace OfficeAPI
             services.AddTransient<HelpService, HelpService>();
             services.AddTransient<IHelpRepost, HelpRepost>();
 
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             var Logger = new LoggerConfiguration()
           .MinimumLevel.Information()
@@ -82,9 +84,6 @@ namespace OfficeAPI
             });
 
 
-
-            services.AddTransient<SecretKeyService, SecretKeyService>();
-            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             //  var Logger = new LoggerConfiguration()
             //.MinimumLevel.Information()
