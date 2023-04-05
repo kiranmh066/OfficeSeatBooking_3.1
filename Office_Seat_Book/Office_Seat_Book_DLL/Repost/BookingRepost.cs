@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Book_Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +22,7 @@ namespace Office_Seat_Book_DLL.Repost
             List<Booking> list = new List<Booking>();
             list = _dbContext.booking.ToList();
             var booking1 = (from list1 in list
-                               select list1).Last();
+                            select list1).Last();
             return booking1.BookingID;
         }
 
@@ -66,5 +67,26 @@ namespace Office_Seat_Book_DLL.Repost
             _dbContext.SaveChanges();
         }
 
+        public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
+        {
+            List<Booking> booking = _dbContext.booking.Include(obj=>obj.employee).ToList();
+            List<Booking>booking1= new List<Booking>();
+
+            foreach(var item in booking)
+            {
+                if(item.From_Date.Date==item.To_Date.Date && item.From_Date.Date==date1)
+                {
+                    booking1.Add(item);
+                    continue;
+                }
+                else if((item.From_Date.Date != item.To_Date.Date)&&(item.From_Date.Date>=date1&& date1<= item.To_Date.Date))
+                {
+                    booking1.Add(item);
+                }
+            }
+            return booking1;
+        }
+
+       
     }
 }

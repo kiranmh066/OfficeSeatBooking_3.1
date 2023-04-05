@@ -2,10 +2,12 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Office_Seat_Book_Entity;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System;
-using ZXing.QrCode;
+using System.Data;
+
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -28,6 +30,13 @@ namespace Office_Seat_Book_MVC.Controllers
 
             return View();
         }
+
+        public IActionResult ScanQr()
+        {
+         
+            return View();
+        }
+
 
 
         public IActionResult GenerateOTP()

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
-    public partial class db : Migration
+    public partial class kiran : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    Secret_Key = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Security_Question = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmployeeStatus = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -88,7 +88,7 @@ namespace Office_Seat_Book_DLL.Migrations
                 {
                     Seat_No = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    seat_flag = table.Column<bool>(type: "bit", nullable: false),
+                    Seat_flag = table.Column<bool>(type: "bit", nullable: false),
                     FloorID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -115,7 +115,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     To_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Shift_Time = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Seat_No = table.Column<int>(type: "int", nullable: false),
-                    booking_Status = table.Column<int>(type: "int", nullable: false),
+                    Booking_Status = table.Column<int>(type: "int", nullable: false),
                     Vehicle = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -141,6 +141,7 @@ namespace Office_Seat_Book_DLL.Migrations
                 {
                     ParkingID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Parking_Number = table.Column<int>(type: "int", nullable: false),
                     ParkingType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BookingID = table.Column<int>(type: "int", nullable: false)
                 },

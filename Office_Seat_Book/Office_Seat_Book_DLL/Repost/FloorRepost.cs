@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Office_Seat_Book_DLL.Repost
 {
-    public class FloorRepost:IFloorRepost
+    public class FloorRepost : IFloorRepost
     {
         Office_DB_Context _dbContext;//default private
 

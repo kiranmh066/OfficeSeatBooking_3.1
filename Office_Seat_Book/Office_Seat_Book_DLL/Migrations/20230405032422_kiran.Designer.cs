@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230403122604_db")]
-    partial class db
+    [Migration("20230405032422_kiran")]
+    partial class kiran
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,9 @@ namespace Office_Seat_Book_DLL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<int>("Booking_Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("EmployeeID")
                         .HasColumnType("int");
@@ -51,9 +54,6 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<bool>("Vehicle")
                         .HasColumnType("bit");
-
-                    b.Property<int>("booking_Status")
-                        .HasColumnType("int");
 
                     b.HasKey("BookingID");
 
@@ -95,7 +95,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Secret_Key")
+                    b.Property<string>("Security_Question")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmpID");
@@ -154,6 +154,9 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<string>("ParkingType")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Parking_Number")
+                        .HasColumnType("int");
+
                     b.HasKey("ParkingID");
 
                     b.HasIndex("BookingID");
@@ -171,7 +174,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("seat_flag")
+                    b.Property<bool>("Seat_flag")
                         .HasColumnType("bit");
 
                     b.HasKey("Seat_No");

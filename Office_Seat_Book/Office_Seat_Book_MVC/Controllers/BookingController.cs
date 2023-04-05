@@ -165,12 +165,12 @@ namespace Office_Seat_Book_MVC.Controllers
                 if (secretKey.SpecialKey == specialKey)
                 {
                     employeeinfo.EmployeeStatus = true;
-                    booking.booking_Status = 1;
+                    booking.Booking_Status = 1;
                 }
                 else
                 {
                     employeeinfo.EmployeeStatus = false;
-                    booking.booking_Status = 0;
+                    booking.Booking_Status = 0;
                 }
                 #endregion
 
@@ -320,7 +320,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         var result = await response.Content.ReadAsStringAsync();
                         secretKey = JsonConvert.DeserializeObject<SecretKey>(result);
-                        TempData["SecretIdForQr"] =Convert.ToInt32(secretKey.SecretId);
+                        TempData["SecretIdForQr"] = Convert.ToInt32(secretKey.SecretId);
                         TempData.Keep();
                     }
                 }

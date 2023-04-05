@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_Entity;
+using System;
 using System.Collections.Generic;
 
 namespace OfficeAPI.Controllers
@@ -33,8 +33,8 @@ namespace OfficeAPI.Controllers
 
             return _BookingService.AddBooking(booking);
 
-            
-           
+
+
 
         }
         [HttpDelete("DeleteBooking")]
@@ -70,6 +70,13 @@ namespace OfficeAPI.Controllers
             
             return _BookingService.GetBookingByEmpId(EmpId);
     
+        }
+
+        [HttpGet("GetBookingsByDate")]
+
+        public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
+        {
+            return _BookingService.GetBookingsByDate(date1);
         }
 
     }
