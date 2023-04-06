@@ -7,7 +7,13 @@
 @{
     ViewData["Title"] = "BookSeat";
 }
-
+@if(Model != null)
+{
+    <h1>You Already Booked the seat, A seat is waiting for you</h1>
+    <h3>See Booked Seat</h3>
+    <a asp-action="ViewPass" asp-controller="Booking" class="btn btn-danger">View Pass</a>
+}else
+{
 
 <body>
     <div class="mask bg-gradient-primary">
@@ -139,6 +145,7 @@
 
 
 </body>
+}
 <script>
     const today = new Date().toISOString().split('T')[0];
     const dateFrom = document.getElementById("fromDate");
