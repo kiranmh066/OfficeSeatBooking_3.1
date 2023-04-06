@@ -1,0 +1,66 @@
+.form-gap {
+    padding-top: 70px;
+}
+
+.img{
+    position: absolute;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .mask {
+    position:absolute;
+    background-size: cover;
+    top: 0;
+    width: 100%;
+    height: 70%;
+}
+.bg-gradient-primary {
+    background-image: linear-gradient(310deg,#7928ca,#ff0080);
+    height:70%;
+    width: 100%;
+    opacity: 1;
+}
+
+  h1{
+    font-weight: bolder;
+    text-align: center;
+    color: lightgray;
+  }
+  
+.card-body{
+  
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+}
+.card{
+    margin-top: 200px;
+}
+.form-control{
+    text-align: center;
+    box-shadow: 0 0 2px 2px lightskyblue;
+}
+
+.form-label input{
+    text-align: center;
+}
+
+.btn{
+   
+    align-items: center;
+   
+    
+}
+
+.mb-4{
+    margin: auto;
+}
+
+
+
+
+

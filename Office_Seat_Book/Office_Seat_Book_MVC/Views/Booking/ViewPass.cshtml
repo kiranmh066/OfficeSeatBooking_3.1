@@ -1,91 +1,60 @@
 ﻿
 @model Office_Seat_Book_Entity.Booking
 
-@{
+@*@{
 
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
-}
+}*@
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <title>Booking Details</title>
-    <style>
-
-        body {
-            background: radial-gradient( #33ccff 0%, #ff99cc 100%);
-            ;
-        }
-
-        .row {
-            margin-top: 19px;
-        }
-
-        .col-md-4 {
-            margin-top: 20px;
-            background-image: url("https://img.freepik.com/free-vector/appointment-booking-with-calendar_52683-39645.jpg?w=740&t=st=1680413425~exp=1680414025~hmac=6ef8cceb619b17af6464b54d48d2809e90fe20b047cb7fc94771e4b5ae4363e4");
-            border-radius: 25px;
-            border: 2px solid black;
-            opacity: 0.9;
-        }
-
-        .col-8 {
-            box-shadow: 0 0 2px 2px grey;
-            background-color: aliceblue;
-            color: blue;
-            font-weight: bold;
-        }
-
-            .col-8:hover {
-                background-color: wheat;
-            }
-
-        .card-text {
-            text-align: left;
-        }
-
-        h2 {
-            font-style: italic;
-            color: red;
-            margin-top: 5px;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
+    <link href="~/css/bookingviewpass.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="col-md-2 mx-auto"><h2>View Pass</h2></div>
-    <div class="card col-md-4 mx-auto p-0">
+    <div class="container">
         <div class="row">
-            <div class="col-8 mx-auto card text-center mb-3">
-                <div class="card-body ">
-                    <h5 class="card-title text-center mb-3">Details of the employee</h5>
-                    <p class="card-text">Name : @Model.employee.Name </p>
-                    <p class="card-text">Emp ID : @Model.EmployeeID </p>
-                    <p class="card-text">Role:@Model.employee.Role </p>
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                <img class="img-fluid"
+                     src="https://img.freepik.com/free-vector/appointment-booking_23-2148570756.jpg?size=626&ext=jpg&ga=GA1.2.1040341196.1679931539&semt=ais"
+                     alt="img">
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                <div class="card col-md-8 mx-auto p-5" style="height:95%">
+                    <div class="row">
+                        <div class="col-6 mx-auto card text-center mb-2">
+                            <div class="card-body" style="margin-top:0px">
+                                <h5 class="card-title text-center mb-1">Details of the employee</h5>
+                                <p class="card-text">Name : @Model.employee.Name </p>
+                                <p class="card-text">Emp ID : @Model.EmployeeID </p>
+                                <p class="card-text">Role:@Model.employee.Role </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 mx-auto card text-center mb-0">
+                            <div class="card-body">
+                                <h5 class="card-title">Booking Details</h5>                                
+                                <p class="card-text">From :@Model.From_Date     </p>
+                                <p class="card-text">To :@Model.To_Date     </p>
+                                <p class="card-text">Shift Time :@Model.Shift_Time     </p>
+                                <p class="card-text">Seat Number :  @Model.Seat_No   </p>
+                                <p class="card-text">Booking ID : @Model.BookingID    </p>
+                                <p class="card-text">Parking : @Model.Vehicle</p>
+                                <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn" style="display:inline">Verify OTP</a>
+                                <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn" style="display:inline">Verify QR</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-     
-
-        <div class=" col-8 mx-auto card text-center mb-3">
-            <!-- <div class="row"> -->
-            <div class="card-body">
-                <h5 class="card-title">Booking Details </h5>
-                <p class="card-text">From Date :@Model.From_Date     </p>
-                <p class="card-text">To Date :@Model.To_Date     </p>
-                <p class="card-text">Shift Time :@Model.Shift_Time     </p>
-                <p class="card-text">Seat Number :  @Model.Seat_No   </p>
-                <p class="card-text">Booking ID : @Model.BookingID    </p>
-                <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn btn-success">Verify Pass</a>
-            </div>
-        </div>
-
+    </div>
 </body>
 </html>

@@ -48,6 +48,8 @@ namespace OfficeAPI
             services.AddTransient<HelpService, HelpService>();
             services.AddTransient<IHelpRepost, HelpRepost>();
 
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             var Logger = new LoggerConfiguration()
           .MinimumLevel.Information()
@@ -82,9 +84,6 @@ namespace OfficeAPI
             });
 
 
-
-            services.AddTransient<SecretKeyService, SecretKeyService>();
-            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             //  var Logger = new LoggerConfiguration()
             //.MinimumLevel.Information()
@@ -139,6 +138,13 @@ namespace OfficeAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetService<Office_DB_Context>();
+                    dbContext.Database.Migrate();
+                }
+
             }
             app.UseSwagger();
             app.UseSwaggerUI(options =>
