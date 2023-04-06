@@ -39,7 +39,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            if (employee.Secret_Key == employee1.Secret_Key)
+            if (employee.Security_Question == employee1.Security_Question)
             {
                 return RedirectToAction("UpdatePassword", "Forgot");
             }
@@ -59,7 +59,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> UpdatePassword(Employee employee)
         {
             int id = Convert.ToInt32(TempData["empId1"]);
-            if (employee.Password == employee.Secret_Key)
+            if (employee.Password == employee.Security_Question)
             {
                 Employee employee1 = new Employee();
                 using (HttpClient client = new HttpClient())
