@@ -30,23 +30,38 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpGet]
         public  async Task<IActionResult> ViewPass()
         {
-            
             Booking booking = new Booking();
-            int EmpId= Convert.ToInt32(TempData["empId"]);
-            TempData.Keep();
-            using (HttpClient client = new HttpClient())
+            try
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + EmpId;
-                //EmployeeId is apicontroleer passing argument name
-                using (var response = await client.GetAsync(endPoint))
+                int EmpId = Convert.ToInt32(TempData["empId"]);
+                TempData.Keep();
+                using (HttpClient client = new HttpClient())
                 {
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {   //dynamic viewbag we can create any variable name in run time
-                        var result = await response.Content.ReadAsStringAsync();
-                        booking = JsonConvert.DeserializeObject<Booking>(result);
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + EmpId;
+                    //EmployeeId is apicontroleer passing argument name
+                    using (var response = await client.GetAsync(endPoint))
+                    {
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {   //dynamic viewbag we can create any variable name in run time
+                            var result = await response.Content.ReadAsStringAsync();
+                            booking = JsonConvert.DeserializeObject<Booking>(result);
+                        }
+                        else if(response.StatusCode==System.Net.HttpStatusCode.InternalServerError || response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                        {
+                            ViewBag.status = "Error";
+                            ViewBag.message = "You Don't have any Bookings";
+                            return View();
+                        }
+
                     }
                 }
             }
+            catch(NullReferenceException ex)
+            {
+                ViewBag.status = "Error";
+                ViewBag.message = "You Don't have any Bookings";
+            }
+            
             return View(booking);
         }
 
@@ -206,6 +221,7 @@ namespace Office_Seat_Book_MVC.Controllers
                         {   //dynamic viewbag we can create any variable name in run time
                             ViewBag.status = "Ok";
                             ViewBag.message = "Seat Booking Verified Successfully!!";
+                            return RedirectToAction("Success", "Booking");
                         }
                         else
                         {
@@ -346,6 +362,10 @@ namespace Office_Seat_Book_MVC.Controllers
             }
             #endregion
             return View(secretKey2);
+        }
+        public IActionResult Success()
+        {
+            return View();
         }
     }
 }
