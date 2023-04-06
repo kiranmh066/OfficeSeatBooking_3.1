@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
-    public partial class ashes : Migration
+    public partial class kiran : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,7 +68,8 @@ namespace Office_Seat_Book_DLL.Migrations
                     SecretId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EmpID = table.Column<int>(type: "int", nullable: false),
-                    SpecialKey = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    SpecialKey = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Qr = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
                 },
                 constraints: table =>
                 {

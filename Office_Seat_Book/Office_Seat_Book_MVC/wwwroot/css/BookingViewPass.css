@@ -1,0 +1,46 @@
+body {
+    background-color: white;
+}
+
+.col-md-4 {
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid black;
+    opacity: 0.9;
+}
+
+.col-6 {
+    background-color: white;
+    color: gray;
+    font-weight: bold;
+    width: 500px;
+}
+
+.card-text {
+    text-align: left;
+}
+
+h2 {
+    font-weight: bolder;
+    color: white;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.container {
+    margin-top: 50px;
+}
+
+.btn {
+    background-color: blueviolet;
+    color: white;
+}
+
+.col-md-8 {
+    border: 2px solid transparent;
+    box-shadow: 0 0px 2px 2px grey;
+    background-color: aliceblue;
+}
