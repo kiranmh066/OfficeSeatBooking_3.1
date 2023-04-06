@@ -15,5 +15,7 @@ namespace Office_Seat_Book_DLL.Repost
         IEnumerable<SecretKey> GetSecretKeys();
 
         SecretKey GetSecretKeyByEmpId(int empId);
+
+        int GetEmpBySecurityKey(string securityKey);
     }
 }

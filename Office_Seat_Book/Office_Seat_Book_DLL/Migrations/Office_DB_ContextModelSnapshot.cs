@@ -192,6 +192,9 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("EmpID")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("Qr")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("SpecialKey")
                         .HasColumnType("nvarchar(max)");
 

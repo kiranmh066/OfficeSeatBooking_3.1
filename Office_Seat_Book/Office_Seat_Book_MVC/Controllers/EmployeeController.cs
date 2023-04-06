@@ -145,13 +145,13 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
+            /*if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
             {
                 ViewBag.status = "Error";
                 ViewBag.message = "Alredy a seat waiting for you!!";
             }
             else
-            {
+            {*/
                 #region Booking Seat
                 booking.From_Date = DateTime.Today;
                 booking.To_Date = DateTime.Today;
@@ -191,7 +191,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 #endregion
 
 
-            }
+            /*}*/
             return View();
         }
         [HttpGet]

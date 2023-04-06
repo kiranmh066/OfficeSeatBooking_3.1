@@ -81,7 +81,7 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> GetCustomDates(Booking booking)
         {
-           
+            bookings = null;
             int d = Convert.ToInt32(booking.From_Date.Day);
             int e = Convert.ToInt32(booking.To_Date.Day);
             int j = 0;
