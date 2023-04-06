@@ -5,6 +5,7 @@ using Office_Seat_Book_DLL;
 using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> RegisterEmp(Employee employee)
         {
             ViewBag.status = "";
+           
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(employee), Encoding.UTF8, "application/json");
@@ -111,7 +113,7 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> EditEmp(Employee emp)
         {
-            ViewBag.status = "";
+            
             //it will update the doctor details after Admin Changes
             using (HttpClient client = new HttpClient())
             {
@@ -284,32 +286,8 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ShowAdminProfile()
-        {
-            Employee emp = null;
-            using (HttpClient client = new HttpClient())
-            {
-                //Fetching temporary ProfileId from  tempdata
-
-                int Id = Convert.ToInt32(TempData["empId"]);
-
-                TempData.Keep();
-                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
-                using (var response = await client.GetAsync(endPoint))
-                {
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        var result = await response.Content.ReadAsStringAsync();
-                        emp = JsonConvert.DeserializeObject<Employee>(result);
-                    }
-
-                }
-
-            }
-            return View(emp);
-
-        }
+        
+        
 
         public IActionResult AddSeat()
         {
