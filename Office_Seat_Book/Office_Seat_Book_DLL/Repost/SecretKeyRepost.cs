@@ -58,5 +58,20 @@ namespace Office_Seat_Book_DLL.Repost
             }
             return null;
         }
+
+        public int GetEmpBySecurityKey(string securityKey)
+        {
+            List<SecretKey>secretKeys= _dbContext.secretKey.ToList();
+            List<SecretKey>secretKeys1 = new List<SecretKey>(); 
+            foreach(var item in secretKeys)
+            {
+                if(securityKey==item.SpecialKey)
+                {
+                    secretKeys1.Add(item);
+                }
+
+            }
+            return secretKeys1.Last().EmpID;
+        }
     }
 }

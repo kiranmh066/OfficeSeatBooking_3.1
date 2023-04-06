@@ -19,10 +19,7 @@
                 <video id="preview"></video>
                 <script type="text/javascript">
                     let scanner = new Instascan.Scanner({ video: document.getElementById("preview") });
-                   
-                    scanner.addListener('scan', function (content) {
-                        @TempData["codefromQr"]=content;
-                    });
+                    
 
                     Instascan.Camera.getCameras().then(function (cameras) {
 
@@ -38,6 +35,33 @@
                     }).catch(function (e) {
                         console.error(e);
                     });
+                        var myContent=0;
+
+                        scanner.addListener('scan', function(content,event) {
+                      
+                        myContent = content;
+                         
+                      
+                         window.alert("scanned successfully wait redirecting");
+                        if (content != null) {
+                            $.ajax({
+                                
+                                url: '@Url.Action("GetEmpIdBySecretId", "Receptionist")',
+                                type: 'POST',
+                                data: { myContent: myContent },
+                                success: function (result) {
+                                    console.log(result);
+                                },
+                                error: function (xhr, status, error) {
+                                    console.log(error);
+                                }
+                            });
+                        }
+                    
+                       
+                      });
+                 
+                   
                 </script>
             </div>
         </div>

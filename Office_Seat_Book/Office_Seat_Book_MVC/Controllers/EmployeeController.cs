@@ -138,14 +138,22 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            if (booking2!=null ||( booking2.Booking_Status !=0 && booking2.Booking_Status !=1)|| booking2.To_Date < DateTime.Today )
-            {
-                ViewBag.status = "Error";
-                ViewBag.message = "Alredy a seat waiting for you!!";
-                return View(booking2);
 
-            }
-            ViewBag.shiftTimings = ShiftTiming();
+            /*if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
+
+                if (booking2 != null || (booking2.Booking_Status != 0 && booking2.Booking_Status != 1) || booking2.To_Date < DateTime.Today)
+
+                {
+                    ViewBag.status = "Error";
+                    ViewBag.message = "Alredy a seat waiting for you!!";
+                    return View(booking2);
+
+                }
+
+                else
+                {*/
+
+             ViewBag.shiftTimings = ShiftTiming();
             ViewBag.requests = RequestType();
             return View();
         }
@@ -155,6 +163,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
           
          
+
                 #region Booking Seat
                 booking.From_Date = DateTime.Today;
                 booking.To_Date = DateTime.Today;
@@ -170,31 +179,31 @@ namespace Office_Seat_Book_MVC.Controllers
                 booking.Shift_Time = "nothing";
 
                 ViewBag.status = "";
-                using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";
+                using (var response = await client.PostAsync(endPoint, content))
                 {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
-                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";
-                    using (var response = await client.PostAsync(endPoint, content))
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
 
-                            var result = await response.Content.ReadAsStringAsync();
-                            bookingId = JsonConvert.DeserializeObject<int>(result);
-                            TempData["Bookid"] = bookingId;
-                            TempData.Keep();
-                            ViewBag.status = "Ok";
-                            ViewBag.message = "Booked successfully!";
-                            return RedirectToAction("BookSeat2", "Employee");
-
-                        }
+                        var result = await response.Content.ReadAsStringAsync();
+                        bookingId = JsonConvert.DeserializeObject<int>(result);
+                        TempData["Bookid"] = bookingId;
+                        TempData.Keep();
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Booked successfully!";
+                        return RedirectToAction("BookSeat2", "Employee");
 
                     }
-                
+
+                }
+
                 #endregion
 
-
             }
+            /*}*/
             return View();
         }
         [HttpGet]
