@@ -32,9 +32,6 @@ namespace Office_Seat_Book_DLL
 
             dbContextOptionsBuilder.UseSqlServer("Data Source =DESKTOP-26DGK8D; Initial Catalog = OfficeDbseen; Integrated Security = True;");
 
-
-
-
         }
 
     }
