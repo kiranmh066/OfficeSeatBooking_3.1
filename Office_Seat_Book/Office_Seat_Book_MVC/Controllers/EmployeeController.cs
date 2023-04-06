@@ -101,9 +101,9 @@ namespace Office_Seat_Book_MVC.Controllers
             List<SelectListItem> YesorNorequest = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="Select Yes/No"},
-           
-                new SelectListItem{Value=false.ToString(),Text="NO"},
                 new SelectListItem{Value=true.ToString(),Text="YES"},
+                new SelectListItem{Value=false.ToString(),Text="NO"},
+                
             };
             return YesorNorequest;
         }
@@ -119,18 +119,11 @@ namespace Office_Seat_Book_MVC.Controllers
         }
 
 
-        public IActionResult BookSeat()
+        public async Task<IActionResult> BookSeat()
         {
-            ViewBag.shiftTimings = ShiftTiming();
-            ViewBag.requests = RequestType();
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> BookSeat(Booking booking)
-        {
+           
             //List<Booking> booking2 = null;
-            /*Booking booking2 = new Booking();
+            Booking booking2 = new Booking();
             using (HttpClient client = new HttpClient())
             {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]);
@@ -145,13 +138,23 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
+            if (booking2!=null ||( booking2.Booking_Status !=0 && booking2.Booking_Status !=1)|| booking2.To_Date < DateTime.Today )
             {
                 ViewBag.status = "Error";
                 ViewBag.message = "Alredy a seat waiting for you!!";
+                return View(booking2);
+
             }
-            else
-            {*/
+            ViewBag.shiftTimings = ShiftTiming();
+            ViewBag.requests = RequestType();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> BookSeat(Booking booking)
+        {
+          
+         
                 #region Booking Seat
                 booking.From_Date = DateTime.Today;
                 booking.To_Date = DateTime.Today;
@@ -187,7 +190,7 @@ namespace Office_Seat_Book_MVC.Controllers
                         }
 
                     }
-                /*}*/
+                
                 #endregion
 
 
@@ -383,6 +386,10 @@ namespace Office_Seat_Book_MVC.Controllers
                         {
                             return RedirectToAction("SelectingTypeofVehicle", "Employee");
                         }
+                        else
+                        {
+                            return RedirectToAction("ViewPass", "Booking");
+                        }
                     }
                 }
             }
@@ -445,7 +452,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
                             ViewBag.status = "Ok";
                             ViewBag.message = "Parking Booked successfully!";
-                            return RedirectToAction("Booking_history", "Employee");
+                            return RedirectToAction("ViewPass", "Booking");
 
                         }
 

@@ -16,7 +16,7 @@
              alt="img">
     </div>
     <div class="container">
-        <nav class="navbar navbar-expand-lg blur blur-rounded shadow my-4">
+        <nav class="navbar navbar-expand-lg align-content-md-center blur blur-rounded shadow my-4">
             <div class="container-fluid">
 
                 <svg data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
@@ -28,17 +28,18 @@
                 </svg>
                 <div class=" col-lg-1 mx-auto order-0">
 
-                    <a class="navbar-brand mx-md-5" style="color: rgb(0, 0, 0);">
+                    <a class="navbar-brand mx-lg-5" style="color: rgb(0, 0, 0);">
                         BOOK.it
                     </a>
                 </div>
 
                 <div class="nav col-lg-2">
                     <div>
-                        <button class="viewpass text-white btn-md bg-success px-2">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="viewpass text-white btn-md bg-success  px-2">
                             View Pass
                         </button>
                     </div>
+
                     <div class="bell" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
@@ -73,11 +74,6 @@
                     </div>
                 </section>
                 <br>
-                <!-- <section class="color-7">
-                    <div class="anchor cl-effect-4">
-                        <a href="#">Your Bookings</a>
-                    </div>
-                </section> -->
 
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
@@ -144,8 +140,59 @@
                     Your Bookings
                 </button>
                 <button class="button btn-lg">
-                    <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white" >Book Seat</a>
+                    <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white">Book Seat</a>
                 </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pass</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable px-4">
+                    <div class="contai">
+                        <div class="row">
+                            <div class="card main mx-auto ">
+                                <div class="row">
+                                    <div class=" text-center ">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
+                                            <p class="card-text">Name :</p>
+                                            <p class="card-text">Emp ID :</p>
+                                            <p class="card-text">Role:</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class=" text-center my-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-black"><u>Booking Details</u></h5>
+                                            <p class="card-text">From Date :</p>
+                                            <p class="card-text">To Date :</p>
+                                            <p class="card-text">Shift Time :</p>
+                                            <p class="card-text">Seat Number :</p>
+                                            <p class="card-text">Booking ID :</p>
+                                            <p class="card-text">Food :</p>
+                                            <p class="card-text">Parking :</p>
+                                            <button class="btn btn-success">View OTP</button> &nbsp;
+                                            <button class="btn btn-success">View OTP</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body text-center">
+                                    <h3>You don't have any bookings</h3>
+                                    <button class="btn btn-success">Book Seat</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -172,8 +219,7 @@
   opacity: 1;
 }
 .navbar-brand{
-  font-weight: bold;
-  
+  font-weight: bold;  
  }
 .nav{
     justify-content: space-between;
@@ -329,27 +375,44 @@ button:active {
 	background: #3fa46a;
 }
 
-
-/* For normal mobile devices */
 media screen and (max-width:405px) {
 
   .middle-row{
     width: 280px!important;
   }
 }
-/* For fold devices */
-media screen and (max-width:283px) {
 
-  .middle-row{
-    width: 220px!important;
-  }
+.contai{
+  width: 400px;
 }
-media screen and (max-width:405px) {
-
-  .img{
-    height: 100%;
-  }
+.card-text{
+  text-align: left;
+}
+.main{
+border-radius: 3%;
 }
 
+keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+.main {
+animation-name: fadeIn;
+animation-duration: 1s;
+}
+
+.main{
+animation: slide-down 1s forwards;
+}
+
+keyframes slide-down {
+from {
+top: -200px;
+}
+to {
+top: 0;
+}
+}
 </style>
 
