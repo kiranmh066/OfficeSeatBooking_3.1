@@ -221,6 +221,7 @@ namespace Office_Seat_Book_MVC.Controllers
                         {   //dynamic viewbag we can create any variable name in run time
                             ViewBag.status = "Ok";
                             ViewBag.message = "Seat Booking Verified Successfully!!";
+                            return RedirectToAction("Success", "Booking");
                         }
                         else
                         {
@@ -361,6 +362,10 @@ namespace Office_Seat_Book_MVC.Controllers
             }
             #endregion
             return View(secretKey2);
+        }
+        public IActionResult Success()
+        {
+            return View();
         }
     }
 }
