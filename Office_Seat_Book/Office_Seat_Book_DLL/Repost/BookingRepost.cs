@@ -35,18 +35,33 @@ namespace Office_Seat_Book_DLL.Repost
 
         public Booking GetBookingByEmpId(int EmpId)
         {
-            List<Booking> bookings = new List<Booking>();
-            List<Booking> bookings1 = new List<Booking>();
-
-            bookings = _dbContext.booking.Include(obj=>obj.employee).ToList();
-            foreach(var item in bookings)
+            try
             {
-                if(item.EmployeeID==EmpId)
+
+                List<Booking> bookings = new List<Booking>();
+                List<Booking> bookings1 = new List<Booking>();
+
+                bookings = _dbContext.booking.Include(obj => obj.employee).ToList();
+                foreach (var item in bookings)
                 {
-                    bookings1.Add(item);
+                    if (item.EmployeeID == EmpId)
+                    {
+                        bookings1.Add(item);
+                    }
+                }
+                if(bookings1.Count>=1)
+                {
+                    return bookings1.Last();
+                }
+                else
+                {
+                    return null;
                 }
             }
-            return bookings1.Last();
+            catch(InvalidOperationException ex)
+            {
+                return null;
+            }
         }
 
         public Booking GetBookingById(int bookingId)

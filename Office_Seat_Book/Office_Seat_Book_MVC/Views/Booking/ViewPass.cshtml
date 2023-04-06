@@ -5,6 +5,24 @@
 
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }*@
+@if(Model==null)
+{
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+}
+else
+{
+    
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,3 +76,4 @@
     </div>
 </body>
 </html>
+}
