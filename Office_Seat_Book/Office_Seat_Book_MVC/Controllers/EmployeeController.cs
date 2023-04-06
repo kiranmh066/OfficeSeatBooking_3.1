@@ -75,7 +75,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             List<SelectListItem> shiftTiming = new List<SelectListItem>()
             {
-                new SelectListItem{Value="Select",Text="select"},
+                new SelectListItem{Value="Select",Text="Shift Timings"},
                 new SelectListItem{Value="02:00pm-10:00pm",Text="02:00pm-10:00pm"},
                 new SelectListItem{Value="10:00am-06:00pm",Text="10:00am-06:00pm"},
                 new SelectListItem{Value="06:00am-02:00pm",Text="06:00am-02:00pm"},
@@ -89,7 +89,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             List<SelectListItem> request = new List<SelectListItem>()
             {
-                new SelectListItem{Value="Select",Text="select"},
+                new SelectListItem{Value="Select",Text="Type Of Request"},
                 new SelectListItem{Value="0",Text="Daily"},
                 new SelectListItem{Value="1",Text="Weekly"},
                 new SelectListItem{Value="2",Text="Custom"},
@@ -100,7 +100,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             List<SelectListItem> YesorNorequest = new List<SelectListItem>()
             {
-                new SelectListItem{Value="Select",Text="select"},
+                new SelectListItem{Value="Select",Text="Select Yes/No"},
            
                 new SelectListItem{Value=false.ToString(),Text="NO"},
                 new SelectListItem{Value=true.ToString(),Text="YES"},
@@ -305,6 +305,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public IActionResult GetFloorLayout()
         {
+
             return View(seats);
         }
 
@@ -329,6 +330,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
+            
             booking.Seat_No = SeatId;
             using (HttpClient client = new HttpClient())
             {
@@ -340,11 +342,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
-                        bool x = (bool)TempData["Vehical"];
-                        if (x == true)
-                        {
-                            return RedirectToAction("SelectingTypeofVehicle", "Employee");
-                        }
+                        
                     }
                     else
                     {
@@ -380,8 +378,12 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
-                    }                  
-
+                        bool x = (bool)TempData["Vehical"];
+                        if (x == true)
+                        {
+                            return RedirectToAction("SelectingTypeofVehicle", "Employee");
+                        }
+                    }
                 }
             }
 
@@ -391,7 +393,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public IActionResult SelectingTypeofVehicle()
         {
-            ViewBag.Type_of_Vehicle = TypeOfVehicle();
+            ViewBag.Yes_or_No_Request = YesorNoDropDown();
             return View();
         }
         [HttpPost]
@@ -407,7 +409,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> SelectingVehicle(int id)
         {
             Parking parking = new Parking();
-            parking.ParkingType = TempData["ParkingType"].ToString();
+           
             TempData.Keep();
             List<Parking> parkings = new List<Parking>();
             using (HttpClient client = new HttpClient())
