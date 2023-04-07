@@ -106,16 +106,15 @@
 
                         <div class="input-box">
                             <select name="location" class="form-control" required>
-                                <option>Location</option>
+                                    <option selected="true" disabled value="">Location</option>
                                 <option>Bengaluru</option>
                                 <option>Gurgaon</option>
                             </select>
                         </div>
 
                         <div class="input-box">
-
                             <select name="branch" class="form-control" required>
-                                <option>Branch</option>
+                                    <option selected ="true" disabled value="">Branch</option>
                                 <option>JP Nagar</option>
                             </select>
                         </div>
@@ -131,7 +130,14 @@
                         </select>
                         </div>*@
                         <div class="input-box">
-                            <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
+@*                            <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" value="" required></select>
+                            *@<select class="form-control" asp-for="Type_Of_Request" required>
+                                    <option disabled selected value="">Type of request</option>
+                                    <option value="0">Daily</option>
+                                    <option value="1">Weekly</option>
+                                    <option value="2">Custom</option>
+
+                                </select>
                         </div>
                     </div>
                     <div class="button">
