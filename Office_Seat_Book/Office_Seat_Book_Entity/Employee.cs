@@ -26,6 +26,9 @@ namespace Office_Seat_Book_Entity
 
         public string Role { get; set; }
 
-        public bool EmployeeStatus { get;set; }
+
+  
+        public bool EmployeeStatus { get; set; }
+
     }
 }
