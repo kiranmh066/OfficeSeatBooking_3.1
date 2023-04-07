@@ -38,10 +38,13 @@
                             </svg>
                         </div> &nbsp; &nbsp; &nbsp;
                         <div class="logout">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                            </svg>
+                            <a asp-controller="Home" asp-action="Index" type="button" onclick="LogoutFunction()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+
+                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -61,14 +64,14 @@
                     <br>
                     <section class="color-7">
                         <div class="anchor cl-effect-4">
-                            <a asp-area="" asp-controller="Admin" asp-action="Showprofile">PROFILE</a>
+                            <a asp-area="" asp-controller="Employee" asp-action="Profile">PROFILE</a>
                         </div>
                     </section>
                     <br>
                     <section class="color-7">
                         <div class="anchor cl-effect-4">
                             <a asp-controller="Admin" asp-action="RegisterEMP">Register Employee</a>
-                            <a asp-area="" asp-controller="Admin" asp-action="ViewEmp">Get All Employee details</a>
+                            <a asp-area="" asp-controller="Admin" asp-action="ViewEmp"> Employee details</a>
                         </div>
                     </section>
                     <br>
@@ -126,53 +129,50 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <center>
-                <h2 style="color:black ;position:relative">All seats </h2>
-            </center>
-            <div class="col-4 d-inline-block align-top" style=" margin-right:90px;margin-left:370px ;position:relative">
-                <div class="row">
-                    <div class="col-12 text-white">
+        <div class="card shadow mb-4" style="width:600px;margin:auto">
+            <div class="card-header py-3">
+                <a class="text-uppercase d-inline-block text-center" style="color:#003399;font-size:x-large" align="center"> Seat <span class="font-weight-bold" style="font-size:x-large">Details</span></a>
 
-                        <hr />
-                        <table class="table table-bordered border-dark" style="background-color:white;position:relative">
-                            <thead>
+            </div>
+            <div class="card-body" style="width:600px">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="myTable" cellspacing="0">
+                        <thead>
+                            <tr style="color:black">
+
+                                <th>Seat_No</th>
+                                <th>FloorID</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Seat in Model)
+
+                            {
+
                                 <tr style="color:black">
+                                    <td>@Seat.Seat_No</td>
+                                    <td>@Seat.FloorID</td>
 
-                                    <th>Seat_No</th>
-                                    <th>FloorID</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <td>
+                                        <a asp-controller="Admin" asp-action="EditSeat"
+                                       asp-route-seatID="@Seat.Seat_No"><img class="btn btn-warning" style="height:50px; width:80px" src="https://www.svgrepo.com/show/241804/edit.svg" /> </a>
+                                    </td>
+
+                                    <td>
+                                        <a asp-controller="Admin" asp-action="DeleteSeat" onclick="DeleteFunction()"
+                                       asp-route-seatID="@Seat.Seat_No"><img class="btn btn-danger" style="height:50px; width:80px" src="https://www.svgrepo.com/show/243864/delete.svg" /> </a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var Seat in Model)
 
-                                {
-
-                                    <tr style="color:black">
-                                        <td>@Seat.Seat_No</td>
-                                        <td>@Seat.FloorID</td>
-
-                                        <td>
-                                            <a asp-controller="Admin" asp-action="EditSeat"
-                                           asp-route-seatID="@Seat.Seat_No"><img class="btn btn-warning" style="height:50px; width:80px" src="https://www.svgrepo.com/show/241804/edit.svg" /> </a>
-                                        </td>
-
-                                        <td>
-                                            <a asp-controller="Admin" asp-action="DeleteSeat" onclick="DeleteFunction()"
-                                           asp-route-seatID="@Seat.Seat_No"><img class="btn btn-danger" style="height:50px; width:80px" src="https://www.svgrepo.com/show/243864/delete.svg" /> </a>
-                                        </td>
-                                    </tr>
-
-                                }
-                            </tbody>
-                        </table>
-
-                    </div>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+
     </div>
 
 </body>
