@@ -73,5 +73,12 @@ namespace OfficeAPI.Controllers
             return _SecretKeyService.GetSecretKeyByEmpId(empId);
 
         }
+
+        [HttpGet("GetEmpIdBySpecialKey")]  
+
+        public int GetEmpIdBySpecialKey(string  specialKey)
+        {
+            return _SecretKeyService.GetEmpIdBySecretKey(specialKey);
+        }
     }
 }

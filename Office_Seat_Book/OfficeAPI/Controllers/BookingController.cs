@@ -64,11 +64,27 @@ namespace OfficeAPI.Controllers
             }
         }
 
+
         [HttpGet("GetBookingByEmpId")]
         public Booking GetBookingByEmpId(int EmpId)
         {
-            
-            return _BookingService.GetBookingByEmpId(EmpId);
+            try
+            {
+                Booking booking = null;
+                booking = _BookingService.GetBookingByEmpId(EmpId);
+                if(booking!=null)
+                {
+                    return _BookingService.GetBookingByEmpId(EmpId);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
     
         }
 

@@ -40,7 +40,8 @@ namespace OfficeAPI
             services.AddTransient<IParkingRepost, ParkingRepost>();
             services.AddTransient<EmployeeService, EmployeeService>();
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
-
+            services.AddTransient<HelpService, HelpService>();
+            services.AddTransient<IHelpRepost, HelpRepost>();
 
             services.AddTransient<SecretKeyService, SecretKeyService>();
             services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
@@ -138,6 +139,7 @@ namespace OfficeAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             app.UseSwagger();
             app.UseSwaggerUI(options =>

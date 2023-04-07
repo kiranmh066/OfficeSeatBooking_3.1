@@ -5,11 +5,22 @@
 @{
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
-<h1>GenerateQR</h1>
-@{
-   string imageBase64Data = Convert.ToBase64String(Model.Qr);
-    string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
-
-    <img height="200" width="200" src="@imageDataURL" />
-}
-@*<input type="image" asp-for="Qr"/>*@
+<head>
+    <link href="~/css/showqr.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <br />
+    <h2>QR Generator</h2>
+    <div class="qr-container">
+        @{
+            string imageBase64Data = Convert.ToBase64String(Model.Qr);
+            string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+            <img height="200" width="200" src="@imageDataURL" />
+        }
+        <br>
+    </div>
+    <div class="tag">
+        <h4>Scan the QR code here...</h4>
+    </div>
+</body>

@@ -49,9 +49,9 @@
 
         /* Style the container for the cancel button */
         /*.cancel-container {
-            width: 100%;
-            margin-top: 12px;
-        }*/
+                            width: 100%;
+                            margin-top: 12px;
+                        }*/
 
         /* Style the cancel button */
         .cancel {
@@ -78,14 +78,13 @@
             <input type="text" placeholder="Your email" required>
 
             <label for="name">Type Of Query</label>
-            <input type="text"  asp-for="TypeOfQuery" placeholder="Your Query Type" required>
+            <input type="text" asp-for="TypeOfQuery" placeholder="Your Query Type" required>
 
             <label for="message">Message</label>
             <textarea asp-for="Description" placeholder="Write your message here" style="height:200px" required></textarea>
-            
-            <button><a asp-controller="Admin" asp-action="Index">Cancel</a></button>
-            <input type="submit" value="Submit"/>     
-            
+
+            <button type="reset" class="cancel">Cancel</button>
+            <input type="submit" value="Submit" />
         </form>
     </div>
     @if (ViewBag.status == "Ok")
