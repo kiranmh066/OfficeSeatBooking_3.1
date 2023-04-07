@@ -107,19 +107,20 @@
                         </div>
                     </section>
                     <br />
-                    @* <section class="color-7">
-                    <div class="anchor cl-effect-4">
-                    <div>
-                    <a href="#"> PARKING&#9662;</a>
-                    <div>
-                    <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
-                    <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
+                    <section class="color-7">
+                        <div class="anchor cl-effect-4">
+                            <div>
+                                <a href="#"> REPORTS &#9662;</a>
+                                <div>
 
-                    </div>
-                    </div>
-                    </div>
-                    </section>*@
-                    <br>
+                                    <a asp-controller="Report" asp-action="Index" type="button "> REPORT BY DAY </a>
+                                    <a asp-controller="Report" asp-action="GetCustomDates" type="button"> REPORT BY CUSTOM DATES </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <br/>
                     <section class="color-7">
                         <div class="anchor cl-effect-4">
                             <a asp-controller="Help" asp-action="GetAllHelps">get all helps</a>

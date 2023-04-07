@@ -60,10 +60,11 @@ namespace Office_Seat_Book_MVC.Controllers
                                 TempData.Keep();
                                 TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
                                 TempData.Keep();
-                                TempData["helpcount1"] = Convert.ToInt32(TempData["helpcount2"]);
-                                TempData.Keep();
-                                TempData["regcount1"] = Convert.ToInt32(TempData["regcount2"]);
-                                TempData.Keep();
+                                int a = Convert.ToInt32(TempData["TotalCount"]);
+                                //TempData["helpcount1"] = Convert.ToInt32(TempData["helpcount2"]);
+                                //TempData.Keep();
+                                //TempData["regcount1"] = Convert.ToInt32(TempData["regcount2"]);
+                                //TempData.Keep();
                                 TempData["register"] = "profile was added";
                                 TempData.Keep();
                                 TempData["help"] = "you get one query";

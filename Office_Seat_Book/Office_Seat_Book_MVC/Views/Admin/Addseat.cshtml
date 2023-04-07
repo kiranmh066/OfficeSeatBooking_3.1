@@ -195,19 +195,20 @@
                         </div>
                     </section>
                     <br />
-                    @* <section class="color-7">
-                    <div class="anchor cl-effect-4">
-                    <div>
-                    <a href="#"> PARKING&#9662;</a>
-                    <div>
-                    <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
-                    <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
+                    <section class="color-7">
+                        <div class="anchor cl-effect-4">
+                            <div>
+                                <a href="#"> REPORTS &#9662;</a>
+                                <div>
 
-                    </div>
-                    </div>
-                    </div>
-                    </section>*@
-                    <br>
+                                    <a asp-controller="Report" asp-action="Index" type="button "> REPORT BY DAY </a>
+                                    <a asp-controller="Report" asp-action="GetCustomDates" type="button"> REPORT BY CUSTOM DATES </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <br/>
                     <section class="color-7">
                         <div class="anchor cl-effect-4">
                             <a asp-controller="Help" asp-action="GetAllHelps">get all helps</a>
@@ -228,28 +229,7 @@
                 </div>
             </div>
 
-            @* <div class="container">
-            <form method="post" enctype="multipart/form-data">
-            <div class="col-4 d-inline-block align-top" style=" margin-right:90px;margin-left:370px ; position:relative;">
-            <center>
-            <h2 style="color:white">Add Seat </h2>
-            </center>
-            <div class="row">
-            <div>
-            @*<div class="form-group">
-
-            <label>Seatno</label>
-            <input type="text" asp-for="Seat_No" class="form-control" placeholder="Enter seat number" required />
-            </div>
-
-            </div>
-            </div>
-            <input type="submit" value="Save" class="btn btn-success my-y" />
-            &nbsp;&nbsp;
-            <input type="reset" value="Reset" class="btn btn-success my-4" />
-
-
-            </div>*@
+          
 
             <div class="contain">
                 <div class="title">Add Seat</div>
@@ -264,9 +244,7 @@
                             </div>
                         </div>
                         <input type="submit" value="Save" class="btn btn-success my-y" />
-                        @*<button class="btn">
-                        Save
-                        </button>*@
+                        
                     </form>
                 </div>
 
