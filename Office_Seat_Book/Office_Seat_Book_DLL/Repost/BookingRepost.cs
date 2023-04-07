@@ -1,4 +1,5 @@
-﻿using Office_Seat_Book_Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Office_Seat_Book_Entity;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -48,6 +49,15 @@ namespace Office_Seat_Book_DLL.Repost
             _dbContext.Entry(booking).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _dbContext.SaveChanges();
         }
-
+        public Booking GetBookingByEmpId(int empId)
+        {
+            List<Booking> bookings = _dbContext.booking.Include(obj => obj.employee).ToList();
+            Booking booking = new Booking();
+            foreach(var item in bookings)
+            {   if(item.EmployeeID == empId)
+                booking = item;
+            }
+            return booking;
+        }
     }
 }

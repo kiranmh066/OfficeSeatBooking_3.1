@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System;
-using Office_Seat_Book_Entity;
-using Microsoft.Extensions.Configuration;
-using System.Text;
-using System.Collections.Generic;
+﻿using Aspose.BarCode.Generation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Numerics;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using Office_Seat_Book_Entity;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -38,11 +38,9 @@ namespace Office_Seat_Book_MVC.Controllers
             }
             return View(employee);
         }
-
-    
         public async Task<IActionResult> Profile()
         {
-            #region Patient profile
+            #region profile
             //storing the profile Id
             /* int PatientProfileId = Convert.ToInt32(TempData["ProfileID"]);
              TempData.Keep();*/
@@ -69,12 +67,12 @@ namespace Office_Seat_Book_MVC.Controllers
             List<SelectListItem> shiftTiming = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="select"},
-                new SelectListItem{Value="02:00pm-10:00pm",Text="02:00pm-10:00pm"},
-                new SelectListItem{Value="10:00am-06:00pm",Text="10:00am-06:00pm"},
-                new SelectListItem{Value="06:00am-02:00pm",Text="06:00am-02:00pm"},
-                new SelectListItem{Value="09:00am-06:00pm",Text="09:00am-06:00pm"},
+                new SelectListItem{Value="0",Text="02:00pm-10:00pm"},
+                new SelectListItem{Value="1",Text="10:00am-06:00pm"},
+                new SelectListItem{Value="2",Text="06:00am-02:00pm"},
+                new SelectListItem{Value="3",Text="09:00am-06:00pm"},
             };
-           
+
 
             return shiftTiming;
         }
@@ -88,6 +86,27 @@ namespace Office_Seat_Book_MVC.Controllers
                 new SelectListItem{Value="2",Text="Custom"},
             };
             return request;
+        }
+        public List<SelectListItem> YesorNoDropDown()
+        {
+            List<SelectListItem> YesorNorequest = new List<SelectListItem>()
+            {
+                new SelectListItem{Value="Select",Text="select"},
+
+                new SelectListItem{Value=false.ToString(),Text="NO"},
+                new SelectListItem{Value=true.ToString(),Text="YES"},
+            };
+            return YesorNorequest;
+        }
+        public List<SelectListItem> TypeOfVehicle()
+        {
+            List<SelectListItem> typeofvehicle = new List<SelectListItem>()
+            {
+                new SelectListItem{Value="Select",Text="select"},
+                new SelectListItem{Value="0",Text="2 Wheeler"},
+                new SelectListItem{Value="1",Text="4 wheeler"},
+            };
+            return typeofvehicle;
         }
 
 
@@ -106,13 +125,14 @@ namespace Office_Seat_Book_MVC.Controllers
             booking.To_Date = DateTime.Today;
 
             int bookingId = 0;
-            booking.EmployeeID =Convert.ToInt32(TempData["empId"]);
+            booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
-            booking.Seat_No =1;
-            booking.Emp_Status = true;
+            booking.Seat_No = 1;
             booking.Food_Type = 1;
             booking.Vehicle = true;
-            booking.booking_Status = 0;
+            booking.Booking_Status = 0;
+
+            booking.Shift_Time = "nothing";
 
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
@@ -131,9 +151,9 @@ namespace Office_Seat_Book_MVC.Controllers
                         ViewBag.status = "Ok";
                         ViewBag.message = "Booked successfully!";
                         return RedirectToAction("BookSeat2", "Employee");
-                       
+
                     }
-                
+
                 }
             }
             return View();
@@ -142,7 +162,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeat2()
         {
             Booking booking = new Booking();
-            Floor floor=new Floor();
+            Floor floor = new Floor();
             //it will fetch the Doctor Details by using DoctorID
             using (HttpClient client = new HttpClient())
             {
@@ -190,6 +210,7 @@ namespace Office_Seat_Book_MVC.Controllers
             ViewBag.FloorList = floor1;
 
             ViewBag.shiftTimings = ShiftTiming();
+            ViewBag.yesornorequest = YesorNoDropDown();
             return View(booking);
 
         }
@@ -197,15 +218,38 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeat2(Booking booking)
         {
             booking.BookingID = Convert.ToInt32(TempData["Bookid"]);
+            TempData.Keep();
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
             booking.Seat_No = 1;
-            booking.Emp_Status = true;
             booking.Food_Type = 1;
-            booking.Vehicle = true;
-            booking.booking_Status = 0;
+            TempData["Vehical"] = booking.Vehicle;
+            booking.Booking_Status = 0;
             int floorId = booking.seat.FloorID;
+            booking.seat = null;
             ViewBag.status = "";
+
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/UpdateBooking";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {   //dynamic viewbag we can create any variable name in run time
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Seat Updated Successfully!!";
+
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Sorry Try Again Not Able to Book!!";
+                    }
+
+                }
+            }
+
 
             using (HttpClient client = new HttpClient())
             {
@@ -238,6 +282,7 @@ namespace Office_Seat_Book_MVC.Controllers
             using (HttpClient client = new HttpClient())
             {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingById?bookingId=" + bookingId;
+
                 //EmployeeId is apicontroleer passing argument name
                 using (var response = await client.GetAsync(endPoint))
                 {
@@ -259,6 +304,11 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
+                        bool x = (bool)TempData["Vehical"];
+                        if (x == true)
+                        {
+                            return RedirectToAction("SelectingTypeofVehicle", "Employee");
+                        }
                     }
                     else
                     {
@@ -269,10 +319,109 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
 
+            Seat seat = new Seat();
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/GetSeatById?seatId=" + SeatId;
+                //EmployeeId is apicontroleer passing argument name
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {   //dynamic viewbag we can create any variable name in run time
+                        var result = await response.Content.ReadAsStringAsync();
+                        seat = JsonConvert.DeserializeObject<Seat>(result);
+                    }
+                }
+            }
+            seat.Seat_flag = false;
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/UpdateSeat";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {   //dynamic viewbag we can create any variable name in run time
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Seat Booked Successfully!!";
+                    }
+
+
+                }
+            }
+
+
 
             return View();
 
         }
+
+        public IActionResult SelectingTypeofVehicle()
+        {
+            ViewBag.Type_of_Vehicle = TypeOfVehicle();
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SelectingTypeofVehicle(Parking parking)
+        {
+            TempData["ParkingType"] = parking.ParkingType;
+
+            return RedirectToAction("SelectingVehicle", "Employee");
+        }
+
+
+
+        public async Task<IActionResult> SelectingVehicle(int id)
+        {
+            Parking parking = new Parking();
+            parking.ParkingType = TempData["ParkingType"].ToString();
+            TempData.Keep();
+            List<Parking> parkings = new List<Parking>();
+            using (HttpClient client = new HttpClient())
+            {
+                // LocalHost Adress in endpoint
+                string endPoint = _configuration["WebApiBaseUrl"] + "Parking/GetParkings";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        //It will deserilize the object in the form of JSON
+                        parkings = JsonConvert.DeserializeObject<List<Parking>>(result);
+                    }
+                }
+            }
+            if (id != 0)
+            {
+
+                parking.BookingID = Convert.ToInt32(TempData["Bookid"]); ;
+                TempData.Keep();
+
+                parking.Parking_Number = id;
+                ViewBag.status = "";
+                using (HttpClient client = new HttpClient())
+                {
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(parking), Encoding.UTF8, "application/json");
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Parking/AddParking";
+                    using (var response = await client.PostAsync(endPoint, content))
+                    {
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+
+                            ViewBag.status = "Ok";
+                            ViewBag.message = "Parking Booked successfully!";
+                            return RedirectToAction("Booking_history", "Employee");
+
+                        }
+
+                    }
+                }
+            }
+
+            return View(parkings);
+        }
+
+
 
 
         [HttpGet]

@@ -24,6 +24,7 @@ namespace Office_Seat_Book_DLL
         public Microsoft.EntityFrameworkCore.DbSet<Floor> floor { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Seat> seat { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<SecretKey> secretKey { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Help> help { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {

@@ -1,9 +1,6 @@
-﻿
-
-@{
-    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+﻿@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
-
 @{
     ViewData["Title"] = "BookSeat";
 }
@@ -101,54 +98,54 @@
 
             <div class="container1 ">
                 <div class="row">
-                  <div class="row">
+                    <div class="row">
                         <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
                             <div class="card-content">
                                 <div class="form-groups">
                                     <label for="type of request">Type of Request</label>
-                                 
+
                                     <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required></select>
                                 </div>
                                 <p class="card-description"></p>
                             </div>
                         </div>
                     </div>
-                     <div class="row text-center">
-                    <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
-                    <div class="card-content col-12">
-                    <label for="date-picker">From Date</label>
-                    <br>
+                    <div class="row text-center">
+                        <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
+                            <div class="card-content col-12">
+                                <label for="date-picker">From Date</label>
+                                <br>
                                 <input style="width:90%" type="date" asp-for="From_Date" class="form-control" placeholder="Select from Date" />
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
-                    <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
-                    <div class="card-content col-12">
-                    <label for="date-picker"> To Date</label>
-                    <br>
-                    <input style="width:90%" type="date" asp-for="To_Date" class="form-control" placeholder="Select to Date" />
-            
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
+                                <p class="card-description"></p>
+                            </div>
+                        </div>
+                        <div class="card col-12 col-md-6 col-lg-6 col-xxl-5 mt-4 mx-auto">
+                            <div class="card-content col-12">
+                                <label for="date-picker"> To Date</label>
+                                <br>
+                                <input style="width:90%" type="date" asp-for="To_Date" class="form-control" placeholder="Select to Date" />
+
+                                <p class="card-description"></p>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
-                    <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
-                    <div class="card-content">
-                    <div class="form-groups">
-                    <label for="shift time">Shift Time</label>
-                    <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
-                    </div>
-                    <p class="card-description"></p>
-                    </div>
-                    </div>
+                        <div class="card col-md-6 col-sm-6 mt-4 mx-auto">
+                            <div class="card-content">
+                                <div class="form-groups">
+                                    <label for="shift time">Shift Time</label>
+                                    <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
+                                </div>
+                                <p class="card-description"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-      
+
 
 
         <div class="row card-div">

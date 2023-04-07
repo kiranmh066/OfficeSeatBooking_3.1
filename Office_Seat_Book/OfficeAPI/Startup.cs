@@ -47,7 +47,8 @@ namespace OfficeAPI
             services.AddTransient<IParkingRepost, ParkingRepost>();
             services.AddTransient<EmployeeService, EmployeeService>();
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
-
+            services.AddTransient<HelpService, HelpService>();
+            services.AddTransient<IHelpRepost, HelpRepost>();
 
             var Logger = new LoggerConfiguration()
           .MinimumLevel.Information()

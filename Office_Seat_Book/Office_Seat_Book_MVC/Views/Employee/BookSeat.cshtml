@@ -1,7 +1,6 @@
 ﻿@{
-    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
-
 @{
     ViewData["Title"] = "BookSeat";
 }
@@ -9,8 +8,8 @@
 @model Office_Seat_Book_Entity.Booking
 <link href="~/css/bookings.css" rel="stylesheet" />
 <head>
-   
-    
+
+
 </head>
 <body>
     <div class="image img-fluid">
@@ -88,64 +87,62 @@
                 <br>
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Help</a>
+                        <a class="" asp-area="" asp-controller="Help" asp-action="Index">Help</a>
                     </div>
                 </section>
             </div>
         </div>
     </div>
-    <div class="container col-12">
-        <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4">
-            <label for="location">Location</label>
-            <select type="location" name="location" class="form-control" required>
-                <option value=""></option>
-                <option value="">Bengaluru</option>
-                <option value="">Gurgaon</option>
-            </select>
-        </div>
-
-        <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
-            <label for="branch">Branch</label>
-            <select type="branch" name="branch" class="form-control" required>
-                <option value=""></option>
-                <option value="">JP Nagar</option>
-                <option value="">East End</option>
-            </select>
-        </div>
-
-        <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
-            <label for="branch">Type of Request</label>
-            <select type="branch" name="branch" class="form-control" required>
-                <option value=""></option>
-                <option value="">Daily</option>
-                <option value="">Weekly</option>
-                <option value="">Customise</option>
-            </select>
-        </div>
-        <div class="date col mx-4 my-2">
-            <div>
-                From
-                <input type="date" id="fromDate">
-            </div> <br>
-            <div>
-                To  &nbsp; &nbsp;
-                <input type="date" id="toDate">
+    <form method="post" enctype="multipart/form-data">
+        <div class="container col-12">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4">
+                <label for="location">Location</label>
+                <select type="location" name="location" class="form-control" required>
+                    <option value=""></option>
+                    <option value="">Bengaluru</option>
+                    <option value="">Gurgaon</option>
+                </select>
             </div>
+
+            <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
+                <label for="branch">Branch</label>
+                <select type="branch" name="branch" class="form-control" required>
+                    <option value=""></option>
+                    <option value="">JP Nagar</option>
+                    <option value="">East End</option>
+                </select>
+            </div>
+
+            <div class="form-groups">
+                <label for="type of request">Type of Request</label>
+                <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
+            </div>
+            <div class="date col mx-4 my-2">
+                <div>
+                    From
+                    <input type="date" id="fromDate" asp-for="From_Date">
+                </div> <br>
+                <div>
+                    To  &nbsp; &nbsp;
+                    <input type="date" id="toDate" asp-for="To_Date">
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
+                <label for="shift-time">Select Shift TIme</label>
+                <select type="shift-time" name="shift-time" class="form-control" asp-for="Shift_Time" required>
+                    <option value=""></option>
+                    <option value="">09:00 AM - 06:00 PM</option>
+                    <option value="">06:00 AM - 02:00 PM</option>
+                    <option value="">02:00 PM - 10:00 PM</option>
+                    <option value="">10:00 AM - 06:00 PM</option>
+                </select>
+            </div>
+
+            @*<a style="text-decoration:none; color:white"  asp-controller="Employee" asp-action="BookSeat2">Next</a>*@
+            <input type="submit" class="btn btn-danger" value="" />
+
         </div>
-        <div class="col-6 col-lg-3 col-md-4 col-sm-4 mx-4 my-4">
-            <label for="shift-time">Select Shift TIme</label>
-            <select type="shift-time" name="shift-time" class="form-control" required>
-                <option value=""></option>
-                <option value="">09:00 AM - 06:00 PM</option>
-                <option value="">06:00 AM - 02:00 PM</option>
-                <option value="">02:00 PM - 10:00 PM</option>
-                <option value="">10:00 AM - 06:00 PM</option>
-            </select>
-        </div>
-        <button class="btn btn-primary mx-4">
-            Next &nbsp; >
-        </button>
-    </div>
+    </form>
 </body>
 <script>
     const today = new Date().toISOString().split('T')[0];

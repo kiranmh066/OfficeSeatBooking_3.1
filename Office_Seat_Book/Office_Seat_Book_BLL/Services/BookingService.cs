@@ -44,5 +44,9 @@ namespace Office_Seat_Book_BLL.Services
         {
             return _bookingRepost.GetBookingById(bookingID);
         }
+        public Booking GetBookingByEmpId(int empId)
+        {
+            return _bookingRepost.GetBookingByEmpId(empId);
+        }
     }
 }

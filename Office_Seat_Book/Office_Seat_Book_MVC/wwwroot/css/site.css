@@ -59,8 +59,8 @@ button.accept-policy {
 }
 
 body {*/
-  /* Margin bottom by footer height */
-  /*margin-bottom: 60px;
+/* Margin bottom by footer height */
+/*margin-bottom: 60px;
 }
 .footer {
   position: absolute;
@@ -71,7 +71,7 @@ body {*/
 /*}*/
 /*for registration*/
 
-  
+
 
 /*form registration*/
 
@@ -178,17 +178,16 @@ input[type="text"].form-control, input[type="password"].form-control {
     height: 50px;
 }
 
- .form-group i{
-  position: absolute;
-  font-size: 25px;
-  color: grey;
+.form-group i {
+    position: absolute;
+    font-size: 25px;
+    color: grey;
 }
 
-.fa-lock{
-  margin-top: 5px;
-  margin-right: 65px;
-  
-} 
+.fa-lock {
+    margin-top: 5px;
+    margin-right: 65px;
+}
 
 .form-group a {
     text-align: none;
@@ -288,4 +287,3 @@ input:hover {
         height: 600vmax;
     }
 }
-

@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<Office_Seat_Book_Entity.Seat>
 @*//this name should be the name of projects under dependencies after adding referrences in MvcUi*@
 @{
-    Layout = "~/Views/Shared/_Layout_Login.cshtml";
-
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 <body>
     <div class="container">
@@ -16,7 +15,7 @@
                     {
                         <div class="col-2">
 
-                            @if (item.seat_flag == true)
+                            @if (item.Seat_flag == true)
                             {
                                 c++;
 
@@ -28,17 +27,17 @@
                                                   style="fill:green;stroke:black;stroke-width:5;opacity:0.5" />
                                     </a>
 
-                                  @*  @if (c == 12)
-                                    {
-                                        c = 0;
-                                        <div class="row">
-                                            <div class="col-1">
-                                                <svg width="400" height="50">
-                                                    <rect x="5" y="5" rx="5" ry="5" width="400" height="30"
-                                                          style="fill:blue;stroke:black;stroke-width:5;opacity:0.8" />
-                                            </div>
-                                        </div>
-                                    }*@
+                                    @*  @if (c == 12)
+                        {
+                        c = 0;
+                        <div class="row">
+                        <div class="col-1">
+                        <svg width="400" height="50">
+                        <rect x="5" y="5" rx="5" ry="5" width="400" height="30"
+                        style="fill:blue;stroke:black;stroke-width:5;opacity:0.8" />
+                        </div>
+                        </div>
+                        }*@
 
                                 </div>
 
