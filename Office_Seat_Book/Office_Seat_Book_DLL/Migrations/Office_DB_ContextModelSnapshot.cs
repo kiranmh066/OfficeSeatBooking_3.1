@@ -69,9 +69,6 @@ namespace Office_Seat_Book_DLL.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Designation")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -93,13 +90,10 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<double>("PhoneNo")
                         .HasColumnType("float");
 
-                    b.Property<string>("Place")
-                        .HasColumnType("varchar(30)");
-
                     b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Secret_Key")
+                    b.Property<string>("Security_Question")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmpID");
@@ -178,7 +172,7 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<int>("FloorID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("seat_flag")
+                    b.Property<bool>("Seat_flag")
                         .HasColumnType("bit");
 
                     b.HasKey("Seat_No");
@@ -197,6 +191,9 @@ namespace Office_Seat_Book_DLL.Migrations
 
                     b.Property<int>("EmpID")
                         .HasColumnType("int");
+
+                    b.Property<byte[]>("Qr")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("SpecialKey")
                         .HasColumnType("nvarchar(max)");

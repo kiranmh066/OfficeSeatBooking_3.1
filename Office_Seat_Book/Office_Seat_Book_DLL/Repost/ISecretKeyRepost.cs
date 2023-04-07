@@ -1,7 +1,5 @@
 ﻿using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Office_Seat_Book_DLL.Repost
 {
@@ -17,5 +15,7 @@ namespace Office_Seat_Book_DLL.Repost
         IEnumerable<SecretKey> GetSecretKeys();
 
         SecretKey GetSecretKeyByEmpId(int empId);
+
+        int GetEmpBySecurityKey(string securityKey);
     }
 }

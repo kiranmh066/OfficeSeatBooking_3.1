@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAPI", "OfficeAPI\Offi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Office_Seat_Book_MVC", "Office_Seat_Book_MVC\Office_Seat_Book_MVC.csproj", "{105A401A-BD3A-459B-A6A4-DE93A438DA62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAPITests", "OfficeAPITests\OfficeAPITests.csproj", "{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeAPITests", "OfficeAPITests\OfficeAPITests.csproj", "{8C4EE87E-BFCF-4C76-BB9E-8C833A33DC48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

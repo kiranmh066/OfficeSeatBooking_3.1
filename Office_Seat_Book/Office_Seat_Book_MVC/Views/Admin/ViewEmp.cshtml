@@ -151,9 +151,9 @@
                                 <th>password</th>
                                 <th>Gender</th>
                                 <th>secret key</th>
-                                <th>place</th>
+
                                 <th>Role</th>
-                                <th>Designation</th>
+
                                 <th>Edit</th>
                                 <th>Delete</th>
 
@@ -168,12 +168,18 @@
                                     <td>@employee.PhoneNo</td>
                                     <td>@employee.Password</td>
                                     <td>@employee.Gender</td>
-                                    <td>@employee.Secret_Key</td>
-                                    <td>@employee.Place</td>
+                                    <td>@employee.Security_Question </td>
                                     <td>@employee.Role</td>
-                                    <td>@employee.Designation</td>
-                                    <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="EditEmp" asp-route-EmpID="@employee.EmpID">Edit<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
-                                    <td align="center"><a class="btn btn-info" asp-controller="Admin" asp-action="DeleteEmp" asp-route-EmpID="@employee.EmpID" onclick="EmpDelete()">Delete<i class="fa-sharp fa-solid fa-pen-to-square"></i></a></td>
+                                    <td>
+                                        <a asp-controller="Admin" asp-action="EditEmp"
+                                       asp-route-EmpID="@employee.EmpID"><img class="btn btn-warning" style="height:50px; width:80px" src="https://www.svgrepo.com/show/241804/edit.svg" /> </a>
+                                    </td>
+
+                                    <td>
+                                        <a asp-controller="Admin" asp-action="DeleteEmp" onclick="DeleteFunction()"
+                                       asp-route-EmpID="@employee.EmpID"><img class="btn btn-danger" style="height:50px; width:80px" src="https://www.svgrepo.com/show/243864/delete.svg" /> </a>
+                                    </td>
+
                                 </tr>
                             }
                         </tbody>
@@ -194,4 +200,3 @@
         }
     }
 </script>
-

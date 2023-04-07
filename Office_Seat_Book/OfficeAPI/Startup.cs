@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,16 +9,10 @@ using Microsoft.OpenApi.Models;
 using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_DLL;
 using Office_Seat_Book_DLL.Repost;
-using Office_Seat_Book_Entity;
 using Serilog;
-using Serilog.Core;
 using Serilog.Events;
 using Serilog.Sinks.Email;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace OfficeAPI
 {
@@ -31,7 +24,7 @@ namespace OfficeAPI
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionStr = Configuration.GetConnectionString("sqlConnection");
@@ -49,6 +42,15 @@ namespace OfficeAPI
             services.AddTransient<IEmployeeRepost, EmployeeRepost>();
             services.AddTransient<HelpService, HelpService>();
             services.AddTransient<IHelpRepost, HelpRepost>();
+
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
+
+            services.AddTransient<HelpService, HelpService>();
+            services.AddTransient<IHelpRepost, HelpRepost>();
+
+            services.AddTransient<SecretKeyService, SecretKeyService>();
+            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             var Logger = new LoggerConfiguration()
           .MinimumLevel.Information()
@@ -83,9 +85,6 @@ namespace OfficeAPI
             });
 
 
-
-            services.AddTransient<SecretKeyService, SecretKeyService>();
-            services.AddTransient<ISecretKeyRepost, SecretKeyRepost>();
 
             //  var Logger = new LoggerConfiguration()
             //.MinimumLevel.Information()
@@ -136,10 +135,17 @@ namespace OfficeAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-        
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetService<Office_DB_Context>();
+                    dbContext.Database.Migrate();
+                }
+
             }
             app.UseSwagger();
             app.UseSwaggerUI(options =>

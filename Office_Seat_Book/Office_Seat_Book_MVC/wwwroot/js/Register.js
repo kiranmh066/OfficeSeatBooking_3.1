@@ -1,27 +1,52 @@
-﻿function validateForm() {
-    const empId = document.getElementById("text").value;
+function validateForm() {
+    // Get input values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var secretkey = document.getElementById("secretkey").value;
+    var designation = document.getElementById("designation").value;
+    var role = document.getElementById("role").value;
+    var password = document.getElementById("password").value;
+    var confirmpassword = document.getElementById("confirmpassword").value;
+    var gender = document.querySelector(".gender").value;
 
-    // Check if empId field is empty
-    if (empId === "") {
-        alert("Please enter EMP_ID.");
+    // Check if input values are empty
+    if (name == "" || email == "" || phone == "" || secretkey == "" || designation == "" || role == "" || password == "" || confirmpassword == "" || gender == "Gender") {
+        alert("Please fill in all fields");
         return false;
     }
 
-    // Check if empId field contains only numbers
-    if (!/^\d{4}$/.test(empId)) {
-        alert("Please enter a valid EMP_ID (only 4 digits number).");
+    // Check if name contains only letters and spaces
+    if (!/^[a-zA-Z\s]+$/.test(name)) {
+        alert("Name must contain only letters and spaces");
         return false;
     }
 
+    // Check if email is valid
+    if (!/\S+@\S+\.\S+/.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    // Check if phone number is valid
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid phone number");
+        return false;
+    }
+
+    // Check if secret key is valid
+    if (secretkey != "123456") {
+        alert("Please enter a valid secret key");
+        return false;
+    }
+
+    // Check if passwords match
+    if (password != confirmpassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    // If all validations pass, submit form
+    alert("Form submitted successfully");
     return true;
 }
-
-const form = document.querySelector("form");
-form.addEventListener("submit", function (event) {
-    event.preventDefault(); // prevent form submission if validation fails
-    if (validateForm()) {
-        // submit form if validation passes
-        alert("Form submitted successfully.");
-        // add code to submit form here
-    }
-});

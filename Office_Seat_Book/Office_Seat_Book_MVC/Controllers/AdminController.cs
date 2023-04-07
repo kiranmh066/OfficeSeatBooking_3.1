@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text.Json.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using Office_Seat_Book_DLL;
 using Newtonsoft.Json;
+using Office_Seat_Book_DLL;
 using Office_Seat_Book_Entity;
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -149,7 +148,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Details Deleted Successfully!";
-                        // return RedirectToAction("", "Admin");
+                         return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -273,6 +272,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Details Deleted Successfully!";
+                        return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -425,6 +425,8 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "seat deleted Successfully!!";
+                        return RedirectToAction("GetAllSeat", "Admin");
+
                     }
 
                     else
@@ -564,6 +566,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = " deleted Successfully!!";
+                        return RedirectToAction("GetAllfloor", "Admin");
                     }
 
                     else

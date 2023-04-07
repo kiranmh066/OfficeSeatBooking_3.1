@@ -1,6 +1,15 @@
 ﻿using Aspose.BarCode.Generation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Numerics;
+using Org.BouncyCastle.Ocsp;
+using Newtonsoft.Json;
+using Office_Seat_Book_Entity;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Office_Seat_Book_Entity;
@@ -22,11 +31,11 @@ namespace Office_Seat_Book_MVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            int PatientProfileId = 1;
             Employee employee = null;
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + PatientProfileId;
+                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Convert.ToInt32(TempData["empId"]);
+                TempData.Keep();
                 using (var response = await client.GetAsync(endpoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -66,7 +75,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             List<SelectListItem> shiftTiming = new List<SelectListItem>()
             {
-                new SelectListItem{Value="Select",Text="select"},
+                new SelectListItem{Value="Select",Text="Shift Timings"},
                 new SelectListItem{Value="0",Text="02:00pm-10:00pm"},
                 new SelectListItem{Value="1",Text="10:00am-06:00pm"},
                 new SelectListItem{Value="2",Text="06:00am-02:00pm"},
@@ -80,7 +89,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             List<SelectListItem> request = new List<SelectListItem>()
             {
-                new SelectListItem{Value="Select",Text="select"},
+                new SelectListItem{Value="Select",Text="Type Of Request"},
                 new SelectListItem{Value="0",Text="Daily"},
                 new SelectListItem{Value="1",Text="Weekly"},
                 new SelectListItem{Value="2",Text="Custom"},
@@ -91,10 +100,10 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             List<SelectListItem> YesorNorequest = new List<SelectListItem>()
             {
-                new SelectListItem{Value="Select",Text="select"},
-
-                new SelectListItem{Value=false.ToString(),Text="NO"},
+                new SelectListItem{Value="Select",Text="Select Yes/No"},
                 new SelectListItem{Value=true.ToString(),Text="YES"},
+                new SelectListItem{Value=false.ToString(),Text="NO"},
+
             };
             return YesorNorequest;
         }
@@ -110,8 +119,40 @@ namespace Office_Seat_Book_MVC.Controllers
         }
 
 
-        public IActionResult BookSeat()
+        public async Task<IActionResult> BookSeat()
         {
+
+            //List<Booking> booking2 = null;
+            Booking booking2 = new Booking();
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]);
+                TempData.Keep(); ;
+                //EmployeeId is apicontroleer passing argument name
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {   //dynamic viewbag we can create any variable name in run time
+                        var result = await response.Content.ReadAsStringAsync();
+                        booking2 = JsonConvert.DeserializeObject<Booking>(result);
+                    }
+                }
+            }
+
+            /*if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
+
+                if (booking2 != null || (booking2.Booking_Status != 0 && booking2.Booking_Status != 1) || booking2.To_Date < DateTime.Today)
+
+                {
+                    ViewBag.status = "Error";
+                    ViewBag.message = "Alredy a seat waiting for you!!";
+                    return View(booking2);
+
+                }
+
+                else
+                {*/
+
             ViewBag.shiftTimings = ShiftTiming();
             ViewBag.requests = RequestType();
             return View();
@@ -120,7 +161,10 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> BookSeat(Booking booking)
         {
-            booking.Shift_Time = "Nothing";
+
+
+
+            #region Booking Seat
             booking.From_Date = DateTime.Today;
             booking.To_Date = DateTime.Today;
 
@@ -155,7 +199,11 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
 
                 }
+
+                #endregion
+
             }
+            /*}*/
             return View();
         }
         [HttpGet]
@@ -269,6 +317,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public IActionResult GetFloorLayout()
         {
+
             return View(seats);
         }
 
@@ -293,6 +342,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
+
             booking.Seat_No = SeatId;
             using (HttpClient client = new HttpClient())
             {
@@ -304,11 +354,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
-                        bool x = (bool)TempData["Vehical"];
-                        if (x == true)
-                        {
-                            return RedirectToAction("SelectingTypeofVehicle", "Employee");
-                        }
+
                     }
                     else
                     {
@@ -344,13 +390,18 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "Seat Booked Successfully!!";
+                        bool x = (bool)TempData["Vehical"];
+                        if (x == true)
+                        {
+                            return RedirectToAction("SelectingTypeofVehicle", "Employee");
+                        }
+                        else
+                        {
+                            return RedirectToAction("ViewPass", "Booking");
+                        }
                     }
-
-
                 }
             }
-
-
 
             return View();
 
@@ -358,7 +409,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public IActionResult SelectingTypeofVehicle()
         {
-            ViewBag.Type_of_Vehicle = TypeOfVehicle();
+            ViewBag.Yes_or_No_Request = YesorNoDropDown();
             return View();
         }
         [HttpPost]
@@ -374,7 +425,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> SelectingVehicle(int id)
         {
             Parking parking = new Parking();
-            parking.ParkingType = TempData["ParkingType"].ToString();
+
             TempData.Keep();
             List<Parking> parkings = new List<Parking>();
             using (HttpClient client = new HttpClient())
@@ -410,7 +461,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
                             ViewBag.status = "Ok";
                             ViewBag.message = "Parking Booked successfully!";
-                            return RedirectToAction("Booking_history", "Employee");
+                            return RedirectToAction("ViewPass", "Booking");
 
                         }
 

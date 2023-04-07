@@ -1,7 +1,6 @@
 ﻿using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Office_Seat_Book_DLL.Repost
 {
@@ -16,6 +15,10 @@ namespace Office_Seat_Book_DLL.Repost
         IEnumerable<Booking> GetBookings();
 
         int AddBooking(Booking booking);
-        Booking GetBookingByEmpId(int empId);
+
+        Booking GetBookingByEmpId(int EmpId);
+        IEnumerable<Booking> GetBookingsByDate(DateTime date1);
+
+
     }
 }

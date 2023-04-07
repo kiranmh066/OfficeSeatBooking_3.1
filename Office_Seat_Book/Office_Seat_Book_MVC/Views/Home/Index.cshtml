@@ -7,81 +7,139 @@
 
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
+<style>
+
+    .col-md-8 {
+        padding-top: 50px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        background-color: rgb(255, 255, 255);
+        border-radius: 3%;
+        width: 400px;
+        height: 400px
+    }
+
+    h3 {
+        text-align: center;
+        color: rgb(73, 73, 73);
+        font-weight: bold;
+    }
+
+    .form-control {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+        .form-control:hover {
+            background-color: transparent;
+        }
+
+    .mb-4 {
+        margin-top: 25px;
+    }
+
+    a {
+        margin-right: 40px;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    .mt-4 {
+        margin-bottom: 2px;
+    }
+
+    .form-check-label {
+        color: rgb(50, 50, 52);
+    }
+
+    .form-label.invalid input[type="email"],
+    .form-label.invalid input[type="password"] {
+        animation: shake 0.5s;
+    }
+
+    .btn {
+        transition: all 0.3s ease-in-out;
+        background-color: rgb(214, 43, 226);
+        color: white;
+    }
+
+        .btn:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            background-color: rgb(214, 43, 226);
+        }
+
+    media (max-width: 550px) {
+        .h-custom
+
+    {
+        height: 100%;
+        width: 100%;
+    }
+
+    }
+</style>
 
 <body>
-
+    <div class="container">
         <section class="vh-100">
-                        <div class="container-fluid h-100">
-                            <div class="row d-flex justify-content-center align-items-center h-100">
-                                <div class="col-md-9 col-lg-6 col-xl-5">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                                         class="img-fluid" alt="Login">
+            <div class="container-fluid h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-9 col-lg-6 col-xl-5">
+                        <img src="https://img.freepik.com/free-vector/my-password-concept-illustration_114360-4294.jpg?w=740&t=st=1680516578~exp=1680517178~hmac=77f7d87ee04bc14454098c39a54f80786e9ea41e89b3e91aa5e70961eb46bc8c"
+                             class="img-fluid" alt="Login">
+                    </div>
+
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <h3>LOGIN</h3>
+                        <form method="post" enctype="multipart/form-data">
+
+                            <div class="form-group">
+                                <div class="form-outline mb-3 mx-5">
+
+                                    <input type="email" asp-controller="Employee" asp-for="Email" id="email1" class="form-control form-control-lg"
+                                           placeholder="Enter a valid email address" />
                                 </div>
 
-                                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                                    <h3>LOGIN</h3>
-                                <form method="post" enctype="multipart/form-data">
 
-                                        <div class="form-group">
-                                            <!-- Email input -->
-                                            <div class="form-outline mb-4 mx-5">
-                                            <input type="email" asp-controller="Employee" asp-for="Email" id="email1" class="form-control form-control-lg"
-                                                       placeholder="Enter a valid email address" />
-                                                <label class="form-label" for="email1">Email address</label>
-                                            </div>
-
-                                            <!-- Password input -->
-                                            <div class="form-outline mb-3 mx-5">
-                                            <input type="password" asp-controller="Employee" asp-for="Password" id="password1" class="form-control form-control-lg"
-                                                       placeholder="Enter password" />
-                                                <label class="form-label" for="password1">Password</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <!-- Checkbox -->
-                                            <div class="form-check mb-0 mx-4">
-                                                <input class="form-check-input me-2" type="checkbox" value="" id="form" />
-                                                <label class="form-check-label" for="form">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                        <a asp-controller="Forgot" asp-action="Index" type="button">Forgot Password</a>
-                                        </div>
-
-                                        <div class="text-center text-lg-start mt-4 pt-2 mx-5">
-                                            <button type="submit" value="Login" class="btn btn-primary btn-lg" @*onclick="login()"*@
-                                                    style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                                                Login
-                                            </button>
-                                        <button type="reset" value="Reset" class="btn btn-primary btn-lg"
-                                        style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                                       Reset
-                                      </button>
-                                        </div>
-                        @if (ViewBag.status == "Ok")
-                        {
-                                <br />
-                                <div class="alert alert-success">
-                                @ViewBag.message
+                                <div class="form-outline mb-3 mx-5">
+                                    <input type="password" asp-controller="Employee" asp-for="Password" id="password1" class="form-control form-control-lg"
+                                           placeholder="Enter password" />
                                 </div>
-                        }
-                        else if (ViewBag.status == "Error")
-                        {
-                                <br />
-                                <div class="alert alert-danger">
-                                @ViewBag.message
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-check mb-0 mx-5">
+                                        <input class="form-check-input " type="checkbox" value="" id="form" />
+                                        <label class="form-check-label" for="form">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                    <a asp-controller="Forgot" asp-action="Index" type="button" class="text-body">Forgot Password</a>
                                 </div>
-                        }
 
-                                    </form>
+                                <div class="text-center text-lg-start mt-4 pt-2 mx-5">
+
+                                    <button type="submit" value="Login" class="btn btn-lg" @*onclick="login()"*@style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                                        Login
+                                    </button>
+                                    <button type="reset" value="Reset" class="btn btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                                        Reset
+                                    </button>
                                 </div>
-                            </div>
-                        </div>
-                    </section>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
 
 
+
+        </section>
+
+
+
+    </div>
 </body>
+
 
 
 
