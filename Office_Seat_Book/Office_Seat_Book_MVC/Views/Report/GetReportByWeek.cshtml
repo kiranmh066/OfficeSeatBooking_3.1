@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 </head>
+
 <body>
     @{
         int booked_and_came = 0;
@@ -16,7 +17,7 @@
         foreach (var item in Model.Item2)
         {
 
-            @if (item.Booking_Status == 1)
+            if (item.Booking_Status == 1)
             {
                 booked_and_came++;
             }
@@ -26,12 +27,12 @@
             }
         }
 
-        @foreach (var item in Model.Item1)
+        foreach (var item in Model.Item1)
         {
             Total_Employees++;
         }
 
-
+  
 
         <table>
             <thead>
@@ -42,16 +43,15 @@
                 }
                 <tr>&nbsp;</tr>
                 <tr>
-                    <th>Booking Id</th>
-                    <th>Employee Id</th>
-                    <th>Employee Name</th>
-                    <th>Type_Of_Request</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Food</th>
+                    <th>Request Type</th>
                     <th>Date</th>
                     <th>Shift Time</th>
                     <th>Seat No</th>
                     <th>Booking Status</th>
-                    <th>Employee Status</th>
-                    <th>Vehicle</th>
+                    <th>vehicle(yes/no)</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,20 +59,59 @@
                 {
 
                     <tr>
-                <td>@item.BookingID</td>
-                <td>@item.employee.Name</td>
-                <td>@item.Food_Type</td>
-                <td>@item.Type_Of_Request</td>
+                      <td>@item.BookingID</td>
+                      <td>@item.employee.Name</td>
+           
+                        @if (@item.Food_Type == 0)
+                        {
+                            <td>Not Opted</td>
+                        }
+                        else
+                        {
+                            <td>Opted</td>
+
+                        }
+              
+                        @if (@item.Type_Of_Request == 0)
+                        {
+                            <td>Daily</td>
+                        }
+                        else
+                        {
+                            <td>Weekly</td>
+
+                        }
+                   
                 <td>@item.From_Date.ToShortDateString()</td>
                 <td>@item.Shift_Time</td>
                 <td>@item.Seat_No</td>
-                    if (item.Booking_Status == 1)
+                    @if (item.Booking_Status == 1)
                     {
                     <td>Booked and Scanned</td>
                     }
+                    else if (item.Booking_Status == 0)
+                    {
+                            <td>Booked and not Scanned</td>
 
+                    }
+                    else if (item.Booking_Status == 2)
+                    {
+                            <td>Booked and time exeeds</td>
 
+                    }
+                        @if (item.Vehicle == false)
+                        {
+                            <td> No</td>
+                        }
+                        else
+                        {
+                            <td>yes</td>
+
+                        }
+                      
                     </tr>
+
+                  
                 }
             </tbody>
         </table>
@@ -84,8 +123,10 @@
     <p class=" font-weight-bolder">Booked and Not Came Employees:@booked_and_notcame</p>
     <p class=" font-weight-bolder">Not Booked and Not Came:@(Total_Employees - booked_and_notcame)</p>
 
-    }
+    
     <button id="downloadBtn">Download PDF</button>
+
+}
 </body>
 <script>
     const downloadBtn = document.getElementById('downloadBtn');
@@ -98,7 +139,7 @@
             margin: 1,
             filename: 'myPDFFile.pdf',
             image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
+            html2canvas: { scale: 5 },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
 
