@@ -42,7 +42,7 @@ namespace Office_Seat_Book_DLL.Repost
                 List<Booking> bookings = new List<Booking>();
                 List<Booking> bookings1 = new List<Booking>();
 
-                bookings = _dbContext.booking.Include(obj => obj.employee).ToList();
+                bookings = _dbContext.booking.Include(obj => obj.employee).Include(obj => obj.seat).ToList();
                 foreach (var item in bookings)
                 {
                     if (item.EmployeeID == EmpId)
@@ -67,6 +67,9 @@ namespace Office_Seat_Book_DLL.Repost
 
         public Booking GetBookingById(int bookingId)
         {
+            /*List<Booking> booking = _dbContext.booking.Include(obj => obj.employee).Include(obj => obj.seat).ToList();*/
+           
+            
             return _dbContext.booking.Find(bookingId);
         }
 

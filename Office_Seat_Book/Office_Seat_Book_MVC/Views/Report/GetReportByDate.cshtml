@@ -135,7 +135,7 @@
     <p class=" font-weight-bolder">Total Employees : @Total_Employees</p>
     <p class=" font-weight-bolder">Booked and Scanned Employees:@booked_and_came</p>
     <p class=" font-weight-bolder">Booked and Not Came Employees:@booked_and_notcame</p>
-    <p class=" font-weight-bolder">Not Booked and Not Came:@(Total_Employees-booked_and_notcame)</p>
+    <p class=" font-weight-bolder">Not Booked and Not Came:@(Total_Employees - booked_and_notcame - booked_and_came)</p>
 
 }
     <button id="downloadBtn">Download PDF</button>
