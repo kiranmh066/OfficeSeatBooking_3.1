@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230407060818_harsh")]
-    partial class harsh
+    [Migration("20230407102453_dsdsdsds")]
+    partial class dsdsdsds
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,6 +74,9 @@ namespace Office_Seat_Book_DLL.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("EmployeeImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<bool>("EmployeeStatus")
                         .HasColumnType("bit");
