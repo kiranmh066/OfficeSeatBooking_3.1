@@ -89,28 +89,28 @@
                 <hr>
             </div>
         </div>
-        
+
         <div class="contain">
             <div class="title">Book Your Seat</div>
             <div class="content">
                 <form method="post">
                     <div class="user-details">
 
-                            <div class="input-box">
-                                @*<select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" value="" required></select>*@
+                        <div class="input-box">
+                            @*<select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" value="" required></select>*@
                             <select class="form-control" asp-for="Vehicle" required>
                                 <option selected disabled value="">Need Parking Slot?</option>
                                 <option value="0">Yes</option>
                                 <option value="1">No</option>
                             </select>
-                            </div>
+                        </div>
 
-                            <div class="input-box">
-                            <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList"  required>
+                        <div class="input-box">
+                            <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required>
                                 <option disabled selected value="">Select Floor</option>
                             </select>
-                            </div>
-                      
+                        </div>
+
                         <div class="input-box">
                             <span>From</span>
                             <input asp-for="From_Date" type="date" class="form-control" id="fromDate" value="" required>
@@ -129,15 +129,15 @@
                                 <option value="2">06:00am-02:00pm</option>
                                 <option value="3">09:00am-06:00pm</option>
                             </select>
-             
-                            
+
+
                         </div>
                         @*<div class="input-box">
-                            <select name="location" class="category" required>
-                                <option>Type of Vehicle</option>
-                                <option>2 Wheeler</option>
-                                <option>4 Wheeler</option>
-                            </select>
+                        <select name="location" class="category" required>
+                        <option>Type of Vehicle</option>
+                        <option>2 Wheeler</option>
+                        <option>4 Wheeler</option>
+                        </select>
                         </div>*@
 
 
@@ -148,7 +148,7 @@
                 </form>
             </div>
         </div>
-      
+
     </div>
 
 </body>

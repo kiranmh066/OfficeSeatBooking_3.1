@@ -1,0 +1,24 @@
+﻿@model Office_Seat_Book_Entity.Booking
+@{
+    ViewData["Title"] = "Notification";
+}
+
+<h1>Notification</h1>
+<script>
+    window.onload = function () {
+        setTimer();
+    };
+    function setTimer() {
+        setInterval(function () {
+            var now = new Date();
+            if (now.getHours() == 13 && now.getMinutes() == 00) {
+                showMessage();
+            }
+        }, 1000); // Check every second
+    }
+    function showMessage() {
+        alert("@Model.employee.Name your booking is cancelled @Model.To_Date");
+    }
+
+</script>
+

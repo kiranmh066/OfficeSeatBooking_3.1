@@ -73,6 +73,9 @@ namespace Office_Seat_Book_DLL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("EmployeeImage")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<bool>("EmployeeStatus")
                         .HasColumnType("bit");
 

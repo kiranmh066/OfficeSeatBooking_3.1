@@ -20,7 +20,8 @@ namespace Office_Seat_Book_DLL.Migrations
                     Gender = table.Column<string>(type: "nvarchar(1)", nullable: false),
                     Security_Question = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmployeeStatus = table.Column<bool>(type: "bit", nullable: false)
+                    EmployeeStatus = table.Column<bool>(type: "bit", nullable: false),
+                    EmployeeImage = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
                 },
                 constraints: table =>
                 {

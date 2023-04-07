@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Book_Entity;
 using System;
+
 using System.Collections.Generic;
 using System.Linq;
 
@@ -85,6 +86,7 @@ namespace Office_Seat_Book_DLL.Repost
             _dbContext.SaveChanges();
         }
 
+
         public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
         {
             List<Booking> booking = _dbContext.booking.Include(obj=>obj.employee).ToList();
@@ -106,5 +108,6 @@ namespace Office_Seat_Book_DLL.Repost
         }
 
        
+
     }
 }
