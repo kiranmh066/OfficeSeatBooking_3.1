@@ -47,5 +47,10 @@ namespace Office_Seat_Book_BLL.Services
         {
             return _SecretKeyRepost.GetSecretKeyByEmpId(empId);
         }
+
+        public int GetEmpIdBySecretKey(string SecretKey)
+        {
+            return _SecretKeyRepost.GetEmpBySecurityKey(SecretKey);
+        }
     }
 }

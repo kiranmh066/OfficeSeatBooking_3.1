@@ -1,5 +1,5 @@
 
-    function validateForm() {
+function validateForm() {
     var name = document.getElementById("Name").value;
     var email = document.getElementById("Email").value;
     var phone = document.getElementById("Phone").value;
@@ -11,42 +11,42 @@
 
     if (name == "") {
         alert("Name must be filled out");
-    return false;
+        return false;
     }
 
     if (email == "") {
         alert("Email must be filled out");
-    return false;
+        return false;
     }
 
     if (phone == "") {
         alert("Phone number must be filled out");
-    return false;
+        return false;
     }
 
     if (question == "") {
         alert("Secret key must be filled out");
-    return false;
+        return false;
     }
 
     if (password == "") {
         alert("Password must be filled out");
-    return false;
+        return false;
     }
 
     if (role == "") {
         alert("Role must be selected");
-    return false;
+        return false;
     }
 
     if (gender == "") {
         alert("Gender must be selected");
-    return false;
+        return false;
     }
 
     if (image == "") {
         alert("Please select a profile picture");
-    return false;
+        return false;
     }
 }
 

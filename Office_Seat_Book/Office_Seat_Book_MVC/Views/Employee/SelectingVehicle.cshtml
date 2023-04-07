@@ -6,38 +6,39 @@
     ViewData["Title"] = "SelectingVehicle";
 }
 @model IEnumerable<Office_Seat_Book_Entity.Parking>
-@if(1==1){
+@if (1 == 1)
+{
     int i = 0;
-    foreach(var p in Model)
+    foreach (var p in Model)
     {
-        i=i+1;
+        i = i + 1;
     }
 
-<body>
- 
-<form method="post">
-        
-        <div class="container-fluid">
+    <body>
+
+        <form method="post">
+
+            <div class="container-fluid">
 
                 @if (Model.Count() == 0)
                 {
-                     <div class="row">
+                    <div class="row">
                         <button class="col-md-1 parking-spot" asp-route-id="1"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">1</button>
                         <button class="col-md-1 parking-spot" asp-route-id="2"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">2</button>
                         <button class="col-md-1 parking-spot" asp-route-id="3"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">3</button>
                         <button class="col-md-1 parking-spot" asp-route-id="4"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">4</button>
                         <button class="col-md-1 parking-spot" asp-route-id="5"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">5</button>
                         <button class="col-md-1 parking-spot" asp-route-id="6"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">6</button>
-                  <button class="col-md-1 parking-spot" asp-route-id="7"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">7</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="7"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">7</button>
                         <button class="col-md-1 parking-spot" asp-route-id="8"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">8</button>
                         <button class="col-md-1 parking-spot" asp-route-id="9"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">9</button>
                         <button class="col-md-1 parking-spot" asp-route-id="10"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">10</button>
-                
-                 
-                </div>
-                <div class="row two">
-                    <button class="col-md-2 parking-spot" asp-route-id="11"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">11</button>
-                    <button class="col-md-2 parking-spot" asp-route-id="12"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">12</button>
+
+
+                    </div>
+                    <div class="row two">
+                        <button class="col-md-2 parking-spot" asp-route-id="11"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">11</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="12"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">12</button>
                         <button class="col-md-2 parking-spot" asp-route-id="13"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">13</button>
                         <button class="col-md-2 parking-spot" asp-route-id="14"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">14</button>
                         <button class="col-md-2 parking-spot" asp-route-id="15"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">15</button>
@@ -47,16 +48,16 @@
                         <button class="col-md-2 parking-spot" asp-route-id="19"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">19</button>
                         <button class="col-md-2 parking-spot" asp-route-id="20"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">20</button>
                         <button class="col-md-2 parking-spot" asp-route-id="21"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">21</button>
-                    <button class="col-md-2 parking-spot" asp-route-id="22"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">22</button>
-                    <button class="col-md-2 parking-spot" asp-route-id="23"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">23</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="22"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">22</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="23"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">23</button>
                         <button class="col-md-2 parking-spot" asp-route-id="24"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">24</button>
                         <button class="col-md-2 parking-spot" asp-route-id="25"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">25</button>
                         <button class="col-md-2 parking-spot" asp-route-id="26"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">26</button>
-                   
-                    
-                  </div>
 
-                  <div class="row three">
+
+                    </div>
+
+                    <div class="row three">
                         <button class="col-md-3 parking-spot" asp-route-id="27"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">27</button>
                         <button class="col-md-3 parking-spot" asp-route-id="28"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">28</button>
                         <button class="col-md-3 parking-spot" asp-route-id="29"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">29</button>
@@ -67,23 +68,23 @@
                         <button class="col-md-3 parking-spot" asp-route-id="34"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">34</button>
                         <button class="col-md-3 parking-spot" asp-route-id="35"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">35</button>
                         <button class="col-md-3 parking-spot" asp-route-id="36"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">36</button>
-                  
-                   
-                  </div>
-         
+
+
+                    </div>
+
 
                 }
 
-                    <div class="row">
+                <div class="row">
                     @if (1 == 1)
                     {
-                        
 
-                         int j = i;
+
+                        int j = i;
 
                         @foreach (var parking in Model)
                         {
-                      
+
 
                             @if (parking.Parking_Number == 1)
                             {
@@ -103,7 +104,7 @@
                         j = i;
                         @foreach (var parking in Model)
                         {
-                           
+
 
                             @if (parking.Parking_Number == 2)
                             {
@@ -120,10 +121,10 @@
                                 }
                             }
                         }
-                          j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                          
+
 
                             @if (parking.Parking_Number == 3)
                             {
@@ -140,10 +141,10 @@
                                 }
                             }
                         }
-                         j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                            
+
 
                             @if (parking.Parking_Number == 4)
                             {
@@ -160,10 +161,10 @@
                                 }
                             }
                         }
-                         j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                           
+
 
                             @if (parking.Parking_Number == 5)
                             {
@@ -183,7 +184,7 @@
                         j = i;
                         @foreach (var parking in Model)
                         {
-                            
+
 
                             @if (parking.Parking_Number == 6)
                             {
@@ -200,10 +201,10 @@
                                 }
                             }
                         }
-                          j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                           
+
 
                             @if (parking.Parking_Number == 7)
                             {
@@ -220,10 +221,10 @@
                                 }
                             }
                         }
-                          j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                          
+
 
                             @if (parking.Parking_Number == 8)
                             {
@@ -240,10 +241,10 @@
                                 }
                             }
                         }
-                           j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                         
+
 
                             @if (parking.Parking_Number == 9)
                             {
@@ -260,10 +261,10 @@
                                 }
                             }
                         }
-                         j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                           
+
                             @if (parking.Parking_Number == 10)
                             {
                                 <label style="background-color:red; height:80px;width:80px;margin-top:30px;margin-left:20px;margin-bottom:40px"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg" style="margin-top:10px">10</label>
@@ -279,29 +280,32 @@
                                 }
                             }
                         }
-                       
+
                     }
 
-                        </div>
+                </div>
 
-                    <div class="row two">
+                <div class="row two">
                     @if (1 == 1)
-                    {  int j = i;
+                    {
+                        int j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 12)
+
+                            @if (parking.Parking_Number == 12)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">12</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="12"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">12</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="12"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">12</button>
                                 }
                             }
-                            }
-                         j = i;
+                        }
+                        j = i;
                         @foreach (var parking in Model)
                         {
 
@@ -318,66 +322,74 @@
                                 }
                             }
                         }
-                         j = i;
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 14)
+
+                            @if (parking.Parking_Number == 14)
                             {
                                 <label style="background-color:red; padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">14</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="14"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">14</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="14"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">14</button>
                                 }
                             }
-                            }
-                             j = i;
+                        }
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 15)
+
+                            @if (parking.Parking_Number == 15)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">15</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="15"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">15</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="15"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">15</button>
                                 }
                             }
-                            }
-                             j = i;
+                        }
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 16)
+
+                            @if (parking.Parking_Number == 16)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">16</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="16"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">16</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="16"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">16</button>
                                 }
                             }
-                            }
-                             j = i;
+                        }
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 17)
+
+                            @if (parking.Parking_Number == 17)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">17</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="17"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">17</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="17"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">17</button>
                                 }
                             }
-                            }
+                        }
                         j = i;
                         @foreach (var parking in Model)
                         {
@@ -398,33 +410,37 @@
                         j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 19)
+
+                            @if (parking.Parking_Number == 19)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">19</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="19"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">19</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="19"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">19</button>
                                 }
                             }
-                            }
-                             j = i;
+                        }
+                        j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 20)
+
+                            @if (parking.Parking_Number == 20)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">20</label>
                             }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="20"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">20</button>
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="20"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">20</button>
                                 }
                             }
-                            }
+                        }
                         j = i;
                         @foreach (var parking in Model)
                         {
@@ -445,123 +461,133 @@
                         j = i;
                         @foreach (var parking in Model)
                         {
-                       
-                          @if (parking.Parking_Number == 22)
+
+                            @if (parking.Parking_Number == 22)
                             {
                                 <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">22</label>
-                            }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="22"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">22</button>
-                                }
-                            }
-                            }
-                            j = i;
-                        @foreach (var parking in Model)
-                        {
-                       
-                          @if (parking.Parking_Number == 23)
-                            {
-                                <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">23</label>
-                            }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="23"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">23</button>
-                                }
-                            }
-                            }
-                            j = i;
-                        @foreach (var parking in Model)
-                        {
-                       
-                          @if (parking.Parking_Number == 24)
-                            {
-                                <label style="background-color:red; padding:5px;height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">24</label>
-                            }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="24"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">24</button>
-                                }
-                            }
-                            }
-                            j = i;
-                        @foreach (var parking in Model)
-                        {
-                       
-                          @if (parking.Parking_Number == 25)
-                            {
-                                <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">25</label>
-                            }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="25"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">25</button>
-                                }
-                            }
-                            }
-                            j = i;
-                        @foreach (var parking in Model)
-                        {
-                       
-                          @if (parking.Parking_Number == 26)
-                            {
-                                <label style="background-color:red; padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">26</label>
-                            }
-                            else{
-                                j=j-1;
-                                if (j == 0){
-                                <button class="col-md-2 parking-spot" asp-route-id="26"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">26</button>
-                                }
-                            }
-                            }
-                       @* j = i;
-                        @foreach (var parking in Model)
-                        {
-
-                            @if (parking.Parking_Number == 27)
-                            {
-                                <label style="background-color:red; padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">27</label>
                             }
                             else
                             {
                                 j = j - 1;
                                 if (j == 0)
                                 {
-                                    <button class="col-md-2 parking-spot" asp-route-id="27"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">27</button>
+                                    <button class="col-md-2 parking-spot" asp-route-id="22"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">22</button>
                                 }
                             }
-                        }*@
                         }
-                    </div>
+                        j = i;
+                        @foreach (var parking in Model)
+                        {
 
-                    <div class="row three">
+                            @if (parking.Parking_Number == 23)
+                            {
+                                <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">23</label>
+                            }
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="23"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">23</button>
+                                }
+                            }
+                        }
+                        j = i;
+                        @foreach (var parking in Model)
+                        {
+
+                            @if (parking.Parking_Number == 24)
+                            {
+                                <label style="background-color:red; padding:5px;height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">24</label>
+                            }
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="24"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">24</button>
+                                }
+                            }
+                        }
+                        j = i;
+                        @foreach (var parking in Model)
+                        {
+
+                            @if (parking.Parking_Number == 25)
+                            {
+                                <label style="background-color:red;padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">25</label>
+                            }
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="25"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">25</button>
+                                }
+                            }
+                        }
+                        j = i;
+                        @foreach (var parking in Model)
+                        {
+
+                            @if (parking.Parking_Number == 26)
+                            {
+                                <label style="background-color:red; padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">26</label>
+                            }
+                            else
+                            {
+                                j = j - 1;
+                                if (j == 0)
+                                {
+                                    <button class="col-md-2 parking-spot" asp-route-id="26"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">26</button>
+                                }
+                            }
+                        }
+                        @* j = i;
+                @foreach (var parking in Model)
+                {
+
+                @if (parking.Parking_Number == 27)
+                {
+                <label style="background-color:red; padding:5px; height:80px;width:120px;margin-left:25px;margin-top:5px" ;><img src="https://www.svgrepo.com/show/484354/car-private-car.svg" style="margin-top:20px;margin-left:10px">27</label>
+                }
+                else
+                {
+                j = j - 1;
+                if (j == 0)
+                {
+                <button class="col-md-2 parking-spot" asp-route-id="27"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">27</button>
+                }
+                }
+                }*@
+                    }
+                </div>
+
+                <div class="row three">
                     @if (1 == 1)
                     {
 
                         int j = i;
 
-                       @* @foreach (var parking in Model)
-                        {
+                        @* @foreach (var parking in Model)
+                {
 
 
-                            @if (parking.Parking_Number == 27)
-                            {
-                                <label style="background-color:red; height:80px;width:80px;margin-top:30px;margin-left:20px;margin-bottom:40px"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg" style="margin-top:10px">27</label>
+                @if (parking.Parking_Number == 27)
+                {
+                <label style="background-color:red; height:80px;width:80px;margin-top:30px;margin-left:20px;margin-bottom:40px"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg" style="margin-top:10px">27</label>
 
-                                break;
-                            }
-                            else
-                            {
-                                j--;
-                                if (j == 0)
-                                {
-                                    <button asp-route-id="27" class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">27</button>
-                                }
-                            }
-                        }*@
+                break;
+                }
+                else
+                {
+                j--;
+                if (j == 0)
+                {
+                <button asp-route-id="27" class="col-md-3 parking-spot"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">27</button>
+                }
+                }
+                }*@
                         j = i;
                         @foreach (var parking in Model)
                         {
@@ -744,39 +770,39 @@
 
                     }
 
-                     @*   <button class="col-md-3 parking-spot" asp-route-id="28"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">28</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="29"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">29</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="30"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">30</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="31"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">31</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="32"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">32</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="33"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">33</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="34"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">34</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="35"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">35</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="36"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">36</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="37"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">37</button>
-                    <button class="col-md-3 parking-spot" asp-route-id="38"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">38</button>*@
-  
+                    @*   <button class="col-md-3 parking-spot" asp-route-id="28"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">28</button>
+                <button class="col-md-3 parking-spot" asp-route-id="29"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">29</button>
+                <button class="col-md-3 parking-spot" asp-route-id="30"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">30</button>
+                <button class="col-md-3 parking-spot" asp-route-id="31"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">31</button>
+                <button class="col-md-3 parking-spot" asp-route-id="32"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">32</button>
+                <button class="col-md-3 parking-spot" asp-route-id="33"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">33</button>
+                <button class="col-md-3 parking-spot" asp-route-id="34"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">34</button>
+                <button class="col-md-3 parking-spot" asp-route-id="35"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">35</button>
+                <button class="col-md-3 parking-spot" asp-route-id="36"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">36</button>
+                <button class="col-md-3 parking-spot" asp-route-id="37"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">37</button>
+                <button class="col-md-3 parking-spot" asp-route-id="38"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">38</button>*@
+
+
+                </div>
 
             </div>
-           
-        </div>
-        
-     
-        <script>
-                    $(document).ready(function(){
-              $(".parking-spot").click(function(){
-                // remove "selected" class from all other parking spots
-                $(".parking-spot").not(this).removeClass("selected");
-                // toggle "selected" class on the clicked parking spot
-                $(this).addClass("selected");
-              });
-            });
 
 
-        </script>
-        
-</form>
-</body>
+            <script>
+                $(document).ready(function () {
+                    $(".parking-spot").click(function () {
+                        // remove "selected" class from all other parking spots
+                        $(".parking-spot").not(this).removeClass("selected");
+                        // toggle "selected" class on the clicked parking spot
+                        $(this).addClass("selected");
+                    });
+                });
+
+
+            </script>
+
+        </form>
+    </body>
 }
 <style>
     <style >
@@ -868,4 +894,3 @@
         color: blue;
     }
 </style>
-

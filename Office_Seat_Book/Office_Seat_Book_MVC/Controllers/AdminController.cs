@@ -37,7 +37,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> RegisterEmp(Employee employee)
         {
             ViewBag.status = "";
-           
+
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(employee), Encoding.UTF8, "application/json");
@@ -113,9 +113,9 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> EditEmp(Employee emp)
         {
-            
-            //it will update the doctor details after Admin Changes
-            using (HttpClient client = new HttpClient())
+
+            //it will update the doctor details after Admin Changes
+            using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(emp), Encoding.UTF8, "application/json");
                 string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
@@ -150,7 +150,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Details Deleted Successfully!";
-                         return RedirectToAction("ViewEmp", "Admin");
+                        return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -286,8 +286,8 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();
         }
 
-        
-        
+
+
 
         public IActionResult AddSeat()
         {

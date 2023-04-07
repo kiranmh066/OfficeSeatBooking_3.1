@@ -11,14 +11,8 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using Office_Seat_Book_Entity;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -161,10 +155,10 @@ namespace Office_Seat_Book_MVC.Controllers
             List<SelectListItem> shiftTiming = new List<SelectListItem>()
             {
                 new SelectListItem{Value="Select",Text="Shift Timings"},
-                new SelectListItem{Value="02:00pm-10:00pm",Text="02:00pm-10:00pm"},
-                new SelectListItem{Value="10:00am-06:00pm",Text="10:00am-06:00pm"},
-                new SelectListItem{Value="06:00am-02:00pm",Text="06:00am-02:00pm"},
-                new SelectListItem{Value="09:00am-06:00pm",Text="09:00am-06:00pm"},
+                new SelectListItem{Value="0",Text="02:00pm-10:00pm"},
+                new SelectListItem{Value="1",Text="10:00am-06:00pm"},
+                new SelectListItem{Value="2",Text="06:00am-02:00pm"},
+                new SelectListItem{Value="3",Text="09:00am-06:00pm"},
             };
 
 
@@ -223,13 +217,17 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            if (booking2 != null || (booking2.Booking_Status != 0 && booking2.Booking_Status != 1) || booking2.To_Date < DateTime.Today)
-            {
-                ViewBag.status = "Error";
-                ViewBag.message = "Alredy a seat waiting for you!!";
-                return View(booking2);
 
-            }
+            /*if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
+                if (booking2 != null || (booking2.Booking_Status != 0 && booking2.Booking_Status != 1) || booking2.To_Date < DateTime.Today)
+                {
+                    ViewBag.status = "Error";
+                    ViewBag.message = "Alredy a seat waiting for you!!";
+                    return View(booking2);
+                }
+                else
+                {*/
+
             ViewBag.shiftTimings = ShiftTiming();
             ViewBag.requests = RequestType();
             return View();
@@ -238,6 +236,7 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> BookSeat(Booking booking)
         {
+
 
 
             #region Booking Seat
@@ -278,8 +277,8 @@ namespace Office_Seat_Book_MVC.Controllers
 
                 #endregion
 
-
             }
+            /*}*/
             return View();
         }
         [HttpGet]

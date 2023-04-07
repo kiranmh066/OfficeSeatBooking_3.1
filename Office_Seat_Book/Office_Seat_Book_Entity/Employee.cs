@@ -26,10 +26,14 @@ namespace Office_Seat_Book_Entity
 
         public string Role { get; set; }
 
+
         public bool EmployeeStatus { get;set; }
 
         [AllowNull]
         public byte[] EmployeeImage { get; set; }
+
+
+  
 
     }
 }

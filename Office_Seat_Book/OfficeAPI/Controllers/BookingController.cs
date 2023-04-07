@@ -64,6 +64,7 @@ namespace OfficeAPI.Controllers
             }
         }
 
+
         [HttpGet("GetBookingByEmpId")]
         public Booking GetBookingByEmpId(int EmpId)
         {
