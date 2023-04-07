@@ -18,12 +18,66 @@
 <form method="post">
         
         <div class="container-fluid">
-            
+
+                @if (Model.Count() == 0)
+                {
+                     <div class="row">
+                        <button class="col-md-1 parking-spot" asp-route-id="1"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">1</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="2"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">2</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="3"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">3</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="4"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">4</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="5"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">5</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="6"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">6</button>
+                  <button class="col-md-1 parking-spot" asp-route-id="7"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">7</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="8"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">8</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="9"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">9</button>
+                        <button class="col-md-1 parking-spot" asp-route-id="10"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">10</button>
                 
+                 
+                </div>
+                <div class="row two">
+                    <button class="col-md-2 parking-spot" asp-route-id="11"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">11</button>
+                    <button class="col-md-2 parking-spot" asp-route-id="12"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">12</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="13"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">13</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="14"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">14</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="15"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">15</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="16"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">16</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="17"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">17</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="18"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">18</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="19"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">19</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="20"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">20</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="21"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">21</button>
+                    <button class="col-md-2 parking-spot" asp-route-id="22"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">22</button>
+                    <button class="col-md-2 parking-spot" asp-route-id="23"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">23</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="24"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">24</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="25"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">25</button>
+                        <button class="col-md-2 parking-spot" asp-route-id="26"><img src="https://www.svgrepo.com/show/484354/car-private-car.svg">26</button>
+                   
+                    
+                  </div>
+
+                  <div class="row three">
+                        <button class="col-md-3 parking-spot" asp-route-id="27"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">27</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="28"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">28</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="29"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">29</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="30"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">30</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="31"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">31</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="32"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">32</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="33"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">33</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="34"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">34</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="35"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">35</button>
+                        <button class="col-md-3 parking-spot" asp-route-id="36"><img src="https://www.svgrepo.com/show/138099/motorcycle.svg">36</button>
+                  
+                   
+                  </div>
+         
+
+                }
 
                     <div class="row">
                     @if (1 == 1)
                     {
+                        
 
                          int j = i;
 
@@ -704,8 +758,7 @@
   
 
             </div>
-            }
-            }
+           
         </div>
         
      

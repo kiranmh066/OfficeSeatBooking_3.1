@@ -1,14 +1,108 @@
 ﻿@model Office_Seat_Book_Entity.Floor
 @{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+@*@model Office_Seat_Book_Entity.Employee*@
+
+@*<div class="bg-image"></div>*@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+
+    body {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contain {
+        max-width: 500px;
+        width: 100%;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        margin: auto;
+    }
+
+        .contain .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+
+            .contain .title::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 30px;
+                border-radius: 5px;
+                background-image: linear-gradient(310deg,#7928ca,#ff0080);
+            }
+
+    input {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        width: 300px !important;
+        margin: 3px;
+    }
+
+        input:active {
+            border: 2px solid black;
+        }
+
+    .content form .user-details {
+        margin: 20px 0 12px 0;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 5px;
+        border: transparent;
+        color: #eee;
+        height: 30px;
+        cursor: pointer;
+        background-image: linear-gradient(310deg,#7928ca,#ff0080);
+    }
+
+    .user-details .input-box input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .alert .success {
+        width: 200px;
+    }
+</style>
+
 <body>
     <div class="mask bg-gradient-primary">
         <img class="img"
              src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
              alt="img">
-        <a asp-area="" asp-controller="Admin" asp-action="Getallfloor"><img class="img-fluid" style="height:35px;position:relative" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+
         <div class="container">
             <nav class="navbar navbar-expand-lg blur blur-rounded shadow my-4">
                 <div class="container-fluid">
@@ -63,14 +157,14 @@
                     <br>
                     <section class="color-7">
                         <div class="anchor cl-effect-4">
-                            <a asp-area="" asp-controller="Admin" asp-action="Showprofile">PROFILE</a>
+                            <a asp-area="" asp-controller="Employee" asp-action="Profile">PROFILE</a>
                         </div>
                     </section>
                     <br>
                     <section class="color-7">
                         <div class="anchor cl-effect-4">
                             <a asp-controller="Admin" asp-action="RegisterEMP">Register Employee</a>
-                            <a asp-area="" asp-controller="Admin" asp-action="ViewEmp">Get All Employee details</a>
+                            <a asp-area="" asp-controller="Admin" asp-action="ViewEmp"> Employee details</a>
                         </div>
                     </section>
                     <br>
@@ -101,7 +195,7 @@
                         </div>
                     </section>
                     <br />
-                    @*<section class="color-7">
+                    @* <section class="color-7">
                     <div class="anchor cl-effect-4">
                     <div>
                     <a href="#"> PARKING&#9662;</a>
@@ -127,47 +221,67 @@
                     </section>
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-
+            @* <div class="container">
             <form method="post" enctype="multipart/form-data">
-                <center>
-                    <h2 style="color:white"> Edit Floor </h2>
-                </center>
-                <div class="col-4 d-inline-block align-top" style=" margin-right:90px;margin-left:370px;position:relative">
-                    <div class="row">
-                        <div class="col-md-6">
-                            @*<div class="form-group">
+            <div class="col-4 d-inline-block align-top" style=" margin-right:90px;margin-left:370px ; position:relative;">
+            <center>
+            <h2 style="color:white">Add Seat </h2>
+            </center>
+            <div class="row">
+            <div>
+            @*<div class="form-group">
 
-                            <label style="font-size:20px;color:white">Floor ID</label>
-                            <input type="text" asp-for="FloorID" class="form-control" placeholder="enter seat number" required />
-                            </div>*@
-                            <div class="form-group">
+            <label>Seatno</label>
+            <input type="text" asp-for="Seat_No" class="form-control" placeholder="Enter seat number" required />
+            </div>
+
+            </div>
+            </div>
+            <input type="submit" value="Save" class="btn btn-success my-y" />
+            &nbsp;&nbsp;
+            <input type="reset" value="Reset" class="btn btn-success my-4" />
+
+
+            </div>*@
+
+            <div class="contain">
+                <div class="title">Edit Floor</div>
+                <div class="content">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="user-details">
+                            <div class="input-box">
+
                                 <label style="font-size:20px;color:white">Floor Name</label>
-                                <input type="text" asp-for="FloorName" class="form-control" placeholder="Enter Floor number" required />
+
+                                <input type="text" asp-for="FloorName" class="form-control" placeholder="Enter Floor Name" required />
                             </div>
                         </div>
-                    </div>
-                    <input type="submit" value="Save" class="btn btn-success my-y" />
-                    &nbsp;&nbsp;
-                    <input type="reset" value="Reset" class="btn btn-success my-4" />
-                    @*submit sends form to server thats why we use submit not button type  *@
-                    @*   by default get request is called so we have mention post in the initial stage of form which will call httppost in Foodcontroller *@
-                    @if (ViewBag.status == "Ok")
-                    {
-                        <div class="alert alert-success">
-                            @ViewBag.message
-                        </div>
-                    }
-                    else if (ViewBag.status == "Error")
-                    {
-                        <div class="alert alert-danger">
-                            @ViewBag.message
-                        </div>
-                    }
+                        <input type="submit" value="Save" class="btn btn-success my-y" />
+                        @*<button class="btn">
+                        Save
+                        </button>*@
+                    </form>
                 </div>
-            </form>
+
+
+
+
+                @*submit sends form to server thats why we use submit not button type  *@
+                @*   by default get request is called so we have mention post in the initial stage of form which will call httppost in Foodcontroller *@
+                @if (ViewBag.status == "Ok")
+                {
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </body>

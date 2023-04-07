@@ -40,7 +40,7 @@
         border-radius: 10px;
         box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
         align-items: center;
-        height:350px;
+        height: 350px;
         border: 1px solid black;
     }
 
@@ -167,50 +167,50 @@
         <div class="col-md-6 offset-md-3">
             <div class="profile">
 
-            <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
 
-                <div>
-                    <div class="form-group">
-                        <label style="color:black;font-size:20px">phone number</label>
-                        <input  type="text" asp-for="PhoneNo" class="form-control" placeholder="Enter Emp number" required />
-                    </div>
                     <div>
-                    <label class="form-label">Profile Picture</label>
-                    <input  asp-for="EmployeeImage" type="file" id="poster" name="poster" class="form-control form-control-lg" placeholder="Choose File" required />
-                    </div>
-                    <br />
-                    
+                        <div class="form-group">
+                            <label style="color:black;font-size:20px">phone number</label>
+                            <input  type="text" asp-for="PhoneNo" class="form-control" placeholder="Enter Emp number" required />
+                        </div>
+                        <div>
+                            <label class="form-label">Profile Picture</label>
+                            <input asp-for="EmployeeImage" type="file" id="poster" name="poster" class="form-control form-control-lg" placeholder="Choose File" required />
+                        </div>
+                        <br />
+
                         <input type="submit" value="Update" class="btn btn-outline-success" onclick="UpdateFunction()" />
                         <button type="button" class="btn btn-success"><a asp-area="" asp-controller="Employee" asp-action="Profile" style="color:white">Go Back</a></button>
-                        
-                       
-                </div>
-            </form>
-            @if (ViewBag.status == "Ok")
-            {
-                <br />
+
+
+                    </div>
+                </form>
+                @if (ViewBag.status == "Ok")
+                {
+                    <br />
 
 
 
-                <br />
-                <div class="alert alert-success">
-                    @ViewBag.message
-                </div>
-            }
-            else if (ViewBag.status == "Error")
-            {
-                <br />
+                    <br />
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+                    <br />
 
 
 
-                <br />
-                <div class="alert alert-danger">
-                    @ViewBag.message
-                </div>
-            }
+                    <br />
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
+            </div>
         </div>
     </div>
-  </div>
 </div>
 <script>
     function UpdateFunction() {
