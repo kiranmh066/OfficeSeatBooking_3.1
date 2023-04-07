@@ -1,0 +1,26 @@
+﻿@model Office_Seat_Book_Entity.SecretKey;
+@{
+    ViewData["Title"] = "EnterKey";
+}
+
+@{
+
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<h1>EnterKey</h1>
+<form method="post" enctype="multipart/form-data">
+    <input type="text" asp-for="SpecialKey" class="form-control" placeholder="Enter Secret Key" />
+    <button type="submit" class="btn btn-primary"></button>
+</form>
+@if (ViewBag.status == "Ok")
+{
+    <div class="alert alert-success">
+        @ViewBag.message
+    </div>
+}
+else if (ViewBag.status == "Error")
+{
+    <div class="alert alert-danger">
+        @ViewBag.message
+    </div>
+}

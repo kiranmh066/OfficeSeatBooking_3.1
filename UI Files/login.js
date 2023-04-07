@@ -21,16 +21,37 @@ function login()
 		}
 		else
 		{
-	alert('Thank You for Login & You are Redirecting to Our Website');
+	alert('Login Successfull!!');
   //Redirecting to other page or webste code or you can set your own html page.
        window.location = " ";
 			}
 	}
+
+	// Get the checkbox element
+    const rememberMeCheckbox = document.getElementById('form');
+
+// Check if the user has previously checked the checkbox
+    if (localStorage.getItem('rememberMe') === 'true') {
+    rememberMeCheckbox.checked = true;
+}
+
+// Add an event listener to the checkbox
+   rememberMeCheckbox.addEventListener('click', function () {
+  // Save the checkbox state in the local storage
+   localStorage.setItem('rememberMe', this.checked);
+});
+
 	//Reset Inputfield code.
 	function clearFunc()
 	{
 		document.getElementById("email1").value="";
 		document.getElementById("password1").value="";
 	}
+
+	function showSuccessModal() {
+		$('#myModal').modal('show');
+	  }
+	  
 	
-	
+
+  

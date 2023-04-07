@@ -28,7 +28,7 @@ namespace Office_Seat_Book_DLL.Repost
 
         public Employee GetEmployeeById(int employeeId)
         {
-            return _dbContext.employee.Find(employeeId);    
+            return _dbContext.employee.Find(employeeId);
         }
 
         public IEnumerable<Employee> GetEmployees()

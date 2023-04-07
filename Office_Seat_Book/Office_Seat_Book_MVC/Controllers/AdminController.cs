@@ -1,16 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text.Json.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using Office_Seat_Book_DLL;
 using Newtonsoft.Json;
+using Office_Seat_Book_DLL;
 using Office_Seat_Book_Entity;
 using System;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Data;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Office_Seat_Book_MVC.Controllers
 {
@@ -31,22 +30,175 @@ namespace Office_Seat_Book_MVC.Controllers
         {
             return View();
         }
-        public IActionResult Notification()
+        //public IActionResult Notification()
+        //{
+           
+        // return View();
+        //}
+        public async Task<IActionResult> Settings()
         {
-            //if (TempData["Total"] != null)
-            //{
-            //    TempData["Total"] = messages.Count;
-            //}
-            //else
-            //{
-            //    TempData["Total"] = "no notification";
-            //    TempData.Keep();
-            //}
-            int a = Convert.ToInt32(TempData["Counter1"]);
-            TempData["C"] = a;
-            TempData.Keep();
-         return View();
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+                
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            return View(emp);
         }
+
+
+
+        public async Task<IActionResult> OldPassword()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+                int Id = Convert.ToInt32(TempData["empId"]);
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+
+                }
+
+            }
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> OldPassword(Employee emp1)
+        {
+            Employee emp = new Employee();
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            emp1.PhoneNo = emp.PhoneNo;
+            emp1.Email = emp.Email;
+            emp1.Role = emp.Role; ;
+            emp1.EmpID = emp.EmpID;
+            emp1.Gender = emp.Gender;
+            emp1.Security_Question = emp.Security_Question;
+            emp1.Name = emp.Name;
+            if (emp1.Password == emp.Password)
+            {
+                ViewBag.status = "Ok";
+                ViewBag.message = "correct";
+
+                return RedirectToAction("NewPassword", "Admin");
+            }
+            else
+            {
+                ViewBag.status = "Error";
+                ViewBag.message = "Wrong Entries!";
+            }
+            return View(emp);
+        }
+        public async Task<IActionResult> NewPassword()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+
+                }
+
+            }
+            return View(emp);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NewPassword(Employee emp1)
+        {
+            Employee emp = new Employee();
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+
+            emp1.Email = emp.Email;
+            emp1.Role = emp.Role; ;
+            emp1.EmpID = emp.EmpID;
+            emp1.Gender = emp.Gender;
+            emp1.Security_Question = emp.Security_Question;
+            emp1.Name = emp.Name;
+            emp1.PhoneNo = emp.PhoneNo;
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(emp1), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Your Details Updated Successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View(emp1);
+        }
+
         public IActionResult RegisterEmp()
         {
             return View();
@@ -65,12 +217,14 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Register successfully!";
-                        TempData["Counter1"] = Convert.ToInt32(TempData["Counter1"]) + 1;
+                        TempData["regcount1"] = Convert.ToInt32(TempData["regcount1"]) + 1;
                         TempData.Keep();
-                        TempData["count"] = TempData["Counter1"];
-                        //TempData.Keep();
-                        TempData["ABC"] = "You Registered successfully";
-                        //TempData.Keep();
+                        TempData["regcount2"] = TempData["regcount1"];
+                        TempData.Keep();
+                        TempData["register"] = "profile was added";
+                        TempData.Keep();
+                        TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
+                        TempData.Keep();
                     }
                     else
                     {
@@ -231,13 +385,12 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-            emp1.Designation = emp.Designation;
+            
             emp1.Email = emp.Email;
             emp1.Role = emp.Role; ;
             emp1.EmpID = emp.EmpID;
-            emp1.Place = emp.Place;
             emp1.Gender = emp.Gender;
-            emp1.Secret_Key = emp.Secret_Key;
+            emp1.Security_Question = emp.Security_Question;
             emp1.Name = emp.Name;
             emp1.Password = emp.Password;
             using (HttpClient client = new HttpClient())
@@ -373,6 +526,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Details Deleted Successfully!";
+                        return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -421,7 +575,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> AddSeat(Seat seat)
         {
             ViewBag.status = "";
-            seat.seat_flag = true;
+            seat.Seat_flag = true;
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
@@ -522,6 +676,8 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = "seat deleted Successfully!!";
+                        return RedirectToAction("GetAllSeat", "Admin");
+
                     }
 
                     else
@@ -661,6 +817,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {   //dynamic viewbag we can create any variable name in run time
                         ViewBag.status = "Ok";
                         ViewBag.message = " deleted Successfully!!";
+                        return RedirectToAction("GetAllfloor", "Admin");
                     }
 
                     else

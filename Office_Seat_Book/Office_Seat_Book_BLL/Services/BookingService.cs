@@ -2,7 +2,6 @@
 using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Office_Seat_Book_BLL.Services
 {
@@ -17,7 +16,7 @@ namespace Office_Seat_Book_BLL.Services
         //Add Appointment
         public int AddBooking(Booking booking)
         {
-           return _bookingRepost.AddBooking(booking);
+            return _bookingRepost.AddBooking(booking);
         }
 
         //Delete Appointment
@@ -43,6 +42,17 @@ namespace Office_Seat_Book_BLL.Services
         public Booking GetBookingById(int bookingID)
         {
             return _bookingRepost.GetBookingById(bookingID);
+        }
+
+        public Booking GetBookingByEmpId(int EmpId)
+        {
+            return _bookingRepost.GetBookingByEmpId(EmpId);
+        }
+
+
+        public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
+        {
+            return _bookingRepost.GetBookingsByDate(date1);
         }
     }
 }

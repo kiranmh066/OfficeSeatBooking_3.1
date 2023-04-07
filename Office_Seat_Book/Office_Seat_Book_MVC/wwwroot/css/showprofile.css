@@ -39,8 +39,9 @@
 
 .profile-pic {
     position: relative;
+    height:100px;
     width: 100px;
-    height: 200px;
+    
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto;
@@ -50,7 +51,6 @@
     .profile-pic img {
         width: 100%;
         height: 100%;
-        margin-top:-120px;
     }
 
 .edit-button {
@@ -99,66 +99,9 @@
 
 
 
-button {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.profile-pic:hover img {
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(180deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 
-.profile {
-    animation: fadeIn 1s ease-in-out forwards;
-    opacity: 0;
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-.profile h5 {
-    text-shadow: 2px 2px 0 #007bff;
-    transition: all 0.3s ease;
-}
 
     .profile h2:hover,
     .profile h5:hover {
@@ -170,14 +113,7 @@ button {
     perspective: 1000px;
 }
 
-    .profile:hover .profile-pic {
-        transform: rotateY(180deg);
-    }
-
-    .profile .profile-pic {
-        transition: all 0.6s ease;
-        transform-style: preserve-3d;
-    }
+ 
 
         .profile .profile-pic img {
             backface-visibility: hidden;
@@ -189,9 +125,7 @@ button {
             height: 100%;
         }
 
-        .profile .profile-pic .back {
-            transform: rotateY(180deg);
-        }
+       
 
             .profile .profile-pic .back img {
                 border-radius: 50%;
@@ -207,5 +141,4 @@ button {
     position: absolute;
     bottom: 0;
     right: 0;
-    transform: rotateY(180deg);
 }
