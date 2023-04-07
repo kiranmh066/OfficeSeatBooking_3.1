@@ -6,16 +6,17 @@
 <body>
 
     <div class="container">
-        @foreach(var seat in Model)
+        @foreach (var seat in Model)
         {
-            @if(seat.Seat_flag==true){
+            @if (seat.Seat_flag == true)
+            {
 
                 <a asp-action="BookSeatByUpdatingSeatId" asp-controller="Employee" asp-route-SeatId="@seat.Seat_No">
-                <div type="button" class="seats">
-                    <img src="https://cdn-icons-png.flaticon.com/512/256/256634.png?w=740&t=st=1680671597~exp=1680672197~hmac=8b5526bb896b67c620b5333f7dce5d22b4c7546037e2d0446f385b2053c5134e"
-                    alt=""><br>
-                    <span><b>@seat.Seat_No</b></span>
-                </div>
+                    <div type="button" class="seats">
+                        <img src="https://cdn-icons-png.flaticon.com/512/256/256634.png?w=740&t=st=1680671597~exp=1680672197~hmac=8b5526bb896b67c620b5333f7dce5d22b4c7546037e2d0446f385b2053c5134e"
+                             alt=""><br>
+                        <span><b>@seat.Seat_No</b></span>
+                    </div>
                 </a>
             }
             else
@@ -28,7 +29,7 @@
             }
         }
     </div>
-       
+
 
 </body>
 <style>
@@ -65,10 +66,10 @@
         color: aliceblue;
     }
 
-        .seats:active {
-            transform: scale(.8);
-            transition: all 0.1s;
-        }
+    .seats:active {
+        transform: scale(.8);
+        transition: all 0.1s;
+    }
 
     img {
         height: 50px;

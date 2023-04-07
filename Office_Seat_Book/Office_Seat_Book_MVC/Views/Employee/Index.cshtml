@@ -4,12 +4,17 @@
 
 @{
     ViewData["Title"] = "Index";
-} 
-@model Office_Seat_Book_Entity.Booking;
+}
+@model Office_Seat_Book_Entity.Booking
 @*<link href="~/css/styles.css" rel="stylesheet" />*@
 
 <body>
 
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+    </div>
     <div class="mask bg-gradient-primary">
         <img class="img"
              src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
@@ -64,20 +69,20 @@
             <div class="offcanvas-body">
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Home</a>
+                        <a asp-controller="Employee" asp-action="Index">Home</a>
                     </div>
                 </section>
                 <br>
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Profile</a>
+                        <a asp-controller="Employee" asp-action="Profile">Profile</a>
                     </div>
                 </section>
                 <br>
 
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Help</a>
+                        <a asp-controller="Help" asp-action="Index">Help</a>
                     </div>
                 </section>
             </div>
@@ -100,44 +105,93 @@
         <div class="col-12">
             <div class=" greet text-center">
                 <p class=" head text-white  ">Good Morning.!</p>
-                <p class=" name text-white mt-3">@TempData["EmpName"].ToString();</p>
+                <p class=" name text-white mt-3">Shaan Ram</p>
             </div>
         </div>
     </div>
-    <div class="row row1 card-div ">
-        <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-            <span class="numb">
-                0
-            </span>
-            <span class="char">
-                Approved
-            </span>
+    @if (Model != null)
+    {
+        <div class="row row1 card-div ">
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Approved
+                </span>
+
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+
+                @if (Model.Booking_Status == 0)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Pending
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">0</span>
+                    <span class="char">
+                        Pending
+                    </span>
+                }
+
+                @* <span class="char">
+            Pending
+            </span>*@
+            </div>
+            <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Rejected
+                </span>
+            </div>
 
         </div>
-        <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-            <span class="numb">
-                0
-            </span>
-            <span class="char">
-                Pending
-            </span>
-        </div>
-        <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-            <span class="numb">
-                0
-            </span>
-            <span class="char">
-                Rejected
-            </span>
-        </div>
+    }
+    else
+    {
+        <div class="row row1 card-div ">
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Approved
+                </span>
 
-    </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Pending
+                </span>
+            </div>
+            <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Rejected
+                </span>
+            </div>
+
+        </div>
+    }
 
     <div class="row card-div">
         <div class="col-12 col-md-6 col-xl-6 col-xxl-6">
             <div class="buttons">
                 <button class="button btn-lg">
-                    Your Bookings
+                    <a asp-controller="Employee" asp-action="Booking_history" style="text-decoration:none;color:white">View Bookings</a>
                 </button>
                 <button class="button btn-lg">
                     <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white">Book Seat</a>
@@ -145,7 +199,6 @@
             </div>
         </div>
     </div>
-    <form method="post">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -163,9 +216,9 @@
                                         <div class=" text-center ">
                                             <div class="card-body">
                                                 <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
-                                                <p class="card-text">Name: @Model.employee.Name</p>
-                                                <p class="card-text">Emp ID: @Model.EmployeeID</p>
-                                                <p class="card-text">Role: @Model.employee.Role</p>
+                                                <p class="card-text">Name :@Model.employee.Name</p>
+                                                <p class="card-text">Emp ID :@Model.EmployeeID</p>
+                                                <p class="card-text">Role:@Model.employee.Role</p>
                                             </div>
                                         </div>
                                     </div>
@@ -174,23 +227,15 @@
                                         <div class=" text-center my-4">
                                             <div class="card-body">
                                                 <h5 class="card-title text-black"><u>Booking Details</u></h5>
-                                                <p class="card-text">From Date: @Model.From_Date</p>
-                                                <p class="card-text">To Date: @Model.To_Date</p>
-                                                <p class="card-text">Shift Time: @Model.Shift_Time</p>
-                                                <p class="card-text">Seat Number: @Model.Seat_No</p>
-                                                <p class="card-text">Booking ID: @Model.BookingID</p>
-                                                <p class="card-text">Food: @Model.Food_Type</p>
-                                                @*<p class="card-text">Parking: </p>*@
-                                                @*<button class="btn btn-success">View OTP</button> &nbsp;
-                                                <button class="btn btn-success">View OTP</button>*@
-                                                @*<a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn" style="display:inline">Verify OTP</a>
-                                                <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn" style="display:inline">Verify QR</a>*@
-                                                <button class="button btn-lg">
-                                                    <a asp-controller="Booking" asp-action="EnterKey" style="color:red">Verify OTP</a>
-                                                </button>
-                                                <button class="button btn-lg">
-                                                    <a asp-controller="Booking" asp-action="GenerateQR" style="text-decoration:none;color:red">Verify QR</a>
-                                                </button>
+                                                <p class="card-text">From Date : @Model.From_Date.ToShortDateString()</p>
+                                                <p class="card-text">To Date : @Model.To_Date.ToShortDateString()</p>
+                                                <p class="card-text">Shift Time :@Model.Shift_Time</p>
+                                                <p class="card-text">Seat Number : @Model.Seat_No</p>
+                                                <p class="card-text">Booking ID :@Model.BookingID</p>
+                                                <p class="card-text">Food :@Model.Food_Type</p>
+                                                <p class="card-text">Parking :false</p>
+                                                @* <button type="button" class="btn btn-success">View OTP</button> &nbsp;
+                                            <button type="button" class="btn btn-success">View OTP</button>*@
                                             </div>
                                         </div>
                                     </div>
@@ -199,234 +244,309 @@
                                 {
                                     <div class="card-body text-center">
                                         <h3>You don't have any bookings</h3>
-                                        <button class="btn btn-success">Book Seat</button>
+                                        @*<button class="btn btn-success">Book Seat</button>*@
                                     </div>
                                 }
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer flex align-content-center">
+                    @if (Model != null)
+                    {
+                        <span style="font-size:18px;font-weight:bold">Verify with :</span>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OTP</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">QR</button>
+                    }
+                    else
+                    {
+
+
+
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                            <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none; color:white">Book Seat</a>
+                        </button>
+
+                    }
+                </div>
             </div>
         </div>
     </div>
-    </form>
+    <div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p></p>
+                </div>
+                <div class="modal-dialog modal-dialog-centered seat">
+                    Seat has already booked!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">View Pass</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <style>
-    .img{
-  position: absolute;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-}
-.navbar{
-  border-top-left-radius:30px;
-  border-bottom-left-radius:30px;  
-  border-top-right-radius:30px;
-  border-bottom-right-radius:30px;  
-  background-color: rgba(234, 210, 239, 0.9);
-  color: rgb(20, 20, 21);
-  opacity: 1;
-}
-.navbar-brand{
-  font-weight: bold;  
- }
-.nav{
-    justify-content: space-between;
-}
-.bell{
-    margin: auto;
-    cursor: pointer;
-}
-.logout{
-    margin: auto;
-    cursor: pointer;
-}
-.viewpass{
-    margin: auto;
-    transition: transform 80ms ease-in;
-    border-top-left-radius:30px;
-    border-bottom-left-radius:30px;  
-    border-top-right-radius:30px;
-    border-bottom-right-radius:30px; 
-    height: 35px;
-}
-.viewpass:active {
-	transform: scale(0.95);
-}
-.mask {
-    position:absolute;
-    background-size: cover;
-    top: 0;
-    width: 100%;
-    height: 70%;
-}
-.bg-gradient-primary {
-    background-image: linear-gradient(310deg,#7928ca,#ff0080);
-    height:70%;
-    width: 100%;
-    opacity: 1;
-}
-.bi{
-  cursor: pointer;
-}
-.card-div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .img {
+        position: absolute;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
 
-.mt-3 {
-    margin-top: 1rem!important;
-}
-.greet{
-    position: relative;
-    margin: 0 auto;
-    color: #1b1b1b;
-}
-.greet, .head{
-    font-size: 50px;
-    font-weight: bold;
-}
-.greet, .name{
-    font-size:30px;
-}
-.middle-row{
-    background: rgba(234, 210, 239, 0.9);
-    width: 200px!important;
-    margin: 10px;
-    position: relative;
-    border-radius: 10px;
-    text-align: center;
-}
-.numb{
-    font-size: 100px;
-    color: #ce381e;
-}
-.char{
-    font-size: 30px;
-}
-.buttons{
-    position: relative;
-    justify-content: center;
-    height: 180px;
-    display: flex;
-    margin-top: 80px;
-}
-.button{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    height: 80px;
-    width: 250px;
-    margin: 15px;
-    border-top-left-radius:30px;
-    border-bottom-left-radius:30px;  
-    border-top-right-radius:30px;
-    border-bottom-right-radius:30px; 
-    color: white;
-    font-size: 20px;
-    background-color: #a53860;;
-    transition: transform 80ms ease-in;
-}
-.button:hover{
-    background-color: #cd3657;;;
-}
-button:active {
-	transform: scale(0.95);
-}
-.anchor a {
-	position: relative;
-	display: inline-block;
-	margin: 15px 25px;
-	outline: none;
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 400;
-	text-shadow: 0 0 1px rgba(255,255,255,0.6);
-	font-size: 1.25em;
-}
+    .navbar {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background-color: rgba(234, 210, 239, 0.9);
+        color: rgb(20, 20, 21);
+        opacity: 1;
+    }
 
-.anchor a:hover,
-.anchor a:focus {
-	outline: none;
-}
-.cl-effect-4 a {
-	padding: 0 0 10px;
-}
+    .navbar-brand {
+        font-weight: bold;
+    }
 
-.cl-effect-4 a::after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background: #fff;
-	content: '';
-	opacity: 0;
-	-webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
-	transition: height 0.3s, opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
+    .nav {
+        justify-content: space-between;
+    }
 
-.cl-effect-4 a:hover::after,
-.cl-effect-4 a:focus::after {
-	height: 5px;
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
-}
-.color-7 {
-  border-radius: 25px;
-	background: #3fa46a;
-}
+    .bell {
+        margin: auto;
+        cursor: pointer;
+    }
 
-media screen and (max-width:405px) {
+    .logout {
+        margin: auto;
+        cursor: pointer;
+    }
 
-  .middle-row{
-    width: 280px!important;
-  }
-}
+    .viewpass {
+        margin: auto;
+        transition: transform 80ms ease-in;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        height: 35px;
+    }
 
-.contai{
-  width: 400px;
-}
-.card-text{
-  text-align: left;
-}
-.main{
-border-radius: 3%;
-}
+        .viewpass:active {
+            transform: scale(0.95);
+        }
 
-keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
+    .mask {
+        position: absolute;
+        background-size: cover;
+        top: 0;
+        width: 100%;
+        height: 70%;
+    }
 
-.main {
-animation-name: fadeIn;
-animation-duration: 1s;
-}
+    .bg-gradient-primary {
+        background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        height: 70%;
+        width: 100%;
+        opacity: 1;
+    }
 
-.main{
-animation: slide-down 1s forwards;
-}
+    .bi {
+        cursor: pointer;
+    }
 
-keyframes slide-down {
-from {
-top: -200px;
-}
-to {
-top: 0;
-}
-}
+    .card-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mt-3 {
+        margin-top: 1rem !important;
+    }
+
+    .greet {
+        position: relative;
+        margin: 0 auto;
+        color: #1b1b1b;
+    }
+
+    .greet, .head {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .greet, .name {
+        font-size: 30px;
+    }
+
+    .middle-row {
+        background: rgba(234, 210, 239, 0.9);
+        width: 200px !important;
+        margin: 10px;
+        position: relative;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .numb {
+        font-size: 100px;
+        color: #ce381e;
+    }
+
+    .char {
+        font-size: 30px;
+    }
+
+    .buttons {
+        position: relative;
+        justify-content: center;
+        height: 180px;
+        display: flex;
+        margin-top: 80px;
+    }
+
+    .button {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        height: 80px;
+        width: 250px;
+        margin: 15px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color: white;
+        font-size: 20px;
+        background-color: #a53860;
+        ;
+        transition: transform 80ms ease-in;
+    }
+
+        .button:hover {
+            background-color: #cd3657;
+            ;
+            ;
+        }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    .anchor a {
+        position: relative;
+        display: inline-block;
+        margin: 15px 25px;
+        outline: none;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        text-shadow: 0 0 1px rgba(255,255,255,0.6);
+        font-size: 1.25em;
+    }
+
+        .anchor a:hover,
+        .anchor a:focus {
+            outline: none;
+        }
+
+    .cl-effect-4 a {
+        padding: 0 0 10px;
+    }
+
+        .cl-effect-4 a::after {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            content: '';
+            opacity: 0;
+            -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+            -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+            transition: height 0.3s, opacity 0.3s, transform 0.3s;
+            -webkit-transform: translateY(-10px);
+            -moz-transform: translateY(-10px);
+            transform: translateY(-10px);
+        }
+
+        .cl-effect-4 a:hover::after,
+        .cl-effect-4 a:focus::after {
+            height: 5px;
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+
+    .color-7 {
+        border-radius: 25px;
+        background: #3fa46a;
+    }
+
+    media screen and (max-width:405px) {
+        .middle-row
+
+    {
+        width: 280px !important;
+    }
+
+    }
+
+    .contai {
+        width: 400px;
+    }
+
+    .card-text {
+        text-align: left;
+    }
+
+    .main {
+        border-radius: 3%;
+    }
+
+    keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    }
+
+    .main {
+        animation-name: fadeIn;
+        animation-duration: 1s;
+    }
+
+    .main {
+        animation: slide-down 1s forwards;
+    }
+
+    keyframes slide-down {
+        from
+
+    {
+        top: -200px;
+    }
+
+    to {
+        top: 0;
+    }
+
+    }
 </style>
-

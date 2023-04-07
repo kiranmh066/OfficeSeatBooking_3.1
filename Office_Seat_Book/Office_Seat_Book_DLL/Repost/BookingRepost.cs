@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Office_Seat_Book_Entity;
 using System;
+
 using System.Collections.Generic;
 using System.Linq;
 
@@ -41,7 +42,7 @@ namespace Office_Seat_Book_DLL.Repost
                 List<Booking> bookings = new List<Booking>();
                 List<Booking> bookings1 = new List<Booking>();
 
-                bookings = _dbContext.booking.Include(obj => obj.employee).ToList();
+                bookings = _dbContext.booking.Include(obj => obj.employee).Include(obj => obj.seat).ToList();
                 foreach (var item in bookings)
                 {
                     if (item.EmployeeID == EmpId)
@@ -66,6 +67,9 @@ namespace Office_Seat_Book_DLL.Repost
 
         public Booking GetBookingById(int bookingId)
         {
+            /*List<Booking> booking = _dbContext.booking.Include(obj => obj.employee).Include(obj => obj.seat).ToList();*/
+           
+            
             return _dbContext.booking.Find(bookingId);
         }
 
@@ -81,6 +85,7 @@ namespace Office_Seat_Book_DLL.Repost
             _dbContext.Entry(booking).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _dbContext.SaveChanges();
         }
+
 
         public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
         {
@@ -103,5 +108,6 @@ namespace Office_Seat_Book_DLL.Repost
         }
 
        
+
     }
 }

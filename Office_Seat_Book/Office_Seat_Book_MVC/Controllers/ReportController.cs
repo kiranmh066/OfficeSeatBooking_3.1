@@ -81,7 +81,7 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> GetCustomDates(Booking booking)
         {
-           
+   
             int d = Convert.ToInt32(booking.From_Date.Day);
             int e = Convert.ToInt32(booking.To_Date.Day);
             int j = 0;
@@ -122,6 +122,7 @@ namespace Office_Seat_Book_MVC.Controllers
 
         public async Task<IActionResult> GetReportByWeek()
         {
+
             List<Employee> employees = null;
             using (HttpClient client = new HttpClient())
             {

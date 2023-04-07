@@ -11,84 +11,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="forgot pass.css">
-
-    <title>FORGOT PASSWORD</title>
+    <link rel="stylesheet" href="~/css/forgot.css">
 </head>
 <style>
-
-    .col-md-8 {
-        padding-top: 50px;
-        background-color: rgb(255, 255, 255);
-        border-bottom-right-radius: 5%;
-        border-top-right-radius: 5%;
-        width: 400px;
-        height: 350px;
-        margin-left: -10px;
-    }
-
     .col-md-9 {
-        width: 375px;
+    width: 375px;
+}
+
+img {
+    border-bottom-left-radius: 5%;
+    border-top-left-radius: 5%;
+}
+
+.col-md-8 {
+    padding-top: 50px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
+    width: 350px;
+    height: 300px
+}
+
+.form-outline {
+    margin: 20px;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+    margin-top: -30px;
+}
+
+.form-control {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+    .form-control:hover {
+        background-color: transparent;
     }
 
-    img {
-        border-bottom-left-radius: 5%;
-        border-top-left-radius: 5%;
-    }
+.btn {
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(214, 43, 226);
+    color: white;
+}
 
-
-    .form-outline {
-        margin: 20px;
-    }
-
-    h3 {
-        text-align: center;
-        color: rgb(73, 73, 73);
-        font-weight: bold;
-        margin-top: -30px;
-    }
-
-    .form-control {
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    }
-
-        .form-control:hover {
-            background-color: transparent;
-        }
-
-    .btn {
-        transition: all 0.3s ease-in-out;
-        background-color: rgb(214, 43, 226);
-        color: white;
-    }
-
-        .btn:hover {
-            transform: scale(1.1);
-            transition: all 0.3s ease;
-            background-color: rgb(214, 43, 226);
-        }
-
-    .btn-primary:hover {
+    .btn:hover {
         transform: scale(1.1);
         transition: all 0.3s ease;
+        background-color: rgb(214, 43, 226);
     }
 
+.btn-primary:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
 
-    /* body{
-      background-image: linear-gradient(310deg,hsl(270, 67%, 47%, 0.7),hsl(330, 100%, 50%,0.7));
-    } */
 
-    media (max-width: 550px) {
-        .h-custom
 
-    {
-        height: 100%;
-        width: 100%;
-    }
+/* body{
+  background-image: linear-gradient(310deg,hsl(270, 67%, 47%, 0.7),hsl(330, 100%, 50%,0.7));
+} */
 
-    }
+media (max-width: 550px) {
+    .h-custom
+
+{
+    height: 100%;
+    width: 100%;
+}
+}
+
 </style>
-
 <body>
 
     <section class="vh-100">
@@ -96,7 +91,7 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-6 col-lg-6 col-xl-5">
                     <img src="~/lib/forgot.svg" class="img-fluid"
-                         style="height: 500px; width: 700px;" alt="Login">
+                         style="height: 400px; width: 500px;" alt="Login">
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-xl-4">
@@ -140,8 +135,6 @@
             </div>
         </div>
     </section>
-    </div>
-    </section>
+   
 </body>
 
-</html>
