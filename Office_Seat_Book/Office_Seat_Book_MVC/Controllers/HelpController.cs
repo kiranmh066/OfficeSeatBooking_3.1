@@ -26,7 +26,7 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(Help help)
         {
-            help.EmpID =Convert.ToInt32(TempData["EmpId"]);
+            help.EmpID = Convert.ToInt32(TempData["EmpId"]);
             TempData.Keep();
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
@@ -50,7 +50,7 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();
         }
         public IActionResult GetAllHelps()
-        {            
+        {
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {  
+                    {
                         var result = await response.Content.ReadAsStringAsync();
                         helpresult = JsonConvert.DeserializeObject<IEnumerable<Help>>(result);
                     }

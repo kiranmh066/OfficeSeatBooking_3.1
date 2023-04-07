@@ -89,42 +89,42 @@
                 <hr>
             </div>
         </div>
-        
+
         <div class="contain">
             <div class="title">Book Your Seat</div>
             <div class="content">
                 <form method="post">
                     <div class="user-details">
 
-                            <div class="input-box">
-                                <select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" required></select>
-                            </div>
+                        <div class="input-box">
+                            <select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" required></select>
+                        </div>
 
-                            <div class="input-box">
-                                <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required></select>
-                            </div>
-                      
+                        <div class="input-box">
+                            <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required></select>
+                        </div>
+
                         <div class="input-box">
                             <span>From</span>
-                                <input asp-for="From_Date" type="date" class="form-control" id="fromDate">
+                            <input asp-for="From_Date" type="date" class="form-control" id="fromDate">
                         </div>
                         <div class="input-box">
                             <span>To</span>
-                                <input asp-for="To_Date" type="date" class="form-control" id="toDate">  @*class="form-control"*@
+                            <input asp-for="To_Date" type="date" class="form-control" id="toDate">  @*class="form-control"*@
                         </div>
 
                         <div class="input-box">
-                                <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
-                            
-             
-                            
+                            <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
+
+
+
                         </div>
                         @*<div class="input-box">
-                            <select name="location" class="category" required>
-                                <option>Type of Vehicle</option>
-                                <option>2 Wheeler</option>
-                                <option>4 Wheeler</option>
-                            </select>
+                        <select name="location" class="category" required>
+                        <option>Type of Vehicle</option>
+                        <option>2 Wheeler</option>
+                        <option>4 Wheeler</option>
+                        </select>
                         </div>*@
 
 
@@ -135,7 +135,7 @@
                 </form>
             </div>
         </div>
-      
+
     </div>
 
 </body>
