@@ -29,6 +29,7 @@
         const canvasElement = document.getElementById('canvas');
         const canvas = canvasElement.getContext('2d');
 
+        //decodeFromVideoDevice method to continuously scan the video stream from the device
         codeReader.decodeFromVideoDevice(null, 'video', (result, error) => {
             if (result) {
                 alert(result.text);

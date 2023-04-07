@@ -38,7 +38,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         ViewBag.status = "Ok";
-                        ViewBag.message = "Query Added successfully!";
+                        ViewBag.message = "Please be patient! Query Submitted successfully!";
                     }
                     else
                     {

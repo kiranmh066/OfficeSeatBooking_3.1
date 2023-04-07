@@ -3,23 +3,50 @@
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 <head>
-    <meta charset="utf-8">
-    <title>Contact Us</title>
     <style>
+        .img {
+            position: absolute;
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .mask {
+            position: absolute;
+            background-size: cover;
+            top: 0;
+            width: 100%;
+            height: 70%;
+        }
+
+        .bg-gradient-primary {
+            background-image: linear-gradient(310deg,#7928ca,#ff0080);
+            height: 100%;
+            width: 100%;
+        }
         /* Style the form container */
         .container {
             border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
+            background-color: lightblue;
+            padding: 30px;
             width: 50%;
             margin: auto;
+            max-width: 500px;
+            max-height: 450px;
+            margin-top: 40px;
+            border: 1px solid black;
         }
 
         /* Style the input fields */
         input[type=text], textarea {
-            width: 100%;
+            width: 95%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #080808;
             border-radius: 4px;
             resize: vertical;
         }
@@ -39,7 +66,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            float: right;
+            margin: auto;
         }
 
             /* Style the submit button on hover */
@@ -47,13 +74,13 @@
                 background-color: #45a049;
             }
 
-        /* Style the container for the cancel button */
-        /*.cancel-container {
-            width: 100%;
-            margin-top: 12px;
-        }*/
+        h1 {
+            text-align: center;
+            margin-top: 85px;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-        /* Style the cancel button */
         .cancel {
             background-color: #f44336;
             color: white;
@@ -61,42 +88,74 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            float: right;
+            /* margin: auto; */
         }
 
-            /* Style the cancel button on hover */
-            .cancel:hover {
-                background-color: #d32f2f;
-            }
+        .request-details {
+            width: 380px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        select {
+            height: 45px;
+            background-color: rgb(238, 238, 238);
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        label {
+            color: #080808;
+        }
+        /* Style the cancel button on hover */
+        .cancel:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
-    <h2>How can we help You?</h2>
-    <div class="container">
-        <form method="post" enctype="multipart/form-data">
-            <label for="email">Email</label>
-            <input type="text" placeholder="Your email" required>
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+        <h1>How can we help You?</h1>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                <label for="email">Email</label>
+                <input type="text" placeholder="Your email" required />
+                <br>
+           @*List of queries*@
+                <label for="TypeOfQuery">Type Of Query</label><br>
+                <select id="Request" name="TypeOfQuery" required>
+                    <option value="" selected disabled>Select query type</option>
+                    <option value="General">General Query</option>
+                    <option value="Technical">Login Issue</option>
+                    <option value="Booking">Booking Issue</option>
+                    <option value="Parking">Parking Issue</option>
+                    <option value="Other">Other Issue</option>
+                </select>
+                <br>
 
-            <label for="name">Type Of Query</label>
-            <input type="text"  asp-for="TypeOfQuery" placeholder="Your Query Type" required>
 
-            <label for="message">Message</label>
-            <textarea asp-for="Description" placeholder="Write your message here" style="height:200px" required></textarea>
-            
-            <button type="reset" class="cancel">Cancel</button>
-            <input type="submit" value="Submit"/>            
-        </form>
-    </div>
-    @if (ViewBag.status == "Ok")
-    {
-        <div class="alert alert-success">
-            @ViewBag.message
+                <label for="message">Message</label>
+                <textarea asp-for="Description" placeholder="Write your message here" style="height: 50px;" required></textarea>
+
+                <input type="submit" value="Submit" />
+                <button type="reset" class="cancel">Cancel</button>
+            </form>
         </div>
-    }
-    else if (ViewBag.status == "Error")
-    {
-        <div class="alert alert-danger">
-            @ViewBag.message
-        </div>
-    }
+    </div>   
 </body>
+@if (ViewBag.status == "Ok")
+{
+    <script>
+        window.alert("Success! @ViewBag.message");
+    </script>
+}
+else if (ViewBag.status == "Error")
+{
+    <script>
+        window.alert("Error! @ViewBag.message");
+    </script>
+}

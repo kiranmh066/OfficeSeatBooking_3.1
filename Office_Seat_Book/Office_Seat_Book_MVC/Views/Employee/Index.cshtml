@@ -5,7 +5,7 @@
 @{
     ViewData["Title"] = "Index";
 } 
-@model Office_Seat_Book_Entity.Employee
+@model Office_Seat_Book_Entity.Booking;
 @*<link href="~/css/styles.css" rel="stylesheet" />*@
 
 <body>
@@ -100,7 +100,7 @@
         <div class="col-12">
             <div class=" greet text-center">
                 <p class=" head text-white  ">Good Morning.!</p>
-                <p class=" name text-white mt-3">Shaan Ram</p>
+                <p class=" name text-white mt-3">@TempData["EmpName"].ToString();</p>
             </div>
         </div>
     </div>
@@ -145,6 +145,7 @@
             </div>
         </div>
     </div>
+    <form method="post">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -156,39 +157,51 @@
                     <div class="contai">
                         <div class="row">
                             <div class="card main mx-auto ">
-                                <div class="row">
-                                    <div class=" text-center ">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
-                                            <p class="card-text">Name :</p>
-                                            <p class="card-text">Emp ID :</p>
-                                            <p class="card-text">Role:</p>
+                                @if (Model != null)
+                                {
+                                    <div class="row">
+                                        <div class=" text-center ">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
+                                                <p class="card-text">Name: @Model.employee.Name</p>
+                                                <p class="card-text">Emp ID: @Model.EmployeeID</p>
+                                                <p class="card-text">Role: @Model.employee.Role</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class=" text-center my-4">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-black"><u>Booking Details</u></h5>
-                                            <p class="card-text">From Date :</p>
-                                            <p class="card-text">To Date :</p>
-                                            <p class="card-text">Shift Time :</p>
-                                            <p class="card-text">Seat Number :</p>
-                                            <p class="card-text">Booking ID :</p>
-                                            <p class="card-text">Food :</p>
-                                            <p class="card-text">Parking :</p>
-                                            <button class="btn btn-success">View OTP</button> &nbsp;
-                                            <button class="btn btn-success">View OTP</button>
+                                    <div class="row">
+                                        <div class=" text-center my-4">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-black"><u>Booking Details</u></h5>
+                                                <p class="card-text">From Date: @Model.From_Date</p>
+                                                <p class="card-text">To Date: @Model.To_Date</p>
+                                                <p class="card-text">Shift Time: @Model.Shift_Time</p>
+                                                <p class="card-text">Seat Number: @Model.Seat_No</p>
+                                                <p class="card-text">Booking ID: @Model.BookingID</p>
+                                                <p class="card-text">Food: @Model.Food_Type</p>
+                                                @*<p class="card-text">Parking: </p>*@
+                                                @*<button class="btn btn-success">View OTP</button> &nbsp;
+                                                <button class="btn btn-success">View OTP</button>*@
+                                                @*<a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn" style="display:inline">Verify OTP</a>
+                                                <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn" style="display:inline">Verify QR</a>*@
+                                                <button class="button btn-lg">
+                                                    <a asp-controller="Booking" asp-action="EnterKey" style="color:red">Verify OTP</a>
+                                                </button>
+                                                <button class="button btn-lg">
+                                                    <a asp-controller="Booking" asp-action="GenerateQR" style="text-decoration:none;color:red">Verify QR</a>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="card-body text-center">
-                                    <h3>You don't have any bookings</h3>
-                                    <button class="btn btn-success">Book Seat</button>
-                                </div>
-
+                                }
+                                else
+                                {
+                                    <div class="card-body text-center">
+                                        <h3>You don't have any bookings</h3>
+                                        <button class="btn btn-success">Book Seat</button>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -196,6 +209,7 @@
             </div>
         </div>
     </div>
+    </form>
 </body>
 <style>
     .img{

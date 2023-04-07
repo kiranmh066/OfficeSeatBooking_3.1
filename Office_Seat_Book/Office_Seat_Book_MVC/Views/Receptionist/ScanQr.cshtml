@@ -19,11 +19,11 @@
                 <video id="preview"></video>
                 <script type="text/javascript">
                     let scanner = new Instascan.Scanner({ video: document.getElementById("preview") });
-                   
+ 
                     scanner.addListener('scan', function (content) {
                         @TempData["codefromQr"]=content;
                     });
-
+ //The code uses the Instascan.Camera.getCameras() method to obtain a list of available cameras and starts the scanner using the first camera in the list
                     Instascan.Camera.getCameras().then(function (cameras) {
 
                         if (cameras.length > 0) {

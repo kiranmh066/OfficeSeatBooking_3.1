@@ -31,17 +31,17 @@ namespace Office_Seat_Book_MVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            Employee employee = null;
+             Booking employee = null;
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Convert.ToInt32(TempData["empId"]); 
+                string endpoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]); 
                 TempData.Keep();
                 using (var response = await client.GetAsync(endpoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         var result = await response.Content.ReadAsStringAsync();
-                        employee = JsonConvert.DeserializeObject<Employee>(result);
+                        employee = JsonConvert.DeserializeObject<Booking>(result);
                     }
                 }
             }
@@ -122,7 +122,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeat()
         {
            
-            //List<Booking> booking2 = null;
+            /*//List<Booking> booking2 = null;
             Booking booking2 = new Booking();
             using (HttpClient client = new HttpClient())
             {
@@ -144,7 +144,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 ViewBag.message = "Alredy a seat waiting for you!!";
                 return View(booking2);
 
-            }
+            }*/
             ViewBag.shiftTimings = ShiftTiming();
             ViewBag.requests = RequestType();
             return View();
@@ -155,45 +155,43 @@ namespace Office_Seat_Book_MVC.Controllers
         {
           
          
-                #region Booking Seat
-                booking.From_Date = DateTime.Today;
-                booking.To_Date = DateTime.Today;
+            #region Booking Seat
+            booking.From_Date = DateTime.Today;
+            booking.To_Date = DateTime.Today;
 
-                int bookingId = 0;
-                booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
-                TempData.Keep();
-                booking.Seat_No = 1;
-                booking.Food_Type = 1;
-                booking.Vehicle = true;
-                booking.Booking_Status = 0;
+            int bookingId = 0;
+            booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
+            TempData.Keep();
+            booking.Seat_No = 1;
+            booking.Food_Type = 1;
+            booking.Vehicle = true;
+            booking.Booking_Status = 0;
 
-                booking.Shift_Time = "nothing";
+            booking.Shift_Time = "nothing";
 
-                ViewBag.status = "";
-                using (HttpClient client = new HttpClient())
+            ViewBag.status = "";
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";
+                using (var response = await client.PostAsync(endPoint, content))
                 {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(booking), Encoding.UTF8, "application/json");
-                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/AddBooking";
-                    using (var response = await client.PostAsync(endPoint, content))
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
 
-                            var result = await response.Content.ReadAsStringAsync();
-                            bookingId = JsonConvert.DeserializeObject<int>(result);
-                            TempData["Bookid"] = bookingId;
-                            TempData.Keep();
-                            ViewBag.status = "Ok";
-                            ViewBag.message = "Booked successfully!";
-                            return RedirectToAction("BookSeat2", "Employee");
-
-                        }
+                        var result = await response.Content.ReadAsStringAsync();
+                        bookingId = JsonConvert.DeserializeObject<int>(result);
+                        TempData["Bookid"] = bookingId;
+                        TempData.Keep();
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Booked successfully!";
+                        return RedirectToAction("BookSeat2", "Employee");
 
                     }
+
+                }
                 
-                #endregion
-
-
+            #endregion
             }
             return View();
         }

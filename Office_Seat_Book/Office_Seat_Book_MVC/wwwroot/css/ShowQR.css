@@ -1,3 +1,4 @@
+/* CSS file of QE Code Display page */
 body {
     background-image: linear-gradient(250deg,#7928ca,#ff0080);
     font-family: Arial, sans-serif;
@@ -19,6 +20,7 @@ body {
     margin-top: 100px;
 }
 
+/*styling for the image*/
 #qr-code-img {
     max-width: 80%;
     max-height: 80%;
@@ -26,6 +28,7 @@ body {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/*styling for the heading tag*/
 h2 {
     font-size: 2rem;
     color: white;
@@ -50,6 +53,7 @@ img {
         animation-iteration-count: infinite;
     }
 
+/* css animation*/
 @keyframes blink {
     0%{
     opacity: 1;
