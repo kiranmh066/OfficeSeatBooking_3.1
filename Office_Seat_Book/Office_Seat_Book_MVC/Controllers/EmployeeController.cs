@@ -26,23 +26,28 @@ namespace Office_Seat_Book_MVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            Employee employee = null;
+            Booking booking = null;
             using (HttpClient client = new HttpClient())
             {
-                string endpoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Convert.ToInt32(TempData["empId"]);
+
+                string endpoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]); 
+
                 TempData.Keep();
                 using (var response = await client.GetAsync(endpoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         var result = await response.Content.ReadAsStringAsync();
-                        employee = JsonConvert.DeserializeObject<Employee>(result);
+                        booking = JsonConvert.DeserializeObject<Booking>(result);
                     }
                 }
             }
-            return View(employee);
-        }
+
+            return View(booking);
+        }    
+
         [HttpGet]
+
         public async Task<IActionResult> Profile()
         {
             #region profile
@@ -202,11 +207,11 @@ namespace Office_Seat_Book_MVC.Controllers
         {
 
             //List<Booking> booking2 = null;
-            Booking booking2 = new Booking();
+            Booking booking2 = null;
             using (HttpClient client = new HttpClient())
             {
                 string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookingByEmpId?EmpId=" + Convert.ToInt32(TempData["empId"]);
-                TempData.Keep(); ;
+                TempData.Keep(); 
                 //EmployeeId is apicontroleer passing argument name
                 using (var response = await client.GetAsync(endPoint))
                 {
@@ -218,16 +223,15 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
 
-            /*if (booking2.Booking_Status == 0 || booking2.Booking_Status == 1)
-                if (booking2 != null || (booking2.Booking_Status != 0 && booking2.Booking_Status != 1) || booking2.To_Date < DateTime.Today)
+            if (booking2 != null)
+            {
+                if ((booking2.Booking_Status == 0 || booking2.Booking_Status == 1) && (booking2.From_Date <= DateTime.Today && booking2.To_Date >= DateTime.Today) && booking2.Shift_Time != "nothing" && booking2.seat.Seat_flag == false)
                 {
                     ViewBag.status = "Error";
                     ViewBag.message = "Alredy a seat waiting for you!!";
                     return View(booking2);
                 }
-                else
-                {*/
-
+            }
             ViewBag.shiftTimings = ShiftTiming();
             ViewBag.requests = RequestType();
             return View();
@@ -237,12 +241,19 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeat(Booking booking)
         {
 
-
-
             #region Booking Seat
-            booking.From_Date = DateTime.Today;
-            booking.To_Date = DateTime.Today;
+            if (booking.Type_Of_Request == 1)
+            {
+                booking.From_Date = DateTime.Today;
+                booking.To_Date = DateTime.Today.AddDays(6);
+            }
 
+            else
+            {
+
+                booking.From_Date = DateTime.Today;
+                booking.To_Date = DateTime.Today;
+            }
             int bookingId = 0;
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();
@@ -322,8 +333,8 @@ namespace Office_Seat_Book_MVC.Controllers
 
 
             //fetching the departments and adding to the Viewbag for selecting appointment
-            floor1.Add(new SelectListItem { Value = null, Text = "Select Floor" });
-            foreach (var item in floors)
+/*            floor1.Add(new SelectListItem { Value = null, Text = "Select Floor" });
+*/            foreach (var item in floors)
             {
                 floor1.Add(new SelectListItem { Value = item.FloorID.ToString(), Text = item.FloorName });
             }
@@ -340,6 +351,15 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> BookSeat2(Booking booking)
         {
+            if (booking.employee.Name == "1")
+            {
+                booking.Vehicle = true;
+            }
+            else
+            {
+                booking.Vehicle=false;
+            }
+            booking.employee = null;
             booking.BookingID = Convert.ToInt32(TempData["Bookid"]);
             TempData.Keep();
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
@@ -517,6 +537,14 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
+            List<Parking> parking1 = new List<Parking>();
+            foreach(var updated in parkings)
+            {
+                if (updated.booking.Booking_Status==1)
+                {
+                    parking1.Add(updated);
+                }
+            }
             if (id != 0)
             {
 
@@ -544,7 +572,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
 
-            return View(parkings);
+            return View(parking1);
         }
 
 

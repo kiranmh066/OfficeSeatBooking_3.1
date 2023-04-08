@@ -2,6 +2,58 @@
 @{
     ViewData["Title"] = "GetAllHelps";
 }
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<Office_Seat_Book_Entity.Help>
+<div class="mask bg-gradient-primary">
+    <img class="img"
+         src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+         alt="img">
 
-<h1>GetAllHelps</h1>
 
+         <br />
+
+    <div class="container" style="width:1200px" align="center">
+        <div class="card shadow mb-4" style="width:1200px" align="center">
+            <div class="card-header py-3">
+                <a asp-area="" asp-controller="Admin" asp-action="Index"><img class="img-fluid" style="height:35px"  align="left" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+                <a class="text-uppercase d-inline-block text-center" style="color:#003399;font-size:x-large" align="center"> user help <span class="font-weight-bold" style="font-size:x-large">Details</span></a>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="myTable" style="width:1000px" align="center" cellspacing="0">
+                        <thead>
+                            <tr style="color:black">
+                                <th>Emp Id</th>
+                                <th>Employee Name</th>
+                                <th>Employee Email</th>
+                                <th> Description</th>
+                                <th> Type of Query</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var help in Model)
+                            {
+                                <tr style="color:black">
+                                    <td>@help.Employee.EmpID</td>
+                                    <td>@help.Employee.Name</td>
+                                    <td>@help.Employee.Email</td>
+                                    <td>@help.Description</td>
+                                    <td>@help.TypeOfQuery</td>
+
+
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+   

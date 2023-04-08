@@ -7,14 +7,7 @@
 @{
     ViewData["Title"] = "BookSeat";
 }
-@if (Model != null)
-{
-    <h1>You Already Booked the seat, A seat is waiting for you</h1>
-    <h3>See Booked Seat</h3>
-    <a asp-action="ViewPass" asp-controller="Booking" class="btn btn-danger">View Pass</a>
-}
-else
-{
+
 
     <body>
         <div class="mask bg-gradient-primary">
@@ -107,16 +100,15 @@ else
 
                             <div class="input-box">
                                 <select name="location" class="form-control" required>
-                                    <option>Location</option>
+                                    <option selected="true" disabled value="">Location</option>
                                     <option>Bengaluru</option>
                                     <option>Gurgaon</option>
                                 </select>
                             </div>
 
                             <div class="input-box">
-
                                 <select name="branch" class="form-control" required>
-                                    <option>Branch</option>
+                                    <option selected="true" disabled value="">Branch</option>
                                     <option>JP Nagar</option>
                                 </select>
                             </div>
@@ -132,7 +124,14 @@ else
                         </select>
                         </div>*@
                             <div class="input-box">
-                                <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" required></select>
+                                @*                            <select asp-for="Type_Of_Request" class="form-control" asp-items="@ViewBag.requests" value="" required></select>
+                            *@<select class="form-control" asp-for="Type_Of_Request" required>
+                                    <option disabled selected value="">Type of request</option>
+                                    <option value="0">Daily</option>
+                                    <option value="1">Weekly</option>
+                                    <option value="2">Custom</option>
+
+                                </select>
                             </div>
                         </div>
                         <div class="button">
@@ -146,7 +145,7 @@ else
 
 
     </body>
-}
+
 <script>
     const today = new Date().toISOString().split('T')[0];
     const dateFrom = document.getElementById("fromDate");
