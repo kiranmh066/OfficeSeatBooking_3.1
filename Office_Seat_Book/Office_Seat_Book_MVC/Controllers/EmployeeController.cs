@@ -241,11 +241,19 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> BookSeat(Booking booking)
         {
 
-
             #region Booking Seat
-            booking.From_Date = DateTime.Today;
-            booking.To_Date = DateTime.Today;
+            if (booking.Type_Of_Request == 1)
+            {
+                booking.From_Date = DateTime.Today;
+                booking.To_Date = DateTime.Today.AddDays(6);
+            }
 
+            else
+            {
+
+                booking.From_Date = DateTime.Today;
+                booking.To_Date = DateTime.Today;
+            }
             int bookingId = 0;
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
             TempData.Keep();

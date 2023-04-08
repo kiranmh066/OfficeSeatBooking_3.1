@@ -131,7 +131,17 @@ namespace Office_Seat_Book_MVC.Controllers
                                 TempData.Keep();
                                 TempData["empId"] = Convert.ToInt32(employee1.EmpID);
                                 TempData.Keep();
-
+                                TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
+                                TempData.Keep();
+                                int a = Convert.ToInt32(TempData["TotalCount"]);
+                                //TempData["helpcount1"] = Convert.ToInt32(TempData["helpcount2"]);
+                                //TempData.Keep();
+                                //TempData["regcount1"] = Convert.ToInt32(TempData["regcount2"]);
+                                //TempData.Keep();
+                                TempData["register"] = "profile was added";
+                                TempData.Keep();
+                                TempData["help"] = "you get one query";
+                                TempData.Keep();
                                 if (employee_role == "ADMIN")
                                     return RedirectToAction("Index", "Admin");
                                 else if (employee_role == "USER")
@@ -156,7 +166,8 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
 
 
-            }else
+            }
+            else
 
             {
                 ViewBag.status = "Error";
