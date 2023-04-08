@@ -105,11 +105,13 @@
         <div class="col-12">
             <div class=" greet text-center">
                 <p class=" head text-white  ">Good Morning.!</p>
+
                 <p class=" name text-white mt-3">@TempData["EmpName"].ToString() </p>
                 @if(true)
                 {
                     TempData.Keep();
                 }
+
             </div>
         </div>
     </div>
@@ -117,16 +119,6 @@
     {
         <div class="row row1 card-div ">
             <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-                <span class="numb">
-                    0
-                </span>
-                <span class="char">
-                    Approved
-                </span>
-
-            </div>
-            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-
                 @if (Model.Booking_Status == 0)
                 {
                     <span class="numb">
@@ -146,17 +138,51 @@
                     </span>
                 }
 
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+
+                @if (Model.Booking_Status == 1)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Approved
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">
+                        0
+                        </span>
+                    <span class="char">
+                        Approved
+                    </span>
+                }
+
                 @* <span class="char">
             Pending
             </span>*@
             </div>
             <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-                <span class="numb">
-                    0
-                </span>
-                <span class="char">
-                    Rejected
-                </span>
+                @if (Model.Booking_Status == 2)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Rejected
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">
+                        0
+                    </span>
+                    <span class="char">
+                        Rejected
+                    </span>
+                }
             </div>
 
         </div>
@@ -169,7 +195,7 @@
                     0
                 </span>
                 <span class="char">
-                    Approved
+                    Pending
                 </span>
 
             </div>
@@ -178,7 +204,7 @@
                     0
                 </span>
                 <span class="char">
-                    Pending
+                    Approved
                 </span>
             </div>
             <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
@@ -199,9 +225,16 @@
                 <button class="button btn-lg">
                     <a asp-controller="Employee" asp-action="Booking_history" style="text-decoration:none;color:white">View Bookings</a>
                 </button>
-                <button class="button btn-lg">
-                    <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white">Book Seat</a>
+                @if (Model == null)
+                {
+                    <button class="button btn-lg">
+                        <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white">Book Seat</a>
+                    </button>
+                }else{
+                <button type="button" data-bs-toggle="modal" data-bs-target="#example" class="button btn-lg">
+                    Book a Seat
                 </button>
+                }
             </div>
         </div>
     </div>
@@ -261,8 +294,8 @@
                     @if (Model != null)
                     {
                         <span style="font-size:18px;font-weight:bold">Verify with :</span>
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OTP</button>
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">QR</button>
+                        <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn" style="display:inline">Verify OTP</a>
+                        <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn" style="display:inline">Verify QR</a>
                     }
                     else
                     {
@@ -286,10 +319,12 @@
                 </div>
                 <div class="modal-dialog modal-dialog-centered seat">
                     Seat has already booked!
+                    Your Seat is Waiting for You.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">View Pass</button>
+                    <a asp-controller="Employee" asp-action="Index" class="btn btn-danger" style="text-decoration:none;color:white">Cancel</a>
+                    <a asp-controller="Booking" asp-action="Viewpass" class="btn btn-danger" style="text-decoration:none;color:white">View Pass</a>
+                   
                 </div>
             </div>
         </div>

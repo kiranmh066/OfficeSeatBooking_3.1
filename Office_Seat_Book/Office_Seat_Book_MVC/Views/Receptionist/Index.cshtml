@@ -1,6 +1,20 @@
 @{
     Layout = "~/Views/Shared/_ReceptionistLayout.cshtml";
 }
+<head>
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 10);
+        window.onunload = function () { null };
+
+        function LogoutFunction() {
+            let val = confirm("Do you want to logout?");
+            if (val == false) {
+                return event.preventDefault();
+            }
+        }
+    </script>
+</head>
 <body>
     <div class="mask bg-gradient-primary">
         <img class="img"

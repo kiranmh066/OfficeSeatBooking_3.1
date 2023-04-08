@@ -55,9 +55,7 @@ namespace Office_Seat_Book_MVC.Controllers
                         TempData["register"] = "profile was added";
                         TempData.Keep();
                         TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
-                        TempData.Keep();
-                        int b = Convert.ToInt32(TempData["TotalCount"]);
-                    }
+                        TempData.Keep();                    }
                     else
                     {
                         ViewBag.status = "Error";
