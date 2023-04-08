@@ -310,7 +310,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
 
             ViewBag.status = "";
-
+            seat.Seat_flag = true;
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");

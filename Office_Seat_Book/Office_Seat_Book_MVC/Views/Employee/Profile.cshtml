@@ -211,7 +211,16 @@
 
 
                     <button type="button" class="btn btn-warning"><a asp-area="" asp-controller="Employee" asp-action="EditProfile" style="color:white">Edit</a></button>
-                    &nbsp; &nbsp; <button type="button" class="btn btn-success"><a asp-controller="Admin" asp-action="Index" style="color:white">Home</a></button>
+                    &nbsp; &nbsp; <button type="button" class="btn btn-success">
+                        @if(Model.Role=="ADMIN")
+                        {
+                            <a asp-controller="Admin" asp-action="Index" style="color:white">Home</a>
+                        }
+                        else if(Model.Role=="RECEPTIONIST")
+                        {
+                            <a asp-controller="RECEPTIONIST" asp-action="Index" style="color:white">Home</a>
+                        }
+                    </button>
                 </form>
                 @if (ViewBag.status == "Ok")
                 {
