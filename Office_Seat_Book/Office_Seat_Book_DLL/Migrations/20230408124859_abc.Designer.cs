@@ -10,8 +10,8 @@ using Office_Seat_Book_DLL;
 namespace Office_Seat_Book_DLL.Migrations
 {
     [DbContext(typeof(Office_DB_Context))]
-    [Migration("20230408122833_poc")]
-    partial class poc
+    [Migration("20230408124859_abc")]
+    partial class abc
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
