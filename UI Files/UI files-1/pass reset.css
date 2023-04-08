@@ -1,0 +1,86 @@
+
+.col-md-8{
+  padding-top:50px;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+  0 10px 10px rgba(0,0,0,0.22);  
+  background-color: white;
+  border-radius: 3%;
+  width: 400px;
+  height:350px;
+  position: relative;
+}
+h3{
+  text-align: center;
+  color:rgb(73, 73, 73);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.input-box{
+  margin: 10px;
+}
+.form-control{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form-control:hover{
+  background-color:transparent;
+}
+
+.btn {
+  transition: all 0.3s ease-in-out;
+  background-color: rgb(214, 43, 226);
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+  background-color: rgb(214, 43, 226);
+}
+
+/* body{
+  background-image: linear-gradient(310deg,hsl(270, 67%, 47%, 0.7),hsl(330, 100%, 50%,0.7));
+  position: relative;
+} */
+
+.btn-primary:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+section {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 550px) {
+.h-custom {
+height: 100%;
+width: 100%;
+}
+}
+/* @media (max-width:992px ){
+  img{
+    width: 0;
+    height:0;
+  }
+} */
+@media  (max-width: 992px) {
+  .col-md-8{
+    margin-top: 0%;
+  }
+}
