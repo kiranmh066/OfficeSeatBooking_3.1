@@ -1,0 +1,100 @@
+﻿@using Office_Seat_Book_Entity
+@model Office_Seat_Book_Entity.Booking
+
+@if(Model.Shift_Time=="3")
+{
+    <body>
+        <script>
+            window.onload = function () {
+            setTimer();
+            };
+            function setTimer() {
+            setInterval(function () {
+            var now = new Date();
+
+            if (now.getHours() == 8 && now.getMinutes() == 45) {
+            showMessage();
+            }
+            }, 1000); // Check every second
+            }
+            function showMessage() {
+                alert("@Model.employee.Name Your Booking is from 9:00 AM - 6:00 PM");
+            } 
+
+        </script>
+
+    </body>
+}
+else if (Model.Shift_Time == "2")
+{
+    <body>
+        <script>
+            window.onload = function () {
+                setTimer();
+            };
+            function setTimer() {
+                setInterval(function () {
+                    var now = new Date();
+
+                    if (now.getHours() == 5 && now.getMinutes() == 45) {
+                        showMessage();
+                    }
+                }, 1000); // Check every second
+            }
+            function showMessage() {
+                alert("@Model.employee.Name Your Booking is from 6:00 AM - 2:00 PM");
+            } 
+
+        </script>
+
+    </body>
+}
+else if (Model.Shift_Time == "1")
+{
+    <body>
+        <script>
+            window.onload = function () {
+                setTimer();
+            };
+            function setTimer() {
+                setInterval(function () {
+                    var now = new Date();
+
+                    if (now.getHours() == 9 && now.getMinutes() == 45) {
+                        showMessage();
+                    }
+                }, 1000); // Check every second
+            }
+            function showMessage() {
+                alert(" @Model.employee.Name Your Booking is from 10:00 AM - 6:00 PM");
+            }
+
+        </script>
+
+    </body>
+}
+else if (Model.Shift_Time == "0")
+{
+    <body>
+        <script>
+            window.onload = function () {
+                setTimer();
+            };
+            function setTimer() {
+                setInterval(function () {
+                    var now = new Date();
+
+                    if (now.getHours() == 10 && now.getMinutes() == 17) {
+                        showMessage();
+                    }
+                }, 1000); // Check every second
+            }
+            function showMessage() {
+                alert("@Model.employee.Name Your Booking is from 2:00 PM - 10:00 PM");
+                
+            }
+
+        </script>
+
+    </body>
+}

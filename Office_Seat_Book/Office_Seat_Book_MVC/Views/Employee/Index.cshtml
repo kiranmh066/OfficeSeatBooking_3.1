@@ -1,0 +1,593 @@
+﻿@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Index";
+}
+@model Office_Seat_Book_Entity.Booking
+@*<link href="~/css/styles.css" rel="stylesheet" />*@
+
+<body>
+
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+    </div>
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg align-content-md-center blur blur-rounded shadow my-4">
+            <div class="container-fluid">
+
+                <svg data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                     aria-controls="offcanvasWithBothOptions" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                     class="bi" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                    </path>
+                </svg>
+                <div class=" col-lg-1 mx-auto order-0">
+
+                    <a class="navbar-brand mx-lg-5" style="color: rgb(0, 0, 0);">
+                        BOOK.it
+                    </a>
+                </div>
+
+                <div class="nav col-lg-2">
+                    <div>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="viewpass text-white btn-md bg-success  px-2">
+                            View Pass
+                        </button>
+                    </div>
+
+                    <div class="bell" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                        </svg>
+                    </div>
+                    <div class="logout">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+             aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title text-center" id="offcanvasWithBothOptionsLabel">Menu</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <section class="color-7">
+                    <div class="anchor cl-effect-4">
+                        <a asp-controller="Employee" asp-action="Index">Home</a>
+                    </div>
+                </section>
+                <br>
+                <section class="color-7">
+                    <div class="anchor cl-effect-4">
+                        <a asp-controller="Employee" asp-action="Profile">Profile</a>
+                    </div>
+                </section>
+                <br>
+
+                <section class="color-7">
+                    <div class="anchor cl-effect-4">
+                        <a asp-controller="Help" asp-action="Index">Help</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Notifications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <h6>Heading</h6>
+                <p>Description</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class=" greet text-center">
+                <p class=" head text-white  ">Good Morning.!</p>
+
+                <p class=" name text-white mt-3">@TempData["EmpName"].ToString() </p>
+                @if(true)
+                {
+                    TempData.Keep();
+                }
+
+            </div>
+        </div>
+    </div>
+    @if (Model != null)
+    {
+        <div class="row row1 card-div ">
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                @if (Model.Booking_Status == 0)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Pending
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">
+                        0
+                    </span>
+                    <span class="char">
+                        Pending
+                    </span>
+                }
+
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+
+                @if (Model.Booking_Status == 1)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Approved
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">
+                        0
+                        </span>
+                    <span class="char">
+                        Approved
+                    </span>
+                }
+
+                @* <span class="char">
+            Pending
+            </span>*@
+            </div>
+            <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                @if (Model.Booking_Status == 2)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Rejected
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">
+                        0
+                    </span>
+                    <span class="char">
+                        Rejected
+                    </span>
+                }
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row row1 card-div ">
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Pending
+                </span>
+
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Approved
+                </span>
+            </div>
+            <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Rejected
+                </span>
+            </div>
+
+        </div>
+    }
+
+    <div class="row card-div">
+        <div class="col-12 col-md-6 col-xl-6 col-xxl-6">
+            <div class="buttons">
+                <button class="button btn-lg">
+                    <a asp-controller="Employee" asp-action="Booking_history" style="text-decoration:none;color:white">View Bookings</a>
+                </button>
+                @if (Model == null)
+                {
+                    <button class="button btn-lg">
+                        <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white">Book Seat</a>
+                    </button>
+                }else{
+                <button type="button" data-bs-toggle="modal" data-bs-target="#example" class="button btn-lg">
+                    Book a Seat
+                </button>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pass</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable px-4">
+                    <div class="contai">
+                        <div class="row">
+                            <div class="card main mx-auto ">
+                                @if (Model != null)
+                                {
+                                    <div class="row">
+                                        <div class=" text-center ">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
+                                                <p class="card-text">Name :@Model.employee.Name</p>
+                                                <p class="card-text">Emp ID :@Model.EmployeeID</p>
+                                                <p class="card-text">Role:@Model.employee.Role</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class=" text-center my-4">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-black"><u>Booking Details</u></h5>
+                                                <p class="card-text">From Date : @Model.From_Date.ToShortDateString()</p>
+                                                <p class="card-text">To Date : @Model.To_Date.ToShortDateString()</p>
+                                                <p class="card-text">Shift Time :@Model.Shift_Time</p>
+                                                <p class="card-text">Seat Number : @Model.Seat_No</p>
+                                                <p class="card-text">Booking ID :@Model.BookingID</p>
+                                                <p class="card-text">Food :@Model.Food_Type</p>
+                                                <p class="card-text">Parking :false</p>
+                                                @* <button type="button" class="btn btn-success">View OTP</button> &nbsp;
+                                            <button type="button" class="btn btn-success">View OTP</button>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="card-body text-center">
+                                        <h3>You don't have any bookings</h3>
+                                        @*<button class="btn btn-success">Book Seat</button>*@
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer flex align-content-center">
+                    @if (Model != null)
+                    {
+                        <span style="font-size:18px;font-weight:bold">Verify with :</span>
+                        <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn" style="display:inline">Verify OTP</a>
+                        <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn" style="display:inline">Verify QR</a>
+                    }
+                    else
+                    {
+
+
+
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                            <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none; color:white">Book Seat</a>
+                        </button>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p></p>
+                </div>
+                <div class="modal-dialog modal-dialog-centered seat">
+                    Seat has already booked!
+                    Your Seat is Waiting for You.
+                </div>
+                <div class="modal-footer">
+                    <a asp-controller="Employee" asp-action="Index" class="btn btn-danger" style="text-decoration:none;color:white">Cancel</a>
+                    <a asp-controller="Booking" asp-action="Viewpass" class="btn btn-danger" style="text-decoration:none;color:white">View Pass</a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .img {
+        position: absolute;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .navbar {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background-color: rgba(234, 210, 239, 0.9);
+        color: rgb(20, 20, 21);
+        opacity: 1;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+    }
+
+    .nav {
+        justify-content: space-between;
+    }
+
+    .bell {
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .logout {
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .viewpass {
+        margin: auto;
+        transition: transform 80ms ease-in;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        height: 35px;
+    }
+
+        .viewpass:active {
+            transform: scale(0.95);
+        }
+
+    .mask {
+        position: absolute;
+        background-size: cover;
+        top: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+    .bg-gradient-primary {
+        background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        height: 70%;
+        width: 100%;
+        opacity: 1;
+    }
+
+    .bi {
+        cursor: pointer;
+    }
+
+    .card-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mt-3 {
+        margin-top: 1rem !important;
+    }
+
+    .greet {
+        position: relative;
+        margin: 0 auto;
+        color: #1b1b1b;
+    }
+
+    .greet, .head {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .greet, .name {
+        font-size: 30px;
+    }
+
+    .middle-row {
+        background: rgba(234, 210, 239, 0.9);
+        width: 200px !important;
+        margin: 10px;
+        position: relative;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .numb {
+        font-size: 100px;
+        color: #ce381e;
+    }
+
+    .char {
+        font-size: 30px;
+    }
+
+    .buttons {
+        position: relative;
+        justify-content: center;
+        height: 180px;
+        display: flex;
+        margin-top: 80px;
+    }
+
+    .button {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        height: 80px;
+        width: 250px;
+        margin: 15px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color: white;
+        font-size: 20px;
+        background-color: #a53860;
+        ;
+        transition: transform 80ms ease-in;
+    }
+
+        .button:hover {
+            background-color: #cd3657;
+            ;
+            ;
+        }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    .anchor a {
+        position: relative;
+        display: inline-block;
+        margin: 15px 25px;
+        outline: none;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        text-shadow: 0 0 1px rgba(255,255,255,0.6);
+        font-size: 1.25em;
+    }
+
+        .anchor a:hover,
+        .anchor a:focus {
+            outline: none;
+        }
+
+    .cl-effect-4 a {
+        padding: 0 0 10px;
+    }
+
+        .cl-effect-4 a::after {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            content: '';
+            opacity: 0;
+            -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+            -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+            transition: height 0.3s, opacity 0.3s, transform 0.3s;
+            -webkit-transform: translateY(-10px);
+            -moz-transform: translateY(-10px);
+            transform: translateY(-10px);
+        }
+
+        .cl-effect-4 a:hover::after,
+        .cl-effect-4 a:focus::after {
+            height: 5px;
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+
+    .color-7 {
+        border-radius: 25px;
+        background: #3fa46a;
+    }
+
+    media screen and (max-width:405px) {
+        .middle-row
+
+    {
+        width: 280px !important;
+    }
+
+    }
+
+    .contai {
+        width: 400px;
+    }
+
+    .card-text {
+        text-align: left;
+    }
+
+    .main {
+        border-radius: 3%;
+    }
+
+    keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    }
+
+    .main {
+        animation-name: fadeIn;
+        animation-duration: 1s;
+    }
+
+    .main {
+        animation: slide-down 1s forwards;
+    }
+
+    keyframes slide-down {
+        from
+
+    {
+        top: -200px;
+    }
+
+    to {
+        top: 0;
+    }
+
+    }
+</style>

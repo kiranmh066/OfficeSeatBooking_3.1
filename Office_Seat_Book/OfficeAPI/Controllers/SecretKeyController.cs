@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_Entity;
 using System.Collections.Generic;
@@ -70,9 +69,16 @@ namespace OfficeAPI.Controllers
         [HttpGet("GetSecretKeyByEmpId")]
         public SecretKey GetSecretKeyByEmpId(int empId)
         {
-           
+
             return _SecretKeyService.GetSecretKeyByEmpId(empId);
-            
+
+        }
+
+        [HttpGet("GetEmpIdBySpecialKey")]  
+
+        public int GetEmpIdBySpecialKey(string  specialKey)
+        {
+            return _SecretKeyService.GetEmpIdBySecretKey(specialKey);
         }
     }
 }

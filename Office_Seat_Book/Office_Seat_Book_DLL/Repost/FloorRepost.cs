@@ -1,13 +1,10 @@
 ﻿using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Text;
 
 namespace Office_Seat_Book_DLL.Repost
 {
-    public class FloorRepost:IFloorRepost
+    public class FloorRepost : IFloorRepost
     {
         Office_DB_Context _dbContext;//default private
 

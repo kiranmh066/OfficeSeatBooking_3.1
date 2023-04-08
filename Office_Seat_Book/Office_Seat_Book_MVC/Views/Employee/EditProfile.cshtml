@@ -1,0 +1,225 @@
+﻿@{
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
+}
+
+@model Office_Seat_Book_Entity.Employee
+
+<style>
+
+    .img {
+        position: absolute;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .mask {
+        position: absolute;
+        background-size: cover;
+        top: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+    .bg-gradient-primary {
+        background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        height: 70%;
+        width: 100%;
+        opacity: 1;
+    }
+
+    .profile {
+        background-color: aliceblue;
+        padding: 30px;
+        margin-top: 100px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px rgba(0,0,0,0.1);
+        align-items: center;
+        height: 350px;
+        border: 1px solid black;
+    }
+
+    .profile-pic {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        border: 2px solid black;
+    }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .btnn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: auto;
+    }
+
+        .btnn:hover {
+            background-color: #0069d9;
+        }
+
+    .media screen and (max-width: 768px) {
+        .profile
+
+    {
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    }
+
+    .media screen and (max-width: 570px) {
+        .profile
+
+    {
+        margin-top: 30px;
+        padding: 10px;
+    }
+
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    }
+
+
+
+
+
+
+
+    .profile h2:hover,
+    .profile h5:hover {
+        text-shadow: 4px 4px 0 #007bff;
+    }
+
+    .profile {
+        position: relative;
+        perspective: 1000px;
+    }
+
+
+
+        .profile .profile-pic img {
+            backface-visibility: hidden;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        .profile .profile-pic .back img {
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    .edit-button {
+        backface-visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+</style>
+<div class="mask bg-gradient-primary">
+    <img class="img"
+         src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+         alt="img">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="profile">
+
+                <form method="post" enctype="multipart/form-data">
+
+                    <div>
+                        <div class="form-group">
+                            <label style="color:black;font-size:20px">phone number</label>
+                            <input  type="text" asp-for="PhoneNo" class="form-control" placeholder="Enter Emp number" required />
+                        </div>
+                        <div>
+                            <label class="form-label">Profile Picture</label>
+                            <input asp-for="EmployeeImage" type="file" id="poster" name="poster" class="form-control form-control-lg" placeholder="Choose File" required />
+                        </div>
+                        <br />
+
+                        <input type="submit" value="Update" class="btn btn-outline-success" onclick="UpdateFunction()" />
+                        <button type="button" class="btn btn-success"><a asp-area="" asp-controller="Employee" asp-action="Profile" style="color:white">Go Back</a></button>
+
+
+                    </div>
+                </form>
+                @if (ViewBag.status == "Ok")
+                {
+                    <br />
+
+
+
+                    <br />
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+                    <br />
+
+
+
+                    <br />
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function UpdateFunction() {
+
+
+
+        let val = confirm("Do you want to update?");
+        if (val == false) {
+            return event.preventDefault();
+        }
+    }
+</script>

@@ -1,14 +1,14 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
+/*a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
+}*/
 
 /* Provide sufficient contrast against white background */
-a {
+/*a {
   color: #0366d6;
 }
 
@@ -22,11 +22,11 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
-}
+}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+/*html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
@@ -49,23 +49,241 @@ html {
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
-}
+}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+/*html {
   position: relative;
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+body {*/
+/* Margin bottom by footer height */
+/*margin-bottom: 60px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;*/ /* Vertically center the text there */
+/*}*/
+/*for registration*/
+
+
+
+/*form registration*/
+
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-box {
+    background-color: #f5f9fa;
+    padding: 10px 10px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    font: 12px;
+    margin-bottom: 5px;
+    box-shadow: 10px 10px 10px 10px #3a3838;
+    transition: all 0.4s ease;
+}
+
+.user-icon {
+    background-color: #fc4481;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -60px;
+}
+
+    .user-icon i {
+        font-size: 40px;
+        color: #FFF;
+    }
+
+.login {
+    width: 100%;
+    padding-top: 70px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin: 15px;
+}
+
+
+input[type="text"].form-control, input[type="password"].form-control {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    /* width:calc(100%-36px); */
+    border: 2px solid #CCC;
+    padding: 0px;
+    border-radius: 0px;
+    transition: all 0.4s ease;
+    width: 330px;
+    height: 50px;
+}
+
+.form-group i {
+    position: absolute;
+    font-size: 25px;
+    color: grey;
+}
+
+.fa-lock {
+    margin-top: 5px;
+    margin-right: 65px;
+}
+
+.form-group a {
+    text-align: none;
+    font-size: 16px;
+    color: #7f2092;
+    padding: 0 0 0 200px;
+}
+
+input[type="text"].form-control:hover, input[type="password"].form-control:hover {
+    border: 2px solid #F06292;
+}
+
+input[type="text"].form-control:focus, input[type="password"].form-control:hover {
+    border: 2px solid #F06292;
+}
+
+input[type="text"].form-control:active, input[type="password"].form-control:hover {
+    border: 2px solid #361b91;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+    label input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+        margin-left: 15px;
+        cursor: pointer
+    }
+
+.form-group input[type="submit"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    width: 90%;
+    height: 45px;
+    color: white;
+    cursor: pointer;
+    border-radius: 45px;
+    line-height: 30px;
+    background-color: #E91E63;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+
+input:hover {
+    box-shadow: 7px 7px 7px #CCC;
+}
+
+@media screen and (max-width: 490px) {
+    #content {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 501px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container .form {
+        width: 300px;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .form {
+        width: 450px;
+    }
+}
+
+@media (min-width: 765px) and (max-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+
+    .container .form {
+        width: 540px;
+        height: 550px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .container {
+        height: 600vmax;
+    }
 }

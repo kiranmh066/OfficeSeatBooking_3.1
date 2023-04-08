@@ -1,8 +1,6 @@
 ﻿using Office_Seat_Book_DLL.Repost;
 using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Office_Seat_Book_BLL.Services
 {
@@ -48,6 +46,11 @@ namespace Office_Seat_Book_BLL.Services
         public SecretKey GetSecretKeyByEmpId(int empId)
         {
             return _SecretKeyRepost.GetSecretKeyByEmpId(empId);
+        }
+
+        public int GetEmpIdBySecretKey(string SecretKey)
+        {
+            return _SecretKeyRepost.GetEmpBySecurityKey(SecretKey);
         }
     }
 }

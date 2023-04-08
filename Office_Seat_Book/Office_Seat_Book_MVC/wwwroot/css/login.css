@@ -1,0 +1,65 @@
+﻿
+.col-md-8 {
+    padding-top: 50px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
+    width: 400px;
+    height: 400px
+}
+
+h3 {
+    text-align: center;
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+}
+
+.form-control {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+    .form-control:hover {
+        background-color: transparent;
+    }
+
+.mb-4 {
+    margin-top: 25px;
+}
+
+a {
+    margin-right: 40px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.mt-4 {
+    margin-bottom: 2px;
+}
+
+.form-check-label {
+    color: rgb(50, 50, 52);
+}
+
+.form-label.invalid input[type="email"],
+.form-label.invalid input[type="password"] {
+    animation: shake 0.5s;
+}
+
+.btn {
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(214, 43, 226);
+    color: white;
+}
+
+    .btn:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+        background-color: rgb(214, 43, 226);
+    }
+
+@media (max-width: 550px) {
+    .h-custom {
+        height: 100%;
+        width: 100%;
+    }
+}

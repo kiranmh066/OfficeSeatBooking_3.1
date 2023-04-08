@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 
 namespace Office_Seat_Book_Entity
 {
@@ -13,32 +10,30 @@ namespace Office_Seat_Book_Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmpID { get; set; }
 
-        [AllowNull]
         [Column(TypeName = "varchar(30)")]
         public string Name { get; set; }
 
-        [AllowNull]
-        public int PhoneNo { get; set; }
+        public double PhoneNo { get; set; }
 
         [Required]
         public string Email { get; set; }
-
         [Required]
         public string Password { get; set; }
 
-        [AllowNull]
         public char Gender { get; set; }
 
-        [AllowNull]
-        public string Secret_Key { get; set; }
-        [AllowNull]
-        [Column(TypeName = "varchar(30)")]
-        public string Place { get; set; }
+        public string Security_Question { get; set; }
 
-        [AllowNull]
         public string Role { get; set; }
 
+
+        public bool EmployeeStatus { get;set; }
+
         [AllowNull]
-        public string Designation { get; set; }
+        public byte[] EmployeeImage { get; set; }
+
+
+  
+
     }
 }

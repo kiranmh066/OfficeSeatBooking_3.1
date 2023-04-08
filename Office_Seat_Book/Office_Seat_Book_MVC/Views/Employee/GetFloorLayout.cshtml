@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Office_Seat_Book_Entity.Seat>
+@*//this name should be the name of projects under dependencies after adding referrences in MvcUi*@
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<body>
+
+    <div class="container">
+        @foreach (var seat in Model)
+        {
+
+            @if (seat.Seat_flag == true)
+            {
+
+                <a asp-action="BookSeatByUpdatingSeatId" asp-controller="Employee" asp-route-SeatId="@seat.Seat_No">
+                    <div type="button" class="seats">
+                        <img src="https://cdn-icons-png.flaticon.com/512/256/256634.png?w=740&t=st=1680671597~exp=1680672197~hmac=8b5526bb896b67c620b5333f7dce5d22b4c7546037e2d0446f385b2053c5134e"
+                             alt=""><br>
+                        <span><b>@seat.Seat_No</b></span>
+                    </div>
+                </a>
+            }
+            else
+            {
+                <div type="button" class="seats2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/256/256634.png?w=740&t=st=1680671597~exp=1680672197~hmac=8b5526bb896b67c620b5333f7dce5d22b4c7546037e2d0446f385b2053c5134e"
+                         alt=""><br>
+                    <span><b>@seat.Seat_No</b></span>
+                </div>
+            }
+        }
+    </div>
+
+
+</body>
+<style>
+    .container {
+        width: 1220px;
+        height: 660px;
+        background-color: rgb(206, 206, 245);
+        border: 1px solid transparent;
+        margin: 100px auto;
+        overflow: auto;
+    }
+
+    .seats {
+        width: 70px;
+        height: 100px;
+        background-color: rgb(238, 238, 238);
+        margin: 5px;
+        float: left;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        color: aliceblue;
+    }
+
+    .seats2 {
+        width: 70px;
+        height: 100px;
+        background-color: red;
+        margin: 5px;
+        float: left;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        color: aliceblue;
+    }
+
+    .seats:active {
+        transform: scale(.8);
+        transition: all 0.1s;
+    }
+
+    img {
+        height: 50px;
+        margin-top: 25px;
+    }
+
+    span {
+        color: black;
+    }
+</style>

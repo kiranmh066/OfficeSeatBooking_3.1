@@ -1,8 +1,6 @@
 ﻿using Office_Seat_Book_DLL.Repost;
 using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Office_Seat_Book_BLL.Services
 {
@@ -44,6 +42,10 @@ namespace Office_Seat_Book_BLL.Services
         public Seat GetBySeatId(int SeatID)
         {
             return _SeatRepost.GetSeatById(SeatID);
+        }
+        public IEnumerable<Seat> GetSeatsByFloorId(int floorId)
+        {
+            return _SeatRepost.GetSeatsByFloorId(floorId);
         }
     }
 }

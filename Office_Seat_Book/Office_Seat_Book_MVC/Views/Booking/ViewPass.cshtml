@@ -1,0 +1,78 @@
+@model Office_Seat_Book_Entity.Booking
+
+@*@{
+
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}*@
+@if (Model == null)
+{
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+}
+else
+{
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <title>Booking Details</title>
+        <link href="~/css/bookingviewpass.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <img class="img-fluid"
+                         src="https://img.freepik.com/free-vector/appointment-booking_23-2148570756.jpg?size=626&ext=jpg&ga=GA1.2.1040341196.1679931539&semt=ais"
+                         alt="img">
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <div class="card col-md-8 mx-auto p-5" style="height:95%">
+                        <div class="row">
+                            <div class="col-6 mx-auto card text-center mb-2">
+                                <div class="card-body" style="margin-top:0px">
+                                    <h5 class="card-title text-center mb-1">Details of the employee</h5>
+                                    <p class="card-text">Name : @Model.employee.Name </p>
+                                    <p class="card-text">Emp ID : @Model.EmployeeID </p>
+                                    <p class="card-text">Role:@Model.employee.Role </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 mx-auto card text-center mb-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Booking Details</h5>
+                                    <p class="card-text">From :@Model.From_Date     </p>
+                                    <p class="card-text">To :@Model.To_Date     </p>
+                                    <p class="card-text">Shift Time :@Model.Shift_Time     </p>
+                                    <p class="card-text">Seat Number :  @Model.Seat_No   </p>
+                                    <p class="card-text">Booking ID : @Model.BookingID    </p>
+                                    <p class="card-text">Parking : @Model.Vehicle</p>
+                                    <a asp-area="" asp-controller="Booking" asp-action="EnterKey" class="btn" style="display:inline">Verify OTP</a>
+                                    <a asp-area="" asp-controller="Booking" asp-action="GenerateQR" class="btn" style="display:inline">Verify QR</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+}

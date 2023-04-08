@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Office_Seat_Book_BLL.Services;
 using Office_Seat_Book_Entity;
+using System;
 using System.Collections.Generic;
 
 namespace OfficeAPI.Controllers
@@ -27,19 +27,15 @@ namespace OfficeAPI.Controllers
             return _BookingService.GetBookingById(bookingId);
         }
         [HttpPost("AddBooking")]
-        public IActionResult AddBooking([FromBody] Booking booking)
+        public int AddBooking([FromBody] Booking booking)
         {
-            try
-            {
-                _BookingService.AddBooking(booking);
 
 
-                return Ok("Booking created successfully!!!");
-            }
-            catch
-            {
-                return BadRequest(400);
-            }
+            return _BookingService.AddBooking(booking);
+
+
+
+
         }
         [HttpDelete("DeleteBooking")]
         public IActionResult DeleteBooking(int bookingId)
@@ -67,5 +63,37 @@ namespace OfficeAPI.Controllers
                 return BadRequest(400);
             }
         }
+
+
+        [HttpGet("GetBookingByEmpId")]
+        public Booking GetBookingByEmpId(int EmpId)
+        {
+            try
+            {
+                Booking booking = null;
+                booking = _BookingService.GetBookingByEmpId(EmpId);
+                if(booking!=null)
+                {
+                    return _BookingService.GetBookingByEmpId(EmpId);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+    
+        }
+
+        [HttpGet("GetBookingsByDate")]
+
+        public IEnumerable<Booking> GetBookingsByDate(DateTime date1)
+        {
+            return _BookingService.GetBookingsByDate(date1);
+        }
+
     }
 }

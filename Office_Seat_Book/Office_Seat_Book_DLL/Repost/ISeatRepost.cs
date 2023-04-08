@@ -1,7 +1,5 @@
 ﻿using Office_Seat_Book_Entity;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Office_Seat_Book_DLL.Repost
 {
@@ -15,5 +13,7 @@ namespace Office_Seat_Book_DLL.Repost
         Seat GetSeatById(int seatId);
 
         IEnumerable<Seat> GetSeats();
+
+        IEnumerable<Seat> GetSeatsByFloorId(int floorId);
     }
 }

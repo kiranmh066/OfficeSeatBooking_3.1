@@ -1,0 +1,315 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Office_Seat_Book_Entity.Employee
+
+@{
+    ViewData["Title"] = "RegisterEmp";
+
+}
+<style>
+    .img {
+        position: absolute;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 700px;
+        width: 100%;
+        height: fit-content;
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        position: relative;
+        z-index: 1;
+    }
+
+        .container .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+    input {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        width: 100%;
+        margin: 3px;
+    }
+
+        input:active {
+            border: 2px solid black;
+        }
+
+    .content form .user-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0 12px 0;
+    }
+
+    .user-details .input-box {
+        margin-bottom: 15px;
+        /* width: calc(100% / 2 - 20px); */
+        display: flex;
+        width: 48%;
+    }
+
+    .input-box span.details {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .user-details .input-box input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .gender-details {
+        width: 380px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    select {
+        height: 45px;
+        background-color: rgb(238, 238, 238);
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .category {
+        display: flex;
+        width: 80%;
+        margin: 14px 0;
+        justify-content: space-between;
+    }
+
+        .category option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+    form .button {
+        height: 45px;
+        margin: 35px 0
+    }
+
+        form .button input {
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 1s ease;
+            background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        }
+
+            form .button input:hover {
+                transform: scale(0.99);
+                background-image: linear-gradient(310deg,#ff0080, #7928ca);
+            }
+
+    .media(max-width: 584px) {
+        .container
+
+    {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category {
+        width: 100%;
+    }
+
+    .content form .gender-details .user-details {
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    }
+
+    media(max-width: 459px) {
+        .container .content .category
+
+    {
+        flex-direction: column;
+    }
+
+    }
+
+    media(max-width: 465px) {
+        .gender-details
+
+    {
+        width: 100%;
+    }
+
+    }
+
+    .mask {
+        position: absolute;
+        background-size: cover;
+        top: 0;
+        width: 100%;
+        height: 70%;
+    }
+
+    .bg-gradient-primary {
+        background-image: linear-gradient(310deg,#7928ca,#ff0080);
+        height: 70%;
+        width: 100%;
+        opacity: 1;
+    }
+
+</style>
+
+<body>
+
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+    </div>
+
+    <div class="container">
+        <a asp-area="" asp-controller="Admin" asp-action="ViewEmp"><img class="img-fluid" style="height:35px" src="https://img.icons8.com/fluency/512/circled-left.png"></a>
+        <div class="title">Registration</div>
+        <div class="content">
+            <form method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <input type="text" asp-for="Name" id="form" placeholder="Enter Name" class="form-control form-control-lg" />
+                        <label class="form-label" for=" name"></label>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="text" asp-for="Email" id="form" placeholder="Enter Email" class="form-control form-control-lg" />
+                        <label class="form-label" for="Email"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" asp-for="PhoneNo" id="form" placeholder="Enter Phone number" class="form-control form-control-lg" />
+                        <label class="form-label" for="Enter Phone Number"></label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" asp-for=" Security_Question" id="form3Example90" placeholder="Enter SecretKey" class="form-control form-control-lg" />
+                        <label class="form-label" for="Secret Key"></label>
+                    </div>
+                    @*  <div class="input-box">
+                    <input type="text" asp-for="Designation" id="form" placeholder="Enter Designation" class="form-control form-control-lg" />
+                    <label class="form-label" for="Designation"></label>
+                    </div>*@
+                    <div class="input-box">
+                        <input type="text" asp-for="Password" id="form" placeholder="Enter Password" class="form-control form-control-lg" />
+                        <label class="form-label" for="Enter Password"></label>
+                    </div>
+                    @* <div class="input-box">
+                    <input type="text" asp-for="Password" id="form" placeholder="Enter Password" class="form-control form-control-lg" />
+                    <label class="form-label" for="Enter your Role"></label>
+                    </div>*@
+
+                    <div class="input-box">
+                        <select class="form-control" asp-for="Role">
+                            <option>ADMIN</option>
+                            <option>USER</option>
+                            <option>RECEPTIONIST</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <select class="form-control" asp-for="Gender">
+                            @*<option class="gender">Gender</option>*@
+                            <option>M</option>
+                            <option>F</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    @*<div class="input-box">
+                    <input type="text" asp-for="Password" id="form" placeholder="Confrim Password" class="form-control form-control-lg" />
+                    <label class="form-label" for="Confirm Password"></label>
+                    </div>*@
+                </div>
+
+
+                @*<div class="button">
+                <input type="submit" value="Register" onclick=" validateForm()">
+                </div>*@
+                <div class="button">
+                    <input type="submit" value="Update" onclick=" validateForm()" />
+                    @* <input type="reset" value="Reset" class="btn btn-outline-secondary" />*@
+
+                </div>
+
+                @if (ViewBag.status == "Ok")
+                {
+
+                    <div class="alert alert-success">
+                        @ViewBag.message
+                    </div>
+                }
+                else if (ViewBag.status == "Error")
+                {
+
+                    <div class="alert alert-danger">
+                        @ViewBag.message
+                    </div>
+                }
+
+            </form>
+        </div>
+    </div>
+</body>
