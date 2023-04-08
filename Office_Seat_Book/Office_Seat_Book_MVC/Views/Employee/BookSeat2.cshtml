@@ -97,25 +97,38 @@
                     <div class="user-details">
 
                         <div class="input-box">
-                            <select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" required></select>
+                            @*<select asp-for="Vehicle" class="form-control" asp-items="@ViewBag.yesornorequest" value="" required></select>*@
+                            <select class="form-control" asp-for="Vehicle" required>
+                                <option selected disabled value="">Need Parking Slot?</option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
+                            </select>
                         </div>
 
                         <div class="input-box">
-                            <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required></select>
+                            <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required>
+                                <option disabled selected value="">Select Floor</option>
+                            </select>
                         </div>
 
                         <div class="input-box">
                             <span>From</span>
-                            <input asp-for="From_Date" type="date" class="form-control" id="fromDate">
+                            <input asp-for="From_Date" type="date" class="form-control" id="fromDate" value="" required>
                         </div>
                         <div class="input-box">
                             <span>To</span>
-                            <input asp-for="To_Date" type="date" class="form-control" id="toDate">  @*class="form-control"*@
+                            <input asp-for="To_Date" type="date" class="form-control" id="toDate" value="" required>  @*class="form-control"*@
                         </div>
 
                         <div class="input-box">
-                            <select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" required></select>
-
+                            @*<select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" value="" required></select>*@
+                            <select class="form-control" asp-for="Shift_Time" required>
+                                <option selected disabled value="">Shift Timings</option>
+                                <option value="0">02:00pm-10:00pm</option>
+                                <option value="1">10:00am-06:00pm</option>
+                                <option value="2">06:00am-02:00pm</option>
+                                <option value="3">09:00am-06:00pm</option>
+                            </select>
 
 
                         </div>

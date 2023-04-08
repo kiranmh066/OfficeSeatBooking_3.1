@@ -39,6 +39,15 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Query Added successfully!";
+                        TempData["helpcount1"] = Convert.ToInt32(TempData["helpcount1"]) + 1;
+                        TempData.Keep();
+                        int a = Convert.ToInt32(TempData["helpcount1"]);
+                        TempData["helpcount2"] = TempData["helpcount1"];
+                        TempData.Keep();
+                        TempData["help"] = "you get one query";
+                        TempData.Keep();
+                        TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
+                        TempData.Keep();
                     }
                     else
                     {
@@ -61,7 +70,7 @@ namespace Office_Seat_Book_MVC.Controllers
             IEnumerable<Help> helpresult = null;
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "Help1/GetAllHelps";
+                string endPoint = _configuration["WebApiBaseUrl"] + "Help/GetHelps";
 
                 using (var response = await client.GetAsync(endPoint))
                 {

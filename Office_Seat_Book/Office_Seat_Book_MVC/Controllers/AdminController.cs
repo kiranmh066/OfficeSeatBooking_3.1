@@ -5,6 +5,7 @@ using Office_Seat_Book_DLL;
 using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace Office_Seat_Book_MVC.Controllers
         public async Task<IActionResult> RegisterEmp(Employee employee)
         {
             ViewBag.status = "";
+
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(employee), Encoding.UTF8, "application/json");
@@ -46,6 +48,15 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Register successfully!";
+                        TempData["regcount1"] = Convert.ToInt32(TempData["regcount1"]) + 1;
+                        TempData.Keep();
+                        TempData["regcount2"] = TempData["regcount1"];
+                        TempData.Keep();
+                        TempData["register"] = "profile was added";
+                        TempData.Keep();
+                        TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
+                        TempData.Keep();
+                        int b = Convert.ToInt32(TempData["TotalCount"]);
                     }
                     else
                     {
@@ -111,9 +122,9 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> EditEmp(Employee emp)
         {
-            ViewBag.status = "";
-            //it will update the doctor details after Admin Changes
-            using (HttpClient client = new HttpClient())
+
+            //it will update the doctor details after Admin Changes
+            using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(emp), Encoding.UTF8, "application/json");
                 string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
@@ -148,7 +159,7 @@ namespace Office_Seat_Book_MVC.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Details Deleted Successfully!";
-                         return RedirectToAction("ViewEmp", "Admin");
+                        return RedirectToAction("ViewEmp", "Admin");
                     }
                     else
                     {
@@ -284,32 +295,8 @@ namespace Office_Seat_Book_MVC.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ShowAdminProfile()
-        {
-            Employee emp = null;
-            using (HttpClient client = new HttpClient())
-            {
-                //Fetching temporary ProfileId from  tempdata
 
-                int Id = Convert.ToInt32(TempData["empId"]);
 
-                TempData.Keep();
-                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
-                using (var response = await client.GetAsync(endPoint))
-                {
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        var result = await response.Content.ReadAsStringAsync();
-                        emp = JsonConvert.DeserializeObject<Employee>(result);
-                    }
-
-                }
-
-            }
-            return View(emp);
-
-        }
 
         public IActionResult AddSeat()
         {
@@ -323,7 +310,7 @@ namespace Office_Seat_Book_MVC.Controllers
         {
 
             ViewBag.status = "";
-
+            seat.Seat_flag = true;
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
@@ -606,6 +593,169 @@ namespace Office_Seat_Book_MVC.Controllers
 
             return View(floorresult);
 
+        }
+        public async Task<IActionResult> Settings()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            return View(emp);
+        }
+
+
+
+        public async Task<IActionResult> OldPassword()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+                int Id = Convert.ToInt32(TempData["empId"]);
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+
+                }
+
+            }
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> OldPassword(Employee emp1)
+        {
+            Employee emp = new Employee();
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+            emp1.PhoneNo = emp.PhoneNo;
+            emp1.Email = emp.Email;
+            emp1.Role = emp.Role; ;
+            emp1.EmpID = emp.EmpID;
+            emp1.Gender = emp.Gender;
+            emp1.Security_Question = emp.Security_Question;
+            emp1.Name = emp.Name;
+            if (emp1.Password == emp.Password)
+            {
+                ViewBag.status = "Ok";
+                ViewBag.message = "correct";
+
+                return RedirectToAction("NewPassword", "Admin");
+            }
+            else
+            {
+                ViewBag.status = "Error";
+                ViewBag.message = "Wrong Entries!";
+            }
+            return View(emp);
+        }
+        public async Task<IActionResult> NewPassword()
+        {
+            Employee emp = null;
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+
+                }
+
+            }
+            return View(emp);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NewPassword(Employee emp1)
+        {
+            Employee emp = new Employee();
+            using (HttpClient client = new HttpClient())
+            {
+                //Fetching temporary ProfileId from  tempdata
+
+                int Id = Convert.ToInt32(TempData["empId"]);
+
+                TempData.Keep();
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/GetEmployeeById?EmployeeId=" + Id;
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        emp = JsonConvert.DeserializeObject<Employee>(result);
+                    }
+                }
+            }
+
+            emp1.Email = emp.Email;
+            emp1.Role = emp.Role; ;
+            emp1.EmpID = emp.EmpID;
+            emp1.Gender = emp.Gender;
+            emp1.Security_Question = emp.Security_Question;
+            emp1.Name = emp.Name;
+            emp1.PhoneNo = emp.PhoneNo;
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(emp1), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employee/UpdateEmployee";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Your Details Updated Successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
+                    }
+                }
+            }
+            return View(emp1);
         }
 
 

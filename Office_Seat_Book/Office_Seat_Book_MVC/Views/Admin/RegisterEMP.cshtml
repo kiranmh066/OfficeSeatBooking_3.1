@@ -230,20 +230,20 @@
             <form method="post">
                 <div class="user-details">
                     <div class="input-box">
-                        <input type="text" asp-for="Name" id="form" placeholder="Enter Name" class="form-control form-control-lg" />
+                        <input type="text" asp-for="Name" id="Name" placeholder="Enter Name" class="form-control form-control-lg" />
                         <label class="form-label" for=" name"></label>
                     </div>
 
                     <div class="input-box">
-                        <input type="text" asp-for="Email" id="form" placeholder="Enter Email" class="form-control form-control-lg" />
+                        <input type="text" asp-for="Email" id="Email" placeholder="Enter Email" class="form-control form-control-lg" />
                         <label class="form-label" for="Email"></label>
                     </div>
                     <div class="input-box">
-                        <input type="text" asp-for="PhoneNo" id="form" placeholder="Enter Phone number" class="form-control form-control-lg" />
+                        <input type="text" asp-for="PhoneNo" id="Phone" placeholder="Enter Phone number" class="form-control form-control-lg" />
                         <label class="form-label" for="Enter Phone Number"></label>
                     </div>
                     <div class="input-box">
-                        <input type="text" asp-for="Security_Question" id="form3Example90" placeholder="Enter SecretKey" class="form-control form-control-lg" />
+                        <input type="text" asp-for="Security_Question" id="Security_Question" placeholder="Enter SecretKey" class="form-control form-control-lg" />
                         <label class="form-label" for="Secret Key"></label>
                     </div>
                     @*<div class="input-box">
@@ -251,9 +251,10 @@
                     <label class="form-label" for="Designation"></label>
                     </div>*@
                     <div class="input-box">
-                        <input type="text" asp-for="Password" id="form" placeholder="Enter Password" class="form-control form-control-lg" />
+                        <input type="text" asp-for="Password" id="Password" placeholder="Enter Password" class="form-control form-control-lg" />
                         <label class="form-label" for="Enter Password"></label>
                     </div>
+
                     @* <div class="input-box">
                     <input type="text" asp-for="Password" id="form" placeholder="Enter Password" class="form-control form-control-lg" />
                     <label class="form-label" for="Enter your Role"></label>
@@ -276,7 +277,10 @@
 
                     </div>
 
-
+                    @* <div>
+                    <label class="input-box">Profile Picture</label>
+                    <input asp-for="EmployeeImage" type="file" id="poster" name="poster" class="form-control form-control-lg" placeholder="Choose File" required />
+                    </div>*@
 
                     @*<div class="input-box">
                     <input type="text" asp-for="Password" id="form" placeholder="Confrim Password" class="form-control form-control-lg" />
@@ -284,15 +288,10 @@
                     </div>*@
                 </div>
 
-
-                @*<div class="button">
-                <input type="submit" value="Register" onclick=" validateForm()">
-                </div>*@
                 <div class="button">
-                    <input type="submit" value="Register" onclick=" validateForm()" />
-                    @* <input type="reset" value="Reset" class="btn btn-outline-secondary" />*@
-
+                    <input type="submit" value="Register" onclick="validateForm()" />
                 </div>
+
 
                 @if (ViewBag.status == "Ok")
                 {
@@ -311,5 +310,61 @@
 
             </form>
         </div>
+
     </div>
 </body>
+<script>
+
+    function validateForm() {
+        var name = document.getElementById("Name").value;
+        var email = document.getElementById("Email").value;
+        var phone = document.getElementById("Phone").value;
+        var question = document.getElementById("Security_Question").value;
+        var password = document.getElementById("Password").value;
+        var role = document.getElementById("Role").value;
+        var gender = document.getElementById("Gender").value;
+        var image = document.getElementById("poster").value;
+
+        if (name == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        }
+
+        if (phone == "") {
+            alert("Phone number must be filled out");
+            return false;
+        }
+
+        if (question == "") {
+            alert("Secret key must be filled out");
+            return false;
+        }
+
+        if (password == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+
+        if (role == "") {
+            alert("Role must be selected");
+            return false;
+        }
+
+        if (gender == "") {
+            alert("Gender must be selected");
+            return false;
+        }
+
+        if (image == "") {
+            alert("Please select a profile picture");
+            return false;
+        }
+    }
+
+
+</script>

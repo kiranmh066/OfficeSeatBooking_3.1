@@ -1,4 +1,5 @@
-﻿using Office_Seat_Book_Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Office_Seat_Book_Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Office_Seat_Book_DLL.Repost
 
         public IEnumerable<Help> GetHelps()
         {
-            return _dbContext.help.ToList();
+            return _dbContext.help.Include(obj => obj.Employee).ToList();
         }
 
 

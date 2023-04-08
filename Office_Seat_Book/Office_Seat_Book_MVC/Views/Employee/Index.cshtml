@@ -5,14 +5,16 @@
 @{
     ViewData["Title"] = "Index";
 }
-@model Office_Seat_Book_Entity.Employee
-
-
-<link href="~/css/styles.css" rel="stylesheet" />
-
+@model Office_Seat_Book_Entity.Booking
+@*<link href="~/css/styles.css" rel="stylesheet" />*@
 
 <body>
 
+    <div class="mask bg-gradient-primary">
+        <img class="img"
+             src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
+             alt="img">
+    </div>
     <div class="mask bg-gradient-primary">
         <img class="img"
              src="https://demos.creative-tim.com/marketplace/soft-ui-design-system-pro/assets/img/curved-images/curved1.jpg"
@@ -67,20 +69,20 @@
             <div class="offcanvas-body">
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Home</a>
+                        <a asp-controller="Employee" asp-action="Index">Home</a>
                     </div>
                 </section>
                 <br>
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Profile</a>
+                        <a asp-controller="Employee" asp-action="Profile">Profile</a>
                     </div>
                 </section>
                 <br>
 
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Help</a>
+                        <a asp-controller="Help" asp-action="Index">Help</a>
                     </div>
                 </section>
             </div>
@@ -103,44 +105,99 @@
         <div class="col-12">
             <div class=" greet text-center">
                 <p class=" head text-white  ">Good Morning.!</p>
-                <p class=" name text-white mt-3">@Model.Name</p>
+
+                <p class=" name text-white mt-3">@TempData["EmpName"].ToString() </p>
+                @if(true)
+                {
+                    TempData.Keep();
+                }
+
             </div>
         </div>
     </div>
-    <div class="row row1 card-div ">
-        <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-            <span class="numb">
-                0
-            </span>
-            <span class="char">
-                Approved
-            </span>
+    @if (Model != null)
+    {
+        <div class="row row1 card-div ">
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Approved
+                </span>
+
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+
+                @if (Model.Booking_Status == 0)
+                {
+                    <span class="numb">
+                        1
+                    </span>
+                    <span class="char">
+                        Pending
+                    </span>
+                }
+                else
+                {
+                    <span class="numb">0</span>
+                    <span class="char">
+                        Pending
+                    </span>
+                }
+
+                @* <span class="char">
+            Pending
+            </span>*@
+            </div>
+            <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Rejected
+                </span>
+            </div>
 
         </div>
-        <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-            <span class="numb">
-                0
-            </span>
-            <span class="char">
-                Pending
-            </span>
-        </div>
-        <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
-            <span class="numb">
-                0
-            </span>
-            <span class="char">
-                Rejected
-            </span>
-        </div>
+    }
+    else
+    {
+        <div class="row row1 card-div ">
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Approved
+                </span>
 
-    </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Pending
+                </span>
+            </div>
+            <div class=" col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
+                <span class="numb">
+                    0
+                </span>
+                <span class="char">
+                    Rejected
+                </span>
+            </div>
+
+        </div>
+    }
 
     <div class="row card-div">
         <div class="col-12 col-md-6 col-xl-6 col-xxl-6">
             <div class="buttons">
                 <button class="button btn-lg">
-                    Your Bookings
+                    <a asp-controller="Employee" asp-action="Booking_history" style="text-decoration:none;color:white">View Bookings</a>
                 </button>
                 <button class="button btn-lg">
                     <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none;color:white">Book Seat</a>
@@ -159,42 +216,80 @@
                     <div class="contai">
                         <div class="row">
                             <div class="card main mx-auto ">
-                                <div class="row">
-                                    <div class=" text-center ">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
-                                            <p class="card-text">Name :</p>
-                                            <p class="card-text">Emp ID :</p>
-                                            <p class="card-text">Role:</p>
+                                @if (Model != null)
+                                {
+                                    <div class="row">
+                                        <div class=" text-center ">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-black"><u>Details of the employee</u> </h5>
+                                                <p class="card-text">Name :@Model.employee.Name</p>
+                                                <p class="card-text">Emp ID :@Model.EmployeeID</p>
+                                                <p class="card-text">Role:@Model.employee.Role</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class=" text-center my-4">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-black"><u>Booking Details</u></h5>
-                                            <p class="card-text">From Date :</p>
-                                            <p class="card-text">To Date :</p>
-                                            <p class="card-text">Shift Time :</p>
-                                            <p class="card-text">Seat Number :</p>
-                                            <p class="card-text">Booking ID :</p>
-                                            <p class="card-text">Food :</p>
-                                            <p class="card-text">Parking :</p>
-                                            <button class="btn btn-success">View OTP</button> &nbsp;
-                                            <button class="btn btn-success">View OTP</button>
+                                    <div class="row">
+                                        <div class=" text-center my-4">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-black"><u>Booking Details</u></h5>
+                                                <p class="card-text">From Date : @Model.From_Date.ToShortDateString()</p>
+                                                <p class="card-text">To Date : @Model.To_Date.ToShortDateString()</p>
+                                                <p class="card-text">Shift Time :@Model.Shift_Time</p>
+                                                <p class="card-text">Seat Number : @Model.Seat_No</p>
+                                                <p class="card-text">Booking ID :@Model.BookingID</p>
+                                                <p class="card-text">Food :@Model.Food_Type</p>
+                                                <p class="card-text">Parking :false</p>
+                                                @* <button type="button" class="btn btn-success">View OTP</button> &nbsp;
+                                            <button type="button" class="btn btn-success">View OTP</button>*@
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="card-body text-center">
-                                    <h3>You don't have any bookings</h3>
-                                    <button class="btn btn-success">Book Seat</button>
-                                </div>
-
+                                }
+                                else
+                                {
+                                    <div class="card-body text-center">
+                                        <h3>You don't have any bookings</h3>
+                                        @*<button class="btn btn-success">Book Seat</button>*@
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="modal-footer flex align-content-center">
+                    @if (Model != null)
+                    {
+                        <span style="font-size:18px;font-weight:bold">Verify with :</span>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OTP</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">QR</button>
+                    }
+                    else
+                    {
+
+
+
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                            <a asp-controller="Employee" asp-action="BookSeat" style="text-decoration:none; color:white">Book Seat</a>
+                        </button>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p></p>
+                </div>
+                <div class="modal-dialog modal-dialog-centered seat">
+                    Seat has already booked!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">View Pass</button>
                 </div>
             </div>
         </div>
