@@ -343,6 +343,15 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> BookSeat2(Booking booking)
         {
+            if (booking.employee.Name == "1")
+            {
+                booking.Vehicle = true;
+            }
+            else
+            {
+                booking.Vehicle=false;
+            }
+            booking.employee = null;
             booking.BookingID = Convert.ToInt32(TempData["Bookid"]);
             TempData.Keep();
             booking.EmployeeID = Convert.ToInt32(TempData["empId"]);
@@ -520,6 +529,14 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
+            List<Parking> parking1 = new List<Parking>();
+            foreach(var updated in parkings)
+            {
+                if (updated.booking.Booking_Status==1)
+                {
+                    parking1.Add(updated);
+                }
+            }
             if (id != 0)
             {
 
@@ -547,7 +564,7 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
             }
 
-            return View(parkings);
+            return View(parking1);
         }
 
 

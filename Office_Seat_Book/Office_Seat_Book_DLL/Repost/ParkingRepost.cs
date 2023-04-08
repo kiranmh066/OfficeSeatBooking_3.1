@@ -1,4 +1,5 @@
-﻿using Office_Seat_Book_Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Office_Seat_Book_Entity;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,7 +33,7 @@ namespace Office_Seat_Book_DLL.Repost
 
         public IEnumerable<Parking> GetParkings()
         {
-            return _dbContext.parking.ToList();
+            return _dbContext.parking.Include(obj=>obj.booking).Include(obj => obj.booking.employee).Include(obj => obj.booking.seat).Include(obj => obj.booking.seat.Floor).ToList();
         }
 
 
