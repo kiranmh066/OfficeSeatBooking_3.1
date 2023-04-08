@@ -15,9 +15,6 @@ namespace Office_Seat_Book_DLL
         public Office_DB_Context(DbContextOptions<Office_DB_Context> options) : base(options)
         {
         }
-
-
-
         public Microsoft.EntityFrameworkCore.DbSet<Parking> parking { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Employee> employee { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Booking> booking { get; set; }
@@ -28,20 +25,7 @@ namespace Office_Seat_Book_DLL
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-
-           
-
-
-            dbContextOptionsBuilder.UseSqlServer("Data Source= DESKTOP-FICLE82\\SQLEXPRESS; Initial Catalog = Officedbseen4; Integrated Security = True;");
-
-            
-
-            
-
-
-
-
-
+            dbContextOptionsBuilder.UseSqlServer("Data Source = DESKTOP-2EN1VVU\\SQLEXPRESS; Initial Catalog = OfficeD; Integrated Security = True;");
         }
 
     }
