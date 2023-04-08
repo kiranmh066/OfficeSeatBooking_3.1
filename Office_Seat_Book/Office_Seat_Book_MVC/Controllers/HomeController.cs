@@ -96,6 +96,44 @@ namespace Office_Seat_Book_MVC.Controllers
                                 }
                             }
                         }
+                        if(item.Booking_Status==2 || item.Booking_Status==3)
+                        {
+                            Seat seat = null;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/GetSeatById?seatId=" + item.Seat_No;
+
+                                using (var response = await client.GetAsync(endPoint))
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {   //dynamic viewbag we can create any variable name in run time
+                                        var result = await response.Content.ReadAsStringAsync();
+                                        seat = JsonConvert.DeserializeObject<Seat>(result);
+                                    }
+                                }
+                            }
+                            seat.Seat_flag = true;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
+                                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/UpdateSeat";//api controller name and its function
+                                using (var response = await client.PutAsync(endPoint, content))
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {   //dynamic viewbag we can create any variable name in run time
+                                        ViewBag.status = "Ok";
+                                        ViewBag.message = "seat updated Successfully!!";
+                                    }
+
+                                    else
+                                    {
+                                        ViewBag.status = "Error";
+                                        ViewBag.message = "Wrong Entries";
+
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
