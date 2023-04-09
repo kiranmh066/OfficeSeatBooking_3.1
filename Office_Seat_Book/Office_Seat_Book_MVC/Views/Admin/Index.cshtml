@@ -37,10 +37,13 @@
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
-                        </svg>@{
-                            @TempData["TotalCount"];
-                            TempData.Keep();
-                        }
+                        </svg>
+                        <span style="color:red">
+                        @{
+                           @TempData["TotalCount"]
+                                TempData.Keep();
+                            }
+                        </span>
                     </div>&nbsp;
                     <div class="logout">
                         <a asp-controller="Home" asp-action="Index" type="button" onclick="LogoutFunction()">
@@ -165,18 +168,24 @@
                 {
                     if (Convert.ToInt32(TempData["regcount1"]) != 0)
                     {
-                        <button><a asp-controller="Admin" asp-action="ViewEmp">get employee details</a></button>
+                        TempData.Keep();
+                        <button ><a asp-controller="Admin" asp-action="ViewEmp" style="text-decoration:none; height:50px ;margin-bottom:5px;padding:10px">get employee details</a></button>
                     }
                     if (Convert.ToInt32(TempData["helpcount1"]) != 0)
                     {
-                        <button><a asp-controller="Help" asp-action="GetAllHelps">get help details</a></button>
+                        TempData.Keep();
+                        <button style="margin-bottom:5px"><a asp-controller="Help" asp-action="GetAllHelps" style="text-decoration:none; height:50px;padding:10px">get help details</a></button>
                     }
                     @for (int i = 0; i < Convert.ToInt32(TempData["regcount1"]); i++)
                     {
                         if (Convert.ToInt32(TempData["regcount1"]) != 0)
                         {
+                            TempData.Keep();
                             <div class="alert alert-primary">
-                                @TempData["register"];
+                                @{
+                                    @TempData["register"];
+                                TempData.Keep();
+                                }
                             </div>
                         }
                     }
@@ -184,8 +193,11 @@
                     {
                         if (Convert.ToInt32(TempData["helpcount1"]) != 0)
                         {
+                            TempData.Keep();
                             <div class="alert alert-info">
-                                @TempData["help"];
+                               @{ @TempData["help"];
+                               TempData.Keep();
+                               }
                             </div>
                         }
                     }
@@ -207,6 +219,7 @@
         </div>
     </div>
     <br>
+   
     <br>
     <div class="row row1 card-div ">
         <div class="col-12 col-md-4 col-lg-4 col-xxl-4 middle-row shadow ">
