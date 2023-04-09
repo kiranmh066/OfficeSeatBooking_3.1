@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office_Seat_Book_DLL.Migrations
 {
-    public partial class B : Migration
+    public partial class _99 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -63,7 +63,7 @@
                 <br>
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a asp-area="" asp-controller="Admin" asp-action="Showprofile">PROFILE</a>
+                        <a asp-area="" asp-controller="Admin" asp-action="ShowAdminProfile">PROFILE</a>
                     </div>
                 </section>
                 <br>
@@ -102,12 +102,27 @@
                 </section>
                 @* <br />
                 <section class="color-7">
+
+            <br>
+            <section class="color-7">
                 <div class="anchor cl-effect-4">
-                <div>
-                <a href="#"> PARKING&#9662;</a>
-                <div>
-                <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
-                <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
+                    <a asp-area="" asp-controller="Admin" asp-action="Showprofile">PROFILE</a>
+                </div>
+            </section>
+            <br>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a asp-controller="Admin" asp-action="RegisterEMP">Register Employee</a>
+                    <a asp-area="" asp-controller="Admin" asp-action="ViewEmp">Get All Employee details</a>
+                </div>
+            </section>
+            <br>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <div>
+                        <a href="#"> SEAT MANGAEMENT &#9662;</a>
+                        <div>
+
 
                 </div>
                 </div>
@@ -117,29 +132,76 @@
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
                         <a asp-area="" asp-controller="Home" asp-action="GetAllHelps">Help</a>
+                            <a asp-controller="Admin" asp-action="Addseat" type="button ">  ADD SEAT </a>
+                            <a asp-controller="Admin" asp-action="GetallSeat" type="button"> VIEW SEATS DETAILS </a>
+
+                        </div>
                     </div>
-                </section>
-                <br />
-                <section class="color-7">
-                    <div class="anchor cl-effect-4">
-                        <a asp-controller="Home" asp-action="Index" type="button">Logout</a>
+                </div>
+            </section>
+            <BR />
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <div>
+                        <a href="#"> FLOOR MANAGEMENT &#9662;</a>
+                        <div>
+
+                            <a asp-controller="Admin" asp-action="Addfloor" type="button ">ADD FLOOR</a>
+                            <a asp-controller="Admin" asp-action="Getallfloor" type="button">VIEW FLOOR DETAILS</a>
+                        </div>
                     </div>
-                </section>
+                </div>
+            </section>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <div>
+                        <a href="#"> Get Reports &#9662;</a>
+                        <a asp-controller="Report" asp-action="Index" type="button">GetReportByDate</a>
+                        <a asp-controller="Report" asp-action="GetCustomDates" type="button">GetReportByWeek</a>
+
+                    </div>
+                </div>
+            </section>
+            @* <br />
+            <section class="color-7">
+            <div class="anchor cl-effect-4">
+            <div>
+            <a href="#"> PARKING&#9662;</a>
+            <div>
+            <a asp-area="" asp-controller="Admin" asp-action="AddParking">ADD PARKING SLOTS</a>
+            <a asp-area="" asp-controller="Admin" asp-action="ViewParking">VIEW PARKING SLOTS</a>
+
             </div>
+            </div>
+            </div>
+            </section>*@
+            <br>
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a href="#">Help</a>
+                </div>
+            </section>
+            <br />
+            <section class="color-7">
+                <div class="anchor cl-effect-4">
+                    <a asp-controller="Home" asp-action="Index" type="button">Logout</a>
+                </div>
+            </section>
         </div>
+    </div>
 
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Notifications</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <h6>Heading</h6>
-                <p>Description</p>
-                <hr>
-            </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Notifications</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <div class="offcanvas-body">
+            <h6>Heading</h6>
+            <p>Description</p>
+            <hr>
+        </div>
+    </div>
     </div>
     <div class="row">
         <div class="col-12">
@@ -192,4 +254,3 @@
         </div>
     </div>
 </body>
-
