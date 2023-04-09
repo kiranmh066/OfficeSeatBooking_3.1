@@ -25,8 +25,119 @@ namespace Office_Seat_Book_MVC.Controllers
 
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var sixPM = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 18, 0, 0);//0
+            var twoPM = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 14, 0, 0);//1
+            var tenAM = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 10, 0, 0);//2
+            var onePM = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 13, 0, 0);//3
+
+            Booking booking = null;
+            IEnumerable<Booking> bookingList = null;
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string endPoint = _configuration["WebApiBaseUrl"] + "Booking/GetBookings";//api controller name and httppost name given inside httppost in moviecontroller of api
+                    using (var response = await client.GetAsync(endPoint))
+                    {
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                        {   //dynamic viewbag we can create any variable name in run time
+                            var result = await response.Content.ReadAsStringAsync();
+                            bookingList = JsonConvert.DeserializeObject<IEnumerable<Booking>>(result);
+                        }
+                    }
+                }
+                if (bookingList != null)
+                {
+                    foreach (var item in bookingList)
+                    {
+                        if (item.To_Date < DateTime.Today)
+                        {
+                            item.Booking_Status = 3;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                StringContent content = new StringContent(JsonConvert.SerializeObject(item), Encoding.UTF8, "application/json");
+                                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/UpdateBooking";
+                                using (var response = await client.PutAsync(endPoint, content))
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {
+                                        ViewBag.status = "Ok";
+                                        ViewBag.message = "Booking Viewpass Updated sucessfully!!";
+                                    }
+                                    else
+                                    {
+                                        ViewBag.status = "Error";
+                                        ViewBag.message = "Wrong entries!";
+                                    }
+                                }
+                            }
+                        }
+                        if ((item.Type_Of_Request == 0 && DateTime.Now > sixPM) || (item.Type_Of_Request == 1 && DateTime.Now > twoPM) || (item.Type_Of_Request == 2 && DateTime.Now > tenAM) || (item.Type_Of_Request == 3 && DateTime.Now > onePM))
+                        {
+                            item.Booking_Status = 2;
+                            //item.seat.Seat_flag = true;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                StringContent content = new StringContent(JsonConvert.SerializeObject(item), Encoding.UTF8, "application/json");
+                                string endPoint = _configuration["WebApiBaseUrl"] + "Booking/UpdateBooking";
+                                using (var response = await client.PutAsync(endPoint, content))
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {
+                                        ViewBag.status = "Ok";
+                                        ViewBag.message = "Booking Viewpass Updated sucessfully!!";
+                                    }
+                                    else
+                                    {
+                                        ViewBag.status = "Error";
+                                        ViewBag.message = "Wrong entries!";
+                                    }
+                                }
+                            }
+                        }
+                        if(item.Booking_Status==2 || item.Booking_Status==3)
+                        {
+                            Seat seat = null;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/GetSeatById?seatId=" + item.Seat_No;
+
+                                using (var response = await client.GetAsync(endPoint))
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {   //dynamic viewbag we can create any variable name in run time
+                                        var result = await response.Content.ReadAsStringAsync();
+                                        seat = JsonConvert.DeserializeObject<Seat>(result);
+                                    }
+                                }
+                            }
+                            seat.Seat_flag = true;
+                            using (HttpClient client = new HttpClient())
+                            {
+                                StringContent content = new StringContent(JsonConvert.SerializeObject(seat), Encoding.UTF8, "application/json");
+                                string endPoint = _configuration["WebApiBaseUrl"] + "Seat/UpdateSeat";//api controller name and its function
+                                using (var response = await client.PutAsync(endPoint, content))
+                                {
+                                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {   //dynamic viewbag we can create any variable name in run time
+                                        ViewBag.status = "Ok";
+                                        ViewBag.message = "seat updated Successfully!!";
+                                    }
+
+                                    else
+                                    {
+                                        ViewBag.status = "Error";
+                                        ViewBag.message = "Wrong Entries";
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             return View();
         }
 
@@ -34,8 +145,6 @@ namespace Office_Seat_Book_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(Employee employee)
         {
-
-
             if (employee.Email != null && employee.Password != null)
             {
                 #region Logging in of Employee using Email and Password and Will Redirect using Employee designation
@@ -53,12 +162,24 @@ namespace Office_Seat_Book_MVC.Controllers
                             employee1 = JsonConvert.DeserializeObject<Employee>(result);
                             if (employee1 != null)
                             {
+                                TempData["EmpName"] = (employee1.Name).ToString();
+                                TempData.Keep();
                                 string employee_role = (employee1.Role).ToString();
                                 TempData["employee_role"] = employee_role;
                                 TempData.Keep();
                                 TempData["empId"] = Convert.ToInt32(employee1.EmpID);
                                 TempData.Keep();
-
+                                TempData["TotalCount"] = Convert.ToInt32(TempData["helpcount2"]) + Convert.ToInt32(TempData["regcount2"]);
+                                TempData.Keep();
+                                int a = Convert.ToInt32(TempData["TotalCount"]);
+                                //TempData["helpcount1"] = Convert.ToInt32(TempData["helpcount2"]);
+                                //TempData.Keep();
+                                //TempData["regcount1"] = Convert.ToInt32(TempData["regcount2"]);
+                                //TempData.Keep();
+                                TempData["register"] = "profile was added";
+                                TempData.Keep();
+                                TempData["help"] = "you get one query";
+                                TempData.Keep();
                                 if (employee_role == "ADMIN")
                                     return RedirectToAction("Index", "Admin");
                                 else if (employee_role == "USER")
@@ -83,7 +204,8 @@ namespace Office_Seat_Book_MVC.Controllers
                 }
 
 
-            }else
+            }
+            else
 
             {
                 ViewBag.status = "Error";
