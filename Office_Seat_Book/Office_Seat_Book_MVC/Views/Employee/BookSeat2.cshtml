@@ -104,13 +104,23 @@
                                 <option value="0">No</option>
                             </select>
                         </div>
+                        @*<label  for="fromDate">From Date:</label>
+                        <input asp-for="From_Date" type="date" id="fromDate" name="fromDate">
 
-                        <div class="input-box">
+                        <label for="toDate">To Date:</label>
+                        <input asp-for="To_Date" type="date" id="toDate" name="toDate">
+
+                        <script>
+                            document.getElementById("fromDate").addEventListener("change", function () {
+                                var fromDateValue = document.getElementById("fromDate").value;
+                                document.getElementById("toDate").setAttribute("min", fromDateValue);
+                            });
+                        </script>*@
+                       <div class="input-box">
                             <select asp-for="seat.FloorID" class="form-control" asp-items="@ViewBag.FloorList" required>
                                 <option disabled selected value="">Select Floor</option>
                             </select>
                         </div>
-
                         <div class="input-box">
                             <span>From</span>
                             <input asp-for="From_Date" type="date" class="form-control" id="fromDate" value="" required>
@@ -119,9 +129,67 @@
                             <span>To</span>
                             <input asp-for="To_Date" type="date" class="form-control" id="toDate" value="" required>  @*class="form-control"*@
                         </div>
+                       @* <label for="fromDate">From Date:</label>
+                        <input type="date" id="fromDate" name="fromDate">
+
+                        <label for="toDate">To Date:</label>
+                        <input type="date" id="toDate" name="toDate" min="">
+
+                        @section Scripts {
+                            <script>
+                                $(function () {
+                                    // Get the initial value of fromDate and set it as the default value for toDate
+                                    var fromDate = $("#fromDate").val();
+                                    $("#toDate").attr("min", fromDate);
+
+                                    // When fromDate changes, update the min attribute of toDate to be the selected date
+                                    $("#fromDate").change(function () {
+                                        var newMin = $(this).val();
+                                        $("#toDate").attr("min", newMin);
+                                    });
+                                });
+                            </script>
+                        }*@
+
+                       @* <label for="fromDate">From Date:</label>
+                        <input type="date" id="fromDate" name="fromDate">
+
+                        <label for="toDate">To Date:</label>
+                        <input type="date" id="toDate" name="toDate">
+
+                        @section Scripts {
+                            <script>
+                                $(function () {
+                                    $("#fromDate").change(function () {
+                                        var fromDate = $(this).val();
+                                        $("#toDate").attr("min", fromDate);
+                                    });
+                                });
+                            </script>
+                        }*@
+                        @*<div class="input-box">
+                            <span>From</span>
+                            <input asp-for="From_Date" type="date" id="mySelect" onchange="myFunction()" class="form-control" value="" required>
+                        </div>
+                        <div class="input-box">
+                            <span>To</span>
+                            <input type="date" id="myInput">
+                            <button onclick="myFunction()">Select Date</button>
+                           @* <input type="date" id="myInput" value="" class="pickedDate">*@
+                            @*<h4 id="pickedDate" class="font-weight-bold text-uppercase mb-3" value="@Model.From_Date;">
+                                
+                                @if (true)
+                                {
+                                    DateTime x = @Model.From_Date;
+                                    x.ToString("dd/MM/yyyy");
+                                    <span>@x</span>
+                                }
+                                </h4>*@
+                            @*<input asp-for="To_Date" type="date" class="form-control" id="pickedDate" value="@Model.From_Date" required>*@  @*class="form-control"
+                        </div>*@
 
                         <div class="input-box">
-                            @*<select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" value="" required></select>*@
+                            @*<select asp-for="Shift_Time" class="form-control" asp-items="@ViewBag.shiftTimings" value="" required></select> id="fromDate" *@
                             <select class="form-control" asp-for="Shift_Time" required>
                                 <option selected disabled value="">Shift Timings</option>
                                 <option value="0">02:00pm-10:00pm</option>
@@ -152,7 +220,14 @@
     </div>
 
 </body>
-<script>
+@*<script>
+      function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            var date = new Date(x);
+            var formattedDate = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' });
+           document.getElementById("myInput").value = formattedDate;
+        }
+    
     const today = new Date().toISOString().split('T')[0];
     const dateFrom = document.getElementById("fromDate");
     dateFrom.setAttribute("min", today);
@@ -160,7 +235,7 @@
     const thisday = new Date().toISOString().split('T')[0];
     const dateTo = document.getElementById("toDate");
     dateTo.setAttribute("min", thisday);
-</script>
+</script>*@
 <style>
     .img {
         position: absolute;

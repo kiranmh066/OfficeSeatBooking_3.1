@@ -42,8 +42,12 @@ namespace Office_Seat_Book_MVC.Controllers
                     }
                 }
             }
-
-            return View(booking);
+            if(booking.Shift_Time!= "nothing" && booking.seat.Seat_flag == false)
+            {
+                return View(booking);
+            }
+            return View();
+          
         }    
 
         [HttpGet]
