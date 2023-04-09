@@ -7,14 +7,7 @@
 @{
     ViewData["Title"] = "BookSeat";
 }
-@if (Model != null)
-{
-    <h1>You Already Booked the seat, A seat is waiting for you</h1>
-    <h3>See Booked Seat</h3>
-    <a asp-action="ViewPass" asp-controller="Booking" class="btn btn-danger">View Pass</a>
-}
-else
-{
+
 
     <body>
         <div class="mask bg-gradient-primary">
@@ -136,7 +129,6 @@ else
                                     <option disabled selected value="">Type of request</option>
                                     <option value="0">Daily</option>
                                     <option value="1">Weekly</option>
-                                    <option value="2">Custom</option>
 
                                 </select>
                             </div>
@@ -152,7 +144,7 @@ else
 
 
     </body>
-}
+
 <script>
     const today = new Date().toISOString().split('T')[0];
     const dateFrom = document.getElementById("fromDate");
