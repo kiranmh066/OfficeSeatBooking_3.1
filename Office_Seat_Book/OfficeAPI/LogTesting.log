@@ -7478,3 +7478,38 @@ FROM [seat] AS [s]
 2023-04-09 00:58:47.080 +05:30 [INF] Executed action OfficeAPI.Controllers.SeatController.GetSeats (OfficeAPI) in 3.4716ms
 2023-04-09 00:58:47.080 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.SeatController.GetSeats (OfficeAPI)'
 2023-04-09 00:58:47.080 +05:30 [INF] Request finished in 4.1704ms 200 application/json; charset=utf-8
+2023-04-10 09:54:11.079 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-10 09:54:11.235 +05:30 [INF] Hosting environment: Development
+2023-04-10 09:54:11.237 +05:30 [INF] Content root path: C:\Users\Kiran.MH\Desktop\HandShake\OfficeSeatBooking_3.1\Office_Seat_Book\OfficeAPI
+2023-04-10 09:54:11.449 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/weatherforecast  
+2023-04-10 09:54:11.774 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-04-10 09:54:11.898 +05:30 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[OfficeAPI.WeatherForecast] Get() on controller OfficeAPI.Controllers.WeatherForecastController (OfficeAPI).
+2023-04-10 09:54:11.948 +05:30 [INF] Executing ObjectResult, writing value of type 'OfficeAPI.WeatherForecast[]'.
+2023-04-10 09:54:12.337 +05:30 [INF] Executed action OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI) in 421.4284ms
+2023-04-10 09:54:12.345 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.WeatherForecastController.Get (OfficeAPI)'
+2023-04-10 09:54:12.376 +05:30 [INF] Request finished in 943.6037ms 200 application/json; charset=utf-8
+2023-04-10 09:54:12.899 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/favicon.ico  
+2023-04-10 09:54:12.919 +05:30 [INF] Request finished in 19.7742ms 404 
+2023-04-10 10:00:36.113 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/index.html  
+2023-04-10 10:00:36.834 +05:30 [INF] Request finished in 721.8128ms 200 text/html;charset=utf-8
+2023-04-10 10:00:36.846 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-04-10 10:00:36.852 +05:30 [INF] Request finished in 6.5422ms 200 application/javascript; charset=utf-8
+2023-04-10 10:00:36.867 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-04-10 10:00:37.001 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_framework/aspnetcore-browser-refresh.js  
+2023-04-10 10:00:37.002 +05:30 [INF] Request finished in 0.7214ms 200 application/javascript; charset=utf-8
+2023-04-10 10:00:37.016 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/_vs/browserLink  
+2023-04-10 10:00:37.033 +05:30 [INF] Request finished in 165.8943ms 200 text/javascript; charset=UTF-8
+2023-04-10 10:00:37.038 +05:30 [INF] Request finished in 22.2985ms 200 text/javascript; charset=UTF-8
+2023-04-10 10:00:37.312 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/swagger/v1/swagger.json  
+2023-04-10 10:00:37.512 +05:30 [INF] Request finished in 200.2533ms 200 application/json;charset=utf-8
+2023-04-10 10:00:43.835 +05:30 [INF] Request starting HTTP/2.0 GET https://localhost:44332/api/Floor/GetFloors  
+2023-04-10 10:00:43.844 +05:30 [INF] Executing endpoint 'OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI)'
+2023-04-10 10:00:43.850 +05:30 [INF] Route matched with {action = "GetFloors", controller = "Floor"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[Office_Seat_Book_Entity.Floor] GetFloors() on controller OfficeAPI.Controllers.FloorController (OfficeAPI).
+2023-04-10 10:00:46.068 +05:30 [INF] Entity Framework Core 5.0.0 initialized 'Office_DB_Context' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-10 10:00:48.690 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[FloorID], [f].[FloorName]
+FROM [floor] AS [f]
+2023-04-10 10:00:48.844 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Office_Seat_Book_Entity.Floor, Office_Seat_Book_Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-10 10:00:48.849 +05:30 [INF] Executed action OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI) in 4998.8767ms
+2023-04-10 10:00:48.850 +05:30 [INF] Executed endpoint 'OfficeAPI.Controllers.FloorController.GetFloors (OfficeAPI)'
+2023-04-10 10:00:48.855 +05:30 [INF] Request finished in 5020.4991ms 200 application/json; charset=utf-8
