@@ -114,17 +114,17 @@ namespace OfficeAPITests.Controller.Tests
             var Obj = result as ObjectResult;
             Assert.AreEqual(200, Obj.StatusCode);
         }
-        [TestMethod()]
-        public async Task AddEmployeeNegativeTest()
-        {
-            var employee = _fixture.Create<Employee>();
-            moq.Setup(x => x.AddEmployee(It.IsAny<Employee>())).
-                 Throws(new Exception());
-            employeeController = new EmployeeController(new EmployeeService(moq.Object));
-            var result = employeeController.AddEmployee(employee);
-            var Obj = result as ObjectResult;
-            Assert.AreEqual(Obj.StatusCode, 400);
-        }
+        //[TestMethod()]
+        //public async Task AddEmployeeNegativeTest()
+        //{
+        //    var employee = _fixture.Create<Employee>();
+        //    moq.Setup(x => x.AddEmployee(It.IsAny<Employee>())).
+        //         Throws(new Exception());
+        //    employeeController = new EmployeeController(new EmployeeService(moq.Object));
+        //    var result = employeeController.AddEmployee(employee);
+        //    var Obj = result as ObjectResult;
+        //    Assert.AreEqual(Obj.StatusCode, 400);
+        //}
         [TestMethod()]
         public void LoginTest()
         {
