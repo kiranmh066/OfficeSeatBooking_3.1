@@ -1,6 +1,17 @@
 @{
     Layout = "~/Views/Shared/_ReceptionistLayout.cshtml";
 }
+<head>
+    <script type="text/javascript">
+
+        function LogoutFunction() {
+            let val = confirm("Do you want to logout?");
+            if (val == false) {
+                return event.preventDefault();
+            }
+        }
+    </script>
+</head>
 <body>
     <div class="mask bg-gradient-primary">
         <img class="img"
@@ -33,10 +44,12 @@
                         </svg>
                     </div> &nbsp; &nbsp; &nbsp;
                     <div class="logout">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                        </svg>
+                         <a asp-controller="Home" asp-action="Index" type="button" onclick="LogoutFunction()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -50,20 +63,20 @@
             <div class="offcanvas-body">
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Home</a>
+                        <a asp-controller="Receptionist" asp-action="Index" type="button">Home</a>
                     </div>
                 </section>
                 <br>
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Profile</a>
+                        <a asp-controller="Employee" asp-action="Profile" type="button">Profile</a>
                     </div>
                 </section>
                 <br>
 
                 <section class="color-7">
                     <div class="anchor cl-effect-4">
-                        <a href="#">Help</a>
+                        <a asp-controller="Help" asp-action="Index" type="button">Help</a>
                     </div>
                 </section>
             </div>
@@ -86,12 +99,12 @@
         <div class="col-12">
             <div class=" greet text-center">
                 <p class=" head text-white  ">Hello.!</p>
-                <p class=" name text-white mt-3">SECURITY</p>
+                <p class=" name text-white mt-3">RECEPTIONIST</p>
             </div>
         </div>
     </div>
     <div class="row card-div">
-        <div class="col-12 col-md-6 col-xl-6 col-xxl-6">
+        <div class="col-12 col-md-6 col-xl-6 col-xxl-6" style="max-width:600px">
             <br />
             <br />
             <br />
